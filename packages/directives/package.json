@@ -1,0 +1,8 @@
+{
+  "name": "@yto-custom/directives",
+  "version": "0.0.5",
+  "description": "Yto directives",
+  "license": "MIT",
+  "main": "index.ts",
+  "module": "index.ts"
+}

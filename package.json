@@ -1,0 +1,116 @@
+{
+  "name": "yto",
+  "version": "0.4.0",
+  "type": "module",
+  "workspaces": [
+    "packages/yto-custom",
+    "packages/yto-utils"
+  ],
+  "scripts": {
+    "gen:components": "pnpm run -C internal/build gen:components",
+    "gc": "pnpm exec bash ./scripts/gc.sh",
+    "build": "pnpm gen:components && pnpm run -C packages/yto-custom build",
+    "build-test": "pnpm run -C packages/yto-custom build",
+    "build:check": "pnpm run -C packages/yto-custom type-check",
+    "build:watch": "pnpm run -C packages/yto-custom watch",
+    "utils:build": "pnpm run -C packages/yto-utils build",
+    "utils:buildwatch": "pnpm run -C packages/yto-utils watch",
+    "play:dev": "pnpm utils:build && pnpm build && pnpm run -C play dev",
+    "play:test": "pnpm run -C play dev",
+    "docs:dev": "pnpm run -C docs3 docs:dev",
+    "docs:build": "pnpm run -C docs3 docs:build",
+    "docs:preview": "pnpm run -C docs3 docs:preview",
+    "dev:all": "pnpm run -C play dev && pnpm run -C docs docs:dev",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "new": "pnpm run -C packages/yto-add-component new",
+    "prepare": "husky install",
+    "commit": "git add -A && git-cz && git push",
+    "release:ui": "pnpm run -C packages/yto-custom release",
+    "release": "npm run release --workspaces && release-it",
+    "release:log": "release-it"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
+    "@release-it/bumper": "^5.1.0",
+    "@release-it/conventional-changelog": "^7.0.2",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "@yto-custom/build-utils": "workspace:^",
+    "@yto/eslint-config": "workspace:^",
+    "cross-env": "^7.0.3",
+    "cross-env-shell": "^7.0.3",
+    "cz-git": "^1.7.1",
+    "element-plus": "^2.8.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "release-it": "16.0.0",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "sass": "^1.69.3",
+    "unocss": "^0.62.4",
+    "unplugin-auto-import": "^0.16.7",
+    "unplugin-element-plus": "^0.8.0",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^5.4.7",
+    "vite-plugin-dts": "^3.7.2",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vite-plugin-windicss": "^1.9.1",
+    "vue-tsc": "^2.1.6",
+    "windicss": "^3.5.6"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@types/node": "^18.18.5",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "@vue/runtime-core": "^3.3.4",
+    "@vue/shared": "^3.2.37",
+    "@vueuse/core": "^10.5.0",
+    "@yto-custom/build-constants": "workspace:^",
+    "@yto-custom/components": "workspace:^",
+    "@yto-custom/directives": "workspace:^",
+    "@yto-custom/hooks": "workspace:^",
+    "@yto-custom/utils": "workspace:^",
+    "@yto/custom": "workspace:*",
+    "@yto/utils": "workspace:*",
+    "axios": "^1.3.5",
+    "echarts": "^5.4.3",
+    "fs-extra": "^11.1.1",
+    "immutable": "^4.3.4",
+    "lodash-unified": "^1.0.3",
+    "moment": "^2.29.4",
+    "print-js": "^1.6.0",
+    "remove": "^0.1.5",
+    "rimraf": "^5.0.5",
+    "simple-uploader.js": "^0.6.0",
+    "spark-md5": "^3.0.2",
+    "typescript": "5.5.4",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "release-it": {
+    "git": {
+      "commit": false,
+      "tag": false,
+      "push": false
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog -p && git add CHANGELOG.md"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
+      }
+    }
+  }
+}

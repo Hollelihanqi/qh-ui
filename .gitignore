@@ -1,0 +1,13 @@
+node_modules
+*/node_modules
+
+dist
+lib
+component
+docs/.vitepress/cache
+stats.html
+.eslintcache
+/.idea
+.zip
+/docs/.vitepress/*.zip
+docs2

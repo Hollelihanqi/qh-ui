@@ -1,0 +1,73 @@
+.json-viewer {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding: 8px;
+  font-weight: bold;
+  .node-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .jv-red {
+    color: #fc1e70;
+  }
+  .jv-greed {
+    color: #42b983;
+  }
+  .jv-n {
+    color: #e08331;
+  }
+  .json-search {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    background: #fff;
+    input {
+      // height: 100%;
+      width: 100%;
+      padding: 8px 16px;
+    }
+  }
+  /* 箭头基础样式 */
+  .triangle-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 8px solid var(--el-color-primary);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    margin-right: 6px;
+    border-radius: 2px;
+    transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+  }
+
+  /* 向右箭头 (旋转 90 度) */
+  .triangle-right {
+    transform: rotate(-90deg);
+  }
+
+  .json-copy {
+    position: sticky;
+    left: 96%;
+    top: 0;
+    cursor: pointer;
+    color: var(--el-color-primary);
+    font-size: 14px;
+    padding: 2px 8px;
+    width: fit-content;
+  }
+}
+.json-viewer-light {
+  background: #fff;
+}
+.json-viewer-dark {
+  background: #282c34;
+  .json-key-span {
+    color: #fff;
+    font-weight: bold;
+  }
+  .color-f {
+    color: #fff;
+  }
+}

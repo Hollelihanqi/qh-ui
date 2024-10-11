@@ -1,0 +1,90 @@
+@use 'sass:math';
+@use 'sass:map';
+// @use '../common/var.scss' as common;
+
+//最新配色方案(紫色)
+// --yto-layout-menu-background: #333f5f; // 整体背景色
+// --yto-layout-menu-background-search: #2a3249; // 搜索框背景色
+// --yto-layout-menu-color-text: #d4daec; // 字体颜色
+// --yto-layout-menu-color-text-active: #ffffff; // 激活状态字体颜色
+// --yto-layout-menu-color-triangle: #7b88a8; // 折叠/展开三角颜色
+// --yto-layout-menu-background-title: transparent; //顶部 title 区域背景颜色
+// --yto-layout-menu-color-title: #ffffff; //顶部 title 区域文字颜色
+// --yto-layout-menu-header-box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1);
+// // 一级菜单颜色
+// --yto-layout-menu-level-1-background-color: #333f5f;
+// --yto-layout-menu-level-1-background-color-hover: #384569;
+// --yto-layout-menu-level-1-background-color-active: #4272dd;
+// --yto-layout-menu-level-1-background-color-expand: #334c84;
+// --yto-layout-menu-level-1-box-shadow: inset 0px -1px 0px 0px #2a3249;
+// // 二级菜单颜色
+// --yto-layout-menu-level-2-background-color: #2a3249;
+// --yto-layout-menu-level-2-background-color-hover: #36415e;
+// --yto-layout-menu-level-2-background-color-active: #4272dd;
+// --yto-layout-menu-level-2-background-color-expand: #2a3249;
+// // 三级菜单颜色
+// --yto-layout-menu-level-2-background-color: #232a3d;
+// --yto-layout-menu-level-2-background-color-hover: #2f3852;
+// --layout-menu-bg-active-color-level-3: #4272dd;
+
+$nav-tabs: () !default;
+$nav-tabs: map.merge(
+  (
+    'background': #e2e6e8,
+    'background-active': #fff,
+    'background-hover': #f0f2f3,
+    'background-item': #fff,
+    'color-text': #151719,
+    'color-text-active': #4272dd,
+    'color-item-divider': #b4b9bf,
+  ),
+  $nav-tabs
+);
+
+$menu-common: () !default;
+$menu-common: map.merge(
+  (
+    'background': #333f5f,
+    'background-search': #2a3249,
+    'background-title': transparent,
+    'color-text': #d4daec,
+    'color-text-active': #ffffff,
+    'color-triangle': #7b88a8,
+    'color-title': #ffffff,
+    'header-box-shadow': inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1),
+  ),
+  $menu-common
+);
+
+$menu-level-1: () !default;
+$menu-level-1: map.merge(
+  (
+    'level-1-background-color': #333f5f,
+    'level-1-background-color-hover': #384569,
+    'level-1-background-color-active': #4272dd,
+    'level-1-background-color-expand': #334c84,
+    'level-1-box-shadow': inset 0px -1px 0px 0px #2a3249,
+  ),
+  $menu-level-1
+);
+
+$menu-level-2: () !default;
+$menu-level-2: map.merge(
+  (
+    'level-2-background-color': #2a3249,
+    'level-2-background-color-hover': #36415e,
+    'level-2-background-color-active': #4272dd,
+    'level-2-background-color-expand': #2a3249,
+  ),
+  $menu-level-2
+);
+
+$menu-level-3: () !default;
+$menu-level-3: map.merge(
+  (
+    'level-3-background-color': #232a3d,
+    'level-3-background-color-hover': #2f3852,
+    'level-3-background-color-active': #4272dd,
+  ),
+  $menu-level-3
+);

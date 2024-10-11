@@ -1,0 +1,121 @@
+{
+  "hash": "5e15fa4d",
+  "configHash": "d5997b86",
+  "lockfileHash": "107c85a8",
+  "browserHash": "24ed3ba0",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/vue@3.5.8_typescript@5.5.4/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "f3fcd7a2",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.4.6/node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "f97401b4",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/.pnpm/@vueuse+core@11.1.0_vue@3.5.11/node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "c90f7dda",
+      "needsInterop": false
+    },
+    "element-plus": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.8.3_vue@3.5.5/node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "1110198e",
+      "needsInterop": false
+    },
+    "nprogress": {
+      "src": "../../../../node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js",
+      "file": "nprogress.js",
+      "fileHash": "2102c5d0",
+      "needsInterop": true
+    },
+    "@vueuse/core": {
+      "src": "../../../../node_modules/.pnpm/@vueuse+core@10.11.1_vue@3.5.5/node_modules/@vueuse/core/index.mjs",
+      "file": "@vueuse_core.js",
+      "fileHash": "e0720bba",
+      "needsInterop": false
+    },
+    "@element-plus/icons-vue": {
+      "src": "../../../../node_modules/.pnpm/@element-plus+icons-vue@2.3.1_vue@3.5.5/node_modules/@element-plus/icons-vue/dist/index.js",
+      "file": "@element-plus_icons-vue.js",
+      "fileHash": "c8d08e85",
+      "needsInterop": false
+    },
+    "@vue/shared": {
+      "src": "../../../../node_modules/.pnpm/@vue+shared@3.5.8/node_modules/@vue/shared/dist/shared.esm-bundler.js",
+      "file": "@vue_shared.js",
+      "fileHash": "95d03c2a",
+      "needsInterop": false
+    },
+    "markdown-it": {
+      "src": "../../../../node_modules/.pnpm/markdown-it@14.1.0/node_modules/markdown-it/index.mjs",
+      "file": "markdown-it.js",
+      "fileHash": "5e291cc4",
+      "needsInterop": false
+    },
+    "echarts": {
+      "src": "../../../../node_modules/.pnpm/echarts@5.5.1/node_modules/echarts/index.js",
+      "file": "echarts.js",
+      "fileHash": "c79ee5f9",
+      "needsInterop": false
+    },
+    "immutable": {
+      "src": "../../../../node_modules/.pnpm/immutable@4.3.7/node_modules/immutable/dist/immutable.es.js",
+      "file": "immutable.js",
+      "fileHash": "4c01850f",
+      "needsInterop": false
+    },
+    "gold-core": {
+      "src": "../../../../node_modules/.pnpm/gold-core@0.1.17/node_modules/gold-core/dist/index.js",
+      "file": "gold-core.js",
+      "fileHash": "9b244be9",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../../../node_modules/.pnpm/vue-router@4.4.5_vue@3.5.5/node_modules/vue-router/dist/vue-router.mjs",
+      "file": "vue-router.js",
+      "fileHash": "500f8adc",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "2e238620",
+      "needsInterop": false
+    },
+    "spark-md5": {
+      "src": "../../../../node_modules/.pnpm/spark-md5@3.0.2/node_modules/spark-md5/spark-md5.js",
+      "file": "spark-md5.js",
+      "fileHash": "58dfbed5",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-IFBWMYF3": {
+      "file": "chunk-IFBWMYF3.js"
+    },
+    "chunk-Z4XTYOOJ": {
+      "file": "chunk-Z4XTYOOJ.js"
+    },
+    "chunk-QW2NJPZZ": {
+      "file": "chunk-QW2NJPZZ.js"
+    },
+    "chunk-KUXNNIY7": {
+      "file": "chunk-KUXNNIY7.js"
+    },
+    "chunk-TUXA6EVM": {
+      "file": "chunk-TUXA6EVM.js"
+    },
+    "chunk-NOO3FI36": {
+      "file": "chunk-NOO3FI36.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}

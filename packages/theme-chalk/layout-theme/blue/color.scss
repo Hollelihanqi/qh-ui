@@ -1,0 +1,15 @@
+@use 'sass:map';
+// @use '../mixins/function.scss' as *;
+@use '../../mixins/_var.scss' as *;
+@use './var.scss' as defVar;
+
+:root {
+  color-scheme: 'blue';
+  [layout-theme='blue'] {
+    @include set-component-css-var('layout-nav', defVar.$nav-tabs);
+    @include set-component-css-var('layout-menu', defVar.$menu-common);
+    @include set-component-css-var('layout-menu', defVar.$menu-level-1);
+    @include set-component-css-var('layout-menu', defVar.$menu-level-2);
+    @include set-component-css-var('layout-menu', defVar.$menu-level-3);
+  }
+}

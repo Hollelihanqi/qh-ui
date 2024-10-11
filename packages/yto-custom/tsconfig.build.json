@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "useUnknownInCatchVariables": false,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["vite/client"],
+    "baseUrl": "./",
+    "paths": {
+      "@yto-custom/hooks": ["../hooks"],
+      "@yto-custom/components": ["../components"],
+      "@yto-custom/directives": ["../directives"]
+    }
+  },
+  "include": [
+    "*.d.ts",
+    "../../global.d.ts",
+    "./defaults.d.ts",
+    "./types/auto-imports.d.ts",
+    "../components/**/*.ts",
+    "../components/**/*.vue",
+    "../directives/**/*.ts",
+    "../utils/**/*.ts",
+    "../hooks/**/*.ts",
+    "./index.ts"
+  ],
+  "exclude": ["vite.config.ts", "node_modules", "dist"]
+}
