@@ -1,0 +1,7 @@
+.staicky-w .el-scrollbar__wrap {
+  display: flex;
+  flex-direction: column;
+}
+.staicky-w .el-scrollbar__view {
+  flex: 1;
+}

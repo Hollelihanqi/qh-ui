@@ -1,0 +1,35 @@
+{
+  "name": "theme-chalk3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "gn": "tsx scripts/generate-scss.ts",
+    "gn2": "tsx scripts/build-scss.ts",
+    "build:unocss": "npx unocss --config uno.config.ts",
+    "dev:unocss": "unocss --config uno.config.ts --watch --debug",
+    "build": "tsx scripts/build-scss.ts",
+    "dev": "unocss -i ../packages/components/**/*.{vue,} -o ./src/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/node": "^18.0.0",
+    "@unocss/cli": "^0.65.3",
+    "glob": "^8.0.3",
+    "postcss": "^8.4.49",
+    "postcss-nested": "^7.0.2",
+    "tsx": "^3.12.7",
+    "typescript": "^4.9.0"
+  },
+  "dependencies": {
+    "@unocss/core": "^0.53.4",
+    "@unocss/preset-attributify": "^0.53.4",
+    "@unocss/preset-uno": "^0.53.4",
+    "@unocss/preset-wind": "^0.53.4",
+    "sass": "^1.69.0"
+  }
+}

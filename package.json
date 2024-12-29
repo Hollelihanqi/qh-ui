@@ -1,0 +1,131 @@
+{
+  "name": "yto",
+  "version": "0.4.0",
+  "type": "module",
+  "scripts": {
+    "gc": "pnpm exec bash scripts/create-component.sh",
+    "watch:components": "tsx scripts/watch-components.ts",
+    "clean": "pnpm run clean:dist",
+    "clean:dist": "rimraf dist",
+    "build": "pnpm run -C internal/build start",
+    "build:watch": "pnpm run -C packages/yto-custom watch",
+    "utils:build": "pnpm run -C packages/yto-utils build",
+    "utils:buildwatch": "pnpm run -C packages/yto-utils watch",
+    "play:dev": "pnpm utils:build && pnpm build && pnpm run -C play dev",
+    "play:test": "pnpm run -C play dev",
+    "docs:dev": "pnpm run -C docs docs:dev",
+    "docs2:dev": "pnpm run -C docs2 dev",
+    "docs:build": "pnpm run -C docs docs:build",
+    "docs:preview": "pnpm run -C docs docs:preview",
+    "dev:all": "pnpm run -C play dev && pnpm run -C docs docs:dev",
+    "build:theme": "pnpm run -C packages/theme-chalk2 build",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "format": "prettier --write .",
+    "new": "pnpm run -C packages/yto-add-component new",
+    "prepare": "husky install",
+    "commit": "git add -A && git-cz && git push",
+    "release:ui": "pnpm run -C packages/yto-custom release",
+    "release": "npm run release --workspaces && release-it",
+    "release:log": "release-it"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
+    "@release-it/bumper": "^5.1.0",
+    "@release-it/conventional-changelog": "^7.0.2",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@unocss/core": "0.53.4",
+    "@unocss/preset-attributify": "^0.65.2",
+    "@unocss/preset-icons": "^0.65.2",
+    "@unocss/preset-uno": "0.53.4",
+    "@unocss/transformer-compile-class": "^0.65.2",
+    "@unocss/transformer-directives": "^0.65.2",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "@vue/runtime-dom": "^3.5.13",
+    "chokidar": "^3.6.0",
+    "cz-git": "^1.7.1",
+    "element-plus": "^2.8.1",
+    "fast-glob": "^3.2.11",
+    "glob": "^11.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "magic-string": "^0.30.17",
+    "postcss-apply": "^0.12.0",
+    "release-it": "16.0.0",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "sass": "^1.79.1",
+    "through2": "^4.0.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "type-fest": "^4.27.0",
+    "typescript": "5.5.4",
+    "unocss": "^0.48.0",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-element-plus": "^0.8.0",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vite-plugin-windicss": "^1.9.1",
+    "vue-tsc": "^2.1.6",
+    "windicss": "^3.5.6"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@types/node": "^18.18.5",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "@vue/runtime-core": "^3.3.4",
+    "@vue/shared": "^3.2.37",
+    "@vueuse/core": "^10.5.0",
+    "@yto-custom/build-constants": "workspace:^",
+    "@yto-custom/build-utils": "workspace:^",
+    "@yto-custom/components": "workspace:^",
+    "@yto-custom/directives": "workspace:^",
+    "@yto-custom/hooks": "workspace:^",
+    "@yto-custom/utils": "workspace:^",
+    "@yto/custom": "workspace:*",
+    "@yto/eslint-config": "workspace:*",
+    "@yto/utils": "workspace:*",
+    "axios": "^1.3.5",
+    "echarts": "^5.4.3",
+    "fs-extra": "^11.1.1",
+    "gold-core": "0.1.17",
+    "immutable": "^4.3.4",
+    "lodash-unified": "^1.0.3",
+    "moment": "^2.29.4",
+    "print-js": "^1.6.0",
+    "remove": "^0.1.5",
+    "rimraf": "^5.0.5",
+    "simple-uploader.js": "^0.6.0",
+    "spark-md5": "^3.0.2",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "release-it": {
+    "git": {
+      "commit": false,
+      "tag": false,
+      "push": false
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog -p && git add CHANGELOG.md"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
+      }
+    }
+  }
+}

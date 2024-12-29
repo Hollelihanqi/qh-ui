@@ -1,0 +1,74 @@
+import type { ExtractPropTypes, PropType } from 'vue'
+
+import Descriptions from './descriptions'
+
+interface LabelProps {
+  label?: string
+  prop?: string
+}
+
+export interface ListProps extends LabelProps {
+  render?: Function
+  span?: number
+  enum?: any
+  show?: boolean | Function
+  labelPosition?: 'left' | 'top'
+}
+
+export interface DescriptionsListProps extends LabelProps {
+  render?: Function
+  span?: number
+  enum?: any
+  show?: boolean | Function
+}
+
+export const descriptionsProps = {
+  list: {
+    type: Array as PropType<ListProps[]>,
+    default: () => [],
+  },
+  data: {
+    type: Object,
+    default: () => ({}),
+  },
+  span: {
+    type: Number,
+    default: 8,
+  },
+  labelWidth: {
+    type: String,
+    default: 'auto',
+  },
+  labelAlign: {
+    type: String,
+    default: 'left',
+  },
+  labelPosition: {
+    type: String,
+    default: 'left',
+  },
+  labelSuffixHide: {
+    type: Boolean,
+    default: false,
+  },
+  border: {
+    type: Boolean,
+    default: false,
+  },
+  labelColor: {
+    type: String,
+    default: '#262626',
+  },
+  valueColor: {
+    type: String,
+    default: '#595959',
+  },
+  lineHeight: {
+    type: String,
+    default: '26px',
+  },
+}
+
+export type DescriptionsProps = ExtractPropTypes<typeof descriptionsProps>
+
+export type DescriptionsInstance = InstanceType<typeof Descriptions>

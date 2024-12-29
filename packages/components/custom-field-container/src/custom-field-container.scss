@@ -1,0 +1,6 @@
+.yto-custom-field-container {
+  --field-row-m-y: 8px;
+  .item-row {
+    margin: var(--field-row-m-y) 0;
+  }
+}

@@ -1,0 +1,8 @@
+
+/* layer: default */
+.flex{display:flex;}
+.flex-col{flex-direction:column;}
+.items-center{align-items:center;}
+.justify-center{justify-content:center;}
+[fill-opacity~="\30 \.9"]{--un-fill-opacity:0.009;}
+.pt-\[16px\]{padding-top:16px;}

@@ -1,0 +1,28 @@
+{
+  "name": "@yto/utils",
+  "version": "1.5.3",
+  "description": "",
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "package.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.yto.net.cn/"
+  },
+  "author": {
+    "name": "西安技术平台部用户体验设计-李涵祺",
+    "email": "02393963@yto.net.cn"
+  },
+  "scripts": {
+    "build": "unbuild"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "unbuild": "^2.0.0"
+  }
+}

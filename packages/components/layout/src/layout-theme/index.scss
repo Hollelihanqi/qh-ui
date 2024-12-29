@@ -1,0 +1,10 @@
+// 全局引入一次 sass 模块
+@use 'sass:map';
+@use 'sass:math';
+
+// 引入主题相关文件
+@use './mixins/function';
+@use './blue/var' as blue-var;
+@use './blue/color' as blue-color;
+@use './purple/var' as purple-var;
+@use './purple/color' as purple-color;

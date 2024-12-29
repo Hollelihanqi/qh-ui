@@ -1,0 +1,16 @@
+.active-icon {
+  background-color: var(--el-color-primary);
+  border-color: var(--el-color-primary);
+}
+.active-text {
+  color: var(--el-color-primary);
+}
+.disabled-text {
+  cursor: not-allowed;
+  color: var(--el-disabled-text-color);
+}
+.disabled-radio {
+  cursor: not-allowed;
+  border-color: var(--el-disabled-border-color);
+  background-color: var(--el-disabled-bg-color);
+}
