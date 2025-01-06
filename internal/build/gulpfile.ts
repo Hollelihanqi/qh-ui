@@ -2,11 +2,10 @@ import path from 'path'
 import { copyFile, mkdir } from 'fs/promises'
 import { copy } from 'fs-extra'
 import { parallel, series } from 'gulp'
-import { buildOutput, ytoOutput, projRoot } from '@yto-custom/build-utils'
+import { buildOutput, ytoOutput } from '@yto-custom/build-utils'
 import { buildConfig, run, runTask, withTaskName } from './src'
 import type { TaskFunction } from 'gulp'
 import type { Module } from './src'
-import Unocss from 'unocss/vite'
 
 // export const copyFiles = () =>
 //   Promise.all([

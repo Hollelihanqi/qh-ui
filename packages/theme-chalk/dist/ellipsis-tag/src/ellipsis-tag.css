@@ -1,0 +1,53 @@
+.ellipsis-tag .tag-box {
+  white-space: nowrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px
+}
+
+.ellipsis-tag .ellipsis {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 2px;
+  --un-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--un-bg-opacity));
+  padding-left: 8px;
+  padding-right: 8px;
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: 150ms;
+  border: 1px solid rgba(0, 0, 0, .06);
+  color: #7f7f7f;
+  transition: all .3s
+}
+
+.ellipsis-tag .ellipsis:hover {
+  background-color: var(--el-color-primary-light-9);
+  border-color: var(--el-color-primary-light-7);
+  color: var(--el-color-primary)
+}
+
+.el-popover.ellipsis-tag-popover {
+  padding: .75rem
+}
+
+.el-popover.ellipsis-tag-popover .tag-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px
+}
+
+.el-popover.ellipsis-tag-popover .tag {
+  border-radius: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  background-color: #fff;
+  white-space: nowrap;
+  margin: 0
+}
