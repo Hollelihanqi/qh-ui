@@ -1,5 +1,5 @@
 <template>
-  <div class="yto-uploader uploader-w" :style="{ width: listHide ? 'auto' : '100%' }">
+  <div class="yto-uploader uploader-w" :style="styles">
     <div>
       <label ref="uploadBtn" style="margin-right: 8px">
         <slot name="uploaderBtn">
@@ -26,6 +26,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { computed } from 'vue'
 import { uploaderProps, uploaderEmits } from './uploader'
 import useUploader from './use-uploader'
 defineOptions({
@@ -35,4 +36,10 @@ defineOptions({
 const props = defineProps(uploaderProps)
 const emit = defineEmits(uploaderEmits)
 const { uploadBtn } = useUploader(props, emit)
+
+const styles = computed(() => {
+  return {
+    width: props.listHide ? 'auto' : '100%',
+  }
+})
 </script>

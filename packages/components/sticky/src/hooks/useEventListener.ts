@@ -3,7 +3,7 @@
  * 给目标元素添加事件
  */
 
-import { onUnmounted, onDeactivated, onMounted, onActivated, watch, isRef, Ref } from 'vue'
+import { onUnmounted, onDeactivated, onMounted, onActivated, watch, isRef, Ref, unref, nextTick } from 'vue'
 
 export type TargetRef = EventTarget | Ref<EventTarget | undefined>
 export type UseEventListenerOptions = {

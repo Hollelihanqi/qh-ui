@@ -4,9 +4,6 @@ import { InputProps, ElSelect, SwitchProps, TimePickerDefaultProps, CheckboxProp
 import { TimeSelectProps } from 'element-plus/es/components/time-select/src/time-select'
 import { YtoRemoteSearch } from '@yto-custom/components/remote-search'
 
-import type SearchForm from './search-form'
-
-
 export type RemoteSelectProps = Partial<typeof YtoRemoteSearch.__defaults>
 type ElDatePickerProps = typeof ElDatePicker.props
 type ElSelectProps = typeof ElSelect.props
@@ -117,5 +114,3 @@ export const searchFormProps = buildProps({
 export const searchFormEmits = ['update:searchModel', 'on-search', 'on-reset']
 
 export type SearchFormProps = ExtractPropTypes<typeof searchFormProps>
-
-export type SearchFormInstance = InstanceType<typeof SearchForm>

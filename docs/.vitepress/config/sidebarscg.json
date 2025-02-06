@@ -1,0 +1,58 @@
+{
+  "guide": {
+    "text": "指南",
+    "items": [
+      {
+        "text": "快速开始",
+        "link": "/fast"
+      }
+    ]
+  },
+  "components": {
+    "text": "组件",
+    "items": [
+      {
+        "text": "Table 表格",
+        "link": "/table"
+      }
+    ]
+  },
+  "yto-utils": {
+    "text": "工具类",
+    "items": [
+      {
+        "text": "分享",
+        "link": "/share"
+      },
+      {
+        "text": "文件下载",
+        "link": "/download"
+      },
+      {
+        "text": "水印",
+        "link": "/waterMarker"
+      },
+      {
+        "text": "时间",
+        "link": "/time"
+      },
+      {
+        "text": "其他方法",
+        "link": "/other"
+      }
+    ]
+  },
+  "others": {
+    "text": "其它",
+    "items": [
+      {
+        "text": "系统维护统一提示",
+        "link": "/system"
+      },
+      {
+        "text": "表单只读样式",
+        "link": "/form-readonly-class"
+      }
+    ]
+  }
+}

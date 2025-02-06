@@ -10,12 +10,14 @@
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
+  // 深色主题
   &.jdata-viewer-dark {
     background: #1e1e1e;
     color: #ffffff;
   }
 
-  .jdata-copy {
+  // 复制按钮
+  .json-copy {
     position: absolute;
     top: 12px;
     left: 85%;
@@ -38,6 +40,7 @@
     overflow-x: hidden;
   }
 
+  // 折叠箭头
   .triangle-arrow {
     width: 0;
     height: 0;
@@ -47,6 +50,7 @@
     display: inline-block;
     position: relative;
     top: 1px;
+    // 基础箭头样式（始终朝下）
     border-top: 8px solid #722ed1;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -68,6 +72,7 @@
     transform: rotate(0);
   }
 
+  // 添加点击区域
   .triangle-arrow::before {
     content: '';
     position: absolute;
@@ -78,35 +83,38 @@
     cursor: pointer;
   }
 
-  .jdata-key-span {
+  // JSON 键值对样式
+  .json-key-span {
     color: #722ed1;
     font-weight: 500;
     padding-right: 4px;
   }
 
+  // 值的颜色
   .jv-greed {
     color: #13c2c2;
-  }
-
+  } // 字符串
   .jv-red {
     color: #52c41a;
-  }
-
+  } // 数字和布尔值
   .jv-n {
     color: #faad14;
-  }
+  } // null
 
+  // 缩进和间距
   div {
     transition: all 0.2s;
   }
 
-  div:hover > .jdata-key-span {
+  // 每一行的悬停效果
+  div:hover > .json-key-span {
     background-color: rgba(114, 46, 209, 0.08);
     border-radius: 3px;
   }
 
+  // 深色主题特殊处理
   &.jdata-viewer-dark {
-    .jdata-copy {
+    .json-copy {
       background: #2d2d2d;
       color: #ccc;
 
@@ -123,7 +131,7 @@
       }
     }
 
-    .jdata-key-span {
+    .json-key-span {
       color: #ffffff;
     }
     .jv-greed {
@@ -136,11 +144,12 @@
       color: #ffffff;
     }
 
-    div:hover > .jdata-key-span {
+    div:hover > .json-key-span {
       background-color: rgba(160, 217, 17, 0.08);
     }
   }
 
+  // 展开收起动画
   .expand-enter-active {
     transition: all 0.25s ease-out;
     max-height: 2000px;
@@ -164,10 +173,14 @@
 
   .html-content {
     display: inline-block;
+
+    // 重置继承的样式，让内联样式生效
     * {
       all: initial;
       display: inline;
     }
+
+    // 让带style属性的元素使用其内联样式
     [style] {
       all: revert;
       display: inline;
@@ -175,11 +188,13 @@
   }
 }
 
+// 深色主题处理
 .jdata-viewer.jdata-viewer-dark {
   .html-content {
     color: #ffffff;
+
     [style] {
-      color: unset;
+      color: unset; // 允许内联样式覆盖
     }
   }
 }

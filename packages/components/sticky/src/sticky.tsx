@@ -3,7 +3,7 @@ import { stickyProps, stickyEmits } from './isticky'
 import { useScrollParent, useRect, useEventListener, useVisibilityChange } from './hooks/index'
 
 export function getZIndexStyle(zIndex?: number | string) {
-  const style: CSSProperties = {}
+  const style: any = {}
   if (zIndex !== undefined) {
     style.zIndex = +zIndex
   }
@@ -82,7 +82,7 @@ export default defineComponent({
         positionY = scrollParentRect.value.top + offset.value
       }
 
-      const style: CSSProperties = Object.assign(getZIndexStyle(props.zIndex), {
+      const style: any = Object.assign(getZIndexStyle(props.zIndex), {
         width: `${state.width}px`,
         height: `${state.height}px`,
         [props.position]: inGlobal ? `${offset.value}px` : `${positionY}px`,

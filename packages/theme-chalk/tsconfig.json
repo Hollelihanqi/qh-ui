@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "skipLibCheck": true, //忽略.d.ts文件类型检查
+    "noEmit": true,
+    "types": [
+      "vite/client"
+    ],
+    "baseUrl": ".", // 解析非相对模块的基准目录
+    "paths": {
+      "@": [
+        "src/"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "@main/*": [
+        "src/packages/*"
+      ]
+    },
+    "removeComments": true
+  },
+  "include": [
+    "./gen-entry.ts",
+    "./vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

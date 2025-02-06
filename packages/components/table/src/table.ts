@@ -3,15 +3,13 @@ import type { PaginationProps } from 'element-plus'
 import { buildProps } from '@yto-custom/utils'
 import type { EmptyProps } from '@yto-custom/components/empty'
 
-import type Table from './table.vue'
-
 export interface ColumnsItemProps {
   label?: string
   prop?: string
   hide?: (row?: any) => boolean
   [propsName: string]: any
 }
-export type CanWrite<T> = {
+type CanWrite<T> = {
   -readonly [K in keyof T]?: T[K]
 }
 
@@ -165,5 +163,3 @@ export const tableProps = buildProps({
 export const tableEmits = ['on-table']
 
 export type TableProps = ExtractPropTypes<typeof tableProps>
-
-export type TableInstance = InstanceType<typeof Table>

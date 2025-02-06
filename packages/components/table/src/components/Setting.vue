@@ -6,8 +6,8 @@
     </div> -->
 
     <div class="pl-[16px] flex flex-col">
-      <template v-for="(item, index) in columns" :key="index">
-        <el-checkbox
+      <template v-for="item in columns" :key="index">
+        <ElCheckbox
           v-model="item.checked"
           :checked="item.checked"
           size="large"
@@ -15,21 +15,21 @@
           @change="handleChange"
         >
           <span>{{ item.label }}</span>
-        </el-checkbox>
+        </ElCheckbox>
       </template>
     </div>
     <template #footer>
       <div class="flex items-center justify-end">
-        <el-button type="default" @click="handleSCancel">取消</el-button>
-        <!-- <el-button type="primary" @click="handleSReture">恢复默认</el-button> -->
-        <!-- <el-button type="primary" @click="handleSSave">保存</el-button> -->
+        <ElButton type="default" @click="handleSCancel">取消</ElButton>
+        <!-- <ElButton type="primary" @click="handleSReture">恢复默认</ElButton> -->
+        <!-- <ElButton type="primary" @click="handleSSave">保存</ElButton> -->
       </div>
     </template>
   </ElDrawer>
 </template>
 <script lang="ts" setup>
 import { PropType, ref } from 'vue'
-import { ElDrawer } from 'element-plus'
+import { ElDrawer, ElButton, ElCheckbox } from 'element-plus'
 
 interface setColumnsProps {
   label: string

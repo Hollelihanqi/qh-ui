@@ -1,8 +1,6 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 import { buildProps } from '@yto-custom/utils'
 
-import type Sticky from './sticky'
-
 export type StickyPosition = 'top' | 'bottom'
 
 export const stickyProps = buildProps({
@@ -34,5 +32,3 @@ export const stickyProps = buildProps({
 export const stickyEmits = ['scroll', 'change']
 
 export type StickyProps = ExtractPropTypes<typeof stickyProps>
-
-export type StickyInstance = InstanceType<typeof Sticky>

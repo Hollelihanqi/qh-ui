@@ -1,14 +1,15 @@
 <template>
-  <yto-c-table :columns="columns" :table-data="tableData" pagination-hide>
+  <YtoTable :columns="columns" :table-data="tableData" pagination-hide>
     <template #ageHeader>
       <el-button type="primary">年龄</el-button>
     </template>
     <template #sexHeader>
       <el-text type="danger">性别</el-text>
     </template>
-  </yto-c-table>
+  </YtoTable>
 </template>
 <script lang="tsx" setup>
+import { h } from 'vue'
 import { ElTag } from 'element-plus'
 
 const tableData = [

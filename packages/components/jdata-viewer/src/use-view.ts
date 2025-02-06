@@ -1,6 +1,7 @@
 import { JdataViewerProps } from './ijdata-viewer'
 import { ElMessage } from 'element-plus'
 import { ref, watchEffect } from 'vue'
+
 export const useView = (props: JdataViewerProps) => {
   const _nodes = ref([])
   const isCollapsed = ref(false)

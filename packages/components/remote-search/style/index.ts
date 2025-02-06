@@ -1,0 +1,1 @@
+import '@yto-custom/components/remote-search/src/remote-search.scss'

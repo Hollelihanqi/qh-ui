@@ -2,7 +2,7 @@ import { defineComponent, h, ref, getCurrentInstance, onMounted, nextTick } from
 import { remoteSearchProps, remoteSearchEmits, RemoteSearchProps } from './iremote-search'
 import { ElSelect, ElOption, ElSelectV2 } from 'element-plus'
 import { request } from '@yto-custom/utils'
-import { useDebounceFn } from '@vueuse/core'
+import { useDebounceFn }  from '@vueuse/core'
 
 export default defineComponent({
   name: 'RemoteSearch',
@@ -16,6 +16,21 @@ export default defineComponent({
     const setData = (list: any) => {
       options.value = list
       copyOptions.value = [...list]
+      // if (attrs.modelValue) {
+      //   const selectedValue = props.modelItem ? attrs.modelValue : attrs.modelValue[props.valueKey]
+      //   const exists = list.some((item: any) => {
+      //     const itemValue = props.modelItem ? item : item[props.valueKey]
+      //     return itemValue === selectedValue
+      //   })
+      //   if (!exists) {
+      //     options.value = [...list]
+      //     if (props.url && !props.isRemoteSearch) {
+      //       updateData({
+      //         [props.searchField]: selectedValue,
+      //       })
+      //     }
+      //   }
+      // }
     }
     const source = request.CancelToken.source()
     const updateData = (params = {}) => {
@@ -207,6 +222,24 @@ export default defineComponent({
         ></ElSelectV2>
       )
     }
+
+    // watch(
+    //   () => attrs.modelValue,
+    //   (newVal) => {
+    //     if (newVal && options.value.length === 0) {
+    //       if (props.url && !props.isRemoteSearch) {
+    //         const params = {
+    //           [props.searchField]: props.modelItem ? newVal : newVal[props.valueKey],
+    //         }
+    //         updateData(params)
+    //       } else if (props.requestApi && !props.isRemoteSearch) {
+    //         callRequestApi()
+    //       }
+    //     }
+    //   },
+    //   { immediate: true },
+    // )
+
     return () => {
       return props.stag === 'select' ? renderSelect() : renderSelectV2()
     }

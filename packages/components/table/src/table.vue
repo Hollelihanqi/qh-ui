@@ -71,13 +71,13 @@
   <SettingV ref="SettingInstance" :columns="setColumns" @on-save="HandleSetSave" />
 </template>
 <script lang="ts" setup>
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 import { ElTable, ElTableColumn, ElPagination } from 'element-plus'
 import TableColumn from './components/TableColumn.vue'
 import SettingV from './components/Setting.vue'
 import Empty from '@yto-custom/components/empty'
 import { Setting } from '@element-plus/icons-vue'
-import useController from './use-controller.ts'
+import useController from './use-controller'
 import useTable from './use-table'
 import { tableProps, tableEmits } from './table'
 
@@ -111,6 +111,7 @@ const {
   resetPage,
   updatePage,
   getData,
+  clearSort,
 } = useTable(props, ElTableInstance, emit)
 
 defineExpose({
@@ -122,5 +123,6 @@ defineExpose({
   getData,
   setting: handleSetting,
   tableData: _tdata,
+  clearSort,
 })
 </script>

@@ -1,0 +1,1 @@
+import '@yto-custom/components/adaption-container/src/adaption-container.scss'

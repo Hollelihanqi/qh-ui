@@ -1,7 +1,5 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { ExtractPropTypes } from 'vue'
 import { buildProps } from '@yto-custom/utils'
-
-import type SearchContainer from './search-container.vue'
 
 export const searchContainerProps = buildProps({
   isUseForm: {
@@ -11,6 +9,10 @@ export const searchContainerProps = buildProps({
   itemMinWidth: {
     type: Number,
     default: 300,
+  },
+  itemMaxWidth: {
+    type: Number,
+    default: 0,
   },
   autoLayout: {
     type: Boolean,
@@ -33,5 +35,3 @@ export const searchContainerProps = buildProps({
 export const searchContainerEmits = ['resize', 'enterKeyup']
 
 export type SearchContainerProps = ExtractPropTypes<typeof searchContainerProps>
-
-export type SearchContainerInstance = InstanceType<typeof SearchContainer>

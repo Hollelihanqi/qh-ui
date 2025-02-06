@@ -1,7 +1,5 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 
-import type CustomFieldConfig from './custom-field-config.tsx'
-
 interface IAnyObject {
   [key: string]: any
 }
@@ -51,5 +49,3 @@ export const customFieldConfigProps = {
 export const customFieldConfigEmits = ['cbChange', 'update:modelValue']
 
 export type CustomFieldConfigProps = ExtractPropTypes<typeof customFieldConfigProps>
-
-export type CustomFieldConfigInstance = InstanceType<typeof CustomFieldConfig>

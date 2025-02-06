@@ -75,7 +75,7 @@ const useController = (props: TableProps, _ElTableInstance: any) => {
     try {
       cacheSetColumns = JSON.parse(cacheSetColumns)
     } catch (error) {
-      error('getCacheColumns 解析失败--', error)
+      console.error('getCacheColumns 解析失败--', error)
     }
     return cacheSetColumns
   }
@@ -139,5 +139,6 @@ function _ideepClone<T>(obj: T): T {
 
   throw new Error("Unable to copy obj! Its type isn't supported.")
 }
+
 
 export default useController

@@ -4,10 +4,9 @@ import type { OutputOptions, RollupBuild } from 'rollup'
 
 export const generateExternal = async (options: { full: boolean }) => {
   const { dependencies, peerDependencies } = getPackageDependencies(ytoPackage)
-  const _external = ['vite', '@babel/parser', '@microsoft/tsdoc', 'lightningcss', 'fsevents', '@babel/preset-typescript']
-  console.log(peerDependencies)
+  
   return (id: string) => {
-    const packages: string[] = [...peerDependencies, 'vue', 'vue-router', '@vueuse/core', 'lodash-unified']
+    const packages: string[] = [...peerDependencies, 'vue', 'vue-router', '@vueuse/core']
     if (!options.full) {
       packages.push('@vue', ...dependencies)
     }

@@ -1,7 +1,5 @@
 import type { ExtractPropTypes } from 'vue'
 
-import type JdataViewer from './jdata-viewer'
-
 export const jdataViewerProps = {
   data: {
     type: [Object, String],
@@ -27,6 +25,10 @@ export const jdataViewerProps = {
     type: String,
     default: '}',
   },
+  renderHTag: {
+    type: Boolean,
+    default: true,
+  },
   hideSearch: {
     type: Boolean,
     default: false,
@@ -38,5 +40,3 @@ export const jdataViewerProps = {
 }
 
 export type JdataViewerProps = ExtractPropTypes<typeof jdataViewerProps>
-
-export type JdataViewerInstance = InstanceType<typeof JdataViewer>

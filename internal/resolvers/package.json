@@ -1,0 +1,21 @@
+{
+  "name": "@yto-custom/yto-custom-resolver",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "unbuild"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "unbuild": "^2.0.0"
+  }
+}

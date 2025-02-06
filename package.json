@@ -11,14 +11,13 @@
     "build:watch": "pnpm run -C packages/yto-custom watch",
     "utils:build": "pnpm run -C packages/yto-utils build",
     "utils:buildwatch": "pnpm run -C packages/yto-utils watch",
+    "build:theme": "pnpm run -C packages/theme-chalk build",
     "play:dev": "pnpm utils:build && pnpm build && pnpm run -C play dev",
     "play:test": "pnpm run -C play dev",
     "docs:dev": "pnpm run -C docs docs:dev",
-    "docs2:dev": "pnpm run -C docs2 dev",
     "docs:build": "pnpm run -C docs docs:build",
     "docs:preview": "pnpm run -C docs docs:preview",
     "dev:all": "pnpm run -C play dev && pnpm run -C docs docs:dev",
-    "build:theme": "pnpm run -C packages/theme-chalk2 build",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "prettier:check": "prettier --check .",
@@ -27,14 +26,7 @@
     "new": "pnpm run -C packages/yto-add-component new",
     "prepare": "husky install",
     "commit": "git add -A && git-cz && git push",
-    "release:ui": "pnpm run -C packages/yto-custom release",
-    "release": "npm run release --workspaces && release-it",
-    "release:log": "release-it"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-git"
-    }
+    "publish:pkg": "sh scripts/publish.sh"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.0",
@@ -61,7 +53,7 @@
     "postcss-apply": "^0.12.0",
     "release-it": "16.0.0",
     "rollup-plugin-visualizer": "^5.9.2",
-    "sass": "^1.79.1",
+    "sass": "^1.83.4",
     "through2": "^4.0.2",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
@@ -71,6 +63,7 @@
     "unplugin-auto-import": "^0.16.6",
     "unplugin-element-plus": "^0.8.0",
     "unplugin-vue-components": "^0.25.2",
+    "unplugin-vue-macros": "^0.11.2",
     "vite": "^5.4.10",
     "vite-plugin-dts": "^3.9.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
@@ -82,14 +75,13 @@
     "@vitejs/plugin-vue-jsx": "^3.0.2",
     "@vue/runtime-core": "^3.3.4",
     "@vue/shared": "^3.2.37",
-    "@vueuse/core": "^10.5.0",
+    "@vueuse/core": "^12.4.0",
     "@yto-custom/build-constants": "workspace:^",
     "@yto-custom/build-utils": "workspace:^",
     "@yto-custom/components": "workspace:^",
     "@yto-custom/directives": "workspace:^",
     "@yto-custom/hooks": "workspace:^",
     "@yto-custom/utils": "workspace:^",
-    "@yto/custom": "workspace:*",
     "@yto/eslint-config": "workspace:*",
     "@yto/utils": "workspace:*",
     "axios": "^1.3.5",
@@ -104,26 +96,15 @@
     "rimraf": "^5.0.5",
     "simple-uploader.js": "^0.6.0",
     "spark-md5": "^3.0.2",
-    "vue": "^3.3.4",
+    "vue": "^3.5.13",
     "vue-router": "^4.2.5"
   },
-  "release-it": {
-    "git": {
-      "commit": false,
-      "tag": false,
-      "push": false
-    },
-    "npm": {
-      "publish": false
-    },
-    "hooks": {
-      "after:bump": "npx auto-changelog -p && git add CHANGELOG.md"
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular",
-        "infile": "CHANGELOG.md"
-      }
+  "engines": {
+    "node": ">=18"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
     }
   }
 }

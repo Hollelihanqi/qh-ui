@@ -1,0 +1,1 @@
+import '@yto-custom/components/text-ellipsis/src/text-ellipsis.scss'

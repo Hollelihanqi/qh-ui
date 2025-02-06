@@ -1,7 +1,5 @@
 import type { ExtractPropTypes } from 'vue'
 
-import type Empty from './empty'
-
 export const emptyProps = {
   size: {
     type: String,
@@ -31,5 +29,3 @@ export const emptyProps = {
 
 
 export type EmptyProps = ExtractPropTypes<typeof emptyProps>
-
-export type EmptyInstance = InstanceType<typeof Empty>

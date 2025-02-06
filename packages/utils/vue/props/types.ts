@@ -1,4 +1,4 @@
-import type { epPropKey } from './runtime'
+import type { ytoPropKey } from './runtime'
 import type { ExtractPropTypes, PropType } from 'vue'
 import type { IfNever, UnknownToNever, WritableArray } from './util'
 
@@ -72,7 +72,7 @@ export type EpPropInputDefault<
  */
 export type NativePropType =
   | ((...args: any) => any)
-  | { new (...args: any): any }
+  | { new(...args: any): any }
   | undefined
   | null
 export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N
@@ -127,13 +127,13 @@ export type EpProp<Type, Default, Required> = {
   readonly type: PropType<Type>
   readonly required: [Required] extends [true] ? true : false
   readonly validator: ((val: unknown) => boolean) | undefined
-  [epPropKey]: true
+  [ytoPropKey]: true
 } & IfNever<Default, unknown, { readonly default: Default }>
 
 /**
  * Determine if it is `EpProp`
  */
-export type IfEpProp<T, Y, N> = T extends { [epPropKey]: true } ? Y : N
+export type IfEpProp<T, Y, N> = T extends { [ytoPropKey]: true } ? Y : N
 
 /**
  * Converting input to output.
@@ -161,4 +161,4 @@ export type EpPropFinalized<Type, Value, Validator, Default, Required> = EpProp<
   Required
 >
 
-export {}
+export { }

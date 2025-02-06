@@ -1,8 +1,6 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 import { buildProps } from '@yto-custom/utils'
 
-import type Radio from './radio.vue'
-
 export interface RadioOptionProp {
   label: string
   value: any
@@ -39,5 +37,3 @@ export const radioProps = buildProps({
 export const radioEmits = ['update:modelValue', 'change']
 
 export type RadioProps = ExtractPropTypes<typeof radioProps>
-
-export type RadioInstance = InstanceType<typeof Radio>

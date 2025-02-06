@@ -1,7 +1,5 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 
-import type DatePicker from './date-picker.vue'
-
 type DateModelType = number | string | Date
 
 export const datePickerProps = {
@@ -22,5 +20,3 @@ export const datePickerProps = {
 export const datePickerEmits = ['update:start', 'update:end']
 
 export type DatePickerProps = ExtractPropTypes<typeof datePickerProps>
-
-export type DatePickerInstance = InstanceType<typeof DatePicker>

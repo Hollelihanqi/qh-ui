@@ -1,0 +1,1 @@
+import '@yto-custom/components/empty/src/empty.scss'

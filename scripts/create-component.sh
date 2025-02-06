@@ -36,10 +36,18 @@ if [ -d "$COMPONENT_DIR" ]; then
     exit 1
 fi
 
-# 转换组件名称为大驼峰形式
-COMPONENT_NAME_PASCAL=$(echo "$COMPONENT_NAME" | sed -E 's/(^|-)([a-z])/\U\2/g')
+# 将组件名按横线分割，每部分首字母大写，然后合并
+COMPONENT_NAME_PASCAL=$(echo "$COMPONENT_NAME" | awk 'BEGIN{FS="-";RS="-"} {printf "%s", toupper(substr($1,1,1)) substr($1,2)}')
+
+echo "Debug: 组件名转换过程"
+echo "原始输入: $COMPONENT_NAME"
+echo "转换结果: $COMPONENT_NAME_PASCAL"
+
 # 转换组件名称为小驼峰形式
-COMPONENT_NAME_CAMEL=$(echo "$COMPONENT_NAME_PASCAL" | sed 's/^./\L&/')
+COMPONENT_NAME_CAMEL=$(echo "${COMPONENT_NAME_PASCAL}" | awk '{print tolower(substr($0,1,1)) substr($0,2)}')
+
+echo "Debug: 小驼峰组件名转换过程"
+echo $COMPONENT_NAME_CAMEL
 
 # 使用 select 命令实现空格选择
 echo "请选择模板类型："
@@ -68,13 +76,12 @@ COMMON_REPLACEMENTS="-e s/Component/$COMPONENT_NAME_PASCAL/g \
 
 if [ "$TEMPLATE_TYPE" = "sfc" ]; then
     # 处理 SFC 模板
-    # 替换组件名、类名、导入语句和组件引用
-    sed -e "s/defineOptions({name: '.*'})/defineOptions({name: '$COMPONENT_NAME_PASCAL'})/" \
+    sed -e "s/defineOptions({name: 'Component'})/defineOptions({name: '$COMPONENT_NAME_PASCAL'})/" \
         -e "s/class=\"yto-component\"/class=\"yto-$COMPONENT_NAME\"/" \
         -e "s/from '\.\/component'/from '\.\/$COMPONENT_NAME'/" \
         -e "s/componentProps/${COMPONENT_NAME_CAMEL}Props/g" \
         -e "s/componentEmits/${COMPONENT_NAME_CAMEL}Emits/g" \
-        -e "s/name: 'Component'/name: '$COMPONENT_NAME_PASCAL'/" \
+        -e "s/name: 'Component'/name: '$COMPONENT_NAME_PASCAL'/g" \
         template/component.vue > "$SRC_DIR/$COMPONENT_NAME.vue"
     
     # 检查是否缺少 script 闭合标签
@@ -104,19 +111,33 @@ else
         template/component.ts > "$SRC_DIR/i$COMPONENT_NAME.ts"
 fi
 
+# 创建 instance.ts 文件
+if [ "$TEMPLATE_TYPE" = "sfc" ]; then
+    # SFC 类型，需要 .vue 后缀
+    sed -e "s/Component/$COMPONENT_NAME_PASCAL/g" \
+        -e "s|'./xxx'|'./$COMPONENT_NAME.vue'|" \
+        template/instance.ts > "$SRC_DIR/instance.ts"
+else
+    # TSX 类型，不需要后缀
+    sed -e "s/Component/$COMPONENT_NAME_PASCAL/g" \
+        -e "s|'./xxx'|'./$COMPONENT_NAME'|" \
+        template/instance.ts > "$SRC_DIR/instance.ts"
+fi
+
 # 创建 index.ts，根据模板类型设置不同的导入路径
 if [ "$TEMPLATE_TYPE" = "sfc" ]; then
     IMPORT_PATH="./src/$COMPONENT_NAME.vue"
     EXPORT_PATH="./src/$COMPONENT_NAME"
 else
-    IMPORT_PATH="./src/$COMPONENT_NAME"  # 移除 .tsx 后缀
+    IMPORT_PATH="./src/$COMPONENT_NAME"
     EXPORT_PATH="./src/i$COMPONENT_NAME"
 fi
 
-# 替换 index.ts 的内容
+# 替换 index.ts 的内容，添加 ComponentInstance 的导出
 sed -e "s/Component/$COMPONENT_NAME_PASCAL/g" \
     -e "s|from './src/component.vue'|from '$IMPORT_PATH'|" \
     -e "s|from './component'|from '$EXPORT_PATH'|" \
+    -e "s|from './src/instance'|from './src/instance'|" \
     template/src-index.ts > "$COMPONENT_DIR/index.ts"
 
 echo "组件 $COMPONENT_NAME 创建完成！"
@@ -126,9 +147,10 @@ echo "├── src/"
 echo "│   ├── $COMPONENT_NAME.scss"
 if [ "$TEMPLATE_TYPE" = "sfc" ]; then
     echo "│   ├── $COMPONENT_NAME.vue"
-    echo "│   └── $COMPONENT_NAME.ts"
+    echo "│   ├── $COMPONENT_NAME.ts"
 else
     echo "│   ├── $COMPONENT_NAME.tsx"
-    echo "│   └── i$COMPONENT_NAME.ts"
+    echo "│   ├── i$COMPONENT_NAME.ts"
 fi
+echo "│   └── instance.ts"
 echo "└── index.ts" 

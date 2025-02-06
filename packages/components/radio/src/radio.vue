@@ -30,7 +30,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { radioProps, radioEmits } from './radio'
+import { computed } from 'vue'
+import { radioProps, radioEmits, RadioOptionProp } from './radio'
 
 defineOptions({
   name: 'Radio',
@@ -45,7 +46,7 @@ const isCheck = computed({
   },
   get: () => props.modelValue,
 })
-const onClicked = (op: string | IOptions) => {
+const onClicked = (op: string | RadioOptionProp) => {
   if (props.disabled) return
   const _key = typeof op === 'string' ? op : op[props.value]
   if (isCheck.value === _key) {

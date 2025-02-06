@@ -1,4 +1,5 @@
 import { withInstall, withNoopInstall } from '@yto-custom/utils'
+
 import RemoteSearch from './src/remote-search'
 import UserSearch from './src/user-search'
 import type { SFCWithInstall } from '@yto-custom/utils'

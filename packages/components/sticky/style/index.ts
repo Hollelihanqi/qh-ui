@@ -1,0 +1,1 @@
+import '@yto-custom/components/sticky/src/sticky.scss'

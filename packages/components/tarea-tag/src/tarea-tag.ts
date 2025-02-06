@@ -1,7 +1,5 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { ExtractPropTypes } from 'vue'
 import { buildProps } from '@yto-custom/utils'
-
-import type TareaTag from './tarea-tag.vue'
 
 export const tareaTagProps = buildProps({
   modelValue: {
@@ -29,5 +27,3 @@ export const tareaTagProps = buildProps({
 export const tareaTagEmits = ['update:modelValue', 'on-updated']
 
 export type TareaTagProps = ExtractPropTypes<typeof tareaTagProps>
-
-export type TareaTagInstance = InstanceType<typeof TareaTag>

@@ -7,7 +7,7 @@
  * @use <div v-show-tip> <ElTooltip /> </div>
  */
 import type { Directive } from 'vue'
-import { getStyle } from 'element-plus/es/utils/dom/index'
+import { getStyle } from '@yto-custom/utils'
 
 const showTip: Directive = {
   created(el: any, _: any, vnode: any) {

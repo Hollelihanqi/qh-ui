@@ -1,5 +1,5 @@
 <template>
-  <div class="yto-layout layout-router flex flex-1 overflow-hidden" :class="{ 'flex-col': isVertical }">
+  <div class="layout-router flex flex-1 overflow-hidden" :class="{ 'flex-col': isVertical }">
     <slot v-if="isVertical" name="header"></slot>
     <slot v-else></slot>
     <div class="flex flex-1 overflow-hidden" :class="isVertical ? 'w-full' : 'flex-col'">
@@ -31,6 +31,9 @@
             </template>
           </NavTabs>
         </slot>
+        <!-- {{
+          `activeItem===${activeItem ? JSON.stringify(activeItem) : activeItem}---------isInIframe===${isInIframe()}`
+        }} -->
         <div
           v-show="isInIframe() || activeItem?.mode === LAYOUT_MODE.Router"
           class="router-view-container flex-1 px-[10px] pb-[10px] overflow-auto w-full"

@@ -105,11 +105,14 @@ export default defineComponent({
       searchActionBoxWidth.value = e.width
     }
 
-    const _searchModel = computed({
+    const insearchFormModel = ref({})
+
+    const _searchModel: any = computed({
       get() {
-        return props.searchModel
+        return props.searchModel || insearchFormModel.value
       },
       set(model: any) {
+        insearchFormModel.value = model
         emit('update:searchModel', model)
       },
     })
@@ -320,7 +323,7 @@ export default defineComponent({
         <div
           ref={searchFormInstance}
           v-resizeElement={handleResize}
-          class="yto-search-form relative search-form-w bg-white px-[16px] pt-[20px]"
+          class="relative search-form-w bg-white px-[16px] pt-[20px]"
         >
           <ElForm model={_searchModel.value} class="search-form" label-width="auto">
             <Grid

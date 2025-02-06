@@ -8,7 +8,7 @@ export default defineComponent({
     Transition,
   },
   props: jdataViewerProps,
-  setup(props) {
+  setup(props: any) {
     const { _nodes, isCollapsed, toggleRoot, handleCopy } = useView(props)
     const paseKey = (key: string) => {
       const keys = key.split('.')
@@ -20,8 +20,8 @@ export default defineComponent({
         return <span class="jv-n">null</span>
       } else if (node.nodeType === 'string') {
         try {
-          // 检查是否是HTML标签
-          if (/<[^>]*>/g.test(node.value)) {
+          // 只有在 renderHTag 为 true 时才处理 HTML 标签
+          if (props.renderHTag && /<[^>]*>/g.test(node.value)) {
             // 移除字符串两端的引号
             const htmlStr = node.value.replace(/^"|"$/g, '')
             // 解析可能包含的JSON字符串
@@ -108,7 +108,7 @@ export default defineComponent({
                 <>
                   {!_node.isArrayChild && (
                     <>
-                      <span class="jdata-key-span" style="display:inline-block">
+                      <span class="json-key-span" style="display:inline-block">
                         {paseKey(key)}
                       </span>
                       <span style="fontWeight:bold">：</span>
@@ -131,11 +131,11 @@ export default defineComponent({
         <div>
           <div>
             <CollapseArrow toggleClick={toggleRoot} isCollapsed={isCollapsed.value} />
-            <span class="jdata-key-span">{props.rootTagStart}</span>
+            <span class="json-key-span">{props.rootTagStart}</span>
             {isCollapsed.value && (
               <>
                 <span>...</span>
-                <span class="jdata-key-span">{props.rootTagEnd}</span>
+                <span class="json-key-span">{props.rootTagEnd}</span>
               </>
             )}
           </div>
@@ -147,7 +147,7 @@ export default defineComponent({
                     <JsonNode node={node} />
                   ))}
                 </div>
-                <span class="jdata-key-span">{props.rootTagEnd}</span>
+                <span class="json-key-span">{props.rootTagEnd}</span>
               </>
             )} */}
             {/* 使用 v-show 控制子节点的显示和隐藏 */}
@@ -157,7 +157,7 @@ export default defineComponent({
                   <JsonNode node={node} />
                 ))}
               </div>
-              <span class="jdata-key-span">{props.rootTagEnd}</span>
+              <span class="json-key-span">{props.rootTagEnd}</span>
             </div>
           </Transition>
         </div>
@@ -167,7 +167,7 @@ export default defineComponent({
     // 搜索
     // const JsonSearch = () => {
     //   return (
-    //     <div class="jdata-search">
+    //     <div class="json-search">
     //       <input placeholder={props.splacholder} />
     //     </div>
     //   )
@@ -175,11 +175,9 @@ export default defineComponent({
 
     return () => {
       return (
-        <div
-          class={`yto-jdata-viewer jdata-viewer ${props.theme === 'light' ? 'jdata-viewer-light' : 'jdata-viewer-dark'}`}
-        >
+        <div class={`json-viewer ${props.theme === 'light' ? 'json-viewer-light' : 'json-viewer-dark'}`}>
           {props.copy && (
-            <div class="jdata-copy" onClick={handleCopy}>
+            <div class="json-copy" onClick={handleCopy}>
               复制
             </div>
           )}

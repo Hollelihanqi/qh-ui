@@ -1,7 +1,5 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 
-import type EllipsisTag from './ellipsis-tag.vue'
-
 export interface ResizeInfo {
   width: number
   height: number
@@ -24,5 +22,3 @@ export const ellipsisTagProps = {
 
 
 export type EllipsisTagProps = ExtractPropTypes<typeof ellipsisTagProps>
-
-export type EllipsisTagInstance = InstanceType<typeof EllipsisTag>

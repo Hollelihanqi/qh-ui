@@ -1,7 +1,5 @@
 <template>
-  <div
-    :class="`yto-custom-field-container flex w-full ${direction === 'vertical' ? 'flex-wrap' : 'flex-col'}`"
-  >
+  <div :class="`yto-custom-field-container flex w-full ${direction === 'vertical' ? 'flex-wrap' : 'flex-col'}`">
     <slot name="prepend"></slot>
     <div :class="`flex ${direction === 'vertical' ? 'flex-col flex-1 w-0' : 'flex-wrap w-full'}`">
       <div
@@ -41,7 +39,7 @@ defineOptions({
   name: 'CustomFieldContainer',
 })
 
-const props = defineProps(customFieldContainerProps)
+defineProps(customFieldContainerProps)
 const emits = defineEmits(customFieldContainerEmits)
 const onClick = (flag: 'add' | 'delete', index: number, item: any) => {
   if (flag === 'add') {

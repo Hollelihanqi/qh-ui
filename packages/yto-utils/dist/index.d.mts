@@ -103,7 +103,7 @@ interface WatermarkParams {
     /** 旋转角度 */
     rotate?: number;
     /** z-index层级 */
-    zIndex?: string;
+    zIndex?: number;
     /** 单个水印宽度 */
     width?: number;
     /** 单个水印高度 */

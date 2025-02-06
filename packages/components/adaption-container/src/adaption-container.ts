@@ -1,19 +1,28 @@
-import type AdaptionContainer from './adaption-container.vue'
+import type { ExtractPropTypes } from 'vue'
 
-export type AdaptionContainerProps = {
-  list: Array<any>
-  minWidth?: number //单个卡片最小宽度
-  gap?: number //卡片间距
-  minNum?: number // 最少显示几个卡片
-  containerMinWidth?: number //容器最小宽度
+export const adaptionContainerProps = {
+  list: {
+    type: Array,
+    default: () => [],
+  },
+  minWidth: {
+    type: Number,
+    default: 200,
+  },
+  gap: {
+    type: Number,
+    default: 10,
+  },
+  minNum: {
+    type: Number,
+    default: 1,
+  },
+  containerMinWidth: {
+    type: Number,
+    default: 1,
+  }
+
 }
 
-export const adaptionContainerProps = withDefaults(defineProps<AdaptionContainerProps>(), {
-  list: () => [],
-  minWidth: 200,
-  gap: 10,
-  minNum: 1,
-  containerMinWidth: 0,
-})
 
-export type AdaptionContainerInstance = InstanceType<typeof AdaptionContainer>
+export type AdaptionContainerProps = ExtractPropTypes<typeof adaptionContainerProps>

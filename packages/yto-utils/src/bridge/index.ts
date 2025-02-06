@@ -5,12 +5,6 @@ interface BridgeParams {
   timeout?: number
 }
 
-interface BridgeResponse<T = any> {
-  code: number
-  data: T
-  message: string
-}
-
 class Bridge {
   constructor() {
     console.log('JsBridge.first：setupWebViewJavascriptBridge')

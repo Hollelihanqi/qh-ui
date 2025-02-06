@@ -48,8 +48,6 @@ defineOptions({
 
 const props = defineProps(ellipsisTagProps)
 
-const map = new WeakMap()
-
 const containerRef = ref<HTMLElement | null>(null)
 const tagBoxRef = ref<HTMLElement | null>(null)
 const shoEllipsis = ref(false)

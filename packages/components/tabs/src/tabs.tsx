@@ -31,7 +31,7 @@ export default defineComponent({
     }
 
     const labelCountRender = (item: TabItemProps) => {
-      if (isRef(item.labelCount)) {
+      if (item.labelCount && isRef(item.labelCount)) {
         return <span class="pl-[2px]">（{item.labelCount.value}）</span>
       } else if (typeof item.labelCount === 'function') {
         return <span class="pl-[2px]">（{item.labelCount()}）</span>

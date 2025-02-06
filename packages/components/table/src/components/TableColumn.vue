@@ -4,7 +4,7 @@
 
 <script lang="tsx" setup>
 import { useSlots } from 'vue'
-import { ElMessage, ElTableColumn } from 'element-plus'
+import { ElMessage, ElTableColumn, ElIcon } from 'element-plus'
 import { CopyDocument } from '@element-plus/icons-vue'
 
 defineProps({
@@ -14,7 +14,7 @@ defineProps({
   },
 })
 
-const slots = useSlots()
+const slots: any = useSlots()
 const formatEnum = (column: any, row: any) => {
   if (Array.isArray(column.enum)) {
     const target = column.enum.find((e: any) => e.value === row[column.prop])
@@ -116,14 +116,14 @@ const renderColumn = (column: any) => {
               if (column.copy)
                 return (
                   <div class="flex items-center gap-2">
-                    <el-icon
+                    <ElIcon
                       class="cursor-pointer copy-icon-color"
                       onClick={() => {
                         copyTextToClipboard(renderCellData(column, scope))
                       }}
                     >
                       <CopyDocument />
-                    </el-icon>
+                    </ElIcon>
                     <span>{renderCellData(column, scope)}</span>
                   </div>
                 )

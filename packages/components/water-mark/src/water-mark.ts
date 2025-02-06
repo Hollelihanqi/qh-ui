@@ -1,9 +1,11 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { ExtractPropTypes } from 'vue'
 import { buildProps } from '@yto-custom/utils'
 
-import type WaterMark from './water-mark.vue'
-
 export const waterMarkProps = buildProps({
+  id: {
+    type: String,
+    default: '',
+  },
   content: {
     type: String,
     default: '',
@@ -28,10 +30,12 @@ export const waterMarkProps = buildProps({
     type: String,
     default: '14px Inter, Avenir',
   },
+  fillStyle: {
+    type: String,
+    default: '',
+  }
 })
 
 export const waterMarkEmits = []
 
 export type WaterMarkProps = ExtractPropTypes<typeof waterMarkProps>
-
-export type WaterMarkInstance = InstanceType<typeof WaterMark>

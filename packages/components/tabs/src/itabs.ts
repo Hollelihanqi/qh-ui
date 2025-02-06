@@ -1,11 +1,9 @@
-import type { ExtractPropTypes, PropType } from 'vue'
-
-import type Tabs from './tabs'
+import type { ExtractPropTypes, PropType, Ref } from 'vue'
 
 export interface TabItemProps {
   label: string
   value: string | number
-  labelCount?: string | number | Function
+  labelCount?: string | number | Function | Ref<string | number>
 }
 
 export const tabsProps = {
@@ -35,5 +33,3 @@ export const tabsProps = {
 export const tabsEmits = ['update:modelValue', 'update:activeIdx', 'change']
 
 export type TabsProps = ExtractPropTypes<typeof tabsProps>
-
-export type TabsInstance = InstanceType<typeof Tabs>

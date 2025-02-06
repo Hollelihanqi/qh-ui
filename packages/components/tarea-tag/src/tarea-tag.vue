@@ -38,7 +38,9 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { ref, computed, } from 'vue'
 import { tareaTagProps, tareaTagEmits } from './tarea-tag'
+import { List } from 'immutable'
 
 defineOptions({
   name: 'TareaTag',
@@ -63,8 +65,8 @@ const tags: any = computed({
   },
   set(value) {
     const _v = value.map((item: any) => item)
-    emits('update:modelValue', _v.length ? _v.filter((item: string) => item) : '')
-    emits('on-updated', _v)
+    emit('update:modelValue', _v.length ? _v.filter((item: string) => item) : '')
+    emit('on-updated', _v)
   },
 })
 
@@ -111,7 +113,6 @@ const checkText = (value: any) => {
   inputText.value = ''
   // 用于验证文本项的函数
   const validateItem = (item: string) => {
-    logger('validateItem', item)
     if (!item) return null
     const isValid =
       props.regular instanceof RegExp
@@ -141,4 +142,6 @@ const valided = (values: []) => {
 const validState = () => {
   return valid.value
 }
+
+defineExpose({ validState })
 </script>

@@ -11,7 +11,7 @@ export const utilRoot = resolve(pkgRoot, 'utils')
 export const buildRoot = resolve(projRoot, 'internal', 'build')
 
 // Docs
-export const docsDirName = 'docs3'
+export const docsDirName = 'docs'
 export const docRoot = resolve(projRoot, docsDirName)
 export const vpRoot = resolve(docRoot, '.vitepress')
 

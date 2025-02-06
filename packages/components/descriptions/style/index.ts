@@ -1,0 +1,1 @@
+import '@yto-custom/components/descriptions/src/descriptions.scss'

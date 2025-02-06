@@ -4,6 +4,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { computed, onMounted, watch, unref } from 'vue'
 import { waterMarkProps, waterMarkEmits } from './water-mark'
 import { addWaterMarker, removeWatermark, guid } from '@yto/utils'
 

@@ -1,4 +1,4 @@
-import { defineComponent, resolveComponent, h, SetupContext, DefineComponent } from 'vue'
+import { defineComponent, resolveComponent, h, SetupContext } from 'vue'
 import { ElInput, ElSelectV2, ElFormItem } from 'element-plus'
 import { customFieldConfigProps, customFieldConfigEmits } from './icustom-field-config'
 
@@ -42,6 +42,7 @@ export default defineComponent({
         </div>
       )
     }
+
     return () => (
       <div class="yto-custom-field-config">
         {props.rules ? (
@@ -54,4 +55,4 @@ export default defineComponent({
       </div>
     )
   },
-}) as DefineComponent
+})

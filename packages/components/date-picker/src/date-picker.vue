@@ -10,6 +10,7 @@
   />
 </template>
 <script lang="ts" setup>
+import { ElDatePicker } from 'element-plus'
 import { computed } from 'vue'
 import { datePickerProps, datePickerEmits } from './date-picker'
 
@@ -21,7 +22,7 @@ const props = defineProps(datePickerProps)
 
 const emit = defineEmits(datePickerEmits)
 
-const timer = computed({
+const timer: any = computed({
   get: () => [props.start, props.end],
   set: (val) => {
     emit('update:start', val?.length > 1 ? val[0] : '')

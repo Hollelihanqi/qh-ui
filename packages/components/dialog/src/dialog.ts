@@ -1,6 +1,5 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 import { ButtonProps } from 'element-plus'
-import type Dialog from './dialog.vue'
 
 type MyParital<T> = {
   [P in keyof T]?: T[P]
@@ -53,5 +52,3 @@ export const dialogProps = {
 export const dialogEmits = ['update:visible', 'cancel', 'confirm']
 
 export type DialogProps = ExtractPropTypes<typeof dialogProps>
-
-export type DialogInstance = InstanceType<typeof Dialog>

@@ -1,25 +1,27 @@
 {
   "name": "theme-chalk3",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsx gulpfile.ts"
+    "clean": "rimraf dist",
+    "build:all": "vite build --config vite.global.config.ts",
+    "build:components": "vite build --config vite.module.config.ts",
+    "build": "pnpm clean && pnpm build:all && pnpm build:components && rimraf dist/*.js && tsx tasks/copyCSS.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@swc/core": "^1.10.4",
-    "@swc/register": "^0.1.10",
     "@types/glob": "^8.0.0",
     "@types/gulp": "^4.0.17",
     "@types/gulp-autoprefixer": "^0.0.37",
     "@types/gulp-clean-css": "^4.3.4",
     "@types/node": "^18.0.0",
-    "@unocss/cli": "^0.65.3",
     "@unocss/postcss": "^0.65.3",
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "clean-css": "^5.3.3",
+    "cross-env": "^7.0.3",
     "glob": "^8.0.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",
@@ -28,22 +30,22 @@
     "gulp-sass": "^6.0.0",
     "postcss": "^8.4.49",
     "postcss-nested": "^7.0.2",
+    "rimraf": "^5.0.5",
+    "sass": "^1.83.4",
     "ts-node": "^10.9.2",
     "tsx": "^3.12.7",
     "typescript": "^4.9.0",
-    "vite": "^5.0.0"
+    "unocss": "^65.4.3",
+    "vite": "^6.0.11"
   },
   "dependencies": {
+    "@esbuild-kit/cjs-loader": "2.2.1",
     "@unocss/core": "^0.53.4",
     "@unocss/preset-attributify": "^0.53.4",
     "@unocss/preset-uno": "^0.53.4",
     "@unocss/preset-wind": "^0.53.4",
     "@unocss/transformer-directives": "^0.53.4",
-    "sass": "^1.69.0",
-    "unocss": "^0.53.4"
-  },
-  "ts-node": {
-    "esm": true,
-    "swc": true
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vue": "^3.5.13"
   }
 }

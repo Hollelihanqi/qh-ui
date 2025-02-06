@@ -1,15 +1,9 @@
 <template>
-  <yto-c-table
-    :columns="columns"
-    :table-data="tableData"
-    :total="total"
-    :table-change="handleTableChange"
-    :border="false"
-  >
+  <yto-table :columns="columns" :table-data="tableData" :total="total" :table-change="handleTableChange" :border="false">
     <template #callStatus="scope">
       <span>{{ scope.row.status }}</span>
     </template>
-  </yto-c-table>
+  </yto-table>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'

@@ -1,7 +1,5 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 
-import type CustomFieldContainer from './custom-field-container.vue'
-
 interface IAnyObject {
   [key: string]: any
 }
@@ -28,5 +26,3 @@ export const customFieldContainerProps = {
 export const customFieldContainerEmits = ['add', 'delete']
 
 export type CustomFieldContainerProps = ExtractPropTypes<typeof customFieldContainerProps>
-
-export type CustomFieldContainerInstance = InstanceType<typeof CustomFieldContainer>

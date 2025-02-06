@@ -44,8 +44,19 @@ const useTable = (props: TableProps, _ElTableInstance: any, emits: any) => {
   })
 
   const cpaginationShow = computed(() => {
-    // 返回一个布尔值，当不隐藏分页，或者自动隐藏且页面尺寸小于总数时显示
-    return !(props.paginationHide || (props.paginationHideAuto && paginationParams.pageSize >= _total.value))
+    // 如果明确设置了隐藏分页，则不显示
+    if (props.paginationHide) {
+      return false
+    }
+
+    // 如果设置了自动隐藏，则只在总数大于1页时显示
+    if (props.paginationHideAuto) {
+      const minPageSize = (props.pageSizes && props.pageSizes[0]) || props.pageSize
+      return _total.value >= minPageSize
+    }
+
+    // 默认显示分页
+    return true
   })
 
   const isDataEmpty = computed(() => {
@@ -95,7 +106,7 @@ const useTable = (props: TableProps, _ElTableInstance: any, emits: any) => {
       props.dataUpdateAfter(_params, result)
     } catch (error) {
       _loading.value = false
-      console.error('表格请求数据发生错误...', error)
+      console.error('表格请求数据发生错误...')
       return Promise.reject(error)
     } finally {
       resetTableDataParams = {}
@@ -182,6 +193,10 @@ const useTable = (props: TableProps, _ElTableInstance: any, emits: any) => {
     paginationParams.pageSize = obj.pageSize ?? paginationParams.pageSize
   }
 
+  const clearSort = () => {
+    _sortItem = null
+    ElTableInstance.value?.clearSort()
+  }
   const getData = () => {
     return _tableData.value
   }
@@ -225,7 +240,7 @@ const useTable = (props: TableProps, _ElTableInstance: any, emits: any) => {
     resetPage,
     updatePage,
     getData,
+    clearSort
   }
 }
-
 export default useTable

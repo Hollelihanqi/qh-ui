@@ -1,0 +1,1 @@
+import '@yto-custom/components/uploader/src/uploader.scss'

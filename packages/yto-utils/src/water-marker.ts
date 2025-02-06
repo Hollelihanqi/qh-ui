@@ -13,7 +13,7 @@ interface WatermarkParams {
   /** 旋转角度 */
   rotate?: number;
   /** z-index层级 */
-  zIndex?: string;
+  zIndex?: number;
   /** 单个水印宽度 */
   width?: number;
   /** 单个水印高度 */
@@ -32,12 +32,12 @@ export const addWaterMarker = (
     font: '14px Inter, Avenir',
     fillStyle: 'rgba(0, 0, 0, 0.08)',
     rotate: -28,
-    zIndex: '99999',
+    zIndex: 99999,
     width: 200,
     height: 100,
   }
 ): void => {
-  const { content, elNode, fillStyle, font, zIndex, rotate, width, height } = params
+  const { content, elNode, fillStyle, font, zIndex, rotate, width, height } = params as any
 
   // 如果没有水印内容则返回
   if (!content) return

@@ -1,9 +1,8 @@
 import path from 'path'
 import { PKG_NAME } from '@yto-custom/build-constants'
 import { ytoOutput } from '@yto-custom/build-utils'
-console.log("ytoOutput_____________lihanqi", PKG_NAME, ytoOutput)
 import type { ModuleFormat } from 'rollup'
-export const modules = ['esm', 'cjs'] as const
+export const modules = ['esm'] as const
 export type Module = (typeof modules)[number]
 export interface BuildInfo {
   module: 'ESNext' | 'CommonJS'
@@ -35,18 +34,18 @@ export const buildConfig: Record<Module, BuildInfo> = {
       path: `${PKG_NAME}/es`,
     },
   },
-  cjs: {
-    module: 'CommonJS',
-    format: 'cjs',
-    ext: 'js',
-    output: {
-      name: 'lib',
-      path: path.resolve(ytoOutput, 'lib'),
-    },
-    bundle: {
-      path: `${PKG_NAME}/lib`,
-    },
-  },
+  // cjs: {
+  //   module: 'CommonJS',
+  //   format: 'cjs',
+  //   ext: 'js',
+  //   output: {
+  //     name: 'lib',
+  //     path: path.resolve(ytoOutput, 'lib'),
+  //   },
+  //   bundle: {
+  //     path: `${PKG_NAME}/lib`,
+  //   },
+  // },
 }
 export const buildConfigEntries = Object.entries(buildConfig) as BuildConfigEntries
 

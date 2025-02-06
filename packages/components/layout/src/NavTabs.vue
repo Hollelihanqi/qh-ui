@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts" setup>
-import { inject, computed, withDefaults, watch, unref, provide } from 'vue'
+import { inject, computed, watch, unref, provide } from 'vue'
 import { EnumSessionKey, LAYOUT_MODE } from './constants'
 import { tabPaneClose, tabPaneAdd, toURL, IOptionTabPane, isBoolean } from 'gold-core'
 import { useRouter, useRoute } from 'vue-router'

@@ -1,7 +1,5 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { ExtractPropTypes } from 'vue'
 import { buildProps } from '@yto-custom/utils'
-
-import type Layout from './layout.vue'
 
 export const layoutProps = buildProps({
   footer: {
@@ -53,5 +51,3 @@ export const layoutProps = buildProps({
 export const layoutEmits = ['tab-change', 'tab-remove']
 
 export type LayoutProps = ExtractPropTypes<typeof layoutProps>
-
-export type LayoutInstance = InstanceType<typeof Layout>

@@ -1,0 +1,39 @@
+<template>
+  <div ref="target" class="home-page">
+    <div class="banner">
+      <div class="banner-desc text-center">
+        <div class="text-center font-bold text-size-[48px]">技术平台部|业务UI组件库</div>
+        <p>一个基于 Element Plus 的综合业务组件库，适用于 vue3 项目当中。</p>
+      </div>
+    </div>
+    <div class="flex justify-center items-center pt-16">
+      <el-button type="primary" size="large" @click="handleStart">快速开始</el-button>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import { useRouter } from 'vitepress'
+const router = useRouter()
+const handleStart = () => {
+  router.go('/guide/fast')
+}
+</script>
+<style lang="scss">
+.home-page {
+  .banner-desc {
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin: 0;
+      color: var(--text-color);
+      font-family: Inter, sans-serif;
+    }
+
+    p {
+      font-size: 16px;
+      margin-top: 20px;
+      color: var(--text-color-light);
+    }
+  }
+}
+</style>

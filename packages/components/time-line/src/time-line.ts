@@ -1,8 +1,6 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 import { buildProps } from '@yto-custom/utils'
 
-import type TimeLine from './time-line.vue'
-
 export const timeLineProps = buildProps({
   timeData: {
     type: Array as PropType<{ [key: string]: any }[]>,
@@ -21,5 +19,3 @@ export const timeLineProps = buildProps({
 export const timeLineEmits = []
 
 export type TimeLineProps = ExtractPropTypes<typeof timeLineProps>
-
-export type TimeLineInstance = InstanceType<typeof TimeLine>

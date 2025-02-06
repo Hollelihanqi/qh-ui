@@ -23,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { formItemsProps } from './form-items'
-import { formProps, formEmits } from './form'
 import itemInput from './form-controls/itemInput.vue'
 import itemSelect from './form-controls/itemSelect.vue'
 import itemSwitch from './form-controls/itemSwitch.vue'
@@ -42,10 +42,10 @@ defineOptions({
   name: 'FormItems',
 })
 
-defineProps(formItemsProps)
+const props = defineProps(formItemsProps)
 
 interface FormComponent {
-  [key: string]: Component
+  [key: string]: any
 }
 
 const types = computed(
@@ -65,12 +65,12 @@ const types = computed(
   }),
 )
 
-const getComponent = (type: string): Component => {
+const getComponent = (type: string): any => {
   return types.value[type]
 }
 
 const formItemStyle = (item: any) => {
-  return `width:${item.formItemWidth || itemConfig.formItemWidth || '25%'}`
+  return `width:${item.formItemWidth || props.itemConfig.formItemWidth || '25%'}`
 }
 
 const getComponentProps = (item: any) => ({

@@ -4,11 +4,16 @@ import { YtoCustomFieldContainer } from '@yto-custom/components/custom-field-con
 import { YtoDatePicker } from '@yto-custom/components/date-picker'
 import { YtoDescriptions } from '@yto-custom/components/descriptions'
 import { YtoDialog } from '@yto-custom/components/dialog'
+import { YtoEchart } from '@yto-custom/components/echart'
 import { YtoEllipsisTag } from '@yto-custom/components/ellipsis-tag'
 import { YtoEmpty } from '@yto-custom/components/empty'
 import { YtoForm } from '@yto-custom/components/form'
 import { YtoJdataViewer } from '@yto-custom/components/jdata-viewer'
 import { YtoLayout } from '@yto-custom/components/layout'
+import { YtoLayoutFrame } from '@yto-custom/components/layout-frame'
+import { YtoLayoutHeader } from '@yto-custom/components/layout-header'
+import { YtoLayoutMenu } from '@yto-custom/components/layout-menu'
+import { YtoLayoutRouter } from '@yto-custom/components/layout-router'
 import { YtoMenu } from '@yto-custom/components/menu'
 import { YtoRadio } from '@yto-custom/components/radio'
 import { YtoRemoteSearch } from '@yto-custom/components/remote-search'
@@ -16,6 +21,8 @@ import { YtoSearchContainer } from '@yto-custom/components/search-container'
 import { YtoSearchForm } from '@yto-custom/components/search-form'
 import { YtoSticky } from '@yto-custom/components/sticky'
 import { YtoStickyContainer } from '@yto-custom/components/sticky-container'
+import { YtoTable } from '@yto-custom/components/table'
+import { YtoTableEditor } from '@yto-custom/components/table-editor'
 import { YtoTabs } from '@yto-custom/components/tabs'
 import { YtoTareaTag } from '@yto-custom/components/tarea-tag'
 import { YtoTextEllipsis } from '@yto-custom/components/text-ellipsis'
@@ -31,11 +38,16 @@ export default [
   YtoDatePicker,
   YtoDescriptions,
   YtoDialog,
+  YtoEchart,
   YtoEllipsisTag,
   YtoEmpty,
   YtoForm,
   YtoJdataViewer,
   YtoLayout,
+  YtoLayoutFrame,
+  YtoLayoutHeader,
+  YtoLayoutMenu,
+  YtoLayoutRouter,
   YtoMenu,
   YtoRadio,
   YtoRemoteSearch,
@@ -43,6 +55,8 @@ export default [
   YtoSearchForm,
   YtoSticky,
   YtoStickyContainer,
+  YtoTable,
+  YtoTableEditor,
   YtoTabs,
   YtoTareaTag,
   YtoTextEllipsis,

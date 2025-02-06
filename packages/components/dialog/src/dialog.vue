@@ -1,5 +1,5 @@
 <template>
-  <el-dialog
+  <ElDialog
     ref="dialogRef"
     class="yto-dialog dialog-cst"
     v-bind="$attrs"
@@ -21,12 +21,12 @@
         }}</el-button>
       </slot>
     </template>
-  </el-dialog>
+  </ElDialog>
 </template>
 
 <script lang="ts" setup>
-import { ButtonProps, ElButton, ElDialog } from 'element-plus'
-import { ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
+import { ElButton, ElDialog } from 'element-plus'
 import { dialogProps, dialogEmits } from './dialog'
 
 defineOptions({
@@ -38,9 +38,8 @@ const dialogRef = ref()
 const props = defineProps(dialogProps)
 const $emit = defineEmits(dialogEmits)
 
-// -------------------------------- footer btn start--------------------------
 const _confirmOption = computed(() => {
-  let option: MyButtonProps = {
+  let option = {
     type: 'primary',
     size: 'default',
     txt: '确认',
@@ -50,7 +49,7 @@ const _confirmOption = computed(() => {
   return reactive(option)
 })
 const _cancelOption = computed(() => {
-  let option: MyButtonProps = {
+  let option = {
     type: 'default',
     size: 'default',
     txt: '取消',
@@ -103,5 +102,4 @@ const handleConfirm = () => {
   $emit('update:visible', false)
   $emit('confirm', 'confirm')
 }
-// -------------------------------- footer btn end--------------------------
 </script>

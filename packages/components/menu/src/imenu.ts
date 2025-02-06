@@ -1,14 +1,12 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 import type { MenuItemProps, SubMenuProps } from 'element-plus'
 
-import type Menu from './menu'
-
 export interface YtoMenuItemProps {
   label?: string
   prop?: string
   [propsName: string]: any
 }
-export type CanWrite<T> = {
+type CanWrite<T> = {
   -readonly [K in keyof T]?: T[K]
 }
 
@@ -46,5 +44,3 @@ export const menuProps = {
 export const menuEmits = ["itemClick"]
 
 export type MenuProps = ExtractPropTypes<typeof menuProps>
-
-export type MenuInstance = InstanceType<typeof Menu>

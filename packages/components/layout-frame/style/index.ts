@@ -1,0 +1,1 @@
+import '@yto-custom/components/layout-frame/src/layout-frame.scss'

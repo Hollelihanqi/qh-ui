@@ -1,7 +1,5 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { ExtractPropTypes } from 'vue'
 import { buildProps } from '@yto-custom/utils'
-
-import type Uploader from './uploader.vue'
 
 export const uploaderProps = buildProps({
   options: {
@@ -90,5 +88,3 @@ export const uploaderProps = buildProps({
 export const uploaderEmits = ['on-type-error', 'on-exceed-limit', 'on-files-submitted', 'on-complete']
 
 export type UploaderProps = ExtractPropTypes<typeof uploaderProps>
-
-export type UploaderInstance = InstanceType<typeof Uploader>

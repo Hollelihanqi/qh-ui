@@ -213,7 +213,7 @@ const addWaterMarker = (params = {
   font: "14px Inter, Avenir",
   fillStyle: "rgba(0, 0, 0, 0.08)",
   rotate: -28,
-  zIndex: "99999",
+  zIndex: 99999,
   width: 200,
   height: 100
 }) => {

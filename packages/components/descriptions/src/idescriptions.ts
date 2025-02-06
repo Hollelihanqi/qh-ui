@@ -1,7 +1,5 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 
-import Descriptions from './descriptions'
-
 interface LabelProps {
   label?: string
   prop?: string
@@ -66,9 +64,7 @@ export const descriptionsProps = {
   lineHeight: {
     type: String,
     default: '26px',
-  },
+  }
 }
 
 export type DescriptionsProps = ExtractPropTypes<typeof descriptionsProps>
-
-export type DescriptionsInstance = InstanceType<typeof Descriptions>
