@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-tabs-w tabs-box h-[40px] w-full relative z-50">
+  <div class="layout-nav-tabs nav-tabs-w tabs-box h-[40px] w-full relative z-50">
     <ElTabs v-model="tabsMenuValue" class="h-full" v-bind="$attrs" type="border-card" @tab-remove="handleTabRemove">
       <template v-for="(item, index) in tabsMenuList" :key="item.href">
         <ElTabPane

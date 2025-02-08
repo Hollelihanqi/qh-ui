@@ -21,8 +21,10 @@
   "include": [
     "packages",
     "typings/env.d.ts",
-    "packages/components/**/*.tsx"
-, "internal/resolve"  ],
+    "packages/components/**/*.tsx",
+    "packages/components/**/*.vue",
+    "internal/resolve"
+  ],
   "exclude": [
     "node_modules",
     "../dist",

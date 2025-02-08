@@ -1,1 +1,2 @@
-@use './layout-theme/index.scss';
+@use './layout-theme/index.scss' as *;
+@use './nav-tabs.scss' as *;

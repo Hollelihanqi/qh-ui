@@ -1,6 +1,5 @@
 <template>
-  <!-- <RouterView /> -->
-   <el-button type="primary">fwefewf</el-button>
+  <RouterView />
 </template>
 <script lang="ts" setup></script>
 

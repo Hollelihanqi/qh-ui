@@ -1,8 +1,8 @@
-.nav-tabs-w {
+.layout-nav-tabs.nav-tabs-w {
   background: var(--yto-layout-nav-background);
   @apply px-[10px] pt-[8px];
 
-  :deep(.el-tabs) {
+  .el-tabs {
     background: transparent;
     border: none;
     --el-tabs-header-height: 32px;
@@ -20,18 +20,19 @@
       }
     }
   }
-
-  :deep(.el-tabs__header) {
+}
+.layout-nav-tabs {
+  .el-tabs__header {
     background: transparent;
     border: none;
     margin: 0;
   }
 
-  :deep(.el-tabs__content) {
+  .el-tabs__content {
     display: none;
   }
 
-  :deep(.el-tabs__item) {
+  .el-tabs__item {
     height: 32px;
     line-height: 32px;
     margin: 0 !important;

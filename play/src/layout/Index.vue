@@ -11,7 +11,6 @@
         title="组件测试"
         link-type="click"
         :searchable="false"
-        @menu-click="handleMenuClick"
       ></yto-layout-menu>
     </yto-layout-router>
   </div>
@@ -19,18 +18,9 @@
 
 <script lang="ts" setup>
 import { menus } from '@/router/menu'
-import { ref } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
 
-const router = useRouter()
-const route = useRoute()
-
-console.log('route______________', route.fullPath)
 const collapse = ref(false)
 
-const handleMenuClick = (item: any) => {
-  router.push({ path: item.href, query: { timestamp: Date.now() } })
-}
 </script>
 
 <style lang="scss"></style>

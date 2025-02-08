@@ -3,14 +3,16 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'url'
 import glob from 'glob'
 import { ytoOutput } from '@yto-custom/build-utils'
+import { consola } from 'consola'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 async function copyCSS() {
+  consola.start('开始复制 CSS 文件')
   // 获取所有 CSS 文件
   const cssFiles = glob.sync('dist/*.css', {
     cwd: resolve(__dirname, '..'),
-    absolute: true
+    absolute: true,
   })
 
   // 确保目标目录存在
@@ -23,6 +25,8 @@ async function copyCSS() {
     const targetPath = resolve(targetDir, fileName!)
     await copyFile(file, targetPath)
   }
+
+  consola.success('CSS 文件复制完成')
 }
 
-export default copyCSS 
+export default copyCSS

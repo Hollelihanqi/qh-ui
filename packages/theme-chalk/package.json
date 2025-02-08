@@ -7,12 +7,13 @@
     "clean": "rimraf dist",
     "build:all": "vite build --config vite.global.config.ts",
     "build:components": "vite build --config vite.module.config.ts",
-    "build": "pnpm clean && pnpm build:all && pnpm build:components && rimraf dist/*.js && tsx tasks/copyCSS.ts"
+    "build": "pnpm clean && pnpm build:all && pnpm build:components && tsx tasks/cleanJS.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "@types/glob": "^8.0.0",
     "@types/gulp": "^4.0.17",
     "@types/gulp-autoprefixer": "^0.0.37",
@@ -21,6 +22,7 @@
     "@unocss/postcss": "^0.65.3",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
     "clean-css": "^5.3.3",
+    "consola": "^3.2.3",
     "cross-env": "^7.0.3",
     "glob": "^8.0.3",
     "gulp": "^4.0.2",
@@ -41,11 +43,8 @@
   "dependencies": {
     "@esbuild-kit/cjs-loader": "2.2.1",
     "@unocss/core": "^0.53.4",
-    "@unocss/preset-attributify": "^0.53.4",
-    "@unocss/preset-uno": "^0.53.4",
-    "@unocss/preset-wind": "^0.53.4",
-    "@unocss/transformer-directives": "^0.53.4",
     "@vitejs/plugin-vue": "^5.2.1",
+    "tiny-glob": "^0.2.9",
     "vue": "^3.5.13"
   }
 }

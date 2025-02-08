@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-menu flex flex-col justify-between bg-slate-100">
+  <div class="layout-menu flex flex-col justify-between">
     <StickyContainer>
       <ElMenu
         ref="menuRef"
@@ -18,53 +18,53 @@
           <ElInput v-model="searchVal" :placeholder="searchPlaceholder" />
         </div>
         <template v-for="(item, index) in menuData" :key="index">
-          <ElSubMenu v-if="isArray(item.children)" :index="item.code || getLabel(item)" class="menu-level-1">
+          <ElSubMenu v-if="Array.isArray(item.children)" :index="item.code || getLabel(item)" class="menu-level-1">
             <template #title>
               <slot name="label" v-bind="item">
-                <inner-node-menu
+                <inner-menu-node
                   :collapse="collapse"
                   :data="item"
                   :show-icon="!!item.icon || !!item.imgsrc"
-                ></inner-node-menu>
+                ></inner-menu-node>
               </slot>
             </template>
             <template v-for="(itemSub, indexSub) in item.children" :key="`${index}-${indexSub}`">
               <ElSubMenu
-                v-if="isArray(itemSub.children)"
+                v-if="Array.isArray(itemSub.children)"
                 class="second-sub-menu menu-level-2"
                 :index="itemSub.code || getLabel(itemSub)"
               >
                 <template #title>
                   <slot name="label" v-bind="itemSub">
-                    <inner-node-menu
+                    <inner-menu-node
                       :collapse="collapse"
                       :data="itemSub"
                       :show-icon="!!itemSub.icon || !!itemSub.imgsrc"
-                    ></inner-node-menu>
+                    ></inner-menu-node>
                   </slot>
                 </template>
                 <template v-for="itemSecond in itemSub.children" :key="`${index}-${indexSub}-${indexSecond}`">
                   <ElMenuItem :index="itemSecond.code" class="leaf-menu menu-level-3" @click="menuClick(itemSecond)">
                     <slot name="label" v-bind="itemSecond">
-                      <inner-node-menu :data="itemSecond" :show-icon="false"></inner-node-menu>
+                      <inner-menu-node :data="itemSecond" :show-icon="false"></inner-menu-node>
                     </slot>
                   </ElMenuItem>
                 </template>
               </ElSubMenu>
               <ElMenuItem v-else :index="itemSub.code" class="leaf-menu menu-level-2" @click="menuClick(itemSub)">
                 <slot name="label" v-bind="itemSub">
-                  <inner-node-menu :data="itemSub" :show-icon="false"></inner-node-menu>
+                  <inner-menu-node :data="itemSub" :show-icon="false"></inner-menu-node>
                 </slot>
               </ElMenuItem>
             </template>
           </ElSubMenu>
           <ElMenuItem v-else :index="item.code" class="menu-level-1" @click="menuClick(item)">
             <slot name="label" v-bind="item">
-              <inner-node-menu
+              <inner-menu-node
                 :collapse="collapse"
                 :data="item"
                 :show-icon="!!item.icon || !!item.imgsrc"
-              ></inner-node-menu>
+              ></inner-menu-node>
             </slot>
           </ElMenuItem>
         </template>
@@ -77,8 +77,7 @@ import { ref, computed, unref, nextTick } from 'vue'
 import { ElMenu, ElMenuItem, ElSubMenu, ElInput } from 'element-plus'
 import { layoutMenuProps, layoutMenuEmits } from './layout-menu'
 import { useMenu } from './use-menu'
-import { isArray } from 'gold-core'
-import InnerNodeMenu from './NodeMenu.vue'
+import InnerMenuNode from './MenuNode.vue'
 import StickyContainer from '@yto-custom/components/sticky-container'
 import Logo from './Logo.vue'
 
