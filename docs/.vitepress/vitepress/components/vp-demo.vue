@@ -63,10 +63,10 @@ const copyCode = async () => {
       <slot name="source" />
     </div>
 
-    <ElDivider class="m-0" />
+    <ElDivider class="!m-0" />
 
     <div class="op-btns">
-      <ElTooltip content="编辑" :show-arrow="false" :trigger="['hover', 'focus']" :trigger-keys="[]">
+      <!-- <ElTooltip content="编辑" :show-arrow="false" :trigger="['hover', 'focus']" :trigger-keys="[]">
         <ElIcon
           :size="16"
           aria-label="编辑"
@@ -77,9 +77,8 @@ const copyCode = async () => {
           @keydown.prevent.enter="onPlaygroundClick"
           @keydown.prevent.space="onPlaygroundClick"
         >
-          <!-- <i-ri-flask-line /> -->
         </ElIcon>
-      </ElTooltip>
+      </ElTooltip> -->
       <!-- <ElTooltip
         :content="locale['edit-on-github']"
         :show-arrow="false"
@@ -104,7 +103,7 @@ const copyCode = async () => {
       <ElTooltip content="复制" :show-arrow="false" :trigger="['hover', 'focus']" :trigger-keys="[]">
         <ElIcon
           :size="16"
-          :aria-label="复制"
+          aria-label="复制"
           class="op-btn"
           tabindex="0"
           role="button"
@@ -112,18 +111,18 @@ const copyCode = async () => {
           @keydown.prevent.enter="copyCode"
           @keydown.prevent.space="copyCode"
         >
-          <!-- <i-ri-file-copy-line /> -->
+          <CopyDocument/>
         </ElIcon>
       </ElTooltip>
       <ElTooltip content="资源" :show-arrow="false" :trigger="['hover', 'focus']" :trigger-keys="[]">
         <button
           ref="sourceCodeRef"
-          :aria-label="sourceVisible ? 隐藏 : 查看"
+          :aria-label="sourceVisible ? '隐藏' : '查看'"
           class="reset-btn el-icon op-btn"
           @click="toggleSourceVisible()"
         >
           <ElIcon :size="16">
-            <!-- <i-ri-code-line /> -->
+            <View/>
           </ElIcon>
         </button>
       </ElTooltip>

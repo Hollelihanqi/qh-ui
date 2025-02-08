@@ -1,0 +1,21 @@
+/* 只需要重写你需要的即可 */
+$primary-color: rgb(149, 71, 236);
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $primary-color,
+    ),
+    'success': (
+      'base': #52c31f,
+    ),
+    'warning': (
+      'base': #e99a24,
+    ),
+    'danger': (
+      'base': #fe4d50,
+    ),
+  )
+);
+
+// @use 'element-plus/theme-chalk/src/index.scss' as *;

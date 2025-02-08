@@ -4,7 +4,7 @@
       <div class="flex-1 flex items-center">
         <slot name="tableHeader"></slot>
         <div v-if="toolBar" :class="`flex justify-end px-[8px] ${$slots.tableHeader ? '' : 'flex-1'}`">
-          <el-button :icon="Setting" circle @click="handleSetting" />
+          <ElButton :icon="Setting" circle @click="handleSetting" />
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTable, ElTableColumn, ElPagination } from 'element-plus'
+import { ElTable, ElTableColumn, ElPagination,ElButton } from 'element-plus'
 import TableColumn from './components/TableColumn.vue'
 import SettingV from './components/Setting.vue'
 import Empty from '@yto-custom/components/empty'

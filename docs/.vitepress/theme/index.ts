@@ -4,12 +4,16 @@ import DefaultTheme from "vitepress/theme";
 
 import "virtual:uno.css";
 import './style.css'
-
-import "../vitepress/styles/base.scss";
+import 'vitepress/dist/client/theme-default/styles/components/vp-code-group.css'
 
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+import YtoCustom from '@yto/custom'
 import '@yto/custom/theme-chalk/index.css'
+
+
+// import "../vitepress/styles/base.scss";
+
 
 // import type { Theme } from 'vitepress'
 
@@ -20,14 +24,15 @@ export default {
   Layout: VPApp,
   async enhanceApp({ app }) {
     app.use(ElementPlus);
+    app.use(YtoCustom)
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp);
     });
     // @ts-ignore
-    if (!import.meta.env.SSR) {
-      const custom = await import('@yto/custom').then((m) => m)
-      app.use(custom.default)
-    }
+    // if (!import.meta.env.SSR) {
+    //   const custom = await import('@yto/custom').then((m) => m)
+    //   app.use(custom.default)
+    // }
   },
   // Layout() {
   //   return h(DefaultTheme.Layout, null, {

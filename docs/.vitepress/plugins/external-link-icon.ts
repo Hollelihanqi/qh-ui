@@ -1,8 +1,9 @@
-import type MarkdownIt from "markdown-it";
-import type Renderer from "markdown-it/lib/renderer";
+import type { MarkdownRenderer } from 'vitepress'
 
-export default (md: MarkdownIt): void => {
-  const renderToken: Renderer.RenderRule = (tokens, idx, options, env, self) => self.renderToken(tokens, idx, options);
+type RendererRule = Exclude<MarkdownRenderer['renderer']['rules']['container'], undefined>
+
+export default (md: MarkdownRenderer): void => {
+  const renderToken: RendererRule = (tokens, idx, options, env, self) => self.renderToken(tokens, idx, options);
   const defaultLinkOpenRenderer = md.renderer.rules.link_open || renderToken;
   const defaultLinkCloseRenderer = md.renderer.rules.link_close || renderToken;
   let isExternalLink = false;
@@ -24,7 +25,7 @@ export default (md: MarkdownIt): void => {
   md.renderer.rules.link_close = (tokens, idx, options, env, self) => {
     if (isExternalLink) {
       isExternalLink = false;
-      return `<i-ri-external-link-line class="link-icon" />${self.renderToken(tokens, idx, options)}`;
+      return `<span>link-icon</span>${self.renderToken(tokens, idx, options)}`;
     }
 
     return defaultLinkCloseRenderer(tokens, idx, options, env, self);

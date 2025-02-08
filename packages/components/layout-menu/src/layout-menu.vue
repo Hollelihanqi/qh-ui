@@ -1,9 +1,6 @@
 <template>
   <div class="layout-menu flex flex-col justify-between bg-slate-100">
     <StickyContainer>
-      <!-- <template v-if="!collapse" #header>
-        <Logo :title="title" :logo="logo" />
-      </template> -->
       <ElMenu
         ref="menuRef"
         v-bind="$attrs"
@@ -20,7 +17,6 @@
         >
           <ElInput v-model="searchVal" :placeholder="searchPlaceholder" />
         </div>
-        <!-- 二级菜单 -->
         <template v-for="(item, index) in menuData" :key="index">
           <ElSubMenu v-if="isArray(item.children)" :index="item.code || getLabel(item)" class="menu-level-1">
             <template #title>
@@ -32,7 +28,6 @@
                 ></inner-node-menu>
               </slot>
             </template>
-            <!-- 三级菜单 -->
             <template v-for="(itemSub, indexSub) in item.children" :key="`${index}-${indexSub}`">
               <ElSubMenu
                 v-if="isArray(itemSub.children)"
@@ -63,7 +58,6 @@
               </ElMenuItem>
             </template>
           </ElSubMenu>
-          <!-- 一级菜单 -->
           <ElMenuItem v-else :index="item.code" class="menu-level-1" @click="menuClick(item)">
             <slot name="label" v-bind="item">
               <inner-node-menu
@@ -136,6 +130,7 @@ const menuData = computed(() => {
   return searchVal.value ? fileNavMenu(tmpData) : tmpData
 })
 const { paneAdd, getLabel, data, activate } = useMenu(props)
+
 defineExpose(
   new Proxy(
     {},

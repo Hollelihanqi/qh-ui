@@ -14,14 +14,14 @@
         <div>
           <slot v-if="$slots.btn" name="btn" :item="item" :index="index"></slot>
           <template v-else>
-            <el-button class="mx-2" link :icon="Plus" @click="onClick('add', index, item)"></el-button>
+            <ElButton class="mx-2" link :icon="Plus" @click="onClick('add', index, item)"></ElButton>
             <span class="mr-2 w-[20px] inline-block">
-              <el-button
+              <ElButton
                 v-show="termHiddenDel ? modelValue.length > 1 : true"
                 link
                 :icon="Delete"
                 @click="onClick('delete', index, item)"
-              ></el-button>
+              ></ElButton>
             </span>
             <slot name="btnAppend" :item="item" :index="index"></slot>
           </template>
@@ -32,6 +32,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ElButton } from 'element-plus'
 import { Plus, Delete } from '@element-plus/icons-vue'
 import { customFieldContainerProps, customFieldContainerEmits } from './custom-field-container'
 

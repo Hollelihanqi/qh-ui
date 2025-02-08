@@ -13,12 +13,12 @@
 
     <template #footer v-if="!_hiddenFooter">
       <slot name="footer">
-        <el-button v-if="_showCancel" v-bind="_cancelOption" @click="handleClose">{{
+        <ElButton v-if="_showCancel" v-bind="_cancelOption" @click="handleClose">{{
           _cancelOption.txt ? _cancelOption.txt : '取消'
-        }}</el-button>
-        <el-button v-if="_showConfirm" v-bind="_confirmOption" @click="handleConfirm">{{
+        }}</ElButton>
+        <ElButton v-if="_showConfirm" v-bind="_confirmOption" @click="handleConfirm">{{
           _confirmOption.txt ? _confirmOption.txt : '确认'
-        }}</el-button>
+        }}</ElButton>
       </slot>
     </template>
   </ElDialog>

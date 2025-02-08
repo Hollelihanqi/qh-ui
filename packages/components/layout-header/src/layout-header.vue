@@ -41,6 +41,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, unref } from 'vue'
+import {ElIcon} from 'element-plus'
+import { SwitchButton } from '@element-plus/icons-vue'
 import { layoutHeaderProps, layoutHeaderEmits } from './layout-header'
 import useFullScreen from './fullScreen'
 import { EnumSessionKey } from './constants'

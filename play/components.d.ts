@@ -7,9 +7,15 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
+    ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    YtoTabs: typeof import('@yto/custom/es/components/tabs/index.mjs')['YtoTabs']
+    YtoLayoutHeader: typeof import('@yto/custom/es/components/layout-header/index.mjs')['YtoLayoutHeader']
+    YtoLayoutMenu: typeof import('@yto/custom/es/components/layout-menu/index.mjs')['YtoLayoutMenu']
+    YtoLayoutRouter: typeof import('@yto/custom/es/components/layout-router/index.mjs')['YtoLayoutRouter']
+    YtoTable: typeof import('@yto/custom/es/components/table/index.mjs')['YtoTable']
   }
 }

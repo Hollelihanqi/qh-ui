@@ -1,40 +1,60 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import path from 'node:path'
-// import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { YtoCustomResolver } from '@yto/custom/resolvers'
-
-
+import Unocss from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import ElementPlus from 'unplugin-element-plus/vite'
 
 // const __dirname = fileURLToPath(new URL('.', import.meta.url))
 // https://vite.dev/config/
 
 // 获取样式副作用
-// function getSideEffects(componentName: string, importStyle: boolean) {
-//   if (!importStyle) return
-//   return [
-//     `@yto/custom/theme-chalk/yto-${componentName}.css`
-//   ]
-// }
+function getSideEffects(componentName: string, importStyle: boolean) {
+  if (!importStyle) return
+  return [
+    `@yto/custom/theme-chalk/yto-${componentName}.css`
+  ]
+}
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+      '~/': `${path.resolve(__dirname, 'src')}/`
+    }
+  },
   plugins: [
     vue(),
     vueJsx({
       transformOn: true,
       mergeProps: true,
     }),
+    Unocss(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      imports: ['vue', 'vue-router'],
+      resolvers: [
+        ElementPlusResolver(),
+      ],
+      dts: true,
+      eslintrc: {
+        enabled: true,
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: true,
+      },
     }),
     Components({
       resolvers: [
-        ElementPlusResolver(),
+        ElementPlusResolver({
+          // importStyle: "sass",
+          // directives: true,
+          // version: "2.9.3",
+        }),
         YtoCustomResolver()
         // {
         //   type: 'component',
@@ -55,14 +75,21 @@ export default defineConfig({
         // }
       ],
     }),
+    // ElementPlus({
+    //   useSource: true,
+    // }),
     visualizer()
   ],
-  resolve: {
-    alias: {
-      // '@yto/custom': path.resolve(__dirname, '../dist/yto-custom'),
-    }
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // additionalData 的内容会在每个 scss 文件的开头自动注入
+        additionalData: `@use "~/assets/styles/variables.scss" as *;`, // 配置全局 scss
+      },
+    },
   },
   server: {
+    port: 3009,
     watch: {
       // 使用 ignored 选项，通过 ! 前缀来包含 dist 目录
       ignored: ['!**/dist/**']

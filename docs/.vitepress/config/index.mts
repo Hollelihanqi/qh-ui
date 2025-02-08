@@ -23,7 +23,7 @@ const config: UserConfig = {
     },
     config: (md) => mdPlugin(md),
   },
-  vue:{
+  vue: {
     template: {
       compilerOptions: {
         hoistStatic: false,

@@ -1,0 +1,13 @@
+/* textarea 取消收缩 */
+textarea {
+  resize: none !important;
+}
+
+.view-w {
+  @apply h-full;
+  @apply w-full;
+  @apply bg-white;
+  @apply p-4;
+  display: flex;
+  flex-direction: column;
+}
