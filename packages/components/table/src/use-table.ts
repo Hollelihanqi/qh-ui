@@ -240,7 +240,7 @@ const useTable = (props: TableProps, _ElTableInstance: any, emits: any) => {
     resetPage,
     updatePage,
     getData,
-    clearSort
+    clearSort,
   }
 }
 export default useTable

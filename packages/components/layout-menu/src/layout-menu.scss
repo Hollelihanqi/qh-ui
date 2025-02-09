@@ -1,6 +1,9 @@
-.layout-menu {
-  @apply bg-[var(--yto-layout-menu-background)];
+.yto-layout-menu {
+  .el-menu:not(.el-menu--collapse) {
+    width: 210px;
+  }
 
+  @apply bg-[var(--yto-layout-menu-background)];
   .layout-menu-search {
     @apply overflow-hidden;
 
@@ -68,9 +71,9 @@
   .el-menu {
     @apply bg-[var(--yto-layout-menu-background)] border-none;
 
-    &:not(.el-menu--collapse) {
-      width: v-bind('props.width');
-    }
+    // &:not(.el-menu--collapse) {
+    //   width: v-bind('props.width');
+    // }
 
     /**************处理菜单折叠后图标对不齐的问题*****************/
     &.el-menu--collapse {
@@ -226,74 +229,75 @@
       }
     }
   }
-}
-.el-popper.layout-menu-popper {
-  .el-menu--popup-container .el-menu {
-    @apply bg-[var(--yto-layout-menu-background)];
 
-    .el-menu-item,
-    .el-sub-menu .el-sub-menu__title {
-      @apply text-[var(--yto-layout-menu-color-text)] border-none;
-    }
+  .el-popper.layout-menu-popper {
+    .el-menu--popup-container .el-menu {
+      @apply bg-[var(--yto-layout-menu-background)];
 
-    .el-menu-item,
-    .el-menu-item > div,
-    .el-sub-menu,
-    .el-sub-menu .el-sub-menu__title {
-      @apply h-[var(--el-menu-sub-item-height)] leading-[var(--el-menu-sub-item-height)];
-    }
-
-    /**************处理激活状态叶子节点左侧的小圆点*****************/
-    .leaf-menu.is-active div {
-      @apply relative;
-
-      &::before {
-        content: '';
-        @apply absolute w-[4px] h-[4px] rounded-[4px] absolute left-[-8px] top-[50%] transform translate-y-[-50%] bg-[var(--yto-layout-menu-color-text-active)];
-      }
-    }
-
-    .menu-level-2 {
-      .el-sub-menu__title > div {
-        display: block !important;
+      .el-menu-item,
+      .el-sub-menu .el-sub-menu__title {
+        @apply text-[var(--yto-layout-menu-color-text)] border-none;
       }
 
-      @apply bg-[var(--yto-layout-menu-level-2-background-color)];
-
-      &.el-menu-item:hover {
-        @apply bg-[var(--yto-layout-menu-level-2-background-color-hover)];
+      .el-menu-item,
+      .el-menu-item > div,
+      .el-sub-menu,
+      .el-sub-menu .el-sub-menu__title {
+        @apply h-[var(--el-menu-sub-item-height)] leading-[var(--el-menu-sub-item-height)];
       }
 
-      &.el-sub-menu .el-sub-menu__title:hover {
-        @apply bg-[var(--yto-layout-menu-level-2-background-color-hover)];
+      /**************处理激活状态叶子节点左侧的小圆点*****************/
+      .leaf-menu.is-active div {
+        @apply relative;
+
+        &::before {
+          content: '';
+          @apply absolute w-[4px] h-[4px] rounded-[4px] absolute left-[-8px] top-[50%] transform translate-y-[-50%] bg-[var(--yto-layout-menu-color-text-active)];
+        }
       }
 
-      &.is-active:not(.el-sub-menu) {
-        @apply bg-[var(--yto-layout-menu-level-2-background-color-active)] text-[var(--yto-layout-menu-color-text-active)];
+      .menu-level-2 {
+        .el-sub-menu__title > div {
+          display: block !important;
+        }
+
+        @apply bg-[var(--yto-layout-menu-level-2-background-color)];
+
+        &.el-menu-item:hover {
+          @apply bg-[var(--yto-layout-menu-level-2-background-color-hover)];
+        }
+
+        &.el-sub-menu .el-sub-menu__title:hover {
+          @apply bg-[var(--yto-layout-menu-level-2-background-color-hover)];
+        }
+
+        &.is-active:not(.el-sub-menu) {
+          @apply bg-[var(--yto-layout-menu-level-2-background-color-active)] text-[var(--yto-layout-menu-color-text-active)];
+        }
+
+        &.is-active:hover {
+          @apply bg-[var(--yto-layout-menu-level-2-background-color-active)] text-[var(--yto-layout-menu-color-text-active)];
+        }
+
+        &.el-sub-menu.is-active {
+          @apply bg-[var(--yto-layout-menu-level-2-background-color-expand)] text-[var(--yto-layout-menu-color-text-active)];
+        }
       }
 
-      &.is-active:hover {
-        @apply bg-[var(--yto-layout-menu-level-2-background-color-active)] text-[var(--yto-layout-menu-color-text-active)];
-      }
+      .menu-level-3 {
+        @apply bg-[var(--yto-layout-menu-level-2-background-color)];
 
-      &.el-sub-menu.is-active {
-        @apply bg-[var(--yto-layout-menu-level-2-background-color-expand)] text-[var(--yto-layout-menu-color-text-active)];
-      }
-    }
+        &:hover {
+          @apply bg-[var(--yto-layout-menu-level-2-background-color-hover)];
+        }
 
-    .menu-level-3 {
-      @apply bg-[var(--yto-layout-menu-level-2-background-color)];
+        &.is-active {
+          @apply bg-[var(--yto-layout-menu-level-3-background-color-active)] text-[var(--yto-layout-menu-color-text-active)];
+        }
 
-      &:hover {
-        @apply bg-[var(--yto-layout-menu-level-2-background-color-hover)];
-      }
-
-      &.is-active {
-        @apply bg-[var(--yto-layout-menu-level-3-background-color-active)] text-[var(--yto-layout-menu-color-text-active)];
-      }
-
-      &.is-active:hover {
-        @apply bg-[var(--yto-layout-menu-level-3-background-color-active)] text-[var(--yto-layout-menu-color-text-active)];
+        &.is-active:hover {
+          @apply bg-[var(--yto-layout-menu-level-3-background-color-active)] text-[var(--yto-layout-menu-color-text-active)];
+        }
       }
     }
   }

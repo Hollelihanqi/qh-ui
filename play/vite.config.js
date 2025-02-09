@@ -36,7 +36,7 @@ export default defineConfig({
     Unocss(),
     AutoImport({
       imports: ['vue', 'vue-router'],
-      resolvers: [ElementPlusResolver(), YtoCustomResolver()],
+      resolvers: [ElementPlusResolver()],
       dts: true,
       eslintrc: {
         enabled: true,

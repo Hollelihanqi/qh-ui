@@ -114,5 +114,3 @@ peerDependencies（前置依赖）:
 * "element-plus": "^2.6.1",
 * "gold-core": "0.1.17",
 * "immutable": "^4.3.4"
-
-:::

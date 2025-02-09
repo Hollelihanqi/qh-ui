@@ -34,10 +34,10 @@ export const layoutMenuProps = buildProps({
     type: String,
     default: '菜单查询',
   },
-  width: {
-    type: String,
-    default: '210px',
-  },
+  // width: {
+  //   type: String,
+  //   default: '210px',
+  // },
   title: {
     type: String,
     default: '',
@@ -56,8 +56,8 @@ export const layoutMenuProps = buildProps({
   },
   defaultActive: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 })
 
 export const layoutMenuEmits = ['menuClick', 'update:collapse']

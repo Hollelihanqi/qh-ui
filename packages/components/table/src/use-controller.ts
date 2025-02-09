@@ -132,13 +132,12 @@ function _ideepClone<T>(obj: T): T {
   if (obj instanceof Object) {
     const copy = Object.create(Object.getPrototypeOf(obj))
     Object.keys(obj).forEach((key) => {
-      ; (copy as any)[key] = _ideepClone((obj as any)[key])
+      ;(copy as any)[key] = _ideepClone((obj as any)[key])
     })
     return copy as T
   }
 
   throw new Error("Unable to copy obj! Its type isn't supported.")
 }
-
 
 export default useController

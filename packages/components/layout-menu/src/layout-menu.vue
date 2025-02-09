@@ -1,10 +1,10 @@
 <template>
-  <div class="layout-menu flex flex-col justify-between">
+  <div class="yto-layout-menu flex flex-col justify-between">
     <StickyContainer>
       <ElMenu
         ref="menuRef"
         v-bind="$attrs"
-        class="layout-menu-v h-[100%]"
+        class="h-[100%]"
         :collapse="collapse"
         :default-active="activeMenu"
         popper-class="layout-menu-popper"

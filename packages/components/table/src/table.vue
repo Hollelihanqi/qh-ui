@@ -10,7 +10,7 @@
     </div>
     <ElTable
       ref="ElTableInstance"
-      v-loading="requestApi ? _loading : loading"
+      v-qoding="requestApi ? _loading : loading"
       class="my-el-table w-[100%]"
       :class="{ 'pagination-hide-table': !cpaginationShow, 'flex-1': !isDataEmpty || !_showSummary }"
       :data="_tdata"
@@ -72,7 +72,8 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTable, ElTableColumn, ElPagination,ElButton } from 'element-plus'
+import { ElTable, ElTableColumn, ElPagination, ElButton } from 'element-plus'
+import { vLoading as vQoding } from 'element-plus/es/components/loading/src/directive'
 import TableColumn from './components/TableColumn.vue'
 import SettingV from './components/Setting.vue'
 import Empty from '@yto-custom/components/empty'
@@ -82,6 +83,7 @@ import useTable from './use-table'
 import { tableProps, tableEmits } from './table'
 
 defineOptions({
+  // eslint-disable-next-line vue/no-reserved-component-names
   name: 'Table',
 })
 
