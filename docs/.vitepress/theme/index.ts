@@ -2,17 +2,16 @@
 import VPApp, { NotFound, globals } from "../vitepress";
 import DefaultTheme from "vitepress/theme";
 
-import "virtual:uno.css";
-import './style.css'
-import 'vitepress/dist/client/theme-default/styles/components/vp-code-group.css'
-
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import YtoCustom from '@yto/custom'
 import '@yto/custom/theme-chalk/index.css'
 
+import "virtual:uno.css";
+import './style.css'
+import 'vitepress/dist/client/theme-default/styles/components/vp-code-group.css'
 
-// import "../vitepress/styles/base.scss";
+import "../vitepress/styles/base.scss";
 
 
 // import type { Theme } from 'vitepress'

@@ -1,7 +1,7 @@
 # Uploader 文件上传
 
 ::: tip
-一个基于 [simple-uploader.js](https://github.com/simple-uploader/Uploader) 的 Vue3 大文件分片上传组件。支持断点续传、秒传及文件状态管理等功能。
+一个基于 [simple-uploader.js](https://github.com/simple-uploader/Uploader/blob/master/README_zh-CN.md) 的 Vue3 大文件分片上传组件。支持断点续传、秒传及文件状态管理等功能。
 :::
 
 ## 基础用法
@@ -14,18 +14,19 @@ uploader/basic
 
 ### Uploader 属性
 
-| 属性名          | 说明                                       | 类型            | 默认值 |
-| --------------- | ------------------------------------------ | --------------- | ------ |
-| options         | uploader 实例配置项，详见下方 options 配置 | Object          | {}     |
-| isSlice         | 是否启用文件分片上传                       | Boolean         | true   |
-| autoUpload      | 是否在选择文件后自动上传                   | Boolean         | true   |
-| multiple        | 是否允许多文件上传                         | Boolean         | true   |
-| limit           | 最大上传文件数量(0表示不限制)              | Number          | 0      |
-| listHide        | 是否隐藏文件上传列表                       | Boolean         | false  |
-| accept          | 接受的文件类型，例如 `.jpg,.png`           | String          | ""     |
-| isCheckFileType | 是否校验文件类型                           | Boolean         | true   |
-| headers         | 上传请求的 HTTP 头                         | Object/Function | {}     |
-| requestParams   | 上传请求的额外参数                         | Object          | {}     |
+| 属性名                       | 说明                                                                                                                                  | 类型            | 默认值 |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------ |
+| options                      | uploader 实例配置项，详见下方 options 配置                                                                                            | Object          | {}     |
+| isSlice                      | 是否启用文件分片上传                                                                                                                  | Boolean         | true   |
+| checkChunkUploadedByResponse | 检查分片是否已上传的回调函数，返回 true 表示该分片已上传。参数为(chunk, message)，其中 chunk 为当前分片信息，message 为服务端返回数据 | Function        | null   |
+| autoUpload                   | 是否在选择文件后自动上传                                                                                                              | Boolean         | true   |
+| multiple                     | 是否允许多文件上传                                                                                                                    | Boolean         | true   |
+| limit                        | 最大上传文件数量(0表示不限制)                                                                                                         | Number          | 0      |
+| listHide                     | 是否隐藏文件上传列表                                                                                                                  | Boolean         | false  |
+| accept                       | 接受的文件类型，例如 `.jpg,.png`                                                                                                      | String          | ""     |
+| isCheckFileType              | 是否校验文件类型                                                                                                                      | Boolean         | true   |
+| headers                      | 上传请求的 HTTP 头                                                                                                                    | Object/Function | {}     |
+| requestParams                | 上传请求的额外参数                                                                                                                    | Object          | {}     |
 
 ### Options 配置项
 
@@ -82,4 +83,3 @@ uploader/basic
 | averageSpeed | 平均上传速度   |
 | currentSpeed | 当前上传速度   |
 | \_response   | 服务器响应数据 |
-

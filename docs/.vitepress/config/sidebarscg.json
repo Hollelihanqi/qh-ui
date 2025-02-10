@@ -14,9 +14,14 @@
       {
         "text": "Table 表格",
         "link": "/table"
+      },
+      {
+        "text": "Uploader 上传",
+        "link": "/uploader"
       }
     ]
   },
+
   "yto-utils": {
     "text": "工具类",
     "items": [

@@ -14,7 +14,6 @@
 <script lang="ts" setup>
 import { ref, nextTick } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
-// import { request } from '../../utils'
 const UploaderInstance = ref()
 const mergeFile = (params = {}) => {
   //...
