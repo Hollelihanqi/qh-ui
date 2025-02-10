@@ -2,6 +2,7 @@ import SimpleUploader from 'simple-uploader.js'
 import SparkMD5 from 'spark-md5'
 import { ref, onBeforeMount, provide, onMounted } from 'vue'
 import { UploaderProps } from './uploader'
+import { showToast } from './toast'
 
 export const baseOptions = {
   target: '/api/v2/upload', // 目标上传 URL
@@ -15,7 +16,7 @@ export const baseOptions = {
   checkChunkUploadedByResponse: null,
   headers: {},
   // 额外的自定义查询参数
-  query: {}
+  query: {},
 }
 
 // 处理 options 参数
@@ -25,16 +26,15 @@ const handleOptions = (props: UploaderProps) => {
       chunk: chunk.offset,
       task_id: file.uniqueIdentifier,
       ...file.params,
-      ...(typeof props.requestParams === 'function'
-        ? props.requestParams()
-        : props.requestParams || {}),
+      ...(typeof props.requestParams === 'function' ? props.requestParams() : props.requestParams || {}),
     }
   }
 
   const options = {
     ...baseOptions,
     query,
-    ...props.options
+    ...props.options,
+    ...(props.checkChunkUploadedByResponse ? { checkChunkUploadedByResponse: props.checkChunkUploadedByResponse } : {}),
   }
 
   return options
@@ -69,7 +69,7 @@ const useUploader = (props: UploaderProps, emits: any) => {
   // 超出 limit 数量 时触发,并且从列表中移除当前文件
   const fileLimitOver = (file: any) => {
     __removeFile(file)
-    console.error('超出最大上传数量')
+    showToast(`最大允许上传 ${props.limit} 个文件！`)
     emits('on-exceed-limit', file, props.limit)
   }
 
@@ -79,6 +79,7 @@ const useUploader = (props: UploaderProps, emits: any) => {
     const suffies = props.accept.split(',')
     if (!suffies.includes(`.${suffix}`)) {
       __removeFile(file)
+      showToast(`文件类型错误，只支持 ${props.accept} 类型`)
       emits('on-type-error', file, props.accept)
       return false
     }
@@ -96,7 +97,7 @@ const useUploader = (props: UploaderProps, emits: any) => {
       return false
     }
     if (props.onFileAdded) {
-      let bool = props.onFileAdded(file)
+      const bool = props.onFileAdded(file)
       if (!bool) {
         __removeFile(file)
       }
@@ -191,7 +192,7 @@ const useUploader = (props: UploaderProps, emits: any) => {
       { event: eventList.FILE_SUCCESS_EVENT, handler: fileSuccess },
       { event: eventList.FILE_ERROR_EVENT, handler: fileError },
       { event: eventList.COMPLETE_EVENT, handler: complete },
-      { event: eventList.UPLOAD_START_EVENT, handler: () => { } },
+      { event: eventList.UPLOAD_START_EVENT, handler: () => ({}) },
     ]
 
     events.forEach(({ event, handler }) => {
@@ -240,8 +241,7 @@ const useUploader = (props: UploaderProps, emits: any) => {
         file.resume() // 恢复文件开始上传
         file.cmd5 = false
         console.log(
-          `MD5计算完毕：${file.name} \nMD5：${HASH} \n分片：${chunks} 大小:${file.size} 用时：${new Date().getTime() - time
-          } ms`,
+          `MD5计算完毕：${file.name} \nMD5：${HASH} \n分片：${chunks} 大小:${file.size} 用时：${Date.now() - time} ms`,
         )
       }
     }
@@ -252,8 +252,8 @@ const useUploader = (props: UploaderProps, emits: any) => {
     }
 
     function loadNext() {
-      let start = currentChunk * chunkSize
-      let end = start + chunkSize >= file.size ? file.size : start + chunkSize
+      const start = currentChunk * chunkSize
+      const end = start + chunkSize >= file.size ? file.size : start + chunkSize
       fileReader.readAsArrayBuffer(blobSlice.call(file.file, start, end))
     }
   }
@@ -305,7 +305,7 @@ const useUploader = (props: UploaderProps, emits: any) => {
     uploadBtn,
     files,
     fileList,
-    UPLOADER
+    UPLOADER,
   }
 }
 

@@ -8,12 +8,6 @@
       </label>
       <slot name="tip"></slot>
     </div>
-
-    <!-- <UploadList v-if="!listHide">
-      <template #fileListItem>
-        <slot name="fileListItem"></slot>
-      </template>
-    </UploadList> -->
     <div v-show="UPLOADER?.fileList?.length && !listHide" class="uploader-list">
       <div v-for="file in UPLOADER.fileList" :key="file.id" class="file-item">
         <UploadInfo :file="file" :list="true">
@@ -27,6 +21,7 @@
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue'
+import UploadInfo from './UploadInfo.vue'
 import { uploaderProps, uploaderEmits } from './uploader'
 import useUploader from './use-uploader'
 defineOptions({
@@ -35,7 +30,7 @@ defineOptions({
 
 const props = defineProps(uploaderProps)
 const emit = defineEmits(uploaderEmits)
-const { uploadBtn } = useUploader(props, emit)
+const { uploadBtn, UPLOADER } = useUploader(props, emit)
 
 const styles = computed(() => {
   return {

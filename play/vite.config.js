@@ -86,5 +86,26 @@ export default defineConfig({
       // 使用 ignored 选项，通过 ! 前缀来包含 dist 目录
       ignored: ['!**/dist/**'],
     },
+    headers: {
+      //因为qiankun内部请求都是fetch来请求资源，所以子应用必须允许跨域
+      'Access-Control-Allow-Origin': '*',
+    },
+    proxy: {
+      '/api/v2': {
+        // target: 'http://10.130.137.53:8000', // sit
+        target: 'http://10.130.17.91:8000', // uat
+        changeOrigin: true,
+      },
+      '/api/v3': {
+        // target: 'http://10.130.137.53:8000', //sit
+        target: 'http://10.130.17.91:8000', // uat
+        changeOrigin: true,
+      },
+      '/api': {
+        // target: 'http://10.130.137.53:8000',
+        target: 'https://xl-admin.yto56test.com',
+        changeOrigin: true,
+      },
+    },
   },
 })

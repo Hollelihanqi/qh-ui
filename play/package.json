@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
+    "build2": "vite build",
     "preview": "vite preview",
     "routes:gen": "tsx scripts/generate-routes.ts"
   },

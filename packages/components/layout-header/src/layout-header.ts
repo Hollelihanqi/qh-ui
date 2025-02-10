@@ -20,7 +20,7 @@ export const layoutHeaderProps = buildProps({
   },
   userInfo: {
     type: Object,
-    default: () => {},
+    default: () => ({}),
   },
 })
 

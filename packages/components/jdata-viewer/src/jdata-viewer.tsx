@@ -3,7 +3,7 @@ import { jdataViewerProps } from './ijdata-viewer'
 import { useView } from './use-view'
 
 export default defineComponent({
-  name: 'JsonViewer',
+  name: 'JdataViewer',
   components: {
     Transition,
   },
@@ -175,7 +175,7 @@ export default defineComponent({
 
     return () => {
       return (
-        <div class={`json-viewer ${props.theme === 'light' ? 'json-viewer-light' : 'json-viewer-dark'}`}>
+        <div class={`jdata-viewer ${props.theme === 'light' ? 'json-viewer-light' : 'json-viewer-dark'}`}>
           {props.copy && (
             <div class="json-copy" onClick={handleCopy}>
               复制

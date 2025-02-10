@@ -14,9 +14,30 @@
 .upload-info {
   position: relative;
   height: 40px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   overflow: hidden;
-  background-color: rgba(240, 240, 240);
+  background-color: #faf8fe;
+  transition: all 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(149, 71, 236);
+    transition: width 0.3s ease;
+    z-index: 11;
+  }
+
+  &:hover {
+    background-color: rgba(149, 71, 236, 0.05);
+
+    &::after {
+      width: 100%;
+    }
+  }
 }
 .upload-info[status='waiting'] .uploader-file-pause,
 .upload-info[status='uploading'] .uploader-file-pause {
@@ -28,31 +49,49 @@
 .upload-info[status='error'] .uploader-file-retry {
   display: block;
 }
-.upload-info[status='success'] .uploader-file-remove {
-  display: none;
-}
 .upload-info[status='error'] .uploader-file-progress {
-  background: #ffe0e0;
+  background: rgba(254, 77, 80);
 }
 .error-uploader-file-progress {
-  background: #ffe0e0 !important;
+  background: rgba(254, 77, 80) !important;
 }
-.upload-info:hover {
-  background-color: rgba(240, 240, 240);
-  .uploader-file-progress {
-    z-index: -1;
+.upload-info[status='error'] {
+  background-color: rgba(254, 77, 80, 0.3);
+
+  &:hover {
+    background-color: rgba(254, 77, 80, 0.1);
   }
+
+  &::after {
+    background-color: #fe4d50;
+  }
+}
+.upload-info[status='success'] {
+  background-color: rgba(82, 196, 26, 0.02);
+
+  &:hover {
+    background-color: rgba(82, 196, 26, 0.05);
+  }
+
+  &::after {
+    background-color: #52c41a;
+  }
+}
+.upload-info[status='success'] .uploader-file-progress {
+  background: linear-gradient(90deg, rgba(82, 196, 26, 0.1) 0%, rgba(82, 196, 26, 0.2) 100%);
 }
 .uploader-file-progress {
   position: absolute;
   width: 100%;
   height: 40px;
-  background: #e2eeff;
+  background: linear-gradient(90deg, rgba(149, 71, 236, 0.1) 0%, rgba(149, 71, 236, 0.2) 100%);
   transform: translateX(-100%);
   z-index: 5;
+  border-radius: 0 2px 2px 0;
+  transition: transform 0.3s ease-in-out;
 }
 .uploader-file-progressing {
-  transition: all 0.4s linear;
+  transition: all 0.3s ease-in-out;
 }
 
 .uploader-file-info {
@@ -66,6 +105,7 @@
   justify-content: space-between;
   gap: 8px;
   overflow: hidden;
+
   .name {
     width: 36%;
     overflow: hidden;
@@ -82,36 +122,54 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+
   & > span {
     width: 18px;
     height: 18px;
     cursor: pointer;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABkCAYAAAD0ZHJ6AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAARkSURBVGje7ZnfS1NRHMAH4ptPkvQSuAdBkCxD8FUQJMEULUgzy1KyyPVQ4JMiiP4Bvg6EwUQQfMmwhwRDshwaKUjDVCgoSdDNHkzTJZ6+Z37Purve8+PeTb2TM/ggu+ew89l33x8H9BBCPG7GowXTJej3+wnDvEm0JuLC04+EYWftVAUv+fiCvDUdQR1BHUEdQR3BTIygvixoQS14XgTtthLVdpNWwXRLqvQ724LplFRtyrYF0yVpFLQrKRVMh6RZ0I6kkmCqklaCqpKZH0FX56Crq9jVfdDVk0RfFrSgFsxkQVmLcdKCVrKySCrryhPEyYShhzOcrFtG0EoilfHHk1CRU5rF6ZjNZhlVOW6RnMSVyyilKies4pO41diVy8wIujoHXV3FGdMHXTtJKLFYTLhZtq4vC1rwXApCZTIqgR6g1PBMCO9DL3bMMSqBHqDU8EyISDAHiGKvWwcCQG2KgjlAFCDAOhAAap0K5gKLphk8mqJgLrCIgoxRJ4J5wKpJ7gAoMkn5EBXBPGDVJHcAFJmkfIhQcAql1oBpTvTol9gG9pm4RHAKpdaAaU706JfYBvaZuJVgPQrt4sFlnOh5MC/p3lmJYD0K7eLBZZzoeTAv6d5ZnuAYHjpgEOnk5F0ufhG6v1ggOIaHDhhEOjl5l4tfhO4vthLcwAMrFNvLJO5vEwhu4IEViu1lEve3WQmyoihQFBzG/V0CQVYUBYqCw7i/SxTBcpsRbFeIYLnNCLZbCY5b5KAnxRwct8hBj9McZFVMW0ihRNBuFdMWUigRlFaxuQ9WWYjRMTiIe5z0wSoLMToGB3GPsA9aTZIJoB+nRgBnM1tzOkkmgH6cGgGczWzNpzqLx3n/aULJJgezeNw07oxQySbVywKjBOgFRnDs+VEsx8FlgVEC9AIjOPb8KJYjvSzoG7UW1IJaUAtqQS14toLNM5fN5APdwBJA8G83Pk/aK/rgzVvXzeQD3cASQPBvNz5P2ssTzAaGUIrHEO6zI5gNDKEUjyHcxxWkh4Ylcowwk1QQpIeGJXKMMJO0EgwqyjGCioJBJvDrxRMSuVOTJEXfbz1/bHwWtBL0yoQehK6RucgE+bGzanzulQh6E3IgQV+xpc8kcrfuSO7eTfJ3ZYmQw0Oy9azVKOk1C/bJ5D5F38YPeLfx0rjWJxHsS0SqsSYuxySjj5qO5Oj7xQWy2VBtFOwzCy6ryH3YfE3uh64Y1xckgstJPydEjkkeHv07Iy4Xaao15+KCWTBx6M/db+T9xivSErqaJDdzXI6yLRE8Vgg0coex/SPJvT0SbWu0KpZtbgSpCH3NRt7I5OxHkObc6heU+/M/J5vrpBFM5GBLqCQux14COXs5CNXK5OjPGm1tSMrJSOMNYQ4mVTGV/L6zTL7+DovkbFUxbSW0Wo05l8hJWsU+cRWfSh+Mt5Lb1ck/J1TvVsdDaR/MiEni+llsdZuZp62EViu+96bpNjNPWwmtVnzvFd5m9IVVC54x/wA7gNvqFG9vXQAAAABJRU5ErkJggg==')
-      no-repeat 0 0;
+    transition: all 0.3s ease;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    position: relative;
+
+    &:hover {
+      opacity: 1;
+      filter: invert(37%) sepia(74%) saturate(1579%) hue-rotate(248deg) brightness(89%) contrast(91%);
+    }
+  }
+
+  .uploader-file-remove {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+
+    &:hover {
+      opacity: 1;
+      filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    }
+  }
+
+  & > span:not(.uploader-file-remove) {
+    &:hover {
+      opacity: 1;
+      filter: invert(37%) sepia(74%) saturate(1579%) hue-rotate(248deg) brightness(89%) contrast(91%);
+    }
   }
 }
-.uploader-file-actions .uploader-file-pause {
-  background-position-y: 0;
+
+// 使用单独的SVG背景图
+.uploader-file-pause {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 19h4V5H6v14zm8-14v14h4V5h-4z'/%3E%3C/svg%3E");
 }
-.uploader-file-actions .uploader-file-resume {
-  background-position-y: -17px;
+
+.uploader-file-resume {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E");
 }
-.uploader-file-actions .uploader-file-retry {
-  background-position-y: -53px;
+
+.uploader-file-retry {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z'/%3E%3C/svg%3E");
 }
-.uploader-file-actions .uploader-file-remove {
-  display: block !important;
-  background-position-y: -34px;
-}
-.uploader-file-actions .uploader-file-pause:hover {
-  background-position-x: -21px;
-}
-.uploader-file-actions .uploader-file-resume:hover {
-  background-position-x: -21px;
-}
-.uploader-file-actions .uploader-file-retry:hover {
-  background-position-x: -21px;
-}
-.uploader-file-actions .uploader-file-remove:hover {
-  background-position-x: -21px;
+
+.uploader-file-remove {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
 }

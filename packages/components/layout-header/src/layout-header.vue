@@ -10,13 +10,7 @@
     </div>
     <div class="flex flex-1">
       <slot>
-        <div class="collapse-icon flex items-center">
-          <i
-            class="icon iconfont cursor-pointer"
-            :class="collapse ? 'layout-icon_dianjizhankai' : 'layout-icon_dianjishouqi'"
-            @click="onCollapse"
-          ></i>
-        </div>
+        <MenuSwitch :collapse="collapse" @click="onCollapse" />
       </slot>
     </div>
     <slot v-if="user" name="right">
@@ -24,12 +18,7 @@
         <div class="mr-[5px]">{{ user.userName }}</div>
         <div class="mr-[10px]">（{{ user.userCode }}）</div>
         <slot name="extend"></slot>
-        <i
-          v-if="isfullscreen"
-          class="icon iconfont cursor-pointer mx-[25px] !text-[14px]"
-          :class="fullscreen ? 'layout-icon_guanbiquanju' : 'layout-icon_kaiqiquanju'"
-          @click="onFullScreen"
-        ></i>
+        <FullscreenSwitch v-if="isfullscreen" :collapse="fullscreen" @click="onFullScreen" />
         <slot name="logout">
           <div class="flex items-center cursor-pointer" @click="onLogout">
             <span class="mr-[5px]">退出</span> <ElIcon size="16"><SwitchButton /></ElIcon>
@@ -41,12 +30,14 @@
 </template>
 <script lang="ts" setup>
 import { ref, unref } from 'vue'
-import {ElIcon} from 'element-plus'
+import { ElIcon } from 'element-plus'
 import { SwitchButton } from '@element-plus/icons-vue'
 import { layoutHeaderProps, layoutHeaderEmits } from './layout-header'
 import useFullScreen from './fullScreen'
 import { EnumSessionKey } from './constants'
 import { session } from 'gold-core'
+import MenuSwitch from './MenuSwitch.vue'
+import FullscreenSwitch from './FullscreenSwitch.vue'
 
 defineOptions({
   name: 'LayoutHeader',

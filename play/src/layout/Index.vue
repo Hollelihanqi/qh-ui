@@ -7,9 +7,7 @@
       <yto-layout-menu
         :menus="menus"
         :collapse="collapse"
-        width="230px"
         title="组件测试"
-        link-type="click"
         :searchable="false"
       ></yto-layout-menu>
     </yto-layout-router>
@@ -20,7 +18,6 @@
 import { menus } from '@/router/menu'
 
 const collapse = ref(false)
-
 </script>
 
 <style lang="scss"></style>

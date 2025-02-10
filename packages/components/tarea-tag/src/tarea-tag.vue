@@ -38,7 +38,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, computed, } from 'vue'
+import { ref, computed } from 'vue'
+import { ElTag, ElInput } from 'element-plus'
 import { tareaTagProps, tareaTagEmits } from './tarea-tag'
 import { List } from 'immutable'
 

@@ -11,14 +11,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  :deep(.el-textarea__inner:focus),
-  :deep(.el-textarea__inner) {
+  .el-textarea__inner:focus,
+  .el-textarea__inner {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
     padding: 0;
   }
-  :deep(textarea) {
+  textarea {
     resize: none;
   }
 }
