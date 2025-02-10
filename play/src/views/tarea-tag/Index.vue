@@ -43,8 +43,8 @@
   </div>
 </template>
 <script lang="tsx" setup>
-// import YtoTareaTag from '@yto-custom/components/tarea-tag/src/tarea-tag.vue'
-// import '@yto-custom/components/tarea-tag/src/tarea-tag.scss'
+import YtoTareaTag from '@yto-custom/components/tarea-tag/src/tarea-tag.vue'
+import '@yto-custom/components/tarea-tag/src/tarea-tag.scss'
 const YtoTareaInstance = ref()
 const sreg = /k\d+/i
 const retrieve_content = ref('')
