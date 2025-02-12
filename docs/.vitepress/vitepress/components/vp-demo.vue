@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, getCurrentInstance, ref, toRef } from 'vue'
 import { isClient, useClipboard, useToggle } from '@vueuse/core'
-import { CaretTop, CopyDocument, Edit, View } from '@element-plus/icons-vue'
+import { CaretTop } from '@element-plus/icons-vue'
 import { useSourceCode } from '../composables/source-code'
 import { usePlayground } from '../composables/use-playground'
 import SourceCode from './demo/vp-source-code.vue'
@@ -26,11 +26,11 @@ const sourceCodeRef = ref<HTMLButtonElement>()
 
 const decodedDescription = computed(() => decodeURIComponent(props.description))
 
-const onPlaygroundClick = () => {
-  const { link } = usePlayground(props.rawSource)
-  if (!isClient) return
-  window.open(link)
-}
+// const onPlaygroundClick = () => {
+//   const { link } = usePlayground(props.rawSource)
+//   if (!isClient) return
+//   window.open(link)
+// }
 
 const onSourceVisibleKeydown = (e: KeyboardEvent) => {
   if (['Enter', 'Space'].includes(e.code)) {
@@ -111,7 +111,7 @@ const copyCode = async () => {
           @keydown.prevent.enter="copyCode"
           @keydown.prevent.space="copyCode"
         >
-          <CopyDocument/>
+          <i-ri-file-copy-line />
         </ElIcon>
       </ElTooltip>
       <ElTooltip content="资源" :show-arrow="false" :trigger="['hover', 'focus']" :trigger-keys="[]">
@@ -122,7 +122,7 @@ const copyCode = async () => {
           @click="toggleSourceVisible()"
         >
           <ElIcon :size="16">
-            <View/>
+            <i-ri-code-line />
           </ElIcon>
         </button>
       </ElTooltip>

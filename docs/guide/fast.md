@@ -1,3 +1,7 @@
+---
+title: 快速开始
+---
+
 ## 组件
 
 ### 安装
@@ -105,12 +109,11 @@ peerDependencies（前置依赖）:
 
 > 适用于插件：在构建插件或扩展时，通常会使用 peerDependencies 来声明对宿主库的依赖，例如 Vue、React 等。这确保了插件与宿主库的版本兼容。
 
-
 以下依赖项不会被自动安装，需要手动安装，但不是必须要安装，使用到具体的组件时需要安装：
 
-* "@element-plus/icons-vue": "^2.1.0",
-* "axios": "^1.3.5",
-* "echarts": "^5.4.2",
-* "element-plus": "^2.6.1",
-* "gold-core": "0.1.17",
-* "immutable": "^4.3.4"
+- "@element-plus/icons-vue": "^2.1.0",
+- "axios": "^1.3.5",
+- "echarts": "^5.4.2",
+- "element-plus": "^2.6.1",
+- "gold-core": "0.1.17",
+- "immutable": "^4.3.4"

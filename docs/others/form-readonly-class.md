@@ -1,3 +1,7 @@
+---
+title: 表单状态
+---
+
 # ElForm 表单状态
 
 基于 element-plus：el-form 的样式进行修改，在编辑和 只读状态下的不同样式状态
@@ -9,7 +13,8 @@
 - 在 el-form 中动态绑定只读模式下的 class 名称
 
 ## 基本使用
-<!-- 
+
+<!--
 <template>
   <FormReadonlyClass/>
 </template>

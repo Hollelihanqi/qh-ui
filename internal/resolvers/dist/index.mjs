@@ -1,6 +1,5 @@
 function getSideEffects(componentName, importStyle) {
-  if (!importStyle)
-    return;
+  if (!importStyle) return;
   return [
     `@yto/custom/theme-chalk/yto-${componentName}.css`
   ];

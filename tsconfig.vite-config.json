@@ -6,9 +6,10 @@
       "node"
     ]
   },
-  "include": [],
+  "include": [
+    "**/vite.config.*"
+  ],
   "exclude": [
     "docs",
-    "play"
   ]
 }

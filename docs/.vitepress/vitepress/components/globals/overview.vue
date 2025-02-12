@@ -1,20 +1,11 @@
 <template>
   <div class="overview-container">
     <div class="search-content">
-      <el-input
-        v-model="query"
-        :prefix-icon="Search"
-        size="large"
-        placeholder="Search Components"
-      />
+      <el-input ref="searchRef" v-model="query" :prefix-icon="Search" size="large" placeholder="Search Components" />
     </div>
 
     <div class="main-content">
-      <div
-        v-for="(group, groupIndex) in filteredSidebars"
-        :key="groupIndex"
-        class="component-group"
-      >
+      <div v-for="(group, groupIndex) in filteredSidebars" :key="groupIndex" class="component-group">
         <p class="component-title">
           {{ group.text }}
           <el-tag effect="dark" round size="small">
@@ -25,8 +16,10 @@
           <el-card
             v-for="(item, index) in group.children"
             :key="index"
+            tabindex="0"
             shadow="hover"
             @click="toPage(item.link)"
+            @keydown.enter="toPage(item.link)"
           >
             <template #header>
               <el-text truncated>{{ item.text }}</el-text>
@@ -43,19 +36,11 @@
         </div>
       </div>
 
-      <el-empty
-        v-if="!filteredSidebars.length"
-        description="自定义描述"
-      />
+      <el-empty v-if="!filteredSidebars.length" description="暂无数据" />
 
       <p class="designed-by">
         Icons designed by
-        <el-link
-          type="primary"
-          :underline="false"
-          href="https://github.com/daodaozz08"
-          target="_blank"
-        >
+        <el-link type="primary" :underline="false" href="https://github.com/daodaozz08" target="_blank">
           @叨叨
         </el-link>
       </p>
@@ -64,10 +49,10 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
 import { useRouter } from 'vitepress'
 import { Search } from '@element-plus/icons-vue'
-// import overviewLocale from '../../../i18n/component/overview.json'
+import type { InputInstance } from 'element-plus'
 import { useSidebar } from '~/composables/sidebar'
 import overviewIcons from '~/components/overview-icons'
 
@@ -75,12 +60,11 @@ const router = useRouter()
 const { sidebars } = useSidebar()
 
 const query = ref('')
-
-// const locale = computed(() => overviewLocale[lang.value])
+const searchRef = ref<InputInstance>()
 const filteredSidebars = computed(() =>
   sidebars.value
     .slice(1)
-    .map((group) => ({
+    .map((group: any) => ({
       ...group,
       children: group.children.filter((item) => {
         const value = query.value.trim().toLowerCase()
@@ -91,7 +75,7 @@ const filteredSidebars = computed(() =>
         )
       }),
     }))
-    .filter((group) => group.children.length)
+    .filter((group) => group.children.length),
 )
 
 const toPage = (link: string) => {
@@ -102,6 +86,12 @@ const getIcon = (link: string) => {
   const name = link.split('/').pop()
   return name ? overviewIcons[name] : null
 }
+
+onMounted(() => {
+  nextTick(() => {
+    searchRef.value?.focus()
+  })
+})
 </script>
 
 <style scoped lang="scss">
@@ -138,6 +128,12 @@ const getIcon = (link: string) => {
 
         :deep(.el-card) {
           cursor: pointer;
+          transition: none;
+
+          &:focus-visible {
+            outline: 2px solid var(--el-color-primary);
+            outline-offset: 1px;
+          }
 
           .el-card__header {
             display: flex;

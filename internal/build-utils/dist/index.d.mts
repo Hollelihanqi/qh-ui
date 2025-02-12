@@ -4,6 +4,8 @@ import { ProjectManifest } from '@pnpm/types';
 declare const writeJson: (path: string, data: any, spaces?: number) => Promise<void>;
 declare const ensureDir: (path: string) => Promise<void>;
 
+declare function errorAndExit(err: Error): never;
+
 declare const projRoot: string;
 declare const pkgRoot: string;
 declare const ytoCustomRoot: string;
@@ -35,4 +37,4 @@ declare const getPackageManifest: (pkgPath: string) => ProjectManifest;
 declare const getPackageDependencies: (pkgPath: string) => Record<"dependencies" | "peerDependencies", string[]>;
 declare const excludeFiles: (files: string[]) => string[];
 
-export { buildOutput, buildRoot, compPackage, compRoot, directivePackage, directiveRoot, docPackage, docRoot, docsDirName, ensureDir, excludeFiles, getPackageDependencies, getPackageManifest, getWorkspaceNames, getWorkspacePackages, hookPackage, hookRoot, pkgRoot, projPackage, projRoot, themePackage, themeRoot, utilPackage, utilRoot, vpRoot, writeJson, ytoCustomRoot, ytoOutput, ytoPackage };
+export { buildOutput, buildRoot, compPackage, compRoot, directivePackage, directiveRoot, docPackage, docRoot, docsDirName, ensureDir, errorAndExit, excludeFiles, getPackageDependencies, getPackageManifest, getWorkspaceNames, getWorkspacePackages, hookPackage, hookRoot, pkgRoot, projPackage, projRoot, themePackage, themeRoot, utilPackage, utilRoot, vpRoot, writeJson, ytoCustomRoot, ytoOutput, ytoPackage };

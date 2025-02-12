@@ -1,13 +1,19 @@
 import { existsSync } from 'fs';
 import { writeFile, mkdir } from 'fs/promises';
+import { exit } from 'node:process';
+import { consola } from 'consola';
 import { resolve } from 'path';
 import { findWorkspacePackages } from '@pnpm/find-workspace-packages';
 
 const writeJson = (path, data, spaces = 0) => writeFile(path, JSON.stringify(data, void 0, spaces), "utf-8");
 const ensureDir = async (path) => {
-  if (!existsSync(path))
-    await mkdir(path, { recursive: true });
+  if (!existsSync(path)) await mkdir(path, { recursive: true });
 };
+
+function errorAndExit(err) {
+  consola.error(err);
+  exit(1);
+}
 
 const projRoot = resolve(__dirname, "..", "..", "..");
 const pkgRoot = resolve(projRoot, "packages");
@@ -53,4 +59,4 @@ const excludeFiles = (files) => {
   return files.filter((path) => !excludes.some((exclude) => path.includes(exclude)));
 };
 
-export { buildOutput, buildRoot, compPackage, compRoot, directivePackage, directiveRoot, docPackage, docRoot, docsDirName, ensureDir, excludeFiles, getPackageDependencies, getPackageManifest, getWorkspaceNames, getWorkspacePackages, hookPackage, hookRoot, pkgRoot, projPackage, projRoot, themePackage, themeRoot, utilPackage, utilRoot, vpRoot, writeJson, ytoCustomRoot, ytoOutput, ytoPackage };
+export { buildOutput, buildRoot, compPackage, compRoot, directivePackage, directiveRoot, docPackage, docRoot, docsDirName, ensureDir, errorAndExit, excludeFiles, getPackageDependencies, getPackageManifest, getWorkspaceNames, getWorkspacePackages, hookPackage, hookRoot, pkgRoot, projPackage, projRoot, themePackage, themeRoot, utilPackage, utilRoot, vpRoot, writeJson, ytoCustomRoot, ytoOutput, ytoPackage };

@@ -8,30 +8,30 @@ type Item = {
 }
 
 function formatLinks(data: Record<string, Item>): Item[] {
-  const formattedData: Item[] = [];
+  const formattedData: Item[] = []
 
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
-      const item = data[key];
-      const prefix = item.linkFormat === false ? '' : `/${key}`;
+      const item = data[key]
+      const prefix = item.linkFormat === false ? '' : `/${key}`
       if (item.items) {
         formattedData.push({
           text: item.text,
-          items: item.items.map(subItem => ({
+          items: item.items.map((subItem) => ({
             text: subItem.text,
-            link: prefix + subItem.link
-          }))
-        });
+            link: prefix + subItem.link,
+          })),
+        })
       } else {
         formattedData.push({
           text: item.text,
-          link: prefix + item.link
-        });
+          link: prefix + item.link,
+        })
       }
     }
   }
 
-  return formattedData;
+  return formattedData
 }
 
-export const sidebars = formatLinks(sidebarsjson);
+export const sidebars = formatLinks(sidebarsjson)

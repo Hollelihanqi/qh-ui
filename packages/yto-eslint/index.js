@@ -55,6 +55,13 @@ export default [
 
       indent: ['error', 2], // 缩进使用2个空格
       semi: ['error', 'never'], //语句末尾不加分号
+
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
     },
   },
   eslintPluginPrettier,

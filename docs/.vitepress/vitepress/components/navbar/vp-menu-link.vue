@@ -1,41 +1,39 @@
-<!--
- * @Author: DESKTOP-7338OS6\LHQ LHQ
- * @Date: 2024-07-16 10:57:36
- * @LastEditors: DESKTOP-7338OS6\LHQ LHQ
- * @LastEditTime: 2024-07-18 15:16:42
- * @FilePath: \yto-engine\docs3\.vitepress\vitepress\components\navbar\vp-menu-link.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 <script lang="ts" setup>
-import { useRoute } from "vitepress";
-import { useStorage } from "@vueuse/core";
-import VPLink from "../common/vp-link.vue";
-import { isActiveLink } from "../../utils";
+import { useRoute } from 'vitepress'
+import { useStorage } from '@vueuse/core'
+import VPLink from '../common/vp-link.vue'
+import { isActive } from '../../utils'
+// import { usePlaygroundPreview } from '../../composables/use-playground'
+import type { Link } from '../../types'
 
-import type { Link } from "../../types";
-const USER_VISITED_NEW_RESOURCE_PAGE = "USER_VISITED_NEW_RESOURCE_PAGE";
-defineProps<{
-  item: Link;
-}>();
+const USER_VISITED_NEW_RESOURCE_PAGE = 'USER_VISITED_NEW_RESOURCE_PAGE'
 
-const route = useRoute();
-const isVisited = useStorage<boolean | string>(USER_VISITED_NEW_RESOURCE_PAGE, false);
-const isNewPage = (item: Link) => item.activeMatch === "/some_fake_path/";
+const props = defineProps<{
+  item: Link
+}>()
+
+const route = useRoute()
+
+const isVisited = useStorage<boolean | string>(USER_VISITED_NEW_RESOURCE_PAGE, false)
+
+const targetLink = ''
+
+const isNewPage = (item: Link) => item.activeMatch === '/some_fake_path/'
 
 const onNavClick = (item: Link) => {
   if (isNewPage(item) && !isVisited.value) {
-    isVisited.value = Date.now().toString();
+    isVisited.value = Date.now().toString()
   }
-};
+}
 </script>
 
 <template>
   <VPLink
     :class="{
       'is-menu-link': true,
-      active: isActiveLink(route, item.activeMatch || item.link, !!item.activeMatch),
+      active: isActive(route.data.relativePath, item.activeMatch || item.link, !!item.activeMatch),
     }"
-    :href="item.link"
+    :href="targetLink"
     :no-icon="true"
     @click="onNavClick(item)"
   >
@@ -68,7 +66,7 @@ const onNavClick = (item: Link) => {
     vertical-align: unset;
   }
 
-  .badge :deep(.is-dot) {
+  .badge:deep(.is-dot) {
     right: 0;
   }
 }

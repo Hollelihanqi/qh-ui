@@ -2,10 +2,13 @@ import { defineConfig, ConfigEnv, UserConfig, loadEnv } from 'vite'
 import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import prismjs from 'vite-plugin-prismjs'
 import UnoCSS from 'unocss/vite'
 import { MarkdownTransform } from './.vitepress/plugins/markdown-transform'
 import VueMacros from 'unplugin-vue-macros/vite'
+import Icons from 'unplugin-icons/vite'
+import Components from 'unplugin-vue-components/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 //主要用于在本地开发环境中创建和管理 HTTPS 证书。
 // import mkcert from "vite-plugin-mkcert";
@@ -35,6 +38,12 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         transformOn: true,
         mergeProps: true,
       }),
+      Components({
+        resolvers: [
+          IconsResolver(),
+        ],
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      }),
       AutoImport({
         ignore: ['h'], //解决h报错
         imports: ['vue'],
@@ -47,8 +56,12 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           vueJsx: vueJsx(),
         },
       }),
+      Icons({
+        autoInstall: true,
+      }),
       // mkcert(),
-      UnoCSS()
+      UnoCSS(),
+      groupIconVitePlugin()
     ],
     server: {
       hmr: {

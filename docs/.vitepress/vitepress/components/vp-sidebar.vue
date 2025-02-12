@@ -8,6 +8,7 @@ defineEmits(['close'])
 
 // const isHome = useIsHome()
 const { sidebars, hasSidebar } = useSidebar()
+
 </script>
 
 <template>

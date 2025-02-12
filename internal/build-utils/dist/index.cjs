@@ -2,14 +2,20 @@
 
 const fs = require('fs');
 const promises = require('fs/promises');
+const node_process = require('node:process');
+const consola = require('consola');
 const path = require('path');
 const findWorkspacePackages = require('@pnpm/find-workspace-packages');
 
 const writeJson = (path, data, spaces = 0) => promises.writeFile(path, JSON.stringify(data, void 0, spaces), "utf-8");
 const ensureDir = async (path) => {
-  if (!fs.existsSync(path))
-    await promises.mkdir(path, { recursive: true });
+  if (!fs.existsSync(path)) await promises.mkdir(path, { recursive: true });
 };
+
+function errorAndExit(err) {
+  consola.consola.error(err);
+  node_process.exit(1);
+}
 
 const projRoot = path.resolve(__dirname, "..", "..", "..");
 const pkgRoot = path.resolve(projRoot, "packages");
@@ -65,6 +71,7 @@ exports.docPackage = docPackage;
 exports.docRoot = docRoot;
 exports.docsDirName = docsDirName;
 exports.ensureDir = ensureDir;
+exports.errorAndExit = errorAndExit;
 exports.excludeFiles = excludeFiles;
 exports.getPackageDependencies = getPackageDependencies;
 exports.getPackageManifest = getPackageManifest;

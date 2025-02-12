@@ -4,24 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "docs:sidebar": "tsx scripts/generate-sidebar.ts",
+    "docs:sidebar2": "tsx scripts/generate-sidebar2.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@docsearch/react": "^3.1.0",
+    "@iconify-json/ri": "^1.2.5",
+    "@mdit-vue/shared": "^2.1.3",
     "@shikijs/markdown-it": "^1.22.0",
     "@types/markdown-it": "^12.2.3",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "chalk": "^4.1.2",
+    "consola": "^3.3.3",
     "escape-html": "^1.0.3",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
     "prismjs": "^1.28.0",
+    "tiny-glob": "^0.2.9",
     "unocss": "0.61.5",
     "unplugin-auto-import": "^0.16.6",
+    "unplugin-icons": "^22.0.0",
     "unplugin-vue-macros": "^0.11.2",
     "vite": "^6.0.11",
     "vite-plugin-mkcert": "^1.7.2",
@@ -34,14 +42,13 @@
     "@highlightjs/vue-plugin": "^2.1.0",
     "@vue/shared": "^3.2.37",
     "@yto/custom": "link:../dist/yto-custom",
-    "consola": "^3.2.3",
-    "fast-glob": "^3.2.11",
     "fs": "0.0.1-security",
     "highlight.js": "^11.10.0",
     "markdown-it": "^14.1.0",
     "markdown-it-container": "^3.0.0",
     "normalize.css": "3.0.3",
     "nprogress": "^0.2.0",
-    "prism-theme-vars": "^0.2.3"
+    "prism-theme-vars": "^0.2.3",
+    "vitepress-plugin-group-icons": "^1.3.5"
   }
 }

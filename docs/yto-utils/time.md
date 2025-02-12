@@ -1,3 +1,9 @@
+---
+title: 时间转换
+---
+
+# 时间
+
 ### 将数值类型时间换为 xx 天 xx 小时 xx 分钟 xx 秒 xx 毫秒
 
 ```typescript

@@ -3,7 +3,10 @@ import { mdPlugin } from './plugins'
 import type { UserConfig } from 'vitepress'
 import { nav } from './nav'
 import { sidebars } from './sidebars'
+// import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
+
+console.log('sidebars________123131', sidebars)
 // https://vitepress.dev/reference/site-config
 const config: UserConfig = {
   title: "技术平台部",
@@ -21,7 +24,7 @@ const config: UserConfig = {
     headers: {
       level: [2, 3, 4, 5, 6],
     },
-    config: (md) => mdPlugin(md),
+    config: (md) => mdPlugin(md)
   },
   vue: {
     template: {
