@@ -5,9 +5,9 @@
   </div>
   <div class="p-4">
     <h3>调整尺寸</h3>
-    <yto-c-empty size="large"> </yto-c-empty>
-    <yto-c-empty size="small"> </yto-c-empty>
-    <yto-c-empty size="mini"> </yto-c-empty>
+    <yto-empty size="large"> </yto-empty>
+    <yto-empty size="small"> </yto-empty>
+    <yto-empty size="mini"> </yto-empty>
     <h3>自定义大小</h3>
     <yto-empty size="small" :small-size="{ width: '300px', height: '150px' }"> </yto-empty>
   </div>

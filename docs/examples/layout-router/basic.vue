@@ -1,9 +1,8 @@
 <template>
   <div class="wrapper">
-    <img :src="demoImg" alt="" />
+    <img src="./demo.jpg" alt="" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import demoImg from './demo.jpg'
 </script>

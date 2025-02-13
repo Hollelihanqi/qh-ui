@@ -31,11 +31,11 @@ title: SearchForm 搜索表单
 
 | 属性名 | 说明                          | 类型   | 默认值 |
 | ------ | ----------------------------- | ------ | ------ |
-| xs     | width < 768                   | Number | 1      |
-| sm     | width >= 768 && width < 992   | Number | 2      |
-| md     | width >= 992 && width < 1200  | Number | 2      |
-| lg     | width >= 1200 && width < 1920 | Number | 3      |
-| xl     | width >= 1920                 | Number | 4      |
+| xs     | `width < 768`                   | Number | 1      |
+| sm     | `width >= 768 && width < 992`   | Number | 2      |
+| md     | `width >= 992 && width < 1200`  | Number | 2      |
+| lg     | `width >= 1200 && width < 1920` | Number | 3      |
+| xl     | `width >= 1920`                 | Number | 4      |
 
 ### FormControlsItem 属性
 

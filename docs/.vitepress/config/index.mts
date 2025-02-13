@@ -6,7 +6,6 @@ import { sidebars } from './sidebars'
 // import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 
-console.log('sidebars________123131', sidebars)
 // https://vitepress.dev/reference/site-config
 const config: UserConfig = {
   title: "技术平台部",

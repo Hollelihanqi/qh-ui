@@ -6,21 +6,15 @@
 -->
 <template>
   <div class="p-4">
-    <yto-c-custom-field-container
-      v-model="dataList"
-      width="50%"
-      :term-hidden-del="false"
-      @add="onAdd"
-      @delete="onDelete"
-    >
+    <yto-custom-field-container v-model="dataList" width="50%" :term-hidden-del="false" @add="onAdd" @delete="onDelete">
       <template #prepend>{{ '前置插槽' }}</template>
       <template #content="{ index }">
-        <yto-c-custom-field-config
+        <yto-custom-field-config
           v-model="dataList[index]"
           :field-config="fieldConfig"
           :operator-config="operatorConfig"
           :value-config="valueConfig"
-        ></yto-c-custom-field-config>
+        ></yto-custom-field-config>
       </template>
       <template #append>
         <div class="flex-1 w-0 flex items-center justify-end min-w-[180px]">
@@ -28,7 +22,7 @@
           <el-button size="mini" type="primary">搜索</el-button>
         </div>
       </template>
-    </yto-c-custom-field-container>
+    </yto-custom-field-container>
   </div>
 </template>
 <script setup lang="ts">

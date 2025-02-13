@@ -5,7 +5,6 @@ import matter from 'gray-matter'
 import { fileURLToPath } from 'url'
 import { consola } from 'consola'
 import { exit } from 'process'
-import fg from 'fast-glob'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -22,7 +21,7 @@ interface Config {
 const config: Config = {
   docsDir: path.resolve(__dirname, '../'),
   outputFile: path.resolve(__dirname, '../.vitepress/config/sidebarscg.json'),
-  include: ['components', 'guide', 'others', 'yto-utils'],
+  include: ['guide', 'components', 'others', 'yto-utils'],
 }
 
 interface SidebarItem {
@@ -79,34 +78,34 @@ async function getDirTitle(dirPath: string): Promise<string> {
 // 生成 sidebar 配置
 async function genreateSidebar(): Promise<SidebarConfig> {
   const sidebar: SidebarConfig = {}
+  
+  // 按顺序处理每个目录
+  for (const dir of config.include) {
+    const dirPath = path.join(config.docsDir, dir)
+    try {
+      // 检查目录是否存在
+      await fsPromises.access(dirPath)
+    } catch (error) {
+      consola.warn(`目录不存在：${dir}`)
+      continue
+    }
+    
+    const mdFiles = await getMdFiles(dirPath)
+    const validFiles = mdFiles.filter((file) => file !== 'index.md')
+    if (validFiles.length > 0) {
+      const items = await Promise.all(
+        validFiles.map(async (file) => ({
+          text: await getTitle(path.join(dirPath, file)),
+          link: `/${path.basename(file, '.md')}`,
+        })),
+      )
 
-  await Promise.all(
-    config.include.map(async (dir) => {
-      const dirPath = path.join(config.docsDir, dir)
-      try {
-        // 检查目录是否存在
-        await fsPromises.access(dirPath)
-      } catch (error) {
-        consola.warn(`目录不存在：${dir}`)
-        return
+      sidebar[`${dir}`] = {
+        text: await getDirTitle(dirPath),
+        items: items.sort((a, b) => a.text.localeCompare(b.text)),
       }
-      const mdFiles = await getMdFiles(dirPath)
-      const validFiles = mdFiles.filter((file) => file !== 'index.md')
-      if (validFiles.length > 0) {
-        const items = await Promise.all(
-          validFiles.map(async (file) => ({
-            text: await getTitle(path.join(dirPath, file)),
-            link: `${path.basename(file, '.md')}`,
-          })),
-        )
-
-        sidebar[`${dir}`] = {
-          text: await getDirTitle(dirPath),
-          items: items.sort((a, b) => a.text.localeCompare(b.text)),
-        }
-      }
-    }),
-  )
+    }
+  }
 
   return sidebar
 }
@@ -143,6 +142,6 @@ async function main() {
 }
 
 // 运行脚本
-;(async () => {
+; (async () => {
   await main()
 })()

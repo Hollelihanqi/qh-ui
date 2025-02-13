@@ -1,6 +1,6 @@
 <template>
   <div class="p-4">
-    <yto-c-custom-field-container :direction="'vertical'" v-model="dataList" @add="onAdd" @delete="onDelete">
+    <yto-custom-field-container :direction="'vertical'" v-model="dataList" @add="onAdd" @delete="onDelete">
       <template #prepend>
         <div class="w-[1px] my-2 mr-4 bg-primary relative">
           <div
@@ -12,14 +12,14 @@
         </div>
       </template>
       <template #content="{ index }">
-        <yto-c-custom-field-config
+        <yto-custom-field-config
           v-model="dataList[index]"
           :fieldConfig="fieldConfig"
           :operatorConfig="operatorConfig"
           :valueConfig="valueConfig"
-        ></yto-c-custom-field-config>
+        ></yto-custom-field-config>
       </template>
-    </yto-c-custom-field-container>
+    </yto-custom-field-container>
   </div>
 </template>
 <script setup lang="ts">

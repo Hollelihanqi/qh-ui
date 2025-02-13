@@ -6,33 +6,33 @@
 -->
 <template>
   <div class="p-4">
-    <yto-c-custom-field-container :direction="'vertical'" v-model="dataList" @add="onAdd" @delete="onDelete">
+    <yto-custom-field-container :direction="'vertical'" v-model="dataList" @add="onAdd" @delete="onDelete">
       <template #content="{ index }">
-        <yto-c-custom-field-config
+        <yto-custom-field-config
           v-model="dataList[index]"
           :fieldConfig="fieldConfig"
           :operatorConfig="operatorConfig"
           :valueConfig="valueConfig"
-        ></yto-c-custom-field-config>
+        ></yto-custom-field-config>
       </template>
       <template #btnAppend>
         <el-button :icon="Share" link></el-button>
       </template>
-    </yto-c-custom-field-container>
+    </yto-custom-field-container>
 
-    <yto-c-custom-field-container :direction="'vertical'" v-model="dataList" @add="onAdd" @delete="onDelete">
+    <yto-custom-field-container :direction="'vertical'" v-model="dataList" @add="onAdd" @delete="onDelete">
       <template #content="{ index }">
-        <yto-c-custom-field-config
+        <yto-custom-field-config
           v-model="dataList[index]"
           :fieldConfig="fieldConfig"
           :operatorConfig="operatorConfig"
           :valueConfig="valueConfig"
-        ></yto-c-custom-field-config>
+        ></yto-custom-field-config>
       </template>
       <template #btn>
         <el-button class="ml-2" :icon="Share" link></el-button>
       </template>
-    </yto-c-custom-field-container>
+    </yto-custom-field-container>
   </div>
 </template>
 <script setup lang="ts">
