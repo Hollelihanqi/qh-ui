@@ -36,11 +36,7 @@ export default defineComponent({
     }
     const rowRender = () => {
       const _domConfigs = ['fieldConfig', 'operatorConfig', 'valueConfig']
-      return (
-        <div class="custom-field-config-row w-full flex items-center border">
-          {_domConfigs.map((e) => itemRender(e))}
-        </div>
-      )
+      return <div class="custom-field-config-row w-full flex items-center">{_domConfigs.map((e) => itemRender(e))}</div>
     }
 
     return () => (

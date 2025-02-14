@@ -20,18 +20,18 @@ descriptions/border
 
 ### Descriptions 属性
 
-| 属性名          | 说明                       | 类型             | 可选值           | 默认值    |
-| --------------- | -------------------------- | ---------------- | ---------------- | --------- |
-| list            | 字段列表                   | <ListProps>Array | —                | []        |
-| data            | 数据源                     | Object           | —                | {}        |
-| span            | 字段所占宽度，最大 24      | Number           | 1-24             | 8         |
-| labelWidth      | 字段名称宽度               | String           | —                | "auto"    |
-| labelAlign      | 对齐方式                   | String           | "text-align:xxx" | "left"    |
-| labelSuffixHide | 是否隐藏字段后面的冒号 `:` | Boolean          | true/false       | false     |
-| border          | 是否有边框                 | Boolean          | true/false       | false     |
-| labelColor      | 字段名称颜色               | String           | —                | "#262626" |
-| valueColor      | 字段值颜色                 | String           | —                | "#595959" |
-| lineHeight      | 行高                       | String           | —                | "26px"    |
+| 属性名          | 说明                     | 类型               | 可选值           | 默认值    |
+| --------------- | ------------------------ | ------------------ | ---------------- | --------- |
+| list            | 字段列表                 | `<ListProps>Array` | —                | `[]`      |
+| data            | 数据源                   | Object             | —                | `{}`      |
+| span            | 字段所占宽度，最大 24    | Number             | `1-24`           | `8`       |
+| labelWidth      | 字段名称宽度             | String             | —                | "auth"    |
+| labelAlign      | 对齐方式                 | String             | "text-align:xxx" | "left"    |
+| labelSuffixHide | 是否隐藏字段后面的冒 `:` | Boolean            | true/false       | false     |
+| border          | 是否有边框               | Boolean            | true/false       | false     |
+| labelColor      | 字段名称颜色             | String             | —                | "#262626" |
+| valueColor      | 字段值颜色               | String             | —                | "#595959" |
+| lineHeight      | 行高                     | String             | —                | "26px"    |
 
 ### ListItem 属性
 

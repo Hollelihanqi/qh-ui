@@ -20,9 +20,7 @@ export const adaptionContainerProps = {
   containerMinWidth: {
     type: Number,
     default: 1,
-  }
-
+  },
 }
-
 
 export type AdaptionContainerProps = ExtractPropTypes<typeof adaptionContainerProps>

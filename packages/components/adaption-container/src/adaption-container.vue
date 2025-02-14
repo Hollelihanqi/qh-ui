@@ -1,6 +1,6 @@
 <template>
   <div class="yto-adaption-container" :style="getStyle()">
-    <template v-for="item in list" :key="index">
+    <template v-for="(item, _index) in list" :key="_index">
       <div class="adapt-card">
         <slot :info="item"></slot>
       </div>

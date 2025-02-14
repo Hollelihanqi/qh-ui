@@ -19,7 +19,19 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const targetDir = resolve(ytoOutput, 'theme-chalk')
 
 async function mergeCssFiles(distPath: string): Promise<void> {
+  // 获取所有的组件名称（通过某种方式，这里需要您提供组件列表）
+  const components = getComponentNames()
+
   const cssFiles = readdirSync(distPath).filter((file) => file.endsWith('.css'))
+
+  // 为没有样式文件的组件创建空的 CSS 文件
+  for (const component of components) {
+    const cssFileName = `${component}.css`
+    if (!cssFiles.includes(cssFileName)) {
+      writeFileSync(resolve(distPath, cssFileName), '', 'utf-8')
+      cssFiles.push(cssFileName)
+    }
+  }
 
   const cssMap = cssFiles.reduce((map, file) => {
     const baseName = file.replace(/\d*\.css$/, '.css')
@@ -39,6 +51,19 @@ async function mergeCssFiles(distPath: string): Promise<void> {
   for (const [fileName, content] of cssMap.entries()) {
     writeFileSync(resolve(distPath, fileName), content, 'utf-8')
   }
+}
+
+// 获取所有组件名称的函数
+function getComponentNames(): string[] {
+  const indexPath = resolve(__dirname, '../../components/index.ts')
+  const content = readFileSync(indexPath, 'utf-8')
+
+  // 匹配所有 export * from './xxx' 的组件名
+  const componentMatches = content.matchAll(/export \* from '\.\/([^']+)'/g)
+
+  return Array.from(componentMatches)
+    .map((match) => match[1])
+    .map((name) => `yto-${name}`)
 }
 
 export default function myMergeCssPlugin(): PluginOption {

@@ -1,13 +1,13 @@
 <template>
-  <div class="echart-container" :style="__style">
-    <div :id="containerId" v-resize-element="resizeHandler" :style="__style"></div>
+  <div class="echart-container-w" :style="__style">
+    <div ref="echartContainer" v-resize-element="resizeHandler" :style="__style"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { computed, watch, onActivated, onMounted, onUnmounted } from 'vue'
+import { computed, watch, onActivated, onMounted, onUnmounted, ref } from 'vue'
 import * as echarts from 'echarts'
-import { guid, debounceFun } from '@yto/utils'
+import { debounceFun } from '@yto/utils'
 import { ResizeElement as vResizeElement } from '@yto-custom/directives'
 interface Props {
   echartId?: string
@@ -30,6 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
   },
 })
 
+const echartContainer = ref()
 const __style = computed(() => {
   return {
     height: `${props.height}px`,
@@ -38,10 +39,6 @@ const __style = computed(() => {
 })
 const emits = defineEmits(['chart-click'])
 let myChart: any | null
-
-const containerId = computed(() => {
-  return props.echartId || `baseChart_${guid()}`
-})
 
 /**
  * @description: 图形加载动画
@@ -70,8 +67,8 @@ const showLoading = () => {
  * @return {*}
  */
 const initChart = () => {
-  const container: any = document.querySelector(`#${containerId.value}`)
-  myChart = echarts.init(container)
+  if (!echartContainer.value) return
+  myChart = echarts.init(echartContainer.value)
   myChart.on('click', (params: any) => {
     emits('chart-click', params)
   })

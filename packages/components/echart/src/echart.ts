@@ -8,7 +8,7 @@ export const echartProps = buildProps({
   },
   optins: {
     type: Object as PropType<any>,
-    default: () => { },
+    default: () => ({}),
   },
   width: {
     type: String,
@@ -17,7 +17,7 @@ export const echartProps = buildProps({
   height: {
     type: String,
     default: '400px',
-  }
+  },
 })
 
 export const echartEmits = []

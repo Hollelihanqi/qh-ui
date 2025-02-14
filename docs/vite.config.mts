@@ -8,7 +8,9 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
-import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { YtoCustomResolver } from '@yto/custom/resolvers'
 
 //主要用于在本地开发环境中创建和管理 HTTPS 证书。
 // import mkcert from "vite-plugin-mkcert";
@@ -41,12 +43,18 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       Components({
         resolvers: [
           IconsResolver(),
+          ElementPlusResolver({
+            // importStyle: 'sass',
+            directives: true,
+          }),
+          YtoCustomResolver(),
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       }),
       AutoImport({
         ignore: ['h'], //解决h报错
         imports: ['vue'],
+        resolvers: [ElementPlusResolver()],
       }),
       MarkdownTransform(),
       VueMacros({

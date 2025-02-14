@@ -1,4 +1,4 @@
-.custom-field-config-row {
+.yto-custom-field-config {
   .el-select-v2__wrapper,
   .el-input__inner,
   .el-input__wrapper.is-focus,
@@ -10,22 +10,25 @@
   .el-select {
     --el-select-input-focus-border-color: transparent;
   }
-}
-.el-form-item {
-  margin-bottom: 0px !important;
-}
-.is-error {
+  .el-form-item {
+    margin-bottom: 0px !important;
+  }
+  .is-error {
+    .custom-field-config-row {
+      border: 1px solid #f00;
+    }
+  }
+  .is-error {
+    & {
+      border-color: red !important;
+    }
+  }
+  .value-view {
+    .el-input__inner {
+      text-align: right;
+    }
+  }
   .custom-field-config-row {
-    border: 1px solid #f00;
-  }
-}
-.is-error {
-  & {
-    border-color: red !important;
-  }
-}
-.value-view {
-  .el-input__inner {
-    text-align: right;
+    border: 1px solid #e5e7eb;
   }
 }

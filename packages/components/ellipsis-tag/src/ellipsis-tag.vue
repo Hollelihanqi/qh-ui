@@ -11,7 +11,7 @@
         </template>
       </div>
     </div>
-    <el-popover popper-class="ellipsis-tag-popover" placement="top-end" :width="360" trigger="hover" v-bind="$attrs">
+    <ElPopover popper-class="ellipsis-tag-popover" placement="top-end" :width="360" trigger="hover" v-bind="$attrs">
       <template #default>
         <div class="tag-box">
           <template v-for="(tag, index) in tags">
@@ -26,20 +26,21 @@
       <template #reference>
         <slot name="ellipsis">
           <div v-show="shoEllipsis" class="ellipsis">
-            <el-icon>
+            <ElIcon>
               <MoreFilled />
-            </el-icon>
+            </ElIcon>
           </div>
         </slot>
       </template>
-    </el-popover>
+    </ElPopover>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref, watch, nextTick } from 'vue'
+import { ElIcon, ElPopover } from 'element-plus'
+import { MoreFilled } from '@element-plus/icons-vue'
 import { ellipsisTagProps, ResizeInfo } from './ellipsis-tag'
 import { debounceFun } from '@yto/utils'
-import { MoreFilled } from '@element-plus/icons-vue'
 import { ResizeElement as vResizeElement } from '@yto-custom/directives'
 
 defineOptions({

@@ -18,8 +18,8 @@
       </template>
       <template #append>
         <div class="flex-1 w-0 flex items-center justify-end min-w-[180px]">
-          <el-button size="mini">重置</el-button>
-          <el-button size="mini" type="primary">搜索</el-button>
+          <el-button size="small">重置</el-button>
+          <el-button size="small" type="primary">搜索</el-button>
         </div>
       </template>
     </yto-custom-field-container>
