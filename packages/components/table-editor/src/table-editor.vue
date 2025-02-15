@@ -40,6 +40,7 @@
   </ElTable>
 </template>
 <script lang="ts" setup>
+import BaseItem from './components/BaseItem.vue'
 import { ElTable, ElTableColumn, ElFormItem } from 'element-plus'
 import { tableEditorProps, tableEditorEmits, IColumn, ITableEditorAnyObject } from './table-editor'
 

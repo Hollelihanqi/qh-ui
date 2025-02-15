@@ -18,10 +18,6 @@ table-editor/valid
 
 ## 表单验证-结合yto-form使用
 
-:::demo
-table-editor/yform
-:::
-
 ## 只读，禁用，隐藏
 
 :::demo

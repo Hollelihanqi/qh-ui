@@ -14,9 +14,12 @@ const props = defineProps<{
 
 const route = useRoute()
 
-const isVisited = useStorage<boolean | string>(USER_VISITED_NEW_RESOURCE_PAGE, false)
+const isVisited = useStorage<boolean | string>(
+  USER_VISITED_NEW_RESOURCE_PAGE,
+  false
+)
 
-const targetLink = ''
+// const targetLink = usePlaygroundPreview(props)
 
 const isNewPage = (item: Link) => item.activeMatch === '/some_fake_path/'
 
@@ -31,13 +34,19 @@ const onNavClick = (item: Link) => {
   <VPLink
     :class="{
       'is-menu-link': true,
-      active: isActive(route.data.relativePath, item.activeMatch || item.link, !!item.activeMatch),
+      active: isActive(
+        route.data.relativePath,
+        item.activeMatch || item.link,
+        !!item.activeMatch
+      ),
     }"
-    :href="targetLink"
+    :href="item.link"
     :no-icon="true"
     @click="onNavClick(item)"
   >
-    <el-badge v-if="isNewPage(item) && !isVisited" is-dot class="badge"> {{ item.text }}</el-badge>
+    <el-badge v-if="isNewPage(item) && !isVisited" is-dot class="badge">
+      {{ item.text }}</el-badge
+    >
     <template v-else> {{ item.text }}</template>
   </VPLink>
 </template>

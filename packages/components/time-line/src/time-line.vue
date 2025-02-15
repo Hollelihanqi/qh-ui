@@ -3,21 +3,21 @@
     <div v-for="(item, index) in props.timeData" :key="'timer' + index" class="flex w-full time-line-item">
       <slot name="prepend" :item="item">
         <div
-          v-if="item[propsConfig.status || 'status']"
+          v-if="getItemValue(item, 'status')"
           :style="`width: ${props.prependWidth}`"
           class="relative -top-1 flex justify-end"
         >
-          <div class="time-line-status">{{ item[propsConfig.status || 'status'] }}</div>
+          <div class="time-line-status">{{ getItemValue(item, 'status') }}</div>
         </div>
       </slot>
       <div class="relative ml-4 flex-1 border-l-1 time-border cus-line">
         <div class="min-h-[32px] px-4 relative -top-1">
           <slot :item="item">
-            <div v-if="item[propsConfig.timestamp || 'timestamp']" class="mb-2">
-              {{ item[propsConfig.timestamp || 'timestamp'] }}
+            <div v-if="getItemValue(item, 'timestamp')" class="mb-2">
+              {{ getItemValue(item, 'timestamp') }}
             </div>
-            <div v-if="item[propsConfig.content || 'content']" class="time-line-item-content">
-              {{ item[propsConfig.content || 'content'] }}
+            <div v-if="getItemValue(item, 'content')" class="time-line-item-content">
+              {{ getItemValue(item, 'content') }}
             </div>
           </slot>
         </div>
@@ -41,4 +41,10 @@ defineOptions({
 
 const props = defineProps(timeLineProps)
 const emit = defineEmits(timeLineEmits)
+
+// 安全地获取item的值
+const getItemValue = (item: any, key: string) => {
+  const configKey = props.propsConfig[key] || key
+  return item[configKey]
+}
 </script>

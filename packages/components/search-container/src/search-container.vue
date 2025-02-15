@@ -6,7 +6,7 @@
     :style="containerStyle"
     @keyup.enter="handleEnterKeyup"
   >
-    <el-form
+    <ElForm
       v-if="isUseForm"
       ref="formInstance"
       v-resize-element="handleResize"
@@ -18,7 +18,7 @@
       <div class="flex-1 text-right container-operation">
         <slot name="operation"></slot>
       </div>
-    </el-form>
+    </ElForm>
     <div v-else v-resize-element="handleResize" class="container-content flex flex-wrap w-full">
       <slot></slot>
       <div class="flex-1 text-right container-operation">
@@ -30,19 +30,18 @@
       class="bg-[#F7F9FA] w-[32px] h-[16px] flex items-center justify-center cursor-pointer container-collapse text-[12px] absolute bottom-0 left-[50%] ml-[-16px]"
       @click="handleCollapse"
     >
-      <el-icon :style="`transform: rotate(${collapse ? 90 : -90}deg)`">
+      <ElIcon :style="`transform: rotate(${collapse ? 90 : -90}deg)`">
         <DArrowRight />
-      </el-icon>
-      <!-- {{ collapse ? `展开` : "折叠" }} -->
+      </ElIcon>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
+import { ElForm,ElIcon } from 'element-plus'
 import { searchContainerProps, searchContainerEmits } from './search-container'
 import { ResizeElement as vResizeElement } from '@yto-custom/directives'
 import { guid } from '@yto/utils'
 import { DArrowRight } from '@element-plus/icons-vue'
-import { logger } from '@yto-custom/utils'
 import { ref, computed, nextTick, onMounted,unref } from 'vue'
 
 defineOptions({
@@ -70,7 +69,6 @@ const setContainerMaxMinHeight = (maxHeight = 0, minHeight = 0) => {
 }
 const handleResize = (info: any, forceUpdate = false) => {
   if ((!props.itemMinWidth || !info.width || prevWidth == info.width) && !forceUpdate) return
-  logger('search-container-handleResize', info)
   prevWidth = info.width
   let num = Math.floor(info.width / props.itemMinWidth) // 每行显示数量
   const tmpItemWidth = info.width / num
@@ -179,13 +177,11 @@ const dealCollapse = (lineNum: number, childrenNodes?: HTMLCollection) => {
     }
   })
   setContainerMaxMinHeight(tmpMaxHeight, tmpMinHeight)
-  logger('containerRowMaxHeight', rowHeightObj, tmpMaxHeight, tmpMinHeight)
 
   setTimeout(() => {
     //判断是否显示折叠按钮
     showCollapse.value = row > props.collapseLine
     if (unref(showCollapse) && unref(collapse)) hiddenLastEl(childrenNodes)
-    logger('内部元素共显示了大致', row, '行（不包含最后一行可能未满的情况）', showCollapse.value)
     //如果开启了默认折叠 超过最大行数则自动折叠
     if (props.defaultCollapse && unref(showCollapse)) {
       doCollapse(childrenNodes)
@@ -223,7 +219,6 @@ const handleCollapse = () => {
 const handleContainerStyle = () => {
   if (!props.isCollapse) return
   const containerEl: any = document.querySelector(`#${containerId.value}`)
-  logger('handleContainerStyle', unref(containerMinHeight), unref(containerMaxHeight))
   if (unref(containerMinHeight) === unref(containerMaxHeight)) {
     if (unref(containerMinHeight) == 0) {
       return
@@ -243,7 +238,6 @@ const handleContainerStyle = () => {
 const containerStyle = computed(handleContainerStyle)
 //处理keyupEnter事件
 const handleEnterKeyup = () => {
-  logger('search-container inner enter keyup')
   emit('enterKeyup')
 }
 const observeChildList = (el: HTMLElement) => {
@@ -252,8 +246,6 @@ const observeChildList = (el: HTMLElement) => {
     for (let mutation of mutationsList) {
       if (mutation.type === 'childList') {
         // 在这里可以访问到变化后的子元素
-        logger('新增子元素', mutation.addedNodes) // 新增的节点
-        logger('删除子元素', mutation.removedNodes) // 删除的节点
         setOrgElDisplay(el.children)
         handleResize({ width: el.offsetWidth }, true)
       }

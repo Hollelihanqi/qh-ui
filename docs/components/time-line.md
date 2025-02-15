@@ -24,15 +24,15 @@ time-line/custom
 
 ## API
 
-### 属性
+### TimeLine 属性
 
-| 属性名       | 说明             | 类型   | 默认值                                                           |
-| ------------ | ---------------- | ------ | ---------------------------------------------------------------- |
-| timeData     | 时间线数据       | Array  | []                                                               |
-| prependWidth | 左侧区域宽度     | string | '88px'                                                           |
-| propsConfig  | 数据字段映射配置 | Object | { status: 'status', timestamp: 'timestamp', content: 'content' } |
+| 属性名       | 说明             | 类型   | 默认值 |
+| ------------ | ---------------- | ------ | ------ |
+| timeData     | 时间线数据       | Array  | []     |
+| prependWidth | 左侧区域宽度     | string | '88px' |
+| propsConfig  | 数据字段映射配置 | Object | --     |
 
-### 插槽
+### TimeLine 插槽
 
 | 插槽名  | 说明           |
 | ------- | -------------- |

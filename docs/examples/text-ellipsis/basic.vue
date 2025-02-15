@@ -1,5 +1,5 @@
 <template>
-  <yto-c-text-ellipsis :content="text" />
+  <yto-text-ellipsis :content="text" />
 </template>
 <script lang="tsx">
 export default {

@@ -13,7 +13,7 @@ export const radioProps = buildProps({
     default: () => [],
   },
   modelValue: {
-    type: String,
+    type: [String, Number, Boolean],
     default: '',
   },
   value: {

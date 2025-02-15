@@ -1,439 +1,313 @@
 {
-  "hash": "62299516",
-  "configHash": "509146fb",
+  "hash": "08912a39",
+  "configHash": "3d2d9f61",
   "lockfileHash": "467f9ca7",
-  "browserHash": "abb672d3",
+  "browserHash": "6b072e8d",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.5.13_typescript@5.5.4/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "08ecf877",
+      "fileHash": "0ad39a0f",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.7.1/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "902ac456",
+      "fileHash": "6848c43e",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@12.5.0_typescript@5.6.3/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "c0bac09f",
-      "needsInterop": false
-    },
-    "element-plus": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/index.mjs",
-      "file": "element-plus.js",
-      "fileHash": "480ef71c",
+      "fileHash": "73fc7644",
       "needsInterop": false
     },
     "nprogress": {
       "src": "../../../../node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js",
       "file": "nprogress.js",
-      "fileHash": "57c9c394",
+      "fileHash": "42e8e7a5",
       "needsInterop": true
     },
     "@vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@12.4.0_typescript@5.5.4/node_modules/@vueuse/core/index.mjs",
       "file": "@vueuse_core.js",
-      "fileHash": "49d06f10",
+      "fileHash": "a8ccb428",
       "needsInterop": false
-    },
-    "@vue/shared": {
-      "src": "../../../../node_modules/.pnpm/@vue+shared@3.5.13/node_modules/@vue/shared/dist/shared.esm-bundler.js",
-      "file": "@vue_shared.js",
-      "fileHash": "b43966ac",
-      "needsInterop": false
-    },
-    "@element-plus/icons-vue": {
-      "src": "../../../../node_modules/.pnpm/@element-plus+icons-vue@2.3.1_vue@3.5.13_typescript@5.5.4_/node_modules/@element-plus/icons-vue/dist/index.js",
-      "file": "@element-plus_icons-vue.js",
-      "fileHash": "aafe914a",
-      "needsInterop": false
-    },
-    "lodash-unified": {
-      "src": "../../../../node_modules/.pnpm/lodash-unified@1.0.3_@types+lodash-es@4.17.12_lodash-es@4.17.21_lodash@4.17.21/node_modules/lodash-unified/import.js",
-      "file": "lodash-unified.js",
-      "fileHash": "07f5a31f",
-      "needsInterop": false
-    },
-    "gold-core": {
-      "src": "../../../../node_modules/.pnpm/gold-core@0.1.17/node_modules/gold-core/dist/index.js",
-      "file": "gold-core.js",
-      "fileHash": "8d3ce512",
-      "needsInterop": false
-    },
-    "vue-router": {
-      "src": "../../../../node_modules/.pnpm/vue-router@4.4.5_vue@3.5.13_typescript@5.5.4_/node_modules/vue-router/dist/vue-router.mjs",
-      "file": "vue-router.js",
-      "fileHash": "121077f6",
-      "needsInterop": false
-    },
-    "element-plus/es/components/loading/src/directive": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/loading/src/directive.mjs",
-      "file": "element-plus_es_components_loading_src_directive.js",
-      "fileHash": "36cb79e1",
-      "needsInterop": false
-    },
-    "immutable": {
-      "src": "../../../../node_modules/.pnpm/immutable@4.3.7/node_modules/immutable/dist/immutable.es.js",
-      "file": "immutable.js",
-      "fileHash": "dff08eda",
-      "needsInterop": false
-    },
-    "markdown-it": {
-      "src": "../../../../node_modules/.pnpm/markdown-it@14.1.0/node_modules/markdown-it/index.mjs",
-      "file": "markdown-it.js",
-      "fileHash": "a860e9d8",
-      "needsInterop": false
-    },
-    "echarts": {
-      "src": "../../../../node_modules/.pnpm/echarts@5.5.1/node_modules/echarts/index.js",
-      "file": "echarts.js",
-      "fileHash": "9f98a3ad",
-      "needsInterop": false
-    },
-    "axios": {
-      "src": "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.4.0/node_modules/axios/index.js",
-      "file": "axios.js",
-      "fileHash": "e4a0dc8c",
-      "needsInterop": false
-    },
-    "simple-uploader.js": {
-      "src": "../../../../node_modules/.pnpm/simple-uploader.js@0.6.0/node_modules/simple-uploader.js/dist/uploader.js",
-      "file": "simple-uploader__js.js",
-      "fileHash": "2c07727d",
-      "needsInterop": true
-    },
-    "spark-md5": {
-      "src": "../../../../node_modules/.pnpm/spark-md5@3.0.2/node_modules/spark-md5/spark-md5.js",
-      "file": "spark-md5.js",
-      "fileHash": "b033f414",
-      "needsInterop": true
     },
     "element-plus/es": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/index.mjs",
       "file": "element-plus_es.js",
-      "fileHash": "85ce47ec",
-      "needsInterop": false
-    },
-    "element-plus/es/components/base/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/base/style/index.mjs",
-      "file": "element-plus_es_components_base_style_index.js",
-      "fileHash": "b14e6adc",
-      "needsInterop": false
-    },
-    "element-plus/es/components/result/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/result/style/index.mjs",
-      "file": "element-plus_es_components_result_style_index.js",
-      "fileHash": "584971a0",
-      "needsInterop": false
-    },
-    "element-plus/es/components/button/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/button/style/index.mjs",
-      "file": "element-plus_es_components_button_style_index.js",
-      "fileHash": "c29ce7c5",
-      "needsInterop": false
-    },
-    "element-plus/es/components/tooltip/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/tooltip/style/index.mjs",
-      "file": "element-plus_es_components_tooltip_style_index.js",
-      "fileHash": "37ac3a69",
-      "needsInterop": false
-    },
-    "element-plus/es/components/collapse-transition/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/collapse-transition/style/index.mjs",
-      "file": "element-plus_es_components_collapse-transition_style_index.js",
-      "fileHash": "60600138",
-      "needsInterop": false
-    },
-    "element-plus/es/components/icon/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/icon/style/index.mjs",
-      "file": "element-plus_es_components_icon_style_index.js",
-      "fileHash": "fc2a3455",
-      "needsInterop": false
-    },
-    "element-plus/es/components/divider/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/divider/style/index.mjs",
-      "file": "element-plus_es_components_divider_style_index.js",
-      "fileHash": "ae4a9109",
-      "needsInterop": false
-    },
-    "element-plus/es/components/link/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/link/style/index.mjs",
-      "file": "element-plus_es_components_link_style_index.js",
-      "fileHash": "345cd139",
-      "needsInterop": false
-    },
-    "element-plus/es/components/empty/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/empty/style/index.mjs",
-      "file": "element-plus_es_components_empty_style_index.js",
-      "fileHash": "804dc20b",
-      "needsInterop": false
-    },
-    "element-plus/es/components/card/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/card/style/index.mjs",
-      "file": "element-plus_es_components_card_style_index.js",
-      "fileHash": "253f97ea",
-      "needsInterop": false
-    },
-    "element-plus/es/components/text/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/text/style/index.mjs",
-      "file": "element-plus_es_components_text_style_index.js",
-      "fileHash": "ac9f5be8",
-      "needsInterop": false
-    },
-    "element-plus/es/components/tag/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/tag/style/index.mjs",
-      "file": "element-plus_es_components_tag_style_index.js",
-      "fileHash": "a542647c",
-      "needsInterop": false
-    },
-    "element-plus/es/components/input/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/input/style/index.mjs",
-      "file": "element-plus_es_components_input_style_index.js",
-      "fileHash": "51d8d3bc",
-      "needsInterop": false
-    },
-    "element-plus/es/components/scrollbar/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/scrollbar/style/index.mjs",
-      "file": "element-plus_es_components_scrollbar_style_index.js",
-      "fileHash": "94586601",
-      "needsInterop": false
-    },
-    "element-plus/es/components/anchor/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/anchor/style/index.mjs",
-      "file": "element-plus_es_components_anchor_style_index.js",
-      "fileHash": "6c9fc23b",
-      "needsInterop": false
-    },
-    "element-plus/es/components/anchor-link/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/anchor-link/style/index.mjs",
-      "file": "element-plus_es_components_anchor-link_style_index.js",
-      "fileHash": "2a03ff4c",
-      "needsInterop": false
-    },
-    "element-plus/es/components/badge/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/badge/style/index.mjs",
-      "file": "element-plus_es_components_badge_style_index.js",
-      "fileHash": "3af4269d",
-      "needsInterop": false
-    },
-    "element-plus/es/components/switch/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/switch/style/index.mjs",
-      "file": "element-plus_es_components_switch_style_index.js",
-      "fileHash": "dbdbeca4",
-      "needsInterop": false
-    },
-    "element-plus/es/components/date-picker/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/date-picker/style/index.mjs",
-      "file": "element-plus_es_components_date-picker_style_index.js",
-      "fileHash": "5f343f88",
-      "needsInterop": false
-    },
-    "element-plus/es/components/form/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/form/style/index.mjs",
-      "file": "element-plus_es_components_form_style_index.js",
-      "fileHash": "3035e8b3",
-      "needsInterop": false
-    },
-    "element-plus/es/components/form-item/style/index": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/form-item/style/index.mjs",
-      "file": "element-plus_es_components_form-item_style_index.js",
-      "fileHash": "2bc6ec6f",
+      "fileHash": "7b112600",
       "needsInterop": false
     },
     "element-plus/es/components/base/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/base/style/css.mjs",
       "file": "element-plus_es_components_base_style_css.js",
-      "fileHash": "1e205727",
-      "needsInterop": false
-    },
-    "element-plus/es/components/collapse-transition/style/css": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/collapse-transition/style/css.mjs",
-      "file": "element-plus_es_components_collapse-transition_style_css.js",
-      "fileHash": "096cf624",
-      "needsInterop": false
-    },
-    "element-plus/es/components/tooltip/style/css": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/tooltip/style/css.mjs",
-      "file": "element-plus_es_components_tooltip_style_css.js",
-      "fileHash": "f011ebf7",
-      "needsInterop": false
-    },
-    "element-plus/es/components/icon/style/css": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/icon/style/css.mjs",
-      "file": "element-plus_es_components_icon_style_css.js",
-      "fileHash": "faf041a3",
-      "needsInterop": false
-    },
-    "element-plus/es/components/divider/style/css": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/divider/style/css.mjs",
-      "file": "element-plus_es_components_divider_style_css.js",
-      "fileHash": "1ca926fe",
+      "fileHash": "d0a3f3f3",
       "needsInterop": false
     },
     "element-plus/es/components/result/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/result/style/css.mjs",
       "file": "element-plus_es_components_result_style_css.js",
-      "fileHash": "38ce58ca",
+      "fileHash": "b6d987f2",
       "needsInterop": false
     },
     "element-plus/es/components/button/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/button/style/css.mjs",
       "file": "element-plus_es_components_button_style_css.js",
-      "fileHash": "72f36675",
+      "fileHash": "cdad939b",
+      "needsInterop": false
+    },
+    "element-plus/es/components/tooltip/style/css": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/tooltip/style/css.mjs",
+      "file": "element-plus_es_components_tooltip_style_css.js",
+      "fileHash": "bf4e18a3",
+      "needsInterop": false
+    },
+    "@element-plus/icons-vue": {
+      "src": "../../../../node_modules/.pnpm/@element-plus+icons-vue@2.3.1_vue@3.5.13_typescript@5.5.4_/node_modules/@element-plus/icons-vue/dist/index.js",
+      "file": "@element-plus_icons-vue.js",
+      "fileHash": "a17d7c5c",
+      "needsInterop": false
+    },
+    "element-plus/es/components/collapse-transition/style/css": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/collapse-transition/style/css.mjs",
+      "file": "element-plus_es_components_collapse-transition_style_css.js",
+      "fileHash": "d784d29e",
+      "needsInterop": false
+    },
+    "element-plus/es/components/icon/style/css": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/icon/style/css.mjs",
+      "file": "element-plus_es_components_icon_style_css.js",
+      "fileHash": "79495e4b",
+      "needsInterop": false
+    },
+    "element-plus/es/components/divider/style/css": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/divider/style/css.mjs",
+      "file": "element-plus_es_components_divider_style_css.js",
+      "fileHash": "c3aa7693",
+      "needsInterop": false
+    },
+    "@vue/shared": {
+      "src": "../../../../node_modules/.pnpm/@vue+shared@3.5.13/node_modules/@vue/shared/dist/shared.esm-bundler.js",
+      "file": "@vue_shared.js",
+      "fileHash": "fdeaf0d5",
       "needsInterop": false
     },
     "element-plus/es/components/link/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/link/style/css.mjs",
       "file": "element-plus_es_components_link_style_css.js",
-      "fileHash": "50f43453",
+      "fileHash": "9743b65d",
       "needsInterop": false
     },
     "element-plus/es/components/empty/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/empty/style/css.mjs",
       "file": "element-plus_es_components_empty_style_css.js",
-      "fileHash": "18726855",
+      "fileHash": "873a71cd",
       "needsInterop": false
     },
     "element-plus/es/components/card/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/card/style/css.mjs",
       "file": "element-plus_es_components_card_style_css.js",
-      "fileHash": "3c5f85a7",
+      "fileHash": "e7d5ebd5",
       "needsInterop": false
     },
     "element-plus/es/components/text/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/text/style/css.mjs",
       "file": "element-plus_es_components_text_style_css.js",
-      "fileHash": "afb56cf3",
+      "fileHash": "fb62fe1c",
       "needsInterop": false
     },
     "element-plus/es/components/tag/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/tag/style/css.mjs",
       "file": "element-plus_es_components_tag_style_css.js",
-      "fileHash": "b929f848",
+      "fileHash": "a3cc6308",
       "needsInterop": false
     },
     "element-plus/es/components/input/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/input/style/css.mjs",
       "file": "element-plus_es_components_input_style_css.js",
-      "fileHash": "697b47dd",
+      "fileHash": "94d88067",
       "needsInterop": false
     },
     "element-plus/es/components/scrollbar/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/scrollbar/style/css.mjs",
       "file": "element-plus_es_components_scrollbar_style_css.js",
-      "fileHash": "b5a3dc09",
+      "fileHash": "b127f81a",
       "needsInterop": false
     },
     "element-plus/es/components/anchor/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/anchor/style/css.mjs",
       "file": "element-plus_es_components_anchor_style_css.js",
-      "fileHash": "40f4638d",
+      "fileHash": "33b01624",
       "needsInterop": false
     },
     "element-plus/es/components/anchor-link/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/anchor-link/style/css.mjs",
       "file": "element-plus_es_components_anchor-link_style_css.js",
-      "fileHash": "93ae639e",
+      "fileHash": "bbd5f1c2",
+      "needsInterop": false
+    },
+    "markdown-it": {
+      "src": "../../../../node_modules/.pnpm/markdown-it@14.1.0/node_modules/markdown-it/index.mjs",
+      "file": "markdown-it.js",
+      "fileHash": "779591c7",
       "needsInterop": false
     },
     "element-plus/es/components/switch/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/switch/style/css.mjs",
       "file": "element-plus_es_components_switch_style_css.js",
-      "fileHash": "77b9f70e",
+      "fileHash": "c84618c1",
       "needsInterop": false
     },
     "element-plus/es/components/badge/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/badge/style/css.mjs",
       "file": "element-plus_es_components_badge_style_css.js",
-      "fileHash": "3a3f52ed",
+      "fileHash": "8f94541c",
       "needsInterop": false
     },
-    "element-plus/es/components/date-picker/style/css": {
-      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/date-picker/style/css.mjs",
-      "file": "element-plus_es_components_date-picker_style_css.js",
-      "fileHash": "fe82f02d",
+    "lodash-unified": {
+      "src": "../../../../node_modules/.pnpm/lodash-unified@1.0.3_@types+lodash-es@4.17.12_lodash-es@4.17.21_lodash@4.17.21/node_modules/lodash-unified/import.js",
+      "file": "lodash-unified.js",
+      "fileHash": "0beb20f7",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.4.0/node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "f552e3c2",
+      "needsInterop": false
+    },
+    "element-plus": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "443f7046",
+      "needsInterop": false
+    },
+    "simple-uploader.js": {
+      "src": "../../../../node_modules/.pnpm/simple-uploader.js@0.6.0/node_modules/simple-uploader.js/dist/uploader.js",
+      "file": "simple-uploader__js.js",
+      "fileHash": "17585664",
+      "needsInterop": true
+    },
+    "spark-md5": {
+      "src": "../../../../node_modules/.pnpm/spark-md5@3.0.2/node_modules/spark-md5/spark-md5.js",
+      "file": "spark-md5.js",
+      "fileHash": "9528c635",
+      "needsInterop": true
+    },
+    "element-plus/es/components/descriptions/style/css": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/descriptions/style/css.mjs",
+      "file": "element-plus_es_components_descriptions_style_css.js",
+      "fileHash": "02e0f9f8",
+      "needsInterop": false
+    },
+    "element-plus/es/components/descriptions-item/style/css": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/descriptions-item/style/css.mjs",
+      "file": "element-plus_es_components_descriptions-item_style_css.js",
+      "fileHash": "c793910b",
+      "needsInterop": false
+    },
+    "immutable": {
+      "src": "../../../../node_modules/.pnpm/immutable@4.3.7/node_modules/immutable/dist/immutable.es.js",
+      "file": "immutable.js",
+      "fileHash": "8ce2657f",
       "needsInterop": false
     },
     "element-plus/es/components/form/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/form/style/css.mjs",
       "file": "element-plus_es_components_form_style_css.js",
-      "fileHash": "6c244ee7",
+      "fileHash": "1d8805c9",
+      "needsInterop": false
+    },
+    "element-plus/es/components/loading/src/directive": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/loading/src/directive.mjs",
+      "file": "element-plus_es_components_loading_src_directive.js",
+      "fileHash": "42db525b",
       "needsInterop": false
     },
     "element-plus/es/components/form-item/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/form-item/style/css.mjs",
       "file": "element-plus_es_components_form-item_style_css.js",
-      "fileHash": "950dd348",
+      "fileHash": "a70ee3db",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../../../node_modules/.pnpm/vue-router@4.4.5_vue@3.5.13_typescript@5.5.4_/node_modules/vue-router/dist/vue-router.mjs",
+      "file": "vue-router.js",
+      "fileHash": "cfbe4291",
+      "needsInterop": false
+    },
+    "gold-core": {
+      "src": "../../../../node_modules/.pnpm/gold-core@0.1.17/node_modules/gold-core/dist/index.js",
+      "file": "gold-core.js",
+      "fileHash": "b63062ec",
+      "needsInterop": false
+    },
+    "echarts": {
+      "src": "../../../../node_modules/.pnpm/echarts@5.5.1/node_modules/echarts/index.js",
+      "file": "echarts.js",
+      "fileHash": "f46bb0dd",
       "needsInterop": false
     },
     "element-plus/es/components/drawer/style/css": {
       "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/drawer/style/css.mjs",
       "file": "element-plus_es_components_drawer_style_css.js",
-      "fileHash": "47d4887e",
+      "fileHash": "41c7971d",
+      "needsInterop": false
+    },
+    "element-plus/es/components/date-picker/style/css": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.9.4_vue@3.5.13_typescript@5.5.4_/node_modules/element-plus/es/components/date-picker/style/css.mjs",
+      "file": "element-plus_es_components_date-picker_style_css.js",
+      "fileHash": "de43451a",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-4ADEDWBO": {
-      "file": "chunk-4ADEDWBO.js"
-    },
-    "chunk-NOUVQKRF": {
-      "file": "chunk-NOUVQKRF.js"
-    },
-    "chunk-RJR7MXIU": {
-      "file": "chunk-RJR7MXIU.js"
-    },
-    "chunk-KEKGR3ZZ": {
-      "file": "chunk-KEKGR3ZZ.js"
-    },
-    "chunk-NWUH757B": {
-      "file": "chunk-NWUH757B.js"
-    },
-    "chunk-A7FYIKWG": {
-      "file": "chunk-A7FYIKWG.js"
-    },
-    "chunk-MJ55IMJK": {
-      "file": "chunk-MJ55IMJK.js"
-    },
-    "chunk-EEZTC6QH": {
-      "file": "chunk-EEZTC6QH.js"
-    },
-    "chunk-TPHKFDZC": {
-      "file": "chunk-TPHKFDZC.js"
-    },
     "chunk-SIAH2RW2": {
       "file": "chunk-SIAH2RW2.js"
     },
     "chunk-LIBMSF3U": {
       "file": "chunk-LIBMSF3U.js"
     },
-    "chunk-YKT2HGBI": {
-      "file": "chunk-YKT2HGBI.js"
+    "chunk-6FMRY5FJ": {
+      "file": "chunk-6FMRY5FJ.js"
     },
-    "chunk-OGGGBT5V": {
-      "file": "chunk-OGGGBT5V.js"
+    "chunk-2G3QEAZC": {
+      "file": "chunk-2G3QEAZC.js"
     },
-    "chunk-NH3DNZ5Y": {
-      "file": "chunk-NH3DNZ5Y.js"
+    "chunk-IVULCRQO": {
+      "file": "chunk-IVULCRQO.js"
+    },
+    "chunk-HVTXBUBW": {
+      "file": "chunk-HVTXBUBW.js"
     },
     "chunk-US2W3C7P": {
       "file": "chunk-US2W3C7P.js"
     },
+    "chunk-2L3PQTKU": {
+      "file": "chunk-2L3PQTKU.js"
+    },
+    "chunk-VU6PNB2C": {
+      "file": "chunk-VU6PNB2C.js"
+    },
+    "chunk-LHW2ISOS": {
+      "file": "chunk-LHW2ISOS.js"
+    },
+    "chunk-HGRMMSGQ": {
+      "file": "chunk-HGRMMSGQ.js"
+    },
     "chunk-B3ROQUUI": {
       "file": "chunk-B3ROQUUI.js"
-    },
-    "chunk-HVTXBUBW": {
-      "file": "chunk-HVTXBUBW.js"
     },
     "chunk-JVSYCCQQ": {
       "file": "chunk-JVSYCCQQ.js"
     },
     "chunk-PR4QN5HX": {
       "file": "chunk-PR4QN5HX.js"
+    },
+    "chunk-XG2ZN75Y": {
+      "file": "chunk-XG2ZN75Y.js"
     }
   }
 }

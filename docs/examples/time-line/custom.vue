@@ -1,12 +1,6 @@
-<!--
- * @Description: 模块名称
- * @Author: ym
- * @Date: 2024-02-21 13:29:30
- * @LastEditTime: 2024-03-20 13:25:13
--->
 <template>
   <div class="p-10">
-    <yto-c-time-line :timeData="timeData">
+    <yto-time-line :timeData="timeData">
       <template #dot>
         <div class="triangle"></div>
       </template>
@@ -25,7 +19,7 @@
           </el-descriptions>
         </div>
       </template>
-    </yto-c-time-line>
+    </yto-time-line>
   </div>
 </template>
 <script setup lang="ts">

@@ -1,7 +1,7 @@
 <template>
-  <yto-watermark :content="content">
+  <yto-water-mark :content="content">
     <div class="h-[500px] bg-white"></div>
-  </yto-watermark>
+  </yto-water-mark>
 </template>
 <script lang="ts" setup>
 const content = ref('测试水印')

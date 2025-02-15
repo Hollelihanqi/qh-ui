@@ -30,6 +30,10 @@ export const searchContainerProps = buildProps({
     type: Number,
     default: 3,
   },
+  customClass: {
+    type: String,
+    default: '',
+  },
 })
 
 export const searchContainerEmits = ['resize', 'enterKeyup']

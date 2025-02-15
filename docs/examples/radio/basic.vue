@@ -3,8 +3,8 @@
     <yto-radio
       v-model="check"
       :options="[
-        { label: '单间', value: 0 },
-        { label: '标间', value: 1 },
+        { label: '单间', value: 1 },
+        { label: '标间', value: 2 },
       ]"
       @change="onChange"
     ></yto-radio>
@@ -12,6 +12,6 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
-const check = ref('')
+const check = ref(1)
 const onChange = () => {}
 </script>

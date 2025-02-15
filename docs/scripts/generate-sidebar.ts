@@ -78,7 +78,7 @@ async function getDirTitle(dirPath: string): Promise<string> {
 // 生成 sidebar 配置
 async function genreateSidebar(): Promise<SidebarConfig> {
   const sidebar: SidebarConfig = {}
-  
+
   // 按顺序处理每个目录
   for (const dir of config.include) {
     const dirPath = path.join(config.docsDir, dir)
@@ -89,7 +89,7 @@ async function genreateSidebar(): Promise<SidebarConfig> {
       consola.warn(`目录不存在：${dir}`)
       continue
     }
-    
+
     const mdFiles = await getMdFiles(dirPath)
     const validFiles = mdFiles.filter((file) => file !== 'index.md')
     if (validFiles.length > 0) {
