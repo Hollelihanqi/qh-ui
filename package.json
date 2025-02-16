@@ -3,8 +3,10 @@
   "version": "0.4.0",
   "type": "module",
   "scripts": {
-    "gc": "pnpm exec bash scripts/create-component.sh",
+    "gc": "pnpm exec bash scripts/create-component2.sh",
     "watch:components": "tsx scripts/watch-components.ts",
+    "gen-component-import": "tsx scripts/gen-component-import.ts",
+    "remove-component": "pnpm exec bash scripts/remove-component.sh",
     "clean": "pnpm run clean:dist",
     "clean:dist": "rimraf dist",
     "build": "pnpm run -C internal/build start",
