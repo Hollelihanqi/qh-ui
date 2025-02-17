@@ -7,7 +7,7 @@ import { YtoDialog } from '@yto-custom/components/dialog'
 import { YtoEchart } from '@yto-custom/components/echart'
 import { YtoEllipsisTag } from '@yto-custom/components/ellipsis-tag'
 import { YtoEmpty } from '@yto-custom/components/empty'
-import { YtoForm } from '@yto-custom/components/form'
+import { YtoFormItems } from '@yto-custom/components/form-items'
 import { YtoJdataViewer } from '@yto-custom/components/jdata-viewer'
 import { YtoLayout } from '@yto-custom/components/layout'
 import { YtoLayoutFrame } from '@yto-custom/components/layout-frame'
@@ -28,6 +28,7 @@ import { YtoTareaTag } from '@yto-custom/components/tarea-tag'
 import { YtoTextEllipsis } from '@yto-custom/components/text-ellipsis'
 import { YtoTimeLine } from '@yto-custom/components/time-line'
 import { YtoUploader } from '@yto-custom/components/uploader'
+import { YtoUserSearch } from '@yto-custom/components/user-search'
 import { YtoWaterMark } from '@yto-custom/components/water-mark'
 import type { Plugin } from 'vue'
 
@@ -41,7 +42,7 @@ export default [
   YtoEchart,
   YtoEllipsisTag,
   YtoEmpty,
-  YtoForm,
+  YtoFormItems,
   YtoJdataViewer,
   YtoLayout,
   YtoLayoutFrame,
@@ -62,5 +63,6 @@ export default [
   YtoTextEllipsis,
   YtoTimeLine,
   YtoUploader,
-  YtoWaterMark
+  YtoUserSearch,
+  YtoWaterMark,
 ] as Plugin[]

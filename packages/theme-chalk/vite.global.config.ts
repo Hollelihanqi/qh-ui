@@ -13,18 +13,18 @@ export default defineConfig({
     vueJsx(),
     UnoCSS({
       mode: 'per-module',
-    })
+    }),
   ],
   build: {
     lib: {
       entry: {
-        'index': './entry.ts',
+        index: './entry.ts',
       },
       formats: ['es'],
     },
     rollupOptions: {
       input: {
-        "index": resolve(__dirname, "./entry.ts")
+        index: resolve(__dirname, './entry.ts'),
       },
       output: [
         {
@@ -49,6 +49,6 @@ export default defineConfig({
     },
     cssCodeSplit: true,
     outDir: resolve(__dirname, './dist'),
-    emptyOutDir: false
-  }
-}) 
+    emptyOutDir: false,
+  },
+})

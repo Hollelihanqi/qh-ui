@@ -113,7 +113,6 @@ else
     cat > "$SRC_DIR/$COMPONENT_NAME.tsx" << EOF
 import { defineComponent } from 'vue'
 import { ${COMPONENT_NAME_CAMEL}Props, ${COMPONENT_NAME_CAMEL}Emits } from './i${COMPONENT_NAME}'
-import './${COMPONENT_NAME}.scss'
 
 export default defineComponent({
   name: '${COMPONENT_NAME_PASCAL}',

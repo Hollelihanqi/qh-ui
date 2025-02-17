@@ -1,10 +1,14 @@
 import { defineComponent, h } from 'vue'
-import SearchSelect from './remote-search'
+import { userSearchProps, userSearchEmits } from './iuser-search'
+import YtoRemoteSearch from '@yto-custom/components/remote-search'
+
 export default defineComponent({
   name: 'UserSearch',
+  props: userSearchProps,
+  emits: userSearchEmits,
   setup(_, context) {
     return () => {
-      return h(SearchSelect, {
+      return h(YtoRemoteSearch, {
         url: '/service-api/index/user/search',
         remote: true,
         searchField: 'keyword',

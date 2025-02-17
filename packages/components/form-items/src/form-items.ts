@@ -1,8 +1,7 @@
 import type { ExtractPropTypes, PropType } from 'vue'
+import { buildProps } from '@yto-custom/utils'
 
-import type FormItems from './form-items.vue'
-
-export const formItemsProps = {
+export const formItemsProps = buildProps({
   formConfig: {
     type: Array as PropType<{ [key: string]: any }[]>,
     default: () => {
@@ -12,16 +11,12 @@ export const formItemsProps = {
   layoutAuto: { type: Boolean, default: false },
   size: {
     type: String,
-    default: () => {
-      return ''
-    },
+    default: '',
   },
   span: { type: Number, default: 6 },
   form: {
     type: Object,
-    default: () => {
-      return {}
-    },
+    default: () => ({}),
   },
   itemConfig: {
     type: Object,
@@ -39,10 +34,8 @@ export const formItemsProps = {
       }
     },
   },
-}
+})
 
-export const formEmits = []
+export const formItemsEmits = []
 
 export type FormItemsProps = ExtractPropTypes<typeof formItemsProps>
-
-export type FormItemsInstance = InstanceType<typeof FormItems>

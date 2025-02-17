@@ -7,7 +7,8 @@
     "clean": "rimraf dist",
     "build:all": "vite build --config vite.global.config.ts",
     "build:components": "vite build --config vite.module.config.ts",
-    "build": "pnpm clean && pnpm build:all && pnpm build:components && tsx tasks/cleanJS.ts"
+    "gen-entry": "tsx gen-entry.ts",
+    "build": "pnpm clean && pnpm gen-entry && pnpm build:all && pnpm build:components && tsx tasks/cleanJS.ts"
   },
   "keywords": [],
   "author": "",

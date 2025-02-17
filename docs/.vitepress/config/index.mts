@@ -10,7 +10,6 @@ import { sidebars } from './sidebars'
 const config: UserConfig = {
   title: "技术平台部",
   description: "技术平台部，业务组件库",
-  cleanUrls: true,
   metaChunk: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

@@ -22,7 +22,7 @@ function removeDir(dir: string) {
 }
 
 function generateComponentEntry() {
-  const components = fs.readdirSync(compRoot).filter(name => {
+  const components = fs.readdirSync(compRoot).filter((name) => {
     const componentDir = resolve(compRoot, name)
     return fs.statSync(componentDir).isDirectory()
   })
@@ -34,7 +34,7 @@ function generateComponentEntry() {
   removeDir(entriesDir)
   fs.mkdirSync(entriesDir)
 
-  components.forEach(name => {
+  components.forEach((name) => {
     const componentDir = resolve(compRoot, name)
     const camelCaseName = name.replace(/-(\w)/g, (_, c) => c.toUpperCase())
 
@@ -81,10 +81,12 @@ export { ${camelCaseName} }
   })
 
   // 生成主入口文件，导出所有组件
-  const mainEntryContent = components.map(name => {
-    // const camelCaseName = name.replace(/-(\w)/g, (_, c) => c.toUpperCase())
-    return `export * from './entries/${name}'`
-  }).join('\n')
+  const mainEntryContent = components
+    .map((name) => {
+      // const camelCaseName = name.replace(/-(\w)/g, (_, c) => c.toUpperCase())
+      return `export * from './entries/${name}'`
+    })
+    .join('\n')
 
   const mainEntryPath = resolve(__dirname, './entry.ts')
   fs.writeFileSync(mainEntryPath, mainEntryContent)
@@ -92,4 +94,4 @@ export { ${camelCaseName} }
   return mainEntryPath
 }
 
-export { generateComponentEntry } 
+generateComponentEntry()

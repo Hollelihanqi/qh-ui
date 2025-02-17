@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import { useAttrs } from 'vue'
-import { ElCheckboxGroup, ElCheckbox } from 'element-plus'
+import { ElCheckbox, ElCheckboxGroup } from 'element-plus'
 const attrs = useAttrs() as any
 defineProps({
   form: {

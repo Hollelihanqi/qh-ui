@@ -120,7 +120,8 @@ export default defineComponent({
     const resetField = (field: string, value = '') => {
       const newModle: any = { ..._searchModel.value }
       newModle[field] = value
-      emit('update:searchModel', newModle)
+      // emit('update:searchModel', newModle)
+      _searchModel.value = newModle
     }
 
     const getFormatValues = () => {
@@ -205,6 +206,7 @@ export default defineComponent({
           _dv[item.field] = getItemDefaultValue(item)
         }
       }
+      insearchFormModel.value = _dv
       emit('update:searchModel', _dv)
     }
 

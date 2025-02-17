@@ -5,18 +5,14 @@ import { fileURLToPath } from 'url'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import UnoCSS from 'unocss/vite'
 import { readdirSync } from 'node:fs'
-import { generateComponentEntry } from './gen-entry'
 import myMergeCssPlugin from './plugins/my-merge-css'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
-// 使用 generateComponentEntry 生成入口
-generateComponentEntry()
-
 // 动态生成组件入口对象
 const entries = readdirSync(resolve(__dirname, 'entries'), { withFileTypes: true })
-  .filter(dirent => dirent.isDirectory())
-  .map(dirent => `entries/${dirent.name}/index.ts`)
+  .filter((dirent) => dirent.isDirectory())
+  .map((dirent) => `entries/${dirent.name}/index.ts`)
 
 const input = entries.reduce((acc, path) => {
   const componentName = basename(dirname(path))
@@ -55,7 +51,7 @@ export default defineConfig({
               return `yto-${name}.css`
             }
             return assetInfo.name
-          }
+          },
         },
       ],
       external: [
@@ -73,6 +69,6 @@ export default defineConfig({
     },
     cssCodeSplit: true,
     outDir: resolve(__dirname, './dist'),
-    emptyOutDir: false
-  }
-}) 
+    emptyOutDir: false,
+  },
+})

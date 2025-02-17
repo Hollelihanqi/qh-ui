@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import { useAttrs } from 'vue'
-import { ElRadioGroup, ElRadio } from 'element-plus'
+import { ElRadio, ElRadioGroup } from 'element-plus'
 const attrs = useAttrs() as any
 defineProps({
   form: {

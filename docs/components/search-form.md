@@ -24,7 +24,7 @@ search-form/basic
 | filterFields        | 搜索项过滤字段                                                  | Array            | —          | []                                      |
 | collapsedRows       | 默认收起行数                                                    | Number           | —          | 1                                       |
 | modelDefault        | 默认值,可以同时支持多个表单项的默认值配置                       | Object           | —          | null                                    |
-| modelDefault        | 默认值,可以同时支持多个表单项的默认值配置                       | Object           | —          | null                                    |
+| clearDefaultValue   | 是否在重置的时候清除默认值                                      | Boolean          | —          | true                                    |
 | okpos               | 确认按钮位置                                                    | String           | right/left | right                                   |
 | collapse            | 展开收起,默认展开                                               | Boolean          | true/false | false                                   |
 | isResetParams       | 点击重置按钮时，是否重置查询默认参数为空                        | Boolean          | true/false | false                                   |
