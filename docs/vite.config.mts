@@ -11,6 +11,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { YtoCustomResolver } from '@yto/custom/resolvers'
+import { getPackageDependencies, ytoPackage, docPackage } from '@yto-custom/build-utils'
 
 //主要用于在本地开发环境中创建和管理 HTTPS 证书。
 // import mkcert from "vite-plugin-mkcert";
@@ -18,6 +19,17 @@ import type { Alias } from 'vite'
 // import dns from "dns";
 // dns.setDefaultResultOrder("verbatim");
 // // https://vitejs.dev/config/
+
+const { dependencies: epDeps } = getPackageDependencies(ytoPackage)
+const { dependencies: docsDeps } = getPackageDependencies(docPackage)
+
+const optimizeDeps = [...new Set([...epDeps, ...docsDeps])].filter(
+  (dep) =>
+    !dep.startsWith('@types/') &&
+    !['@yto-custom/metadata', 'yto-custom'].includes(dep)
+)
+
+console.log(optimizeDeps)
 
 const alias: Alias[] = [
   {
@@ -33,7 +45,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       alias,
     },
     optimizeDeps: {
-      exclude: ['vitepress'],
+      // exclude: ['vitepress'],
+      include: optimizeDeps,
     },
     plugins: [
       vueJsx({
@@ -43,10 +56,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       Components({
         resolvers: [
           IconsResolver(),
-          ElementPlusResolver({
-            // importStyle: 'sass',
-            directives: true,
-          }),
           YtoCustomResolver(),
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -54,7 +63,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       AutoImport({
         ignore: ['h'], //解决h报错
         imports: ['vue'],
-        resolvers: [ElementPlusResolver()],
       }),
       MarkdownTransform(),
       VueMacros({

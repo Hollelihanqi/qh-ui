@@ -2,7 +2,7 @@
 import VPApp, { NotFound, globals } from '../vitepress'
 import DefaultTheme from 'vitepress/theme'
 
-// import ElementPlus from 'element-plus'
+import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // import YtoCustom from '@yto/custom'
 // import '@yto/custom/theme-chalk/index.css'
@@ -19,7 +19,7 @@ export default {
   NotFound,
   Layout: VPApp,
   async enhanceApp({ app, router }) {
-    // app.use(ElementPlus)
+    app.use(ElementPlus)
     // app.use(YtoCustom)
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp)
