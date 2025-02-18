@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import { isClient } from "@vueuse/core";
+import { ElResult, ElButton } from 'element-plus'
 
 const goHome = () => {
   if (!isClient) return;
@@ -9,11 +9,11 @@ const goHome = () => {
 </script>
 
 <template>
-  <el-result icon="error" title="自定义标题Title" sub-title="sub-title">
+  <ElResult icon="error" title="自定义标题Title" sub-title="sub-title">
     <template #extra>
-      <el-button @click="goHome">button-title</el-button>
+      <ElButton @click="goHome">button-title</ElButton>
     </template>
-  </el-result>
+  </ElResult>
 </template>
 
 <style scoped>

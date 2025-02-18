@@ -3,6 +3,7 @@ import { useRoute } from 'vitepress'
 import { useStorage } from '@vueuse/core'
 import VPLink from '../common/vp-link.vue'
 import { isActive } from '../../utils'
+import { ElBadge } from 'element-plus'
 // import { usePlaygroundPreview } from '../../composables/use-playground'
 import type { Link } from '../../types'
 
@@ -44,9 +45,9 @@ const onNavClick = (item: Link) => {
     :no-icon="true"
     @click="onNavClick(item)"
   >
-    <el-badge v-if="isNewPage(item) && !isVisited" is-dot class="badge">
-      {{ item.text }}</el-badge
-    >
+    <ElBadge v-if="isNewPage(item) && !isVisited" is-dot class="badge">
+      {{ item.text }}
+    </ElBadge>
     <template v-else> {{ item.text }}</template>
   </VPLink>
 </template>

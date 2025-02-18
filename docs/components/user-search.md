@@ -14,7 +14,7 @@ user-search/basic
 
 ### UserSearch 属性
 
-该组件继承了 RemoteSearch 的所有属性，下面列出的是特有属性。更多属性请参考 [RemoteSearch 组件文档](../remote-search/index.md)。
+该组件继承了 RemoteSearch 的所有属性，下面列出的是特有属性。更多属性请参考 [RemoteSearch 组件文档](./remote-search.md)。
 
 | 属性名      | 说明           | 类型            | 默认值         | 必填 |
 | ----------- | -------------- | --------------- | -------------- | ---- |

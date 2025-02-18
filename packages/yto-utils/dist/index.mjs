@@ -31,8 +31,7 @@ const guid = () => {
   return `${S4()}${S4()}-${S4()}-${S4()}-${S4()}-${S4()}${S4()}${S4()}`;
 };
 const copyStr = async (str) => {
-  if (!str)
-    return false;
+  if (!str) return false;
   try {
     if (navigator.clipboard && window.isSecureContext) {
       await navigator.clipboard.writeText(str);
@@ -59,8 +58,17 @@ const copyStr = async (str) => {
   }
 };
 
+const isBrowser = typeof window !== "undefined";
+const checkEnvironment = () => {
+  if (!isBrowser) {
+    console.warn("\u5F53\u524D\u73AF\u5883\u4E0D\u652F\u6301JsBridge");
+    return false;
+  }
+  return true;
+};
 const JsBridge = {
   init: function(callback) {
+    if (!checkEnvironment()) return;
     console.log("jsBridge:init");
     const u = navigator.userAgent;
     const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
@@ -94,6 +102,7 @@ const JsBridge = {
     }
   },
   first: function() {
+    if (!checkEnvironment()) return;
     const u = navigator.userAgent;
     const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
     if (!isiOS) {
@@ -116,6 +125,7 @@ const JsBridge = {
    * @return {Object} 回调
    */
   registerHandler: function(name, fun) {
+    if (!checkEnvironment()) return;
     JsBridge.init(function(bridge) {
       bridge.registerHandler(name, fun);
     });
@@ -129,23 +139,34 @@ const JsBridge = {
    * @return {Object} 回调
    */
   callHandler: function(name, data, fun) {
+    if (!checkEnvironment()) return;
     JsBridge.init(function(bridge) {
       bridge.callHandler(name, data, fun);
     });
   }
 };
 
-class Bridge {
+var __defProp = Object.defineProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+const _Bridge = class _Bridge {
   constructor() {
-    console.log("JsBridge.first\uFF1AsetupWebViewJavascriptBridge");
+    console.log("\u521D\u59CB\u5316JsBridge");
     JsBridge.first();
   }
-  callHandler(funName, funParams = {}, otherParams = { timeout: 3e3 }) {
+  /**
+   * 调用原生方法
+   * @param funName 方法名
+   * @param funParams 方法参数
+   * @param otherParams 其他参数（如超时时间）
+   */
+  callHandler(funName, funParams = {}, otherParams = { timeout: _Bridge.DEFAULT_TIMEOUT }) {
     let isCallback = false;
+    const timeout = otherParams.timeout || _Bridge.DEFAULT_TIMEOUT;
     return new Promise((resolve, reject) => {
       try {
         JsBridge.init((bridge2) => {
-          console.log("JsBridge.init\uFF1AsetupWebViewJavascriptBridge", bridge2);
+          console.log("JsBridge\u521D\u59CB\u5316\u6210\u529F");
           bridge2.registerHandler(
             funName,
             (data, responseCallback) => {
@@ -154,24 +175,34 @@ class Bridge {
           );
           bridge2.callHandler(funName, funParams, (res) => {
             isCallback = true;
-            resolve(res);
+            resolve({
+              code: 0,
+              data: res,
+              message: "\u6210\u529F"
+            });
           });
           setTimeout(() => {
             if (!isCallback) {
               resolve({
                 code: -1,
                 data: null,
-                message: "\u8C03\u7528\u8D85\u65F6"
+                message: `\u8C03\u7528\u8D85\u65F6(${timeout}ms)`
               });
             }
-          }, otherParams.timeout);
+          }, timeout);
         });
       } catch (error) {
-        reject(error instanceof Error ? error : new Error("\u672A\u77E5\u9519\u8BEF"));
+        reject({
+          code: -2,
+          data: null,
+          message: error instanceof Error ? error.message : "\u672A\u77E5\u9519\u8BEF"
+        });
       }
     });
   }
-}
+};
+__publicField(_Bridge, "DEFAULT_TIMEOUT", 3e3);
+let Bridge = _Bridge;
 const bridge = new Bridge();
 
 const ocrValueMapping = (originalData, field) => {
@@ -218,8 +249,7 @@ const addWaterMarker = (params = {
   height: 100
 }) => {
   const { content, elNode, fillStyle, font, zIndex, rotate, width, height } = params;
-  if (!content)
-    return;
+  if (!content) return;
   let node = getTargetNode(elNode);
   try {
     const canvas = createWatermarkCanvas(content, {
@@ -336,8 +366,7 @@ const formatUnit = (value, unit, shouldAddZero = true) => {
   return shouldAddZero && value < 10 ? `0${value}${unit}` : `${value}${unit}`;
 };
 const formatDuration = (timeInput, inputType = "second", showUnits = ["day", "hour", "minute", "second"]) => {
-  if (!timeInput)
-    return "--";
+  if (!timeInput) return "--";
   const conversionMap = {
     minute: 60 * 1e3,
     second: 1e3,
@@ -347,8 +376,7 @@ const formatDuration = (timeInput, inputType = "second", showUnits = ["day", "ho
   const result = showUnits.reduce((acc, unit) => {
     const { value, label } = TIME_UNITS[unit];
     const unitValue = Math.floor(totalMilliseconds % (unit === "day" ? Infinity : TIME_UNITS[showUnits[showUnits.indexOf(unit) - 1]]?.value || Infinity) / value);
-    if (unitValue === 0 && acc === "")
-      return acc;
+    if (unitValue === 0 && acc === "") return acc;
     return acc + formatUnit(unitValue, label, unit !== "millisecond");
   }, "");
   return result || "--";

@@ -1,33 +1,34 @@
 <script lang="ts" setup>
 import { computed } from "vue";
+import { ElCard } from 'element-plus'
 </script>
 
 <template>
   <div class="cards">
-    <el-card shadow="hover">
+    <ElCard shadow="hover">
       <guide-svg w="40" m="y-12" />
       <h3>homeLang3</h3>
       <p>homeLang4</p>
       <template #footer>
         <a :href="`/${lang}/guide/design.html`">homeLang5</a>
       </template>
-    </el-card>
-    <el-card shadow="hover">
+    </ElCard>
+    <ElCard shadow="hover">
       <component-svg w="40" m="y-12" />
       <h3>homeLang6</h3>
       <p>homeLang7</p>
       <template #footer>
         <a :href="`/${lang}/component/overview.html`"> homeLang5 </a>
       </template>
-    </el-card>
-    <el-card shadow="hover">
-      <resource-svg w="40" m="y-12" />
+    </ElCard>
+    <ElCard shadow="hover">
+      <ResourceSvg w="40" m="y-12" />
       <h3>homeLang8</h3>
       <p>homeLang9</p>
       <template #footer>
         <a :href="`/${lang}/resource/index.html`"> {{ homeLang["5"] }} </a>
       </template>
-    </el-card>
+    </ElCard>
   </div>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
-  <el-tag size="small" effect="plain" hit round class="ml-2">a11y</el-tag>
+  <ElTag size="small" effect="plain" hit round class="ml-2">a11y</ElTag>
 </template>
+<script setup lang="ts">
+import { ElTag } from 'element-plus'
+</script>
 <style scoped>
 .el-tag {
   color: #6222c2;

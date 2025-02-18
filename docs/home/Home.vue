@@ -7,11 +7,12 @@
       </div>
     </div>
     <div class="flex justify-center items-center pt-16">
-      <el-button type="primary" size="large" @click="handleStart">快速开始</el-button>
+      <ElButton type="primary" size="large" @click="handleStart">快速开始</ElButton>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+import { ElButton } from 'element-plus'
 import { useRouter } from 'vitepress'
 const router = useRouter()
 const handleStart = () => {

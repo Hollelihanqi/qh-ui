@@ -1,6 +1,6 @@
 <template>
-  <el-row :gutter="12">
-    <el-col :span="6" :xs="{ span: 12 }">
+  <ElRow :gutter="12">
+    <ElCol :span="6" :xs="{ span: 12 }">
       <div class="demo-color-box-group">
         <div
           v-for="(text, i) in textColors"
@@ -17,9 +17,9 @@
           </div>
         </div>
       </div>
-    </el-col>
+    </ElCol>
 
-    <el-col :span="6" :xs="{ span: 12 }">
+    <ElCol :span="6" :xs="{ span: 12 }">
       <div class="demo-color-box-group">
         <div
           v-for="(border, i) in borderColors"
@@ -33,9 +33,9 @@
           </div>
         </div>
       </div>
-    </el-col>
+    </ElCol>
 
-    <el-col :span="6" :xs="{ span: 12 }">
+    <ElCol :span="6" :xs="{ span: 12 }">
       <div class="demo-color-box-group">
         <div
           v-for="(fill, i) in fillColors"
@@ -56,9 +56,9 @@
           </div>
         </div>
       </div>
-    </el-col>
+    </ElCol>
 
-    <el-col :span="6" :xs="{ span: 12 }">
+    <ElCol :span="6" :xs="{ span: 12 }">
       <div class="demo-color-box-group">
         <div
           class="demo-color-box demo-color-box-other"
@@ -104,13 +104,14 @@
           </div>
         </div>
       </div>
-    </el-col>
-  </el-row>
+    </ElCol>
+  </ElRow>
 </template>
 
 <script lang="ts" setup>
 import { isDark } from '~/composables/dark'
 import { getCssVarName, getCssVarValue } from '~/utils/colors'
+import { ElRow, ElCol } from 'element-plus'
 
 const backgroundTypes = ['page', '', 'overlay']
 const backgroundColors = backgroundTypes.map((type) => {

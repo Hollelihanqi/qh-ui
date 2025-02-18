@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import MarkdownIt from 'markdown-it'
 import { useToc } from '../../composables/use-toc'
+import { ElAnchor, ElAnchorLink } from 'element-plus'
 
 import SponsorsButton from '../sponsors/sponsors-button.vue'
 import SponsorRightBigLogoList from '../sponsors/right-big-logo-list.vue'
@@ -19,21 +20,21 @@ const headers = useToc()
     <nav class="toc-content">
       <h3 class="toc-content__heading">Contents</h3>
       <ClientOnly>
-        <el-anchor :offset="70" :bound="120">
-          <el-anchor-link v-for="{ link, text, children } in headers" :key="link" :href="link" :title="text">
+        <ElAnchor :offset="70" :bound="120">
+          <ElAnchorLink v-for="{ link, text, children } in headers" :key="link" :href="link" :title="text">
             <div v-html="localMd.render(text)" />
             <template v-if="children" #sub-link>
-              <el-anchor-link
+              <ElAnchorLink
                 v-for="{ link: childLink, text: childText } in children"
                 :key="childLink"
                 :href="childLink"
                 :title="text"
               >
                 <div v-html="localMd.render(childText)" />
-              </el-anchor-link>
+              </ElAnchorLink>
             </template>
-          </el-anchor-link>
-        </el-anchor>
+          </ElAnchorLink>
+        </ElAnchor>
       </ClientOnly>
       <!-- <SponsorLarge
         class="mt-8 toc-ads flex flex-col"

@@ -5,6 +5,7 @@ import { CaretTop } from '@element-plus/icons-vue'
 import { useSourceCode } from '../composables/source-code'
 import { usePlayground } from '../composables/use-playground'
 import SourceCode from './demo/vp-source-code.vue'
+import { ElTooltip, ElIcon, ElCollapseTransition, ElDivider } from 'element-plus'
 
 const props = defineProps<{
   source: string

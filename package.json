@@ -10,7 +10,6 @@
     "clean": "pnpm run clean:dist",
     "clean:dist": "rimraf dist",
     "build": "pnpm run -C internal/build start",
-    "build:watch": "pnpm run -C packages/yto-custom watch",
     "utils:build": "pnpm run -C packages/yto-utils build",
     "utils:buildwatch": "pnpm run -C packages/yto-utils watch",
     "build:theme": "pnpm run -C packages/theme-chalk build",

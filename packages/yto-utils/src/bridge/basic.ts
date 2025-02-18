@@ -1,6 +1,26 @@
 // @ts-nocheck
+// 添加环境判断辅助函数
+const isBrowser = typeof window !== 'undefined'
+
+// 添加类型定义
+export interface WebViewJavascriptBridge {
+  init: (callback: (data: any, responseCallback: (data: any) => void) => void) => void
+  registerHandler: (name: string, callback: (data: any, responseCallback: (data: any) => void) => void) => void
+  callHandler: (name: string, data: any, callback: (data: any) => void) => void
+}
+
+// 添加环境检测函数
+const checkEnvironment = () => {
+  if (!isBrowser) {
+    console.warn('当前环境不支持JsBridge')
+    return false
+  }
+  return true
+}
+
 export const JsBridge = {
   init: function (callback) {
+    if (!checkEnvironment()) return
     console.log('jsBridge:init')
     const u = navigator.userAgent
     const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
@@ -37,6 +57,7 @@ export const JsBridge = {
   },
 
   first: function () {
+    if (!checkEnvironment()) return
     const u = navigator.userAgent
     const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
     if (!isiOS) {
@@ -60,7 +81,7 @@ export const JsBridge = {
    * @return {Object} 回调
    */
   registerHandler: function (name, fun) {
-    // console.log("jsBridge:registerHandler")
+    if (!checkEnvironment()) return
     JsBridge.init(function (bridge) {
       bridge.registerHandler(name, fun)
     })
@@ -75,6 +96,7 @@ export const JsBridge = {
    * @return {Object} 回调
    */
   callHandler: function (name, data, fun) {
+    if (!checkEnvironment()) return
     JsBridge.init(function (bridge) {
       bridge.callHandler(name, data, fun)
     })

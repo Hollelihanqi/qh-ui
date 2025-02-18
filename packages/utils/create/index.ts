@@ -17,8 +17,8 @@ interface IReturnObj {
 }
 
 export const createMountContainer = (customClass?: string[]): Element => {
-  const container = document.createElement('div')
   console.log('customClass', customClass)
+  const container = document.createElement('div')
   container.className = `creator-api-container ${customClass ? customClass : ''}`
   return container
 }

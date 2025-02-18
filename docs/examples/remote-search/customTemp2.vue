@@ -1,7 +1,6 @@
-<script lang="tsx">
+<script lang="ts">
 import { YtoRemoteSearch } from '@yto/custom'
 export default defineComponent({
-  name: 'StaffSearch',
   setup(props, context) {
     return () => {
       return h(YtoRemoteSearch, {

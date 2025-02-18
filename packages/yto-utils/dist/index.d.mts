@@ -40,9 +40,21 @@ declare const copyStr: (str: string) => Promise<boolean>;
 interface BridgeParams {
     timeout?: number;
 }
+interface BridgeResponse<T> {
+    code: number;
+    data: T | null;
+    message: string;
+}
 declare class Bridge {
+    private static readonly DEFAULT_TIMEOUT;
     constructor();
-    callHandler<T = any>(funName: string, funParams?: Record<string, any>, otherParams?: BridgeParams): Promise<T>;
+    /**
+     * 调用原生方法
+     * @param funName 方法名
+     * @param funParams 方法参数
+     * @param otherParams 其他参数（如超时时间）
+     */
+    callHandler<T = any>(funName: string, funParams?: Record<string, any>, otherParams?: BridgeParams): Promise<BridgeResponse<T>>;
 }
 declare const bridge: Bridge;
 

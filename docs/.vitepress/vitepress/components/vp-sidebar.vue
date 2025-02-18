@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useSidebar } from '../composables/sidebar'
-
+import { ElScrollbar } from 'element-plus'
 import VPSidebarLink from './sidebar/vp-sidebar-link.vue'
 
 defineProps<{ open: boolean }>()
@@ -12,7 +12,7 @@ const { sidebars, hasSidebar } = useSidebar()
 </script>
 
 <template>
-  <el-scrollbar v-if="hasSidebar" :class="{ sidebar: true, open }" class="!fixed">
+  <ElScrollbar v-if="hasSidebar" :class="{ sidebar: true, open }" class="!fixed">
     <aside>
       <slot name="top" />
       <div class="sidebar-groups">
@@ -30,5 +30,5 @@ const { sidebars, hasSidebar } = useSidebar()
       </div>
       <slot name="bottom" />
     </aside>
-  </el-scrollbar>
+  </ElScrollbar>
 </template>

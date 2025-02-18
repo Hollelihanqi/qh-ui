@@ -11,7 +11,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { YtoCustomResolver } from '@yto/custom/resolvers'
-import { getPackageDependencies, ytoPackage, docPackage } from '@yto-custom/build-utils'
+import { getPackageDependencies, ytoPackage, docPackage, projRoot } from '@yto-custom/build-utils'
 
 //主要用于在本地开发环境中创建和管理 HTTPS 证书。
 // import mkcert from "vite-plugin-mkcert";
@@ -36,6 +36,18 @@ const alias: Alias[] = [
     find: '~/',
     replacement: `${path.resolve(__dirname, './.vitepress/vitepress')}/`,
   },
+  ...(process.env.DOC_ENV === 'production'
+    ? []
+    : [
+      {
+        find: /^yto-custom(\/(es|lib))?$/,
+        replacement: path.resolve(projRoot, 'packages/yto-custom/index.ts'),
+      },
+      {
+        find: /^yto-custom\/(es|lib)\/(.*)$/,
+        replacement: `${path.resolve(projRoot, 'packages')}/$2`,
+      },
+    ]),
 ]
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -45,7 +57,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       alias,
     },
     optimizeDeps: {
-      // exclude: ['vitepress'],
+      exclude: [
+        'vitepress'
+      ],
       include: optimizeDeps,
     },
     plugins: [
@@ -56,13 +70,17 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       Components({
         resolvers: [
           IconsResolver(),
-          YtoCustomResolver(),
+          // ElementPlusResolver({
+          //   directives: true,
+          // }),
+          // YtoCustomResolver(),
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       }),
       AutoImport({
         ignore: ['h'], //解决h报错
         imports: ['vue'],
+        // resolvers: [ElementPlusResolver()],
       }),
       MarkdownTransform(),
       VueMacros({
@@ -79,7 +97,13 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       UnoCSS(),
       groupIconVitePlugin()
     ],
+    build: {
+      chunkSizeWarningLimit: 1000, // 调整 chunk 大小限制（临时方案）
+    },
     server: {
+      fs: {
+        allow: [projRoot],
+      },
       hmr: {
         overlay: false,
       },

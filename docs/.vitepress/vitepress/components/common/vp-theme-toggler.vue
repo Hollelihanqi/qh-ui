@@ -4,6 +4,7 @@ import { isDark, toggleDark } from '../../composables/dark'
 import DarkIcon from '../icons/dark.vue'
 import LightIcon from '../icons/light.vue'
 import type { SwitchInstance } from 'element-plus'
+import { ElSwitch } from 'element-plus'
 
 defineOptions({ inheritAttrs: false })
 
@@ -59,7 +60,7 @@ const beforeChange = () => {
 
 <template>
   <ClientOnly>
-    <el-switch
+    <ElSwitch
       ref="switchRef"
       v-model="darkMode"
       v-bind="$attrs"

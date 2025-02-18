@@ -1,11 +1,12 @@
 <script lang="ts" setup>
+import { ElTag } from 'element-plus'
 defineProps<{
   version: string
 }>()
 </script>
 
 <template>
-  <el-tag size="small" effect="plain" hit round class="ml-2">
+  <ElTag size="small" effect="plain" hit round class="ml-2">
     {{ version }}
-  </el-tag>
+  </ElTag>
 </template>

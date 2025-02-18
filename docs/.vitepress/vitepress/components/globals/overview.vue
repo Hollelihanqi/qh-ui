@@ -1,19 +1,19 @@
 <template>
   <div class="overview-container">
     <div class="search-content">
-      <el-input ref="searchRef" v-model="query" :prefix-icon="Search" size="large" placeholder="Search Components" />
+      <ElInput ref="searchRef" v-model="query" :prefix-icon="Search" size="large" placeholder="Search Components" />
     </div>
 
     <div class="main-content">
       <div v-for="(group, groupIndex) in filteredSidebars" :key="groupIndex" class="component-group">
         <p class="component-title">
           {{ group.text }}
-          <el-tag effect="dark" round size="small">
+          <ElTag effect="dark" round size="small">
             {{ group.children.length }}
-          </el-tag>
+          </ElTag>
         </p>
         <div class="card-content">
-          <el-card
+          <ElCard
             v-for="(item, index) in group.children"
             :key="index"
             tabindex="0"
@@ -22,7 +22,7 @@
             @keydown.enter="toPage(item.link)"
           >
             <template #header>
-              <el-text truncated>{{ item.text }}</el-text>
+              <ElText truncated>{{ item.text }}</ElText>
               <span v-if="item.promotion" class="vp-tag">
                 {{ item.promotion }}
               </span>
@@ -32,17 +32,15 @@
               <component :is="getIcon(item.link)" v-if="getIcon(item.link)" />
               <span v-else>Todo</span>
             </template>
-          </el-card>
+          </ElCard>
         </div>
       </div>
 
-      <el-empty v-if="!filteredSidebars.length" description="暂无数据" />
+      <ElEmpty v-if="!filteredSidebars.length" description="暂无数据" />
 
       <p class="designed-by">
         Icons designed by
-        <el-link type="primary" :underline="false" href="https://github.com/daodaozz08" target="_blank">
-          @叨叨
-        </el-link>
+        <ElLink type="primary" :underline="false" href="https://github.com/daodaozz08" target="_blank"> @叨叨 </ElLink>
       </p>
     </div>
   </div>
@@ -55,7 +53,7 @@ import { Search } from '@element-plus/icons-vue'
 import type { InputInstance } from 'element-plus'
 import { useSidebar } from '~/composables/sidebar'
 import overviewIcons from '~/components/overview-icons'
-
+import { ElInput, ElTag, ElCard, ElLink, ElEmpty } from 'element-plus'
 const router = useRouter()
 const { sidebars } = useSidebar()
 

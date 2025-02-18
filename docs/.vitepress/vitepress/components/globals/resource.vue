@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { isClient } from "@vueuse/core";
 import { sendEvent } from "../../../config/analytics";
-
+import { ElCard, ElButton } from 'element-plus'
 import AxureComponentsSvg from "./resources/axure-components-svg.vue";
 import SketchTemplateSvg from "./resources/sketch-template-svg.vue";
 import FigmaTemplateSvg from "./resources/figma-template-svg.vue";
@@ -78,7 +78,7 @@ const resourceCards = computed(() => [
     <p>resourceLang-lineOne</p>
     <!-- <p v-html="resourceLang.lineTwo" /> -->
     <div class="resource-content">
-      <el-card v-for="card in resourceCards" :key="card.title" class="card" shadow="hover">
+      <ElCard v-for="card in resourceCards" :key="card.title" class="card" shadow="hover">
         <div class="w-30 m-auto">
           <component :is="card.icon" alt="icon" />
         </div>
@@ -87,9 +87,9 @@ const resourceCards = computed(() => [
           {{ card.intro }}
         </p>
         <a target="_blank" :href="card.url" @click="onClick(card.title)">
-          <el-button type="primary">resourceLang.download</el-button>
+          <ElButton type="primary">resourceLang.download</ElButton>
         </a>
-      </el-card>
+      </ElCard>
     </div>
   </div>
 </template>

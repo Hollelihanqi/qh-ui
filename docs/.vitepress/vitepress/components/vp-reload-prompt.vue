@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, watch } from "vue";
 import { useStorage } from "@vueuse/core";
+import { ElCard, ElButton } from 'element-plus'
 // import { useRegisterSW } from 'virtual:pwa-register/vue'
 
 // const { needRefresh, updateServiceWorker } = useRegisterSW()
@@ -17,12 +18,12 @@ const testFunc = () => {
 
 <template>
   <transition name="pwa-popup">
-    <el-card v-if="!alwaysRefresh && needRefresh" class="pwa-card" role="alert">
+    <ElCard v-if="!alwaysRefresh && needRefresh" class="pwa-card" role="alert">
       <p class="pwa-card-text">locale-message</p>
-      <el-button type="primary" plain @click="testFunc"> locale-refresh </el-button>
-      <el-button plain @click="alwaysRefresh = true"> locale-always-refresh </el-button>
-      <el-button plain @click="needRefresh = false"> locale-close </el-button>
-    </el-card>
+      <ElButton type="primary" plain @click="testFunc"> locale-refresh </ElButton>
+      <ElButton plain @click="alwaysRefresh = true"> locale-always-refresh </ElButton>
+      <ElButton plain @click="needRefresh = false"> locale-close </ElButton>
+    </ElCard>
   </transition>
 </template>
 

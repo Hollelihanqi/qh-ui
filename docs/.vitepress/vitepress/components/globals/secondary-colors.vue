@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { getColorValue, useCopyColor } from '../../utils'
-
+import { ElRow, ElCol, ElButton } from 'element-plus'
 const colorsType = ['success', 'warning', 'danger', 'info']
 
 const colorLevel = [3, 5, 7, 8, 9].map((item) => `light-${item}`)
@@ -10,8 +10,8 @@ const { copyColor } = useCopyColor()
 </script>
 
 <template>
-  <el-row :gutter="12">
-    <el-col
+  <ElRow :gutter="12">
+    <ElCol
       v-for="(type, i) in colorsType"
       :key="i"
       :span="6"
@@ -35,6 +35,6 @@ const { copyColor } = useCopyColor()
           />
         </div>
       </div>
-    </el-col>
-  </el-row>
+    </ElCol>
+  </ElRow>
 </template>

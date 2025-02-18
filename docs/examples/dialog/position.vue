@@ -11,7 +11,6 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive } from 'vue'
-// import { YtoDialog } from "@yto/custom";
 
 export default defineComponent({
   setup() {
