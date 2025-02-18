@@ -29,8 +29,6 @@ const optimizeDeps = [...new Set([...epDeps, ...docsDeps])].filter(
     !['@yto-custom/metadata', 'yto-custom'].includes(dep)
 )
 
-console.log(optimizeDeps)
-
 const alias: Alias[] = [
   {
     find: '~/',
@@ -58,9 +56,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     optimizeDeps: {
       exclude: [
-        'vitepress'
+        'vitepress',
       ],
-      include: optimizeDeps,
+      include: []
     },
     plugins: [
       vueJsx({
@@ -70,9 +68,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       Components({
         resolvers: [
           IconsResolver(),
-          // ElementPlusResolver({
-          //   directives: true,
-          // }),
+          ElementPlusResolver({
+            importStyle: false,
+            directives: true,
+          }),
           // YtoCustomResolver(),
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -80,7 +79,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       AutoImport({
         ignore: ['h'], //解决h报错
         imports: ['vue'],
-        // resolvers: [ElementPlusResolver()],
+        resolvers: [ElementPlusResolver()],
       }),
       MarkdownTransform(),
       VueMacros({

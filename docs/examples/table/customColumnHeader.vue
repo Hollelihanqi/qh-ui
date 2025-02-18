@@ -1,16 +1,16 @@
 <template>
   <YtoTable :columns="columns" :table-data="tableData" pagination-hide>
     <template #ageHeader>
-      <el-button type="primary">年龄</el-button>
+      <ElButton type="primary">年龄</ElButton>
     </template>
     <template #sexHeader>
-      <el-text type="danger">性别</el-text>
+      <ElText type="danger">性别</ElText>
     </template>
   </YtoTable>
 </template>
 <script lang="tsx" setup>
 import { h } from 'vue'
-import { ElTag } from 'element-plus'
+import { ElTag, ElButton, ElText } from 'element-plus'
 
 const tableData = [
   {
@@ -56,7 +56,7 @@ const columns = [
     label: '姓名',
     prop: 'name',
     headerRender: () => {
-      return <el-text type="primary">姓名</el-text>
+      return <ElText type="primary">姓名</ElText>
     },
   },
   {
@@ -78,7 +78,7 @@ const columns = [
       return scope.row.isWife === 0 ? '未婚' : '已婚'
     },
     headerRender: () => {
-      return <el-button type="success">是否已婚</el-button>
+      return <ElButton type="success">是否已婚</ElButton>
     },
   },
   {

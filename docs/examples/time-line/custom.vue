@@ -6,23 +6,24 @@
       </template>
       <template #default="{ item }">
         <div class="mb-4">
-          <el-descriptions :title="`${item.title}  -  ${item.timestamp}`">
-            <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-            <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-            <el-descriptions-item label="Place">Suzhou</el-descriptions-item>
-            <el-descriptions-item label="Remarks">
-              <el-tag size="small">School</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="Address"
-              >No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item
-            >
-          </el-descriptions>
+          <ElDescriptions :title="`${item.title}  -  ${item.timestamp}`">
+            <ElDescriptionsItem label="Username">kooriookami</ElDescriptionsItem>
+            <ElDescriptionsItem label="Telephone">18100000000</ElDescriptionsItem>
+            <ElDescriptionsItem label="Place">Suzhou</ElDescriptionsItem>
+            <ElDescriptionsItem label="Remarks">
+              <ElTag size="small">School</ElTag>
+            </ElDescriptionsItem>
+            <ElDescriptionsItem label="Address">
+              No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
+              </ElDescriptionsItem>
+          </ElDescriptions>
         </div>
       </template>
     </yto-time-line>
   </div>
 </template>
 <script setup lang="ts">
+import { ElDescriptions, ElDescriptionsItem, ElTag } from 'element-plus'
 const timeData = [
   {
     title: '需求发起',

@@ -8,7 +8,7 @@
       @on-search="handleSearch"
     >
       <template #input2="scope">
-        <el-input v-model="scope._value.value" placeholder="自定义插槽template"></el-input>
+        <ElInput v-model="scope._value.value" placeholder="自定义插槽template"></ElInput>
       </template>
     </yto-search-form>
   </div>
@@ -16,6 +16,7 @@
 <script lang="tsx" setup>
 import RenderCSelect from './renderc.vue'
 import { SearchFormControlProps } from '@yto/custom'
+import { ElInput } from 'element-plus'
 
 const filterData = ref<any>({})
 const modelDefault = ref({})

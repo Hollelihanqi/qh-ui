@@ -4,7 +4,7 @@ import DefaultTheme from 'vitepress/theme'
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import YtoCustom from '@yto/custom'
+// import YtoCustom from '@yto/custom'
 import '@yto/custom/theme-chalk/index.css'
 
 import 'virtual:uno.css'
@@ -20,16 +20,16 @@ export default {
   Layout: VPApp,
   async enhanceApp({ app, router }) {
     // app.use(ElementPlus)
-    app.use(YtoCustom)
+    // app.use(YtoCustom)
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp)
     })
 
-    // @ts-ignore
-    // if (!import.meta.env.SSR) {
-    //   const custom = await import('@yto/custom').then((m) => m)
-    //   app.use(custom.default)
-    // }
+    if (!import.meta.env.SSR) {
+      // @ts-ignore
+      const custom = await import('@yto/custom').then((m) => m)
+      app.use(custom.default)
+    }
   },
   // Layout() {
   //   return h(DefaultTheme.Layout, null, {

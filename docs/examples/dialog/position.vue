@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button class="a" @click="dialogVisible = true">弹出位置</el-button>
+    <ElButton @click="dialogVisible = true">弹出位置</ElButton>
 
     <yto-dialog v-model="dialogVisible" :offset="['0', '0']" @confirm="handleConfirm" @cancel="handleCancel">
       <template #header> title </template>
@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive } from 'vue'
-
+import { ElButton } from 'element-plus'
 export default defineComponent({
   setup() {
     const confirm = reactive({

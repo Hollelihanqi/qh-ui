@@ -1,14 +1,14 @@
 <template>
   <div class="p-4 h-[300px] overflow-y-auto">
-    <el-form ref="formRef" :model="tableData" class="">
+    <ElForm ref="formRef" :model="tableData" class="">
       <yto-table-editor :columns="columns" :data="tableData" :setRules="setRules"></yto-table-editor>
-    </el-form>
-   <el-button @click="onSave" type="primary" class="ml-[85%]">保存</el-button>
+    </ElForm>
+   <ElButton @click="onSave" type="primary" class="ml-[85%]">保存</ElButton>
   </div>
 </template>
 
 <script lang="ts" setup>
-
+import { ElForm, ElButton } from 'element-plus'
 import { ref } from 'vue'
 const columns = [
   {

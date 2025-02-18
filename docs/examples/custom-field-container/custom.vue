@@ -16,7 +16,7 @@
         ></yto-custom-field-config>
       </template>
       <template #btnAppend>
-        <el-button :icon="Share" link></el-button>
+        <ElButton :icon="Share" link></ElButton>
       </template>
     </yto-custom-field-container>
 
@@ -30,13 +30,14 @@
         ></yto-custom-field-config>
       </template>
       <template #btn>
-        <el-button class="ml-2" :icon="Share" link></el-button>
+        <ElButton class="ml-2" :icon="Share" link></ElButton>
       </template>
     </yto-custom-field-container>
   </div>
 </template>
 <script setup lang="ts">
 import { Share } from '@element-plus/icons-vue'
+import { ElButton } from 'element-plus'
 const dataList = ref([{}])
 
 interface FieldConfig {

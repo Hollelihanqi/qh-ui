@@ -6,7 +6,7 @@
 -->
 <template>
   <div class="p-4">
-    <el-form :model="dataList" ref="formRef">
+    <ElForm :model="dataList" ref="formRef">
       <yto-custom-field-container :direction="'vertical'" v-model="dataList" @add="onAdd" @delete="onDelete">
         <template #content="{ index }">
           <yto-custom-field-config
@@ -19,17 +19,18 @@
           ></yto-custom-field-config>
         </template>
         <template #btnAppend>
-          <el-button :icon="Share" link></el-button>
+          <ElButton :icon="Share" link></ElButton>
         </template>
       </yto-custom-field-container>
-      <el-form-item>
-        <el-button class="my-2" type="primary" @click="onSubmit">submit</el-button>
-      </el-form-item>
-    </el-form>
+      <ElFormItem>
+        <ElButton class="my-2" type="primary" @click="onSubmit">submit</ElButton>
+      </ElFormItem>
+    </ElForm>
   </div>
 </template>
 <script setup lang="ts">
 import { Share } from '@element-plus/icons-vue'
+import { ElForm, ElFormItem, ElButton } from 'element-plus'
 const dataList = ref([{}])
 
 interface FieldConfig {

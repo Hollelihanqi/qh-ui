@@ -18,14 +18,15 @@
       </template>
       <template #append>
         <div class="flex-1 w-0 flex items-center justify-end min-w-[180px]">
-          <el-button size="small">重置</el-button>
-          <el-button size="small" type="primary">搜索</el-button>
+          <ElButton size="small">重置</ElButton>
+          <ElButton size="small" type="primary">搜索</ElButton>
         </div>
       </template>
     </yto-custom-field-container>
   </div>
 </template>
 <script setup lang="ts">
+import { ElButton } from 'element-plus'
 const dataList = ref([{}])
 
 interface FieldConfig {

@@ -14,7 +14,7 @@
       @cbChange="cbChange"
     >
       <template #value>
-        <el-date-picker
+        <ElDatePicker
           v-model="formData.params"
           type="datetimerange"
           start-placeholder="开始时间"
@@ -30,6 +30,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ElDatePicker } from 'element-plus'
 export interface FieldConfig {
   elType?: string
   props: string

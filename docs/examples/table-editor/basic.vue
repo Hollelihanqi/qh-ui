@@ -1,11 +1,13 @@
 <template>
   <div class="p-4">
-    <el-button @click="onAdd" type="primary" class="mb-2">新增</el-button>
+    <ElButton @click="onAdd" type="primary" class="mb-2">新增</ElButton>
     <yto-table-editor :columns="columns" :data="tableData"></yto-table-editor>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { ElButton } from 'element-plus'
+
 const columns = [
   {
     prop: 'name',

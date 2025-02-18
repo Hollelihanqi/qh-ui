@@ -6,14 +6,16 @@
       @file-success="handleUploadSuccess"
       @file-removed="handleFileRemoved"
     >
-      <template #uploaderBtn> <el-button type="primary" plain :icon="Plus">文件上传</el-button></template>
+      <template #uploaderBtn> <ElButton type="primary" plain :icon="Plus">文件上传</ElButton></template>
     </yto-uploader>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, nextTick } from 'vue'
+import { ElButton } from 'element-plus'
 import { Plus } from '@element-plus/icons-vue'
+
 const UploaderInstance = ref()
 const mergeFile = (params = {}) => {
   //...

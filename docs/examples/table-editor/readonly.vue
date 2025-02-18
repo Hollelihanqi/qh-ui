@@ -1,14 +1,15 @@
 <template>
   <div class="p-4">
-    <el-button @click="onLook" type="primary" >只读</el-button>
-    <el-button @click="onDisabled" type="primary">禁用</el-button>
-    <el-button @click="onHidden" type="primary">隐藏某一项</el-button>
+    <ElButton @click="onLook" type="primary" >只读</ElButton>
+    <ElButton @click="onDisabled" type="primary">禁用</ElButton>
+    <ElButton @click="onHidden" type="primary">隐藏某一项</ElButton>
     <yto-table-editor :columns="tableColumns" :data="formData.tableData" :readonly="isReadonly" :disabled="isDisabled"></yto-table-editor>  
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { ElButton } from 'element-plus'
 const isReadonly = ref(false)
 const isDisabled = ref(false)
 const isHidden = ref(false)

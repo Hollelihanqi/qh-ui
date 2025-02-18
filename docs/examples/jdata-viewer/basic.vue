@@ -1,17 +1,18 @@
 <template>
   <div class="p-[16px]">
-    <el-button @click="actionDialog">预览JSON</el-button>
+    <ElButton @click="actionDialog">预览JSON</ElButton>
   </div>
-  <el-drawer v-model="dialogVisible" title="详细信息" direction="rtl" :before-close="handleClose" size="600px">
+  <ElDrawer v-model="dialogVisible" title="详细信息" direction="rtl" :before-close="handleClose" size="600px">
     <yto-jdata-viewer :data="testData" class="!p-0" />
     <template #footer>
       <div class="flex items-center justify-end">
-        <el-button type="default" @click="handleClose">取消</el-button>
+        <ElButton type="default" @click="handleClose">取消</ElButton>
       </div>
     </template>
-  </el-drawer>
+  </ElDrawer>
 </template>
 <script lang="tsx" setup>
+import { ElButton, ElDrawer } from 'element-plus'
 const dialogVisible = ref(false)
 const actionDialog = (): void => {
   dialogVisible.value = true

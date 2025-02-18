@@ -26,6 +26,7 @@
     "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
     "prismjs": "^1.28.0",
+    "sass": "^1.83.4",
     "tiny-glob": "^0.2.9",
     "unocss": "0.61.5",
     "unplugin-auto-import": "^0.16.6",

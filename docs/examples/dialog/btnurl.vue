@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button class="a" @click="dialogVisible = true">按钮定制</el-button>
+    <ElButton class="mb-2" @click="dialogVisible = true">按钮定制</ElButton>
 
     <yto-dialog
       v-model="dialogVisible"
@@ -17,8 +17,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive } from 'vue'
-// import { YtoDialog } from "@yto/custom";
-
+import { ElButton } from 'element-plus'
 export default defineComponent({
   setup() {
     const btnVisible = ref(true)
