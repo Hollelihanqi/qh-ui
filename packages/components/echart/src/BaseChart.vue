@@ -33,8 +33,8 @@ const props = withDefaults(defineProps<Props>(), {
 const echartContainer = ref()
 const __style = computed(() => {
   return {
-    height: `${props.height}px`,
-    width: `${props.width}px`,
+    height: props.height,
+    width: props.width,
   }
 })
 const emits = defineEmits(['chart-click'])

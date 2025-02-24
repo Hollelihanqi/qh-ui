@@ -7,6 +7,7 @@ import { YtoDialog } from '@yto-custom/components/dialog'
 import { YtoEchart } from '@yto-custom/components/echart'
 import { YtoEllipsisTag } from '@yto-custom/components/ellipsis-tag'
 import { YtoEmpty } from '@yto-custom/components/empty'
+import { YtoForm } from '@yto-custom/components/form'
 import { YtoFormItems } from '@yto-custom/components/form-items'
 import { YtoJdataViewer } from '@yto-custom/components/jdata-viewer'
 import { YtoLayout } from '@yto-custom/components/layout'
@@ -42,6 +43,7 @@ export default [
   YtoEchart,
   YtoEllipsisTag,
   YtoEmpty,
+  YtoForm,
   YtoFormItems,
   YtoJdataViewer,
   YtoLayout,

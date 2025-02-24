@@ -1,13 +1,13 @@
 <template>
   <div class="view-w wrapper">
     <p>测试数据1</p>
-    <yto-adaption-container :list="list" :min-num="3" min-width="230">
+    <yto-adaption-container :list="list" :min-num="3" :min-width="230">
       <template #default="{ info }">
         <div class="card">{{ info }}</div>
       </template>
     </yto-adaption-container>
     <p>基于form的测试数据</p>
-    <yto-adaption-container :list="list" :min-num="3" min-width="330">
+    <yto-adaption-container :list="list" :min-num="3" :min-width="330">
       <template #default>
         <el-form-item class="" label="Activity name">
           <el-input placeholder="请输入啊啊啊" />

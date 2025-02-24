@@ -1,33 +1,64 @@
 <template>
-  <ElFormItem
-    v-for="item in formConfig"
-    v-bind="item?.formItemBinds"
-    :key="item.prop"
-    :label="item?.label"
-    :prop="item?.prop"
-    :label-width="item.labelWidth"
-    :style="`width:${item.formItemWidth || itemConfig.formItemWidth || '25%'}`"
-    class="yto-form-item"
-  >
-    <div :class="item.contentClass">
-      <component
-        v-bind="item"
-        :is="getComponent(item.itemType)"
-        v-if="!$slots[item.prop]"
+  <template v-for="item in formConfig" :key="item.prop">
+    <!-- 当需要栅格布局时使用div包裹 -->
+    <template v-if="useColWrapper">
+      <ElFormItem
+        v-bind="item?.formItemBinds"
+        :label="item?.label"
         :prop="item?.prop"
-        :form="form"
-        :options="item?.options || itemConfig.options"
-        :multiple="item?.multiple || false"
-        :active-color="item?.activeColor || itemConfig.activeColor"
-        :inactive-color="item?.inactiveColor || itemConfig.inactiveColor"
-        :active-value="item?.activeValue || itemConfig.activeValue"
-        :inactive-value="item?.inactiveValue || itemConfig.inactiveValue"
-        :disabled="item?.disabled || itemConfig.disabled"
-        :clearable="item?.clearable || itemConfig.clearable"
-      />
-      <slot v-if="$slots[item.prop]" :name="item?.prop" :item="item" />
-    </div>
-  </ElFormItem>
+        :label-width="item.labelWidth"
+        class="yto-form-item"
+      >
+        <div :class="item.contentClass">
+          <component
+            v-bind="item"
+            :is="getComponent(item.itemType)"
+            v-if="!$slots[item.prop]"
+            :prop="item?.prop"
+            :form="form"
+            :options="item?.options || itemConfig.options"
+            :multiple="item?.multiple || false"
+            :active-color="item?.activeColor || itemConfig.activeColor"
+            :inactive-color="item?.inactiveColor || itemConfig.inactiveColor"
+            :active-value="item?.activeValue || itemConfig.activeValue"
+            :inactive-value="item?.inactiveValue || itemConfig.inactiveValue"
+            :disabled="item?.disabled || itemConfig.disabled"
+            :clearable="item?.clearable || itemConfig.clearable"
+          />
+          <slot v-if="$slots[item.prop]" :name="item?.prop" :item="item" />
+        </div>
+      </ElFormItem>
+    </template>
+    <!-- 默认布局模式 -->
+    <ElFormItem
+      v-else
+      v-bind="item?.formItemBinds"
+      :label="item?.label"
+      :prop="item?.prop"
+      :label-width="item.labelWidth"
+      :style="getItemStyle(item)"
+      class="yto-form-item mx-[10px]"
+    >
+      <div :class="item.contentClass">
+        <component
+          v-bind="item"
+          :is="getComponent(item.itemType)"
+          v-if="!$slots[item.prop]"
+          :prop="item?.prop"
+          :form="form"
+          :options="item?.options || itemConfig.options"
+          :multiple="item?.multiple || false"
+          :active-color="item?.activeColor || itemConfig.activeColor"
+          :inactive-color="item?.inactiveColor || itemConfig.inactiveColor"
+          :active-value="item?.activeValue || itemConfig.activeValue"
+          :inactive-value="item?.inactiveValue || itemConfig.inactiveValue"
+          :disabled="item?.disabled || itemConfig.disabled"
+          :clearable="item?.clearable || itemConfig.clearable"
+        />
+        <slot v-if="$slots[item.prop]" :name="item?.prop" :item="item" />
+      </div>
+    </ElFormItem>
+  </template>
 </template>
 
 <script lang="ts" setup>
@@ -50,7 +81,7 @@ defineOptions({
   name: 'FormItems',
 })
 
-defineProps(formItemsProps)
+const props = defineProps(formItemsProps)
 
 const types = {
   input: itemInput,
@@ -69,5 +100,11 @@ const types = {
 
 const getComponent = (type: string) => {
   return types[type]
+}
+
+// 样式计算逻辑
+const getItemStyle = (item: any) => {
+  if (props.useColWrapper) return ''
+  return `width:${item.formItemWidth || props.itemConfig?.formItemWidth || '25%'}`
 }
 </script>

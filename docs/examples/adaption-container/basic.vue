@@ -1,11 +1,13 @@
 <template>
-  <div class="wrapper">
-    <yto-adaption-container :list="list">
-      <template #default="{ info }">
-        <div class="card">{{ info }}</div>
-      </template>
-    </yto-adaption-container>
-  </div>
+  <ClientOnly>
+    <div class="wrapper">
+      <yto-adaption-container :list="list">
+        <template #default="{ info }">
+          <div class="card">{{ info }}</div>
+        </template>
+      </yto-adaption-container>
+    </div>
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>

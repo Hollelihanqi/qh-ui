@@ -1,26 +1,28 @@
 <template>
-  <div class="p-10">
-    <yto-time-line :timeData="timeData">
-      <template #dot>
-        <div class="triangle"></div>
-      </template>
-      <template #default="{ item }">
-        <div class="mb-4">
-          <ElDescriptions :title="`${item.title}  -  ${item.timestamp}`">
-            <ElDescriptionsItem label="Username">kooriookami</ElDescriptionsItem>
-            <ElDescriptionsItem label="Telephone">18100000000</ElDescriptionsItem>
-            <ElDescriptionsItem label="Place">Suzhou</ElDescriptionsItem>
-            <ElDescriptionsItem label="Remarks">
-              <ElTag size="small">School</ElTag>
-            </ElDescriptionsItem>
-            <ElDescriptionsItem label="Address">
-              No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
+  <ClientOnly>
+    <div class="p-10">
+      <yto-time-line :timeData="timeData">
+        <template #dot>
+          <div class="triangle"></div>
+        </template>
+        <template #default="{ item }">
+          <div class="mb-4">
+            <ElDescriptions :title="`${item.title}  -  ${item.timestamp}`">
+              <ElDescriptionsItem label="Username">kooriookami</ElDescriptionsItem>
+              <ElDescriptionsItem label="Telephone">18100000000</ElDescriptionsItem>
+              <ElDescriptionsItem label="Place">Suzhou</ElDescriptionsItem>
+              <ElDescriptionsItem label="Remarks">
+                <ElTag size="small">School</ElTag>
               </ElDescriptionsItem>
-          </ElDescriptions>
-        </div>
-      </template>
-    </yto-time-line>
-  </div>
+              <ElDescriptionsItem label="Address">
+                No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
+              </ElDescriptionsItem>
+            </ElDescriptions>
+          </div>
+        </template>
+      </yto-time-line>
+    </div>
+  </ClientOnly>
 </template>
 <script setup lang="ts">
 import { ElDescriptions, ElDescriptionsItem, ElTag } from 'element-plus'

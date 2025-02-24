@@ -92,7 +92,7 @@ const { openTab } = useRouteChange(props.tabsMenuList, props)
 watch(
   () => route.fullPath,
   (newVal, oldVal) => {
-    if (!newVal) return
+    if (!newVal || newVal === '/') return
     //记录path切换时的current/back标记
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     props.routerGoback &&

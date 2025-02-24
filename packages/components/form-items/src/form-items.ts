@@ -13,7 +13,6 @@ export const formItemsProps = buildProps({
     type: String,
     default: '',
   },
-  span: { type: Number, default: 6 },
   form: {
     type: Object,
     default: () => ({}),
@@ -33,6 +32,10 @@ export const formItemsProps = buildProps({
         inactiveValue: false,
       }
     },
+  },
+  useColWrapper: {
+    type: Boolean,
+    default: false,
   },
 })
 

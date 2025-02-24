@@ -145,12 +145,12 @@
     "text": "其它",
     "items": [
       {
-        "text": "系统维护",
-        "link": "/system"
-      },
-      {
         "text": "表单状态",
         "link": "/form-readonly-class"
+      },
+      {
+        "text": "系统维护",
+        "link": "/system"
       }
     ]
   },
@@ -158,16 +158,12 @@
     "text": "工具函数",
     "items": [
       {
-        "text": "其他",
-        "link": "/other"
-      },
-      {
         "text": "分享",
         "link": "/share"
       },
       {
-        "text": "文件下载",
-        "link": "/download"
+        "text": "其他",
+        "link": "/other"
       },
       {
         "text": "时间转换",
@@ -176,6 +172,10 @@
       {
         "text": "水印",
         "link": "/waterMarker"
+      },
+      {
+        "text": "文件下载",
+        "link": "/download"
       }
     ]
   }

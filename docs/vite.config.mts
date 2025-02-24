@@ -58,7 +58,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       exclude: [
         'vitepress',
       ],
-      include: []
+      include: optimizeDeps
     },
     plugins: [
       vueJsx({
@@ -79,7 +79,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       AutoImport({
         ignore: ['h'], //解决h报错
         imports: ['vue'],
-        resolvers: [ElementPlusResolver()],
       }),
       MarkdownTransform(),
       VueMacros({

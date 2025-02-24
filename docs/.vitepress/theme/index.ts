@@ -1,8 +1,9 @@
 /** @type {import('vitepress').Theme} */
+
 import VPApp, { NotFound, globals } from '../vitepress'
 import DefaultTheme from 'vitepress/theme'
 
-import ElementPlus from 'element-plus'
+// import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // import YtoCustom from '@yto/custom'
 import '@yto/custom/theme-chalk/index.css'
@@ -24,10 +25,10 @@ export default {
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp)
     })
-
+    // console.log('import.meta.env.SSR', import.meta.env.SSR)
     if (!import.meta.env.SSR) {
       // @ts-ignore
-      const custom = await import('@yto/custom').then((m) => m)
+      const custom = await import('@yto/custom')
       app.use(custom.default)
     }
   },
