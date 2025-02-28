@@ -2,13 +2,13 @@ import { defineComponent, h, ref, getCurrentInstance, onMounted, nextTick } from
 import { remoteSearchProps, remoteSearchEmits, RemoteSearchProps } from './iremote-search'
 import { ElSelect, ElOption, ElSelectV2 } from 'element-plus'
 import { request } from '@yto-custom/utils'
-import { useDebounceFn }  from '@vueuse/core'
+import { useDebounceFn } from '@vueuse/core'
 
 export default defineComponent({
   name: 'RemoteSearch',
   props: remoteSearchProps,
   emits: remoteSearchEmits,
-  setup(props: RemoteSearchProps, { attrs, expose, emit }) {
+  setup(props: RemoteSearchProps, { attrs, expose, emit }: any) {
     const options: any = ref([])
     const copyOptions: any = ref([])
     const loading = ref(false)
@@ -16,22 +16,23 @@ export default defineComponent({
     const setData = (list: any) => {
       options.value = list
       copyOptions.value = [...list]
-      // if (attrs.modelValue) {
-      //   const selectedValue = props.modelItem ? attrs.modelValue : attrs.modelValue[props.valueKey]
-      //   const exists = list.some((item: any) => {
-      //     const itemValue = props.modelItem ? item : item[props.valueKey]
-      //     return itemValue === selectedValue
-      //   })
-      //   if (!exists) {
-      //     options.value = [...list]
-      //     if (props.url && !props.isRemoteSearch) {
-      //       updateData({
-      //         [props.searchField]: selectedValue,
-      //       })
-      //     }
-      //   }
-      // }
+      setDefaultFirstOption(list)
     }
+
+    const setDefaultFirstOption = (list: any) => {
+      // 如果设置了defaultFirstOption且有数据，将第一条数据设为默认值
+      if (props.defaultFirstOption && list.length > 0 && !attrs.modelValue) {
+        const firstItem = list[0]
+        const value = props.modelItem ? firstItem : firstItem[props.valueKey]
+        // 使用nextTick确保在DOM更新后设置值
+        nextTick(() => {
+          if (attrs['onUpdate:modelValue']) {
+            attrs['onUpdate:modelValue'](value)
+          }
+        })
+      }
+    }
+
     const source = request.CancelToken.source()
     const updateData = (params = {}) => {
       source.cancel()
@@ -61,17 +62,34 @@ export default defineComponent({
             cancelToken: source.token,
           })
           .then((res: any) => {
-            if (props.dataCallback) {
-              options.value = props.dataCallback(res)
-              copyOptions.value = [...options.value]
+            // 处理空响应
+            if (!res) {
+              setData([])
+              emit('after-remote', res)
               return
             }
+
+            // 使用数据回调处理
+            if (props.dataCallback) {
+              setData(props.dataCallback(res) ?? [])
+              emit('after-remote', res)
+              return
+            }
+
+            // 处理数组响应
             if (Array.isArray(res)) {
               setData(res)
-            } else {
-              options.value = props.resultKey && res[props.resultKey]
-              copyOptions.value = props.resultKey && [...res[props.resultKey]]
+              emit('after-remote', res)
+              return
             }
+
+            // 处理对象响应
+            if (props.resultKey && Array.isArray(res[props.resultKey])) {
+              setData(res[props.resultKey])
+            } else {
+              setData([])
+            }
+
             emit('after-remote', res)
           })
           .finally(() => {
@@ -222,23 +240,6 @@ export default defineComponent({
         ></ElSelectV2>
       )
     }
-
-    // watch(
-    //   () => attrs.modelValue,
-    //   (newVal) => {
-    //     if (newVal && options.value.length === 0) {
-    //       if (props.url && !props.isRemoteSearch) {
-    //         const params = {
-    //           [props.searchField]: props.modelItem ? newVal : newVal[props.valueKey],
-    //         }
-    //         updateData(params)
-    //       } else if (props.requestApi && !props.isRemoteSearch) {
-    //         callRequestApi()
-    //       }
-    //     }
-    //   },
-    //   { immediate: true },
-    // )
 
     return () => {
       return props.stag === 'select' ? renderSelect() : renderSelectV2()

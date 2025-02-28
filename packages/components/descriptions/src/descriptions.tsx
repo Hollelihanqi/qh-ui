@@ -57,6 +57,7 @@ export default defineComponent({
                   width: itemLabelPosition === 'top' ? 'auto' : _lwidth.value,
                   'text-align': props.labelAlign,
                   'padding-right': props.labelSuffixHide ? '12px' : '',
+                  'font-weight': 500,
                   color: props.labelColor,
                   ...(itemLabelPosition === 'top'
                     ? {

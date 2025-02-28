@@ -55,16 +55,16 @@ export const descriptionsProps = {
   },
   labelColor: {
     type: String,
-    default: '#262626',
+    default: '#606266',
   },
   valueColor: {
     type: String,
-    default: '#595959',
+    default: '#909399',
   },
   lineHeight: {
     type: String,
     default: '26px',
-  }
+  },
 }
 
 export type DescriptionsProps = ExtractPropTypes<typeof descriptionsProps>

@@ -79,6 +79,10 @@ export const remoteSearchProps = buildProps({
     type: String,
     default: 'select',
   },
+  defaultFirstOption: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 export const remoteSearchEmits = ['after-remote']

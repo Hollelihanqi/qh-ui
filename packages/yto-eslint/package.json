@@ -1,6 +1,6 @@
 {
   "name": "@yto/eslint-config",
-  "version": "9.10.0-7",
+  "version": "9.10.0-8",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -17,18 +17,6 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@eslint/js": "^9.9.1",
-    "@typescript-eslint/eslint-plugin": "^8.6.0",
-    "@typescript-eslint/parser": "^8.6.0",
-    "eslint": "^9.9.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-vue": "^9.27.0",
-    "globals": "^15.9.0",
-    "prettier": "^3.3.3",
-    "typescript-eslint": "^8.6.0"
-  },
-  "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
