@@ -91,14 +91,6 @@ const renderCellData = (item: any, scope: any) => {
         : (scope.row[item.prop] ?? '--')
 }
 
-// const _showColumn = (column: any) => {
-//   if (column.hide && typeof column.hide === "function") {
-//     return column.hide();
-//   } else {
-//     return column.show !== false;
-//   }
-// };
-
 const renderColumn = (column: any) => {
   return (
     <>
@@ -106,7 +98,13 @@ const renderColumn = (column: any) => {
         <ElTableColumn
           showOverflowTooltip={column.showOverflowTooltip ?? column.prop !== 'action'}
           {...column}
-          className={`${column.sortable && column.align === 'right' ? 'sort-cell-td' : ''} ${column?.className || ''} `}
+          className={[
+            column.sortable && column.align === 'right' && 'sort-cell-td',
+            column?.className ?? '',
+            column.prop === 'action' && 'action-td',
+          ]
+            .filter(Boolean)
+            .join(' ')}
         >
           {{
             default: (scope: any) => {
