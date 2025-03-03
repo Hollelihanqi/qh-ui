@@ -160,8 +160,8 @@ import {
   withKeys,
   withMemo,
   withModifiers,
-  withScopeId,
-} from './chunk-B3ROQUUI.js'
+  withScopeId
+} from "./chunk-B3ROQUUI.js";
 import {
   camelize,
   capitalize,
@@ -169,9 +169,9 @@ import {
   normalizeProps,
   normalizeStyle,
   toDisplayString,
-  toHandlerKey,
-} from './chunk-JVSYCCQQ.js'
-import './chunk-SNAQBZPT.js'
+  toHandlerKey
+} from "./chunk-JVSYCCQQ.js";
+import "./chunk-SNAQBZPT.js";
 export {
   BaseTransition,
   BaseTransitionPropsValidators,
@@ -341,6 +341,6 @@ export {
   withKeys,
   withMemo,
   withModifiers,
-  withScopeId,
-}
+  withScopeId
+};
 //# sourceMappingURL=vue.js.map

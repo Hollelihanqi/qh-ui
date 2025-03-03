@@ -15,9 +15,9 @@ import {
   isCancel,
   mergeConfig,
   spread,
-  toFormData,
-} from './chunk-5PPGIVZJ.js'
-import './chunk-SNAQBZPT.js'
+  toFormData
+} from "./chunk-2IC7ADMB.js";
+import "./chunk-SNAQBZPT.js";
 export {
   Axios,
   AxiosError,
@@ -35,6 +35,6 @@ export {
   isCancel,
   mergeConfig,
   spread,
-  toFormData,
-}
+  toFormData
+};
 //# sourceMappingURL=axios.js.map

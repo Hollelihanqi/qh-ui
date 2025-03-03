@@ -8,11 +8,6 @@ export const formItemsProps = buildProps({
       return []
     },
   },
-  layoutAuto: { type: Boolean, default: false },
-  size: {
-    type: String,
-    default: '',
-  },
   form: {
     type: Object,
     default: () => ({}),

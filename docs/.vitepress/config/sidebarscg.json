@@ -48,8 +48,12 @@
         "link": "/empty"
       },
       {
-        "text": "Form 表单",
+        "text": "form",
         "link": "/form"
+      },
+      {
+        "text": "form-items",
+        "link": "/form-items"
       },
       {
         "text": "JDataViewer JSON数据查看器",
