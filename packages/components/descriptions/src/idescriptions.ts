@@ -65,6 +65,10 @@ export const descriptionsProps = {
     type: String,
     default: '26px',
   },
+  colAignItemsCenter: {
+    type: Boolean,
+    default: false,
+  },
 }
 
 export type DescriptionsProps = ExtractPropTypes<typeof descriptionsProps>

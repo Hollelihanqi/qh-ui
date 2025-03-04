@@ -31,7 +31,7 @@
 </template>
 <script lang="ts" setup>
 import SimpleUploader from 'simple-uploader.js'
-import { computed, defineProps, watch, ref, onBeforeMount } from 'vue'
+import { computed, watch, ref, onBeforeMount } from 'vue'
 
 const props = defineProps({
   file: {

@@ -30,6 +30,7 @@ import { ElButton, ElDialog } from 'element-plus'
 import { dialogProps, dialogEmits } from './dialog'
 
 defineOptions({
+  // eslint-disable-next-line vue/no-reserved-component-names
   name: 'Dialog',
 })
 

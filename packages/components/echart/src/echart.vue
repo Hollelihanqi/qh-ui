@@ -3,7 +3,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { echartProps, echartEmits } from './echart'
+import { echartProps } from './echart'
 import LineChart from './LineChart.vue'
 import BarChart from './BarChart.vue'
 import BaseChart from './BaseChart.vue'
@@ -15,7 +15,6 @@ defineOptions({
 })
 
 const props = defineProps(echartProps)
-const emit = defineEmits(echartEmits)
 
 const chartRef = ref()
 const chartMap = new Map<string, any>()

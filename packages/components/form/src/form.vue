@@ -79,7 +79,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { ElForm, ElFormItem, ElRow, ElCol } from 'element-plus'
-import BaseFormContent from '../../form-items/src/form-controls/Index.vue'
+import BaseFormContent from '@yto-custom/components/form-items/src/form-controls/Index.vue'
 import { formProps } from './form'
 
 defineOptions({
