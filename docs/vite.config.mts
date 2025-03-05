@@ -57,6 +57,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     optimizeDeps: {
       exclude: [
         'vitepress',
+        'fsevents'
       ],
       include: optimizeDeps
     },
