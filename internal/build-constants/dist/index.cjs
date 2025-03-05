@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const PKG_PREFIX = "@yto-custom";
-const PKG_NAME = "yto-custom";
+const PKG_NAME = "@yto/custom";
 const PKG_CAMELCASE_NAME = "YtoCustom";
 const PKG_BRAND_NAME = "Yto Custom";
 

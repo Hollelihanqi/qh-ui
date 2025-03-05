@@ -1,5 +1,5 @@
 declare const PKG_PREFIX = "@yto-custom";
-declare const PKG_NAME = "yto-custom";
+declare const PKG_NAME = "@yto/custom";
 declare const PKG_CAMELCASE_NAME = "YtoCustom";
 declare const PKG_BRAND_NAME = "Yto Custom";
 
