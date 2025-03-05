@@ -7,7 +7,7 @@
 .page-content {
   outline: none;
   @include respond-to('lg') {
-    padding-top: var(--nav-height);
+    // padding-top: var(--nav-height);
 
     &.has-sidebar {
       padding-left: calc(var(--sidebar-width-sm) + 10px);
