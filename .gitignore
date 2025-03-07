@@ -5,3 +5,5 @@ dist
 .vitepress/cache
 !packages/**/dist
 !internal/**/dist
+/.cursor
+/docs/.vitepress/cache
