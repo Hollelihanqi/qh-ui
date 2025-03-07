@@ -3,7 +3,7 @@
 </template>
 
 <script lang="tsx" setup>
-import { useSlots } from 'vue'
+import { useSlots, Fragment } from 'vue'
 import { ElMessage, ElTableColumn, ElIcon } from 'element-plus'
 import { CopyDocument } from '@element-plus/icons-vue'
 
@@ -61,22 +61,10 @@ const copyTextToClipboard = (copyData = '') => {
             message: '复制失败',
           })
         })
-    } else {
-      // 兼容旧浏览器
-      document.execCommand('Copy')
-      ElMessage({
-        type: 'success',
-        message: '复制成功',
-      })
     }
-
     document.body.removeChild(input)
   } catch (error) {
     console.error('Error during copy operation: ', error)
-    ElMessage({
-      type: 'error',
-      message: '复制失败',
-    })
   }
 }
 
@@ -91,9 +79,52 @@ const renderCellData = (item: any, scope: any) => {
         : (scope.row[item.prop] ?? '--')
 }
 
+// 复制
+const getCopyText = (column: any, scope: any): string => {
+  try {
+    // 如果设置了 copyText
+    if (column.copyText !== undefined) {
+      // 如果是字符串直接返回
+      if (typeof column.copyText === 'string') {
+        return column.copyText
+      }
+      // 如果是函数则执行并返回结果
+      if (typeof column.copyText === 'function') {
+        const result = column.copyText(scope.row)
+        return String(result || '--')
+      }
+    }
+
+    // 如果有 prop 属性，则获取对应的值
+    if (column.prop && scope.row) {
+      const value = scope.row[column.prop]
+      // 使用 nullish 运算符，只有值为 null 或 undefined 时才返回 '--'
+      return value ?? '--'
+    }
+
+    return '--'
+  } catch (error) {
+    console.warn('获取复制文本时出错:', error)
+    return '--'
+  }
+}
+
+const copyRender = (column: any, scope: any) => {
+  return (
+    <ElIcon
+      class="cursor-pointer copy-icon-color"
+      onClick={() => {
+        copyTextToClipboard(getCopyText(column, scope))
+      }}
+    >
+      <CopyDocument />
+    </ElIcon>
+  )
+}
+
 const renderColumn = (column: any) => {
   return (
-    <>
+    <Fragment>
       {
         <ElTableColumn
           showOverflowTooltip={column.showOverflowTooltip ?? column.prop !== 'action'}
@@ -109,22 +140,18 @@ const renderColumn = (column: any) => {
           {{
             default: (scope: any) => {
               if (column._children) return column._children.map((child: any) => renderColumn(child))
-              if (column.render) return column.render(scope)
-              if (column.prop && slots[column.prop]) return slots?.[column.prop]?.(scope)
-              if (column.copy)
+              if (column.copy) {
                 return (
                   <div class="flex items-center gap-2">
-                    <ElIcon
-                      class="cursor-pointer copy-icon-color"
-                      onClick={() => {
-                        copyTextToClipboard(renderCellData(column, scope))
-                      }}
-                    >
-                      <CopyDocument />
-                    </ElIcon>
-                    <span>{renderCellData(column, scope)}</span>
+                    {copyRender(column, scope)}
+                    {column.render && column.render(scope)}
+                    {column.prop && slots[column.prop] && slots?.[column.prop]?.(scope)}
+                    {renderCellData(column, scope)}
                   </div>
                 )
+              }
+              if (column.render) return column.render(scope)
+              if (column.prop && slots[column.prop]) return slots?.[column.prop]?.(scope)
               return renderCellData(column, scope)
             },
             header: () => {
@@ -135,7 +162,7 @@ const renderColumn = (column: any) => {
           }}
         </ElTableColumn>
       }
-    </>
+    </Fragment>
   )
 }
 </script>

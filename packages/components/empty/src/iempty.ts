@@ -25,7 +25,10 @@ export const emptyProps = {
     type: Boolean,
     default: false,
   },
+  hideImg: {
+    type: Boolean,
+    default: false,
+  },
 }
-
 
 export type EmptyProps = ExtractPropTypes<typeof emptyProps>

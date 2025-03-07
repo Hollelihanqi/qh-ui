@@ -325,7 +325,7 @@ export default defineComponent({
         <div
           ref={searchFormInstance}
           v-resizeElement={handleResize}
-          class="relative search-form-w bg-white px-[16px] pt-[20px]"
+          class="yto-search-form relative bg-white px-[16px] pt-[20px]"
         >
           <ElForm model={_searchModel.value} class="search-form" label-width="auto">
             <Grid
@@ -372,11 +372,44 @@ export default defineComponent({
             </Grid>
           </ElForm>
           {showCollapse.value && (
-            <div class={`absolute bottom-0 left-0 w-full flex justify-center ${collapsed.value ? 'hbottom-20' : ''}`}>
+            <div class={`collapse-btn-box absolute bottom-0 left-0 w-full flex justify-center`}>
               <div
-                class={`w-[60px] h-[20px] cursor-pointer ${collapsed.value ? 'downi' : 'upi'}`}
+                class={`collapse-btn h-[20px] w-[60px] flex items-center justify-center ${collapsed.value ? 'down' : 'up'}`}
                 onClick={handleCollapse}
-              ></div>
+              >
+                <svg
+                  v-show={!collapsed.value}
+                  width="10px"
+                  height="10px"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                  class="c-g-700 m-t-3-n yt-icon yt-icon-chevron-up-double"
+                >
+                  <path
+                    d="M7.01 1.86 1.436 7.434l-.849-.849 6-6a.6.6 0 0 1 .849 0l6 6-.849.849-5.575-5.576Zm0 5-5.575 5.575-.849-.849 6-6a.6.6 0 0 1 .849 0l6 6-.849.849-5.575-5.576Z"
+                    fill="currentColor"
+                    stroke="none"
+                    stroke-width="0"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+                <svg
+                  v-show={collapsed.value}
+                  width="10px"
+                  height="10px"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                  class="c-g-700 m-t-3-n yt-icon yt-icon-chevron-down-double"
+                >
+                  <path
+                    d="m7.01 10.99 5.575-5.575.849.849-6 6a.6.6 0 0 1-.849 0l-6-6 .849-.849 5.575 5.576Zm0-5L12.584.416l.849.849-6 6a.6.6 0 0 1-.849 0l-6-6 .849-.849 5.575 5.576Z"
+                    fill="currentColor"
+                    stroke="none"
+                    stroke-width="0"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+              </div>
             </div>
           )}
         </div>

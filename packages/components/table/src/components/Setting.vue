@@ -6,7 +6,7 @@
     </div> -->
 
     <div class="pl-[16px] flex flex-col">
-      <template v-for="item in columns" :key="index">
+      <template v-for="item in columns" :key="item.prop">
         <ElCheckbox
           v-model="item.checked"
           :checked="item.checked"

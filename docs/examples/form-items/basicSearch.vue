@@ -88,9 +88,7 @@ const formConfig = [
 ]
 
 const test = ref()
-onMounted(() => {
-  console.log('???????????????:', test.value)
-})
+
 </script>
 
 <style scoped lang="scss">

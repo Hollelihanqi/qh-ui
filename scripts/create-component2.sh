@@ -159,6 +159,7 @@ if [ "$TEMPLATE_TYPE" = "sfc" ]; then
 import type ${COMPONENT_NAME_PASCAL} from './${COMPONENT_NAME}.vue'
 
 export type ${COMPONENT_NAME_PASCAL}Instance = InstanceType<typeof ${COMPONENT_NAME_PASCAL}>
+
 EOF
 else
     # TSX 版本
@@ -166,6 +167,7 @@ else
 import type ${COMPONENT_NAME_PASCAL} from './${COMPONENT_NAME}'
 
 export type ${COMPONENT_NAME_PASCAL}Instance = InstanceType<typeof ${COMPONENT_NAME_PASCAL}>
+
 EOF
 fi
 

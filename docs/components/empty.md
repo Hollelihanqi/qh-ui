@@ -22,3 +22,4 @@ empty/basic
 | miniSize  | 尺寸大小 | Object  | —                | `{ width: "80px", height: "40px" }`   |
 | desc      | 文本描述 | String  | —                | 暂无数据                              |
 | hidesc    | 隐藏文本 | Boolean | —                | false                                 |
+| hideImg   | 隐藏图片 | Boolean | —                | false                                 |

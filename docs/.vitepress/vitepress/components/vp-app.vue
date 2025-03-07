@@ -64,7 +64,6 @@ onMounted(async () => {
         !(extMatch && extMatch[0] !== '.html')
       ) {
         e.preventDefault()
-        console.log('pathname', pathname, currentUrl.pathname)
         if (pathname !== currentUrl.pathname) {
           nprogress.start()
         }

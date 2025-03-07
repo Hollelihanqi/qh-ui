@@ -63,7 +63,7 @@ export type SearchFormControlProps = SearchProps<El>
 export const searchFormProps = buildProps({
   searchModel: {
     type: Object,
-    default: () => ({}),
+    default: () => null, // 这里的默认值必须是 null ，不能是 {} ，否则会导致表单无法输入
   },
   colConfig: {
     type: [Number, Object],

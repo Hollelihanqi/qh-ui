@@ -1,6 +1,6 @@
 {
   "name": "@yto/custom",
-  "version": "2.0.14-test",
+  "version": "2.0.0-beta.6",
   "type": "module",
   "module": "es/index.mjs",
   "types": "es/index.d.ts",

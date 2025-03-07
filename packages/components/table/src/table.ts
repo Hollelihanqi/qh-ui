@@ -7,6 +7,8 @@ export interface ColumnsItemProps {
   label?: string
   prop?: string
   hide?: (row?: any) => boolean
+  copy?: (row?: any) => boolean
+  copyText?: string | Function
   [propsName: string]: any
 }
 type CanWrite<T> = {

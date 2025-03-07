@@ -4,3 +4,12 @@
     width: 100%;
   }
 }
+.yto-search-form {
+  .collapse-btn-box {
+    .collapse-btn {
+      &:hover {
+        background: rgba(215, 219, 223, 0.2);
+      }
+    }
+  }
+}
