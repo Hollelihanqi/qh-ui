@@ -3,7 +3,9 @@ node_modules
 .idea
 dist
 .vitepress/cache
-!packages/**/dist
-!internal/**/dist
 /.cursor
 /docs/.vitepress/cache
+.DS_Store
+
+!packages/**/dist
+!internal/**/dist
