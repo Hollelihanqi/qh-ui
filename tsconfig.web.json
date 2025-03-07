@@ -23,7 +23,9 @@
     "typings/env.d.ts",
     "packages/components/**/*.tsx",
     "packages/components/**/*.vue",
-    "internal/resolve"
+    "internal/resolve",
+    "packages/theme-chalk/**/*.ts",
+    "packages/theme-chalk/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",

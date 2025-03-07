@@ -15,7 +15,6 @@ import {
   require_node_crypto,
   require_node_dns,
   require_node_events,
-  require_node_net,
   require_node_readline,
   require_node_stream,
   require_node_string_decoder,
@@ -25,9 +24,11 @@ import {
   require_node_zlib,
   require_querystring,
   require_tls,
-  require_tty,
   require_zlib
-} from "./chunk-TOLW622G.js";
+} from "./chunk-ZWSIKFVV.js";
+import {
+  require_url
+} from "./chunk-NLSDCWQO.js";
 import {
   require_events,
   require_node_os,
@@ -36,10 +37,17 @@ import {
   require_util
 } from "./chunk-GN57YAIH.js";
 import {
+  require_fs
+} from "./chunk-QZAH7VNE.js";
+import {
   require_node_fs,
   require_node_perf_hooks,
-  require_promises
-} from "./chunk-A7VKV7GE.js";
+  require_promises,
+  require_tty
+} from "./chunk-RCZZDYYZ.js";
+import {
+  require_path
+} from "./chunk-LXBZCEIU.js";
 import {
   require_node_http
 } from "./chunk-MM644HQJ.js";
@@ -53,15 +61,6 @@ import {
 import {
   require_node_path
 } from "./chunk-OYZR2EBP.js";
-import {
-  require_url
-} from "./chunk-NLSDCWQO.js";
-import {
-  require_fs
-} from "./chunk-QZAH7VNE.js";
-import {
-  require_path
-} from "./chunk-LXBZCEIU.js";
 import {
   __commonJS,
   __toESM
@@ -530,16 +529,16 @@ var require_browser = __commonJS({
   }
 });
 
-// ../node_modules/.pnpm/vitepress-plugin-group-icons@1.3.6/node_modules/vitepress-plugin-group-icons/dist/index.mjs
+// ../node_modules/.pnpm/vitepress-plugin-group-icons@1.3.5/node_modules/vitepress-plugin-group-icons/dist/index.mjs
 var import_node_fs2 = __toESM(require_node_fs(), 1);
 var import_node_path2 = __toESM(require_node_path(), 1);
 var import_node_url2 = __toESM(require_node_url(), 1);
 
-// ../node_modules/.pnpm/vite@5.4.14_@types+node@18.19.76_sass@1.85.1/node_modules/vite/dist/node/index.js
+// ../node_modules/.pnpm/vite@5.4.10_@types+node@18.19.50_sass@1.83.4/node_modules/vite/dist/node/index.js
 var import_esbuild = __toESM(require_main());
 var import_node_fs = __toESM(require_node_fs());
 
-// ../node_modules/.pnpm/vite@5.4.14_@types+node@18.19.76_sass@1.85.1/node_modules/vite/dist/node/runtime.js
+// ../node_modules/.pnpm/vite@5.4.10_@types+node@18.19.50_sass@1.83.4/node_modules/vite/dist/node/runtime.js
 var SOURCEMAPPING_URL = "sourceMa";
 SOURCEMAPPING_URL += "ppingURL";
 var isWindows = typeof process < "u" && process.platform === "win32";
@@ -570,14 +569,13 @@ var retrieveSourceMapFromHandlers = createExecHandlers(
 );
 var originalPrepare = Error.prepareStackTrace;
 
-// ../node_modules/.pnpm/vite@5.4.14_@types+node@18.19.76_sass@1.85.1/node_modules/vite/dist/node/index.js
+// ../node_modules/.pnpm/vite@5.4.10_@types+node@18.19.50_sass@1.83.4/node_modules/vite/dist/node/index.js
 var import_promises = __toESM(require_promises());
 var import_node_path = __toESM(require_node_path());
 var import_node_url = __toESM(require_node_url());
 var import_node_util = __toESM(require_node_util());
 var import_node_perf_hooks = __toESM(require_node_perf_hooks());
 var import_node_module = __toESM(require_node_module());
-var import_node_crypto = __toESM(require_node_crypto());
 var import_tty = __toESM(require_tty());
 var import_path = __toESM(require_path());
 var import_fs = __toESM(require_fs());
@@ -596,6 +594,7 @@ var import_stream = __toESM(require_stream());
 var import_os = __toESM(require_os());
 var import_child_process = __toESM(require_child_process());
 var import_node_os = __toESM(require_node_os());
+var import_node_crypto = __toESM(require_node_crypto());
 var import_node_dns = __toESM(require_node_dns());
 var import_crypto = __toESM(require_crypto());
 var import_module = __toESM(require_module());
@@ -609,14 +608,13 @@ var import_zlib = __toESM(require_zlib());
 var import_buffer = __toESM(require_buffer());
 var import_https = __toESM(require_https());
 var import_tls = __toESM(require_tls());
-var import_node_net = __toESM(require_node_net());
 var import_assert = __toESM(require_assert());
 var import_node_zlib = __toESM(require_node_zlib());
 
-// ../node_modules/.pnpm/vitepress-plugin-group-icons@1.3.6/node_modules/vitepress-plugin-group-icons/dist/index.mjs
+// ../node_modules/.pnpm/vitepress-plugin-group-icons@1.3.5/node_modules/vitepress-plugin-group-icons/dist/index.mjs
 var import_node_module2 = __toESM(require_node_module(), 1);
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/icon/defaults.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/icon/defaults.mjs
 var defaultIconDimensions = Object.freeze(
   {
     left: 0,
@@ -640,7 +638,7 @@ var defaultExtendedIconProps = Object.freeze({
   hidden: false
 });
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/customisations/defaults.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/customisations/defaults.mjs
 var defaultIconSizeCustomisations = Object.freeze({
   width: null,
   height: null
@@ -652,7 +650,7 @@ var defaultIconCustomisations = Object.freeze({
   ...defaultIconTransformations
 });
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/icon/transformations.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/icon/transformations.mjs
 function mergeIconTransformations(obj1, obj2) {
   const result = {};
   if (!obj1.hFlip !== !obj2.hFlip) {
@@ -668,7 +666,7 @@ function mergeIconTransformations(obj1, obj2) {
   return result;
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/icon/merge.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/icon/merge.mjs
 function mergeIconData(parent, child) {
   const result = mergeIconTransformations(parent, child);
   for (const key in defaultExtendedIconProps) {
@@ -685,7 +683,7 @@ function mergeIconData(parent, child) {
   return result;
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/icon-set/tree.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/icon-set/tree.mjs
 function getIconsTree(data, names) {
   const icons = data.icons;
   const aliases = data.aliases || /* @__PURE__ */ Object.create(null);
@@ -708,7 +706,7 @@ function getIconsTree(data, names) {
   return resolved;
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/icon-set/get-icon.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/icon-set/get-icon.mjs
 function internalGetIconData(data, name, tree) {
   const icons = data.icons;
   const aliases = data.aliases || /* @__PURE__ */ Object.create(null);
@@ -731,7 +729,7 @@ function getIconData(data, name) {
   return tree ? internalGetIconData(data, name, tree) : null;
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/icon-set/validate-basic.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/icon-set/validate-basic.mjs
 var optionalPropertyDefaults = {
   provider: "",
   aliases: {},
@@ -739,12 +737,12 @@ var optionalPropertyDefaults = {
   ...defaultIconDimensions
 };
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/icon-set/get-icons.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/icon-set/get-icons.mjs
 var propsToCopy = Object.keys(defaultIconDimensions).concat([
   "provider"
 ]);
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/svg/size.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/svg/size.mjs
 var unitsSplit = /(-?[0-9.]*[0-9]+[0-9.]*)/g;
 var unitsTest = /^-?[0-9.]*[0-9]+[0-9.]*$/g;
 function calculateSize(size, ratio, precision) {
@@ -784,7 +782,7 @@ function calculateSize(size, ratio, precision) {
   }
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/svg/defs.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/svg/defs.mjs
 function splitSVGDefs(content, tag = "defs") {
   let defs = "";
   const index = content.indexOf("<" + tag);
@@ -814,7 +812,7 @@ function wrapSVGContent(body, start, end) {
   return mergeDefsAndContent(split.defs, start + split.content + end);
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/svg/build.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/svg/build.mjs
 var isUnsetKeyword = (value) => value === "unset" || value === "undefined" || value === "none";
 function iconToSVG(icon, customisations) {
   const fullIcon = {
@@ -928,15 +926,15 @@ function iconToSVG(icon, customisations) {
   };
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/svg/id.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/svg/id.mjs
 var randomPrefix = "IconifyId" + Date.now().toString(16) + (Math.random() * 16777216 | 0).toString(16);
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/svg/url.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/svg/url.mjs
 function encodeSVGforURL(svg) {
   return svg.replace(/"/g, "'").replace(/%/g, "%25").replace(/#/g, "%23").replace(/</g, "%3C").replace(/>/g, "%3E").replace(/\s+/g, " ");
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/svg/encode-svg-for-css.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/svg/encode-svg-for-css.mjs
 function encodeSvgForCss(svg) {
   let useSvg = svg.startsWith("<svg>") ? svg.replace("<svg>", "<svg >") : svg;
   if (!useSvg.includes(" xmlns:xlink=") && useSvg.includes(" xlink:")) {
@@ -954,7 +952,7 @@ function encodeSvgForCss(svg) {
   return encodeSVGforURL(useSvg);
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/svg/html.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/svg/html.mjs
 function iconToHTML(body, attributes) {
   let renderAttribsHTML = body.indexOf("xlink:") === -1 ? "" : ' xmlns:xlink="http://www.w3.org/1999/xlink"';
   for (const attr in attributes) {
@@ -963,7 +961,7 @@ function iconToHTML(body, attributes) {
   return '<svg xmlns="http://www.w3.org/2000/svg"' + renderAttribsHTML + ">" + body + "</svg>";
 }
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/colors/keywords.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/colors/keywords.mjs
 var colorKeywords = {
   transparent: {
     type: "transparent"
@@ -1151,7 +1149,7 @@ add("whitesmoke", [245]);
 add("yellow", [255, 255, 0]);
 add("yellowgreen", [154, 205, 50]);
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/css/icons.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/css/icons.mjs
 var commonSelector = ".icon--{prefix}";
 var iconSelector = ".icon--{prefix}--{name}";
 var defaultSelectors = {
@@ -1160,18 +1158,18 @@ var defaultSelectors = {
   overrideSelector: commonSelector + iconSelector
 };
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/loader/custom.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/loader/custom.mjs
 var import_debug = __toESM(require_browser(), 1);
 var debug = (0, import_debug.default)("@iconify-loader:custom");
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/loader/modern.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/loader/modern.mjs
 var import_debug2 = __toESM(require_browser(), 1);
 var debug2 = (0, import_debug2.default)("@iconify-loader:icon");
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/loader/loader.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/loader/loader.mjs
 var import_debug3 = __toESM(require_browser(), 1);
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/emoji/format.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/emoji/format.mjs
 var defaultUnicodeOptions = {
   prefix: "",
   separator: "",
@@ -1185,10 +1183,10 @@ var defaultSequenceOptions = {
   separator: "-"
 };
 
-// ../node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/index.mjs
+// ../node_modules/.pnpm/@iconify+utils@2.2.1/node_modules/@iconify/utils/lib/index.mjs
 var import_debug4 = __toESM(require_browser(), 1);
 
-// ../node_modules/.pnpm/vitepress-plugin-group-icons@1.3.6/node_modules/vitepress-plugin-group-icons/dist/index.mjs
+// ../node_modules/.pnpm/vitepress-plugin-group-icons@1.3.5/node_modules/vitepress-plugin-group-icons/dist/index.mjs
 function localIconLoader(url, path) {
   return (0, import_node_fs2.readFileSync)((0, import_node_path2.resolve)((0, import_node_path2.dirname)((0, import_node_url2.fileURLToPath)(url)), path), "utf-8");
 }
@@ -1364,7 +1362,7 @@ ${selector} {
   --icon: url("data:image/svg+xml,${svg}");
 }`;
   }));
-  return iconCSS.sort().join("");
+  return iconCSS.join("");
 }
 async function getSVG(icon) {
   if (icon.startsWith("<svg")) {

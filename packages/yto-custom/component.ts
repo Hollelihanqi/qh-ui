@@ -66,5 +66,5 @@ export default [
   YtoTimeLine,
   YtoUploader,
   YtoUserSearch,
-  YtoWaterMark,
+  YtoWaterMark
 ] as Plugin[]
