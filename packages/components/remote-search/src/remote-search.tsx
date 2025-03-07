@@ -169,8 +169,17 @@ export default defineComponent({
       disLabelEvent()
     })
 
+    const _exposeApi = {
+      getOptions,
+      clearOptions,
+    }
+
+    if (props.exposeRef) {
+      props.exposeRef.value = _exposeApi
+    }
+
     const RemoteSearchSelectInstance: any = ref()
-    expose({ getOptions, clearOptions })
+    expose(_exposeApi)
 
     const renderSelect = () => {
       return h(

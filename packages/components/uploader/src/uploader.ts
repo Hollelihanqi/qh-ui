@@ -6,6 +6,10 @@ export const uploaderProps = buildProps({
     type: Object,
     default: () => ({}),
   },
+  exposeRef: {
+    type: Object,
+    default: null,
+  },
   isSlice: {
     type: Boolean,
     default: true,

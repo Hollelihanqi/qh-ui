@@ -6,6 +6,10 @@ export const remoteSearchProps = buildProps({
     type: String,
     default: '',
   },
+  exposeRef: {
+    type: Object,
+    default: null,
+  },
   method: {
     type: String,
     default: 'GET',

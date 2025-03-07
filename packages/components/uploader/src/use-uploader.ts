@@ -296,6 +296,14 @@ const useUploader = (props: UploaderProps, emits: any) => {
     UPLOADER.value.getFileList = getFileList
     UPLOADER.value._upload = __upload
     props.getInstance(UPLOADER)
+    if (props.exposeRef) {
+      props.exposeRef.value = {
+        clearFiles,
+        removeFile,
+        getFileList,
+        _upload: __upload,
+      }
+    }
     setInputMultiple(false)
   })
 
