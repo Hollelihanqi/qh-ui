@@ -33,7 +33,7 @@
     "build-after-version": "pnpm build",
     "publish-custom": "cd dist/yto-custom && npm publish",
     "push-tags": "git push origin --tags",
-    "release:ui": "pnpm check-git && pnpm update-version && pnpm build-after-version && pnpm publish-custom"
+    "release:ui": "pnpm check-git && pnpm update-version && pnpm build-after-version && pnpm publish-custom && pnpm push-tags"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.0",
