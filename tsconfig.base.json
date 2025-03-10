@@ -16,12 +16,8 @@
     "rootDir": ".",
     "types": [],
     "paths": {
-      "@yto-custom/*": [
-        "packages/*"
-      ],
-      "yto-custom": [
-        "packages/yto-custom"
-      ]
+      "@yto-custom/*": ["packages/*"],
+      "yto-custom": ["packages/yto-custom"]
     },
     "preserveSymlinks": true
   }

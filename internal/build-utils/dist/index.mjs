@@ -7,7 +7,8 @@ import { findWorkspacePackages } from '@pnpm/find-workspace-packages';
 
 const writeJson = (path, data, spaces = 0) => writeFile(path, JSON.stringify(data, void 0, spaces), "utf-8");
 const ensureDir = async (path) => {
-  if (!existsSync(path)) await mkdir(path, { recursive: true });
+  if (!existsSync(path))
+    await mkdir(path, { recursive: true });
 };
 
 function errorAndExit(err) {

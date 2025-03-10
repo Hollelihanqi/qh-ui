@@ -9,3 +9,7 @@ dist
 
 !packages/**/dist
 !internal/**/dist
+
+
+.nx/cache
+.nx/workspace-data

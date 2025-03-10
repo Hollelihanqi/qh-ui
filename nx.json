@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true
+    }
+  },
+  "defaultBase": "master",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "!{projectRoot}/**/node_modules/**/*"],
+    "production": ["default"]
+  },
+  "release": {
+    "projectsRelationship": "independent",
+    "releaseTagPattern": "v{version}",
+    "changelog": {
+      "workspaceChangelog": true,
+      "projectChangelogs": false
+    },
+    "git": {
+      "commitMessage": "chore(release): publish v${version}"
+    }
+  }
+}

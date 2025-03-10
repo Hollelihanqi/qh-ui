@@ -9,7 +9,8 @@ const findWorkspacePackages = require('@pnpm/find-workspace-packages');
 
 const writeJson = (path, data, spaces = 0) => promises.writeFile(path, JSON.stringify(data, void 0, spaces), "utf-8");
 const ensureDir = async (path) => {
-  if (!fs.existsSync(path)) await promises.mkdir(path, { recursive: true });
+  if (!fs.existsSync(path))
+    await promises.mkdir(path, { recursive: true });
 };
 
 function errorAndExit(err) {
