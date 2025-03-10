@@ -21,7 +21,8 @@
     "version": {
       "git": {
         "commitMessage": "chore(release): publish v${version}",
-        "push": true
+        "push": true,
+        "tag": true
       }
     }
   }
