@@ -20,7 +20,8 @@
     },
     "version": {
       "git": {
-        "commitMessage": "chore(release): publish v${version}"
+        "commitMessage": "chore(release): publish v${version}",
+        "push": true
       }
     }
   }
