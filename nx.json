@@ -18,8 +18,10 @@
       "workspaceChangelog": true,
       "projectChangelogs": false
     },
-    "git": {
-      "commitMessage": "chore(release): publish v${version}"
+    "version": {
+      "git": {
+        "commitMessage": "chore(release): publish v${version}"
+      }
     }
   }
 }
