@@ -25,15 +25,17 @@
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "format": "prettier --write .",
-    "new": "pnpm run -C packages/yto-add-component new",
     "prepare": "husky install",
     "commit": "git add -A && git-cz && git push",
     "check-git": "git diff-index --quiet HEAD || (echo '发现未提交的代码改动，请先执行 pnpm commit 提交代码' && exit 1)",
     "update-version": "npx nx release version --projects=@yto/custom",
+    "commit-version": "git add packages/yto-custom/package.json && git commit -m \"chore(release): update package version\" || true",
     "build-after-version": "pnpm build",
     "publish-custom": "cd dist/yto-custom && npm publish",
-    "push-tags": "git push origin --tags",
-    "release:ui": "pnpm check-git && pnpm update-version && pnpm build-after-version && pnpm publish-custom && pnpm push-tags"
+    "push-tags": "git push origin --tags && git push",
+    "release:ui": "pnpm check-git && pnpm update-version && pnpm commit-version && pnpm build-after-version && pnpm publish-custom && pnpm push-tags",
+    "clean:cache": "npx nx reset",
+    "build:verbose": "NX_VERBOSE_LOGGING=true pnpm build"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.0",

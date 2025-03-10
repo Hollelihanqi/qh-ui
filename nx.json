@@ -3,13 +3,20 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "cache": true
+      "cache": true,
+      "inputs": ["production", "^production"]
     }
   },
   "defaultBase": "master",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "!{projectRoot}/**/node_modules/**/*"],
-    "production": ["default"]
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.test.ts",
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/.eslintrc.json"
+    ]
   },
   "release": {
     "projectsRelationship": "independent",
@@ -22,7 +29,8 @@
       "git": {
         "commitMessage": "chore(release): publish v${version}",
         "push": true,
-        "tag": true
+        "tag": true,
+        "signOff": false
       }
     }
   }
