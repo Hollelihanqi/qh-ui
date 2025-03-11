@@ -1,7 +1,4 @@
 {
-  "version": {
-    "increment": null
-  },
   "git": {
     "requireCleanWorkingDir": true,
     "commitMessage": "chore(release): release ${name}@${version}",
@@ -27,13 +24,6 @@
       "skipUnstable": true,
       "skipInit": true,
       "silent": true
-    }
-  },
-  "prompt": {
-    "version": {
-      "type": "list",
-      "message": "Select version increment:",
-      "choices": ["patch", "minor", "major", "prepatch", "preminor", "premajor", "custom"]
     }
   }
 }
