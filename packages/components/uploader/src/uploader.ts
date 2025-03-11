@@ -2,6 +2,10 @@ import type { ExtractPropTypes } from 'vue'
 import { buildProps } from '@yto-custom/utils'
 
 export const uploaderProps = buildProps({
+  modelValue: {
+    type: Array,
+    default: () => [],
+  },
   options: {
     type: Object,
     default: () => ({}),
@@ -89,6 +93,12 @@ export const uploaderProps = buildProps({
   },
 })
 
-export const uploaderEmits = ['on-type-error', 'on-exceed-limit', 'on-files-submitted', 'on-complete']
+export const uploaderEmits = [
+  'on-type-error',
+  'on-exceed-limit',
+  'on-files-submitted',
+  'on-complete',
+  'update:modelValue',
+]
 
 export type UploaderProps = ExtractPropTypes<typeof uploaderProps>
