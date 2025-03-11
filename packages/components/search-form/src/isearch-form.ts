@@ -77,10 +77,6 @@ export const searchFormProps = buildProps({
     type: Array as PropType<SearchFormControlProps[]>,
     default: () => [],
   },
-  filterFields: {
-    type: Array,
-    default: () => [],
-  },
   modelDefault: {
     type: Object,
     default: null,

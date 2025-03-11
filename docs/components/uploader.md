@@ -53,18 +53,18 @@ uploader/basic
 
 ### 事件
 
-| 事件名             | 说明                     | 回调参数                          |
-| ------------------ | ------------------------ | --------------------------------- |
-| update:modelValue  | 文件列表更新时触发       | (fileList: Array)                 |
-| on-file-added      | 文件添加前的钩子         | (file: File) => boolean           |
-| on-file-success    | 文件上传成功时触发       | (rootFile, file, response, chunk) |
-| on-file-error      | 文件上传失败时触发       | (rootFile, file, response, chunk) |
-| on-file-complete   | 文件上传完成时触发       | (rootFile)                        |
-| on-file-removed    | 文件被移除时触发         | (file)                            |
-| on-type-error      | 文件类型校验失败时触发   | (file, acceptedTypes)             |
-| on-exceed-limit    | 超出文件数量限制时触发   | (file, limit)                     |
-| on-files-submitted | 文件添加到上传队列后触发 | (fileList)                        |
-| on-complete        | 所有文件上传完成时触发   | (fileList)                        |
+| 事件名             | 说明                                                                                         | 回调参数                          |
+| ------------------ | -------------------------------------------------------------------------------------------- | --------------------------------- |
+| update:modelValue  | 文件列表更新时触发                                                                           | (fileList: Array)                 |
+| on-file-added      | 文件添加到上传队列之前调用，可用于文件校验，返回 false 禁止文件上传,并且从列表中移除当前文件 | (file: File) => boolean           |
+| on-file-success    | 文件上传成功时触发                                                                           | (rootFile, file, response, chunk) |
+| on-file-error      | 文件上传失败时触发                                                                           | (rootFile, file, response, chunk) |
+| on-file-complete   | 文件上传完成时触发                                                                           | (rootFile)                        |
+| on-file-removed    | 文件被移除时触发                                                                             | (file)                            |
+| on-type-error      | 文件类型校验失败时触发                                                                       | (file, acceptedTypes)             |
+| on-exceed-limit    | 超出文件数量限制时触发                                                                       | (file, limit)                     |
+| on-files-submitted | 文件添加到上传队列后触发                                                                     | (fileList)                        |
+| on-complete        | 所有文件上传完成时触发                                                                       | (fileList)                        |
 
 ### 插槽
 
