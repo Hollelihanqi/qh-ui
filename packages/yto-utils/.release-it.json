@@ -1,5 +1,4 @@
 {
-  "ci": false,
   "interactive": true,
   "git": {
     "requireCleanWorkingDir": true,
@@ -22,13 +21,6 @@
     "@release-it/conventional-changelog": {
       "preset": "angular",
       "infile": "CHANGELOG.md"
-    }
-  },
-  "prompt": {
-    "version": {
-      "type": "list",
-      "message": "Select version increment:",
-      "choices": ["patch", "minor", "major", "prepatch", "preminor", "premajor", "custom"]
     }
   }
 }

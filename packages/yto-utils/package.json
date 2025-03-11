@@ -18,7 +18,8 @@
     "email": "02393963@yto.net.cn"
   },
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "release": "release-it"
   },
   "keywords": [],
   "license": "ISC",
