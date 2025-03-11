@@ -4,8 +4,8 @@
   "interactive": true,
   "git": {
     "requireCleanWorkingDir": true,
-    "commitMessage": "chore(release): release ${name}-${version}",
-    "tagName": "${name}-${version}",
+    "commitMessage": "chore(release): release ${name}@${version}",
+    "tagName": "${name}@${version}",
     "push": true
   },
   "npm": {
