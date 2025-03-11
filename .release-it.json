@@ -1,0 +1,25 @@
+{
+  "git": {
+    "requireCleanWorkingDir": true,
+    "commitMessage": "chore(release): release ${version}",
+    "tagName": "v${version}",
+    "push": true
+  },
+  "npm": {
+    "publish": true,
+    "registry": "https://npm.yto.net.cn/",
+    "skipChecks": true,
+    "ignoreVersion": true,
+    "tag": "latest"
+  },
+  "hooks": {
+    "before:init": ["pnpm build:utils"],
+    "after:release": "echo Successfully released ${name} v${version}"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
+  }
+}
