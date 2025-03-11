@@ -1,4 +1,7 @@
 {
+  "ci": false,
+  "increment": null,
+  "interactive": true,
   "git": {
     "requireCleanWorkingDir": true,
     "commitMessage": "chore(release): release ${name}@${version}",
@@ -21,8 +24,5 @@
       "preset": "angular",
       "infile": "CHANGELOG.md"
     }
-  },
-  "increment": null,
-  "interactive": true,
-  "ci": false
+  }
 }
