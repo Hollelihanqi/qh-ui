@@ -8,7 +8,7 @@
   "npm": {
     "publish": true,
     "registry": "https://npm.yto.net.cn/",
-    "skipChecks": true,
+    "skipChecks": false,
     "ignoreVersion": false,
     "tag": "latest"
   },
