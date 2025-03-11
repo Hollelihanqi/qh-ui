@@ -25,7 +25,7 @@ descriptions/border
 | list            | 字段列表                 | `<ListProps>Array` | —                | `[]`      |
 | data            | 数据源                   | Object             | —                | `{}`      |
 | span            | 字段所占宽度，最大 24    | Number             | `1-24`           | `8`       |
-| labelWidth      | 字段名称宽度             | String             | —                | "auth"    |
+| labelWidth      | 字段名称宽度             | String             | —                | "auto"    |
 | labelAlign      | 对齐方式                 | String             | "text-align:xxx" | "left"    |
 | labelSuffixHide | 是否隐藏字段后面的冒 `:` | Boolean            | true/false       | false     |
 | border          | 是否有边框               | Boolean            | true/false       | false     |

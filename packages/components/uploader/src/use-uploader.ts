@@ -301,7 +301,11 @@ const useUploader = (props: UploaderProps, emits: any) => {
         clearFiles,
         removeFile,
         getFileList,
+        // 添加文件事件
+        addFile: __upload,
         _upload: __upload,
+        upload: UPLOADER.value.upload,
+        cancel: UPLOADER.value.cancel,
       }
     }
     setInputMultiple(false)
