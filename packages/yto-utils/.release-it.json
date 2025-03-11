@@ -23,5 +23,6 @@
     }
   },
   "increment": null,
-  "interactive": true
+  "interactive": true,
+  "ci": false
 }

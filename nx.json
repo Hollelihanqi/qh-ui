@@ -27,7 +27,7 @@
     },
     "version": {
       "git": {
-        "commitMessage": "chore(release): publish v${version}",
+        "commitMessage": "chore(release): publish ${name}@${version}",
         "push": true,
         "tag": true,
         "signOff": false
