@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "unbuild",
-    "release": "release-it --interactive"
+    "release": "release-it --verbose"
   },
   "keywords": [],
   "license": "ISC",

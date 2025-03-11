@@ -12,7 +12,7 @@
     "publish": true,
     "registry": "https://npm.yto.net.cn/",
     "skipChecks": true,
-    "ignoreVersion": true,
+    "ignoreVersion": false,
     "tag": "latest"
   },
   "hooks": {
