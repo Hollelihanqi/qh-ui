@@ -1,5 +1,7 @@
 # Changelog
 
+# [0.4.0](https://git.yto.net.cn/02393963/yto-test-ui/compare/@yto/utils@0.3.0...${npm.name}@0.4.0) (2025-03-11)
+
 # [0.3.0](https://git.yto.net.cn/02393963/yto-test-ui/compare/@yto/utils@0.2.0...${npm.name}@0.3.0) (2025-03-11)
 
 # 0.2.0 (2025-03-11)
