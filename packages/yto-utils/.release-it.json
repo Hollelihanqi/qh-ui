@@ -13,7 +13,7 @@
     "tag": "latest"
   },
   "hooks": {
-    "before:init": ["pnpm build:utils"],
+    "before:init": ["pnpm build"],
     "after:release": "echo Successfully released ${name} v${version}"
   },
   "plugins": {
