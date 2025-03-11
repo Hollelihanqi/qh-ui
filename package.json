@@ -11,7 +11,7 @@
     "clean:dist": "rimraf dist",
     "prebuild": "npx nx run-many -t build -p yto-utils,internal-build-constants,internal-build-utils,internal-resolvers",
     "build": "pnpm run -C internal/build start",
-    "utils:build": "pnpm run -C packages/yto-utils build",
+    "build:utils": "pnpm run -C packages/yto-utils build",
     "utils:buildwatch": "pnpm run -C packages/yto-utils watch",
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "play:dev": "pnpm utils:build && pnpm build && pnpm run -C play dev",
@@ -34,6 +34,8 @@
     "publish-custom": "cd dist/yto-custom && npm publish",
     "push-tags": "git push origin --tags && git push",
     "release:ui": "pnpm check-git && pnpm update-version && pnpm commit-version && pnpm build-after-version && pnpm publish-custom && pnpm push-tags",
+    "commit-version-utils": "git add packages/yto-utils/package.json && git commit -m \"chore(release): update package version\" || true",
+    "release:utils": "pnpm check-git && npx nx release version --projects=yto-utils && pnpm commit-version-utils && pnpm build:utils && pnpm push-tags",
     "clean:cache": "npx nx reset",
     "build:verbose": "NX_VERBOSE_LOGGING=true pnpm build"
   },
