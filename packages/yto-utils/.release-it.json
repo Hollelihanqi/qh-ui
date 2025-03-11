@@ -1,4 +1,7 @@
 {
+  "version": {
+    "increment": null
+  },
   "git": {
     "requireCleanWorkingDir": true,
     "commitMessage": "chore(release): release ${name}@${version}",
