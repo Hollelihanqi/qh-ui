@@ -31,8 +31,6 @@
     "publish-custom": "cd dist/yto-custom && npm publish",
     "push-tags": "git push origin --tags && git push",
     "release:ui": "pnpm check-git && pnpm update-version && pnpm commit-version && pnpm build-after-version && pnpm publish-custom && pnpm push-tags",
-    "commit-version-utils": "git add packages/yto-utils/package.json && git commit -m \"chore(release): update package version\" || true",
-    "publish-utils": "cd dist/yto-utils && npm publish",
     "release:utils": "cd packages/yto-utils && release-it --config .release-it.json",
     "clean:cache": "npx nx reset",
     "build:verbose": "NX_VERBOSE_LOGGING=true pnpm build",

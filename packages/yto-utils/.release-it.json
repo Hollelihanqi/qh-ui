@@ -21,5 +21,7 @@
       "preset": "angular",
       "infile": "CHANGELOG.md"
     }
-  }
+  },
+  "increment": null,
+  "interactive": true
 }
