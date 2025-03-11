@@ -1,6 +1,5 @@
 {
   "ci": false,
-  "increment": null,
   "interactive": true,
   "git": {
     "requireCleanWorkingDir": true,
