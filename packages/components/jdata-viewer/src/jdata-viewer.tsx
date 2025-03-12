@@ -176,7 +176,7 @@ export default defineComponent({
 
     return () => {
       return (
-        <div class={`jdata-viewer ${props.theme === 'light' ? 'json-viewer-light' : 'json-viewer-dark'}`}>
+        <div class={`jdata-viewer ${props.theme === 'light' ? 'jdata-viewer-light' : 'jdata-viewer-dark'}`}>
           {props.copy && (
             <div class="json-copy" onClick={handleCopy}>
               复制
