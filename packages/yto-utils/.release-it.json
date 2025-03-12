@@ -1,13 +1,13 @@
 {
   "$schema": "../../node_modules/release-it/schema/release-it.json",
   "git": {
-    "requireCleanWorkingDir": false,
+    "requireCleanWorkingDir": true,
     "commitMessage": "chore(release): release ${name}@${version}",
     "tagName": "${npm.name}@${version}",
     "push": true
   },
   "npm": {
-    "publish": false,
+    "publish": true,
     "registry": "https://npm.yto.net.cn/",
     "skipChecks": true,
     "ignoreVersion": false,
