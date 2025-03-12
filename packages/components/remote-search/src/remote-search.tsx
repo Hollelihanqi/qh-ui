@@ -154,6 +154,11 @@ export default defineComponent({
       copyOptions.value = []
     }
 
+    const setOptions = (list: any) => {
+      options.value = list
+      copyOptions.value = [...list]
+    }
+
     const disLabelEvent = () => {
       const label = RemoteSearchSelectInstance.value?.$el.parentElement.parentElement
       if (label) label.classList.add('el-form-label-dis')
@@ -172,6 +177,7 @@ export default defineComponent({
     const _exposeApi = {
       getOptions,
       clearOptions,
+      setOptions,
     }
 
     if (props.exposeRef) {
