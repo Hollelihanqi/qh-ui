@@ -1,6 +1,6 @@
 {
   "name": "@yto/utils",
-  "version": "0.5.0",
+  "version": "0.8.0",
   "description": "",
   "type": "module",
   "module": "./dist/index.mjs",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "unbuild",
-    "release": "release-it --verbose"
+    "release": "release-it"
   },
   "keywords": [],
   "license": "ISC",

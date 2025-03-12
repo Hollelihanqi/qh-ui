@@ -1,6 +1,6 @@
 {
   "git": {
-    "requireCleanWorkingDir": true,
+    "requireCleanWorkingDir": false,
     "commitMessage": "chore(release): release ${name}@${version}",
     "tagName": "${npm.name}@${version}",
     "push": true
@@ -8,7 +8,7 @@
   "npm": {
     "publish": true,
     "registry": "https://npm.yto.net.cn/",
-    "skipChecks": false,
+    "skipChecks": true,
     "ignoreVersion": false,
     "tag": "latest"
   },
