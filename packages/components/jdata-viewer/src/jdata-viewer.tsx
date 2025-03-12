@@ -1,4 +1,4 @@
-import { defineComponent, Transition } from 'vue'
+import { defineComponent, Transition, Fragment } from 'vue'
 import { jdataViewerProps } from './ijdata-viewer'
 import { useView } from './use-view'
 
@@ -10,40 +10,57 @@ export default defineComponent({
   props: jdataViewerProps,
   setup(props: any) {
     const { _nodes, isCollapsed, toggleRoot, handleCopy } = useView(props)
-    const paseKey = (key: string) => {
+
+    // 修复拼写错误：paseKey -> parseKey
+    const parseKey = (key: string) => {
       const keys = key.split('.')
       return keys[keys.length - 1]
     }
-    const _colors = ['#fa541c', '#fa8c16', '#faad14', '#fadb14', '#a0d911', '#722ed1', '#eb2f96']
-    const valueFormat = (node: any) => {
+
+    // 将颜色定义提取为常量，便于维护
+    const COLORS = ['#fa541c', '#fa8c16', '#faad14', '#fadb14', '#a0d911', '#722ed1', '#eb2f96']
+
+    const isHtml = (node: any) => {
+      return /<[^>]*>/g.test(node.value)
+    }
+
+    // 优化 valueRender 函数，提高可读性
+    const valueRender = (node: any) => {
       if (node.value === null) {
         return <span class="jv-n">null</span>
-      } else if (node.nodeType === 'string') {
-        try {
-          // 只有在 renderHTag 为 true 时才处理 HTML 标签
-          if (props.renderHTag && /<[^>]*>/g.test(node.value)) {
-            // 移除字符串两端的引号
-            const htmlStr = node.value.replace(/^"|"$/g, '')
-            // 解析可能包含的JSON字符串
-            const processJsonInHtml = (str: string) => {
-              return str.replace(/\{([^}]+)\}/g, (match) => {
-                try {
-                  const jsonObj = JSON.parse(match)
-                  return JSON.stringify(jsonObj)
-                } catch {
-                  return match
-                }
-              })
+      }
+
+      switch (node.nodeType) {
+        case 'string':
+          try {
+            // 只有在 renderHTag 为 true 时才处理 HTML 标签
+            if (props.renderHTag && isHtml(node)) {
+              // 移除字符串两端的引号
+              const htmlStr = node.value.replace(/^"|"$/g, '')
+              // 解析可能包含的JSON字符串
+              const processJsonInHtml = (str: string) => {
+                return str.replace(/\{([^}]+)\}/g, (match) => {
+                  try {
+                    const jsonObj = JSON.parse(match)
+                    return JSON.stringify(jsonObj)
+                  } catch {
+                    return match
+                  }
+                })
+              }
+              const processedHtml = processJsonInHtml(htmlStr)
+              return <div class="html-content" innerHTML={processedHtml}></div>
             }
-            const processedHtml = processJsonInHtml(htmlStr)
-            return <div class="html-content" innerHTML={processedHtml}></div>
+            return <span class="jv-greed">{JSON.stringify(node.value)}</span>
+          } catch {
+            return <span class="jv-greed">{JSON.stringify(node.value)}</span>
           }
+        case 'number':
+          return <span class="jv-red">{node.value}</span>
+        case 'boolean':
+          return <span class="jv-red">{String(node.value)}</span>
+        default:
           return <span class="jv-greed">{JSON.stringify(node.value)}</span>
-        } catch {
-          return <span class="jv-greed">{JSON.stringify(node.value)}</span>
-        }
-      } else if (node.nodeType === 'number' || node.nodeType === 'boolean') {
-        return <span class="jv-red">{node.nodeType === 'boolean' ? String(node.value) : node.value}</span>
       }
     }
 
@@ -59,13 +76,14 @@ export default defineComponent({
         onClick={toggleClick}
       ></div>
     )
+
     // 渲染单个节点的组件
     const JsonNode = ({ node }: any) => {
       // 渲染节点内容
       const renderNode = (key: string, value: any, children: [], type: string, index = 0, childNode: any) => {
         const _node = childNode || node
         if ((type === 'object' || type === 'array') && value !== null) {
-          const colorIndex = index % _colors.length
+          const colorIndex = index % COLORS.length
           return (
             <div
               style={{
@@ -76,14 +94,14 @@ export default defineComponent({
               <CollapseArrow toggleClick={() => toggleExpand(_node)} isCollapsed={_node.collapse} />
               <div style="display:inline-block;word-break: break-all;">
                 {!_node.isArrayChild && (
-                  <>
-                    <span>{paseKey(key)}</span>
+                  <Fragment>
+                    <span>{parseKey(key)}</span>
                     <span style="fontWeight:bold">：</span>
-                  </>
+                  </Fragment>
                 )}
-                <strong style={{ color: _colors[colorIndex] }}>{type === 'object' ? '{' : '['}</strong>
+                <strong style={{ color: COLORS[colorIndex] }}>{type === 'object' ? '{' : '['}</strong>
               </div>
-              {_node.collapse ? <span style={{ color: _colors[colorIndex] }}>...</span> : ''}
+              {_node.collapse ? <span style={{ color: COLORS[colorIndex] }}>...</span> : ''}
               <Transition name="expand">
                 <div v-show={!_node.collapse} style={{ paddingLeft: '16px' }}>
                   {children.map((child: any) => {
@@ -95,7 +113,7 @@ export default defineComponent({
                   })}
                 </div>
               </Transition>
-              <span style={{ color: _colors[colorIndex] }}>
+              <span style={{ color: COLORS[colorIndex] }}>
                 <strong>{type === 'object' ? '}' : ']'}</strong>
               </span>
               {_node.isArrayChild && <span>，</span>}
@@ -103,20 +121,22 @@ export default defineComponent({
           )
         } else {
           return (
-            <div style="display:inline-block;word-break: break-all;">
+            <div
+              style={{ display: props.renderHTag && isHtml(node) ? 'flex' : 'inline-block', wordBreak: 'break-all' }}
+            >
               {type !== 'array' && (
-                <>
+                <Fragment>
                   {!_node.isArrayChild && (
-                    <>
+                    <Fragment>
                       <span class="json-key-span" style="display:inline-block">
-                        {paseKey(key)}
+                        {parseKey(key)}
                       </span>
                       <span style="fontWeight:bold">：</span>
-                    </>
+                    </Fragment>
                   )}
-                </>
+                </Fragment>
               )}
-              {valueFormat(_node)}
+              {valueRender(_node)}
               {_node.isArrayChild && <span>，</span>}
             </div>
           )
@@ -125,6 +145,7 @@ export default defineComponent({
 
       return <div>{renderNode(node.key, node.value, node._children, node.nodeType, 0, node)}</div>
     }
+
     // 根组件，渲染整个JSON树
     const JsonTree = (data = []) => {
       return (
@@ -133,27 +154,16 @@ export default defineComponent({
             <CollapseArrow toggleClick={toggleRoot} isCollapsed={isCollapsed.value} />
             <span class="json-key-span">{props.rootTagStart}</span>
             {isCollapsed.value && (
-              <>
+              <Fragment>
                 <span>...</span>
                 <span class="json-key-span">{props.rootTagEnd}</span>
-              </>
+              </Fragment>
             )}
           </div>
           <Transition>
-            {/* {!isCollapsed.value && (
-              <>
-                <div style={{ marginLeft: "16px" }}>
-                  {data.map((node, index) => (
-                    <JsonNode node={node} />
-                  ))}
-                </div>
-                <span class="json-key-span">{props.rootTagEnd}</span>
-              </>
-            )} */}
-            {/* 使用 v-show 控制子节点的显示和隐藏 */}
             <div v-show={!isCollapsed.value} style={{ marginLeft: '16px' }}>
               <div style={{ paddingLeft: '16px' }}>
-                {data.map((node) => (
+                {data.map((node: any) => (
                   <JsonNode node={node} />
                 ))}
               </div>
@@ -163,15 +173,6 @@ export default defineComponent({
         </div>
       )
     }
-
-    // 搜索
-    // const JsonSearch = () => {
-    //   return (
-    //     <div class="json-search">
-    //       <input placeholder={props.splacholder} />
-    //     </div>
-    //   )
-    // }
 
     return () => {
       return (
