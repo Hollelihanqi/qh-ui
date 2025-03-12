@@ -56,3 +56,4 @@ remote-search/requestApi
 | ------------ | ------------ |
 | getOptions   | 获取下拉列表 |
 | clearOptions | 清空下拉列表 |
+| setOptions   | 设置下拉列表 |
