@@ -1,4 +1,4 @@
-import { SetupContext, computed, defineComponent } from 'vue'
+import { SetupContext, computed, defineComponent, Fragment } from 'vue'
 import { descriptionsProps, DescriptionsProps, ListProps } from './idescriptions'
 import { ElRow, ElCol } from 'element-plus'
 
@@ -63,6 +63,18 @@ export default defineComponent({
     // 判断是否显示标签
     const shouldShowLabel = (label?: string) => label !== undefined && label !== null && label.trim() !== ''
 
+    // 渲染标签内容
+    const renderLabel = (item: ListProps) => {
+      if (slots[`label-${item.prop}`]) return slots[`label-${item.prop}`]?.(item)
+      if (item.labelRender) return item.labelRender(item)
+      return (
+        <Fragment>
+          {item.label}
+          {!props.labelSuffixHide && !props.border && getItemLabelPosition(item) !== 'top' && '：'}
+        </Fragment>
+      )
+    }
+
     return () => (
       <div class={`text-[14px] ${props.border ? 'descriptions-border' : ''}`}>
         {props.data ? (
@@ -79,16 +91,15 @@ export default defineComponent({
                   class={['overflow-x-hidden', props.colAignItemsCenter ? 'items-center' : '']}
                 >
                   {shouldShowLabel(item.label) && (
-                    <span
+                    <div
                       class={{
                         'text-opc0': !item.label,
                         'desc-label': props.border,
                       }}
                       style={getLabelStyles(item)}
                     >
-                      {item.label}
-                      {!props.labelSuffixHide && !props.border && itemLabelPosition !== 'top' && '：'}
-                    </span>
+                      {renderLabel(item)}
+                    </div>
                   )}
                   <div
                     class={`${itemLabelPosition === 'top' ? 'w-full' : 'flex-1 w-0'} desc-prop`}
