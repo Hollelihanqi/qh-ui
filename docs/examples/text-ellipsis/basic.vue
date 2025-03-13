@@ -1,5 +1,7 @@
 <template>
-  <yto-text-ellipsis :content="text" />
+  <ClientOnly>
+    <yto-text-ellipsis :content="text" />
+  </ClientOnly>
 </template>
 <script lang="tsx">
 export default {
