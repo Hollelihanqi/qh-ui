@@ -65,10 +65,11 @@ const { listRoute, activate } = useFrame({
 const tabList = computed(() => {
   const tabs = listRoute.value.filter((item: any) => item.label)
   // 将数组分成不可关闭和可关闭两部分，然后合并
-  const unclosableTabs = tabs.filter((item: any) => !item.closable)
-  const closableTabs = tabs.filter((item: any) => item.closable)
+  // const unclosableTabs = tabs.filter((item: any) => !item.closable)
+  // const closableTabs = tabs.filter((item: any) => item.closable)
 
-  return [...unclosableTabs, ...closableTabs]
+  // return [...unclosableTabs, ...closableTabs]
+  return tabs
 })
 // 是否为垂直布局
 const isVertical = computed(() => props.type === 'vertical')
