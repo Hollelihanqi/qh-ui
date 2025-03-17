@@ -10,7 +10,7 @@
         <slot v-if="showTab" name="tab" :tab-data="listRoute">
           <NavTabs
             v-if="showTab"
-            :tabs-menu-list="listRoute"
+            :tabs-menu-list="tabList"
             :tabs-key-label="tabsKeyLabel"
             :format-tab="formatTab"
             :router-goback="routerGoback"
@@ -60,6 +60,15 @@ const { listRoute, activate } = useFrame({
   cacheable: props.cacheable as boolean,
   sso: props.sso as boolean,
   max: props.max as number,
+})
+
+const tabList = computed(() => {
+  const tabs = listRoute.value.filter((item: any) => item.label)
+  // 将数组分成不可关闭和可关闭两部分，然后合并
+  const unclosableTabs = tabs.filter((item: any) => !item.closable)
+  const closableTabs = tabs.filter((item: any) => item.closable)
+
+  return [...unclosableTabs, ...closableTabs]
 })
 // 是否为垂直布局
 const isVertical = computed(() => props.type === 'vertical')

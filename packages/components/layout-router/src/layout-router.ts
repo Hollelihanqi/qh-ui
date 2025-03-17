@@ -4,45 +4,45 @@ import { buildProps } from '@yto-custom/utils'
 export const layoutRouterProps = buildProps({
   footer: {
     type: Boolean,
-    default: false
+    default: false,
   },
   cacheable: {
     type: Boolean,
-    default: false
+    default: false,
   },
   sso: {
     type: Boolean,
-    default: false
+    default: false,
   },
   max: Number,
   tabsKeyLabel: {
     type: String,
-    default: 'title'
+    default: 'title',
   },
   formatTab: {
     type: Function,
-    default: null
+    default: null,
   },
   routerGoback: {
     type: Boolean,
-    default: false
+    default: false,
   },
   type: {
     type: String,
-    default: 'vertical'
+    default: 'vertical',
   },
   showTab: {
     type: Boolean,
-    default: true
+    default: true,
   },
   activeMenu: {
     type: Boolean,
-    default: false
+    default: false,
   },
   theme: {
     type: String,
-    default: 'purple'
-  }
+    default: 'purple',
+  },
 })
 
 export const layoutRouterEmits = ['tab-change', 'tab-remove']
