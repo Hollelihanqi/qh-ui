@@ -33,13 +33,12 @@
 </template>
 
 <script lang="ts" setup>
-// 导入必要的组件和工具
+import { inject, computed, watch, unref, provide, nextTick } from 'vue'
 import { ElTabs, ElTabPane } from 'element-plus'
 import { EnumSessionKey } from './constants'
 import { tabPaneClose, toURL, IOptionTabPane, isBoolean } from 'gold-core'
 import { useRouter, useRoute } from 'vue-router'
 import useRouteChange from './use-route'
-import { inject, computed, watch, unref, provide } from 'vue'
 
 // 定义组件属性接口
 interface Props {
@@ -79,7 +78,7 @@ const handleTabRemove = (closeCode: any) => {
 
   if (!props.routerGoback || closeCode !== unref(tabsMenuValue)) return
 
-  const backItem = props.tabsMenuList.find((item) => item.back) as IOptionTabPane
+  const backItem = props.tabsMenuList.find((item: any) => item.back) as IOptionTabPane
   if (!backItem?.href) return
 
   nextTick(() => {
@@ -96,7 +95,7 @@ const activePreidx = computed(() => {
 const updateTabsState = (newPath?: string, oldPath?: string) => {
   if (!props.routerGoback || !newPath || newPath === '/') return
 
-  props.tabsMenuList.forEach((item) => {
+  props.tabsMenuList.forEach((item: any) => {
     const itemPath = item.href ? toURL(item.href).pathname : ''
     item.current = newPath && itemPath === newPath.split('?')[0]
     item.back = oldPath && itemPath === oldPath.split('?')[0]
