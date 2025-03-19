@@ -8,7 +8,7 @@
           {{ label }}
         </span>
       </template>
-      
+
       <!-- 使用插槽自定义内容 -->
       <template #age="{ prop }">
         <span class="custom-content">{{ data[prop] }} 岁</span>
@@ -17,39 +17,41 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="tsx">
 import { User } from '@element-plus/icons-vue'
 
 const data = {
   name: '张三',
   age: 18,
   gender: '男',
-  email: 'zhangsan@example.com'
+  email: 'zhangsan@example.com',
 }
 
 const list = [
-  { 
-    label: '姓名', 
-    prop: 'name'
+  {
+    label: '姓名',
+    prop: 'name',
   },
-  { 
-    label: '年龄', 
-    prop: 'age'
+  {
+    label: '年龄',
+    prop: 'age',
   },
-  { 
-    label: '性别', 
+  {
+    label: '性别',
     prop: 'gender',
     // 使用 labelRender 自定义标签（优先级第二）
     labelRender: (item) => (
       <span class="custom-label-render">
-        <el-tag size="small" type="success">{{item.label}}</el-tag>
+        <el-tag size="small" type="success">
+          {item.label}
+        </el-tag>
       </span>
-    )
+    ),
   },
-  { 
-    label: '邮箱', 
-    prop: 'email'
-  }
+  {
+    label: '邮箱',
+    prop: 'email',
+  },
 ]
 </script>
 
@@ -75,4 +77,4 @@ const list = [
   color: #67c23a;
   font-weight: bold;
 }
-</style> 
+</style>
