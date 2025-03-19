@@ -144,14 +144,6 @@ pnpm docs:build
 pnpm docs:preview
 ```
 
-#### `pnpm dev:all`
-
-同时启动开发环境和文档站点。此命令会并行启动 `play` 开发服务器和文档开发服务器。
-
-```bash
-pnpm dev:all
-```
-
 ### 代码质量相关
 
 #### `pnpm lint`
