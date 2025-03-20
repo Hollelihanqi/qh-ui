@@ -18,7 +18,7 @@
         <div class="mr-[5px]">{{ user.userName }}</div>
         <div class="mr-[10px]">（{{ user.userCode }}）</div>
         <slot name="extend"></slot>
-        <FullscreenSwitch v-if="isfullscreen" :collapse="fullscreen" @click="onFullScreen" />
+        <FullscreenSwitch v-if="isfullscreen" />
         <slot name="logout">
           <div class="flex items-center cursor-pointer" @click="onLogout">
             <span class="mr-[5px]">退出</span> <ElIcon size="16"><SwitchButton /></ElIcon>
@@ -29,16 +29,14 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, unref } from 'vue'
+import { ref } from 'vue'
 import { ElIcon } from 'element-plus'
 import { SwitchButton } from '@element-plus/icons-vue'
 import { layoutHeaderProps, layoutHeaderEmits } from './layout-header'
-import useFullScreen from './fullScreen'
 import { EnumSessionKey } from './constants'
 import { session } from 'gold-core'
 import MenuSwitch from './MenuSwitch.vue'
 import FullscreenSwitch from './FullscreenSwitch.vue'
-
 defineOptions({
   name: 'LayoutHeader',
 })
@@ -62,21 +60,22 @@ function onCollapse(): void {
 
   emit('collapse')
 }
-// 处理全屏事件
-const { toggleFullScreen } = useFullScreen()
-const fullscreen = ref(false)
-function onFullScreen(): void {
-  toggleFullScreen()
-  emit('fullscreen')
-}
-const KeyDown = (event: any) => {
-  if (event.keyCode === 122) {
-    event.returnValue = false
-    toggleFullScreen() //触发全屏的方法
-  }
-}
-window.addEventListener('keydown', KeyDown, true)
-document.addEventListener('fullscreenchange', () => {
-  fullscreen.value = !unref(fullscreen) //你要切换得图标使用得属性
-})
+
+// // 处理全屏事件
+// const { toggleFullScreen } = useFullScreen()
+// const fullscreen = ref(false)
+// function onFullScreen(): void {
+//   toggleFullScreen()
+//   emit('fullscreen')
+// }
+// const KeyDown = (event: any) => {
+//   if (event.keyCode === 122) {
+//     event.returnValue = false
+//     toggleFullScreen() //触发全屏的方法
+//   }
+// }
+// window.addEventListener('keydown', KeyDown, true)
+// document.addEventListener('fullscreenchange', () => {
+//   fullscreen.value = !unref(fullscreen) //你要切换得图标使用得属性
+// })
 </script>

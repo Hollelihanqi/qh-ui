@@ -1,0 +1,13 @@
+{
+  "name": "@yto/custom",
+  "targets": {
+    "version": {
+      "executor": "@nx/js:version",
+      "options": {
+        "trackDeps": false,
+        "push": true,
+        "changelog": true
+      }
+    }
+  }
+}

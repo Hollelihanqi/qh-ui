@@ -3,7 +3,7 @@
 </template>
 
 <script lang="tsx" setup>
-import { useSlots, Fragment } from 'vue'
+import { useSlots, Fragment, computed } from 'vue'
 import { ElMessage, ElTableColumn, ElIcon } from 'element-plus'
 import { CopyDocument } from '@element-plus/icons-vue'
 
@@ -122,6 +122,65 @@ const copyRender = (column: any, scope: any) => {
   )
 }
 
+const getRenderStrategy = computed(() => {
+  return (column: any) => {
+    // 预先确定渲染策略
+    if (column._children) {
+      return {
+        type: 'children',
+        render: () => column._children.map((child: any) => renderColumn(child)),
+      }
+    }
+
+    if (column.copy) {
+      return {
+        type: 'copy',
+        render: (scope: any) => {
+          const content = column.render
+            ? column.render
+            : column.prop && slots[column.prop]
+              ? slots[column.prop]
+              : (scope: any) => renderCellData(column, scope)
+
+          return (
+            <div class="flex items-center gap-2">
+              {copyRender(column, scope)}
+              {content(scope)}
+            </div>
+          )
+        },
+      }
+    }
+
+    if (column.render) {
+      return {
+        type: 'custom',
+        render: column.render,
+      }
+    }
+
+    if (column.prop && slots[column.prop]) {
+      return {
+        type: 'slot',
+        render: slots[column.prop],
+      }
+    }
+
+    return {
+      type: 'default',
+      render: (scope: any) => renderCellData(column, scope),
+    }
+  }
+})
+
+const getColumnClassName = computed(() => {
+  return (column: any) => ({
+    'sort-cell-td': column.sortable && column.align === 'right',
+    'action-td': column.prop === 'action',
+    [column?.className || '']: !!column?.className,
+  })
+})
+
 const renderColumn = (column: any) => {
   return (
     <Fragment>
@@ -129,30 +188,12 @@ const renderColumn = (column: any) => {
         <ElTableColumn
           showOverflowTooltip={column.showOverflowTooltip ?? column.prop !== 'action'}
           {...column}
-          className={[
-            column.sortable && column.align === 'right' && 'sort-cell-td',
-            column?.className ?? '',
-            column.prop === 'action' && 'action-td',
-          ]
-            .filter(Boolean)
-            .join(' ')}
+          class={getColumnClassName.value(column)}
         >
           {{
             default: (scope: any) => {
-              if (column._children) return column._children.map((child: any) => renderColumn(child))
-              if (column.copy) {
-                return (
-                  <div class="flex items-center gap-2">
-                    {copyRender(column, scope)}
-                    {column.render && column.render(scope)}
-                    {column.prop && slots[column.prop] && slots?.[column.prop]?.(scope)}
-                    {renderCellData(column, scope)}
-                  </div>
-                )
-              }
-              if (column.render) return column.render(scope)
-              if (column.prop && slots[column.prop]) return slots?.[column.prop]?.(scope)
-              return renderCellData(column, scope)
+              const strategy = getRenderStrategy.value(column)
+              return strategy.render(scope)
             },
             header: () => {
               if (column.headerRender) return column.headerRender(column)

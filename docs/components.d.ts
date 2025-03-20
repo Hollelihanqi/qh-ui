@@ -12,6 +12,7 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElTag: typeof import('element-plus/es')['ElTag']
     ElText: typeof import('element-plus/es')['ElText']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     IRiCodeLine: typeof import('~icons/ri/code-line')['default']

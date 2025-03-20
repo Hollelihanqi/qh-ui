@@ -1,0 +1,16 @@
+{
+  "name": "internal-resolvers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "internal/resolvers/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/**/*", "!{projectRoot}/dist/**/*"],
+      "options": {
+        "command": "cd internal/resolvers && pnpm build",
+        "cwd": "."
+      }
+    }
+  }
+}

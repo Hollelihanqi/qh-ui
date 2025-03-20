@@ -31,7 +31,8 @@ yto/
 │   ├── theme-chalk/       # 主题样式
 │   ├── utils/             # 工具函数
 │   ├── yto-custom/        # 主包入口
-│   └── yto-utils/         # 工具包
+│   ├── yto-utils/         # 工具包
+│   └── yto-eslint/        # ESLint 配置
 ├── play/                  # 开发调试环境
 ├── scripts/               # 开发和构建脚本
 └── template/              # 组件模板
@@ -85,28 +86,12 @@ pnpm gen-component-import
 pnpm build
 ```
 
-#### `pnpm utils:build`
+#### `pnpm build:utils`
 
 构建工具包。此命令会单独构建 `packages/yto-utils` 包。
 
 ```bash
-pnpm utils:build
-```
-
-#### `pnpm utils:buildwatch`
-
-以监视模式构建工具包。此命令会在监视模式下构建 `packages/yto-utils` 包，当文件变化时自动重新构建。
-
-```bash
-pnpm utils:buildwatch
-```
-
-#### `pnpm build:theme`
-
-构建主题样式。此命令会编译 `packages/theme-chalk` 目录中的 SCSS 文件为 CSS。
-
-```bash
-pnpm build:theme
+pnpm build:utils
 ```
 
 #### `pnpm clean`
@@ -129,23 +114,15 @@ pnpm clean:dist
 
 #### `pnpm play:dev`
 
-启动开发调试环境。此命令会先构建工具包和组件库，然后启动 `play` 目录中的开发服务器，用于调试和测试组件。
+启动开发调试环境。此命令会启动 `play` 目录中的开发服务器，用于调试和测试组件。
 
 ```bash
 pnpm play:dev
 ```
 
-#### `pnpm play:test`
-
-直接启动开发调试环境，不进行预构建。此命令会直接启动 `play` 目录中的开发服务器，适用于已经构建过组件库的情况。
-
-```bash
-pnpm play:test
-```
-
 #### `pnpm docs:dev`
 
-启动文档开发服务器。此命令会先生成侧边栏配置，然后启动 VitePress 开发服务器，用于预览和开发文档站点。
+启动文档开发服务器。此命令会启动 VitePress 开发服务器，用于预览和开发文档站点。
 
 ```bash
 pnpm docs:dev
@@ -165,14 +142,6 @@ pnpm docs:build
 
 ```bash
 pnpm docs:preview
-```
-
-#### `pnpm dev:all`
-
-同时启动开发环境和文档站点。此命令会并行启动 `play` 开发服务器和文档开发服务器。
-
-```bash
-pnpm dev:all
 ```
 
 ### 代码质量相关
@@ -219,12 +188,20 @@ pnpm format
 
 ### 发布相关
 
-#### `pnpm publish:pkg`
+#### `pnpm release:ui`
 
-发布组件库。此命令会构建组件库并发布到 npm 仓库。
+发布组件库。此命令会执行完整的发布流程，包括版本更新、构建和发布到 npm。
 
 ```bash
-pnpm publish:pkg
+pnpm release:ui
+```
+
+#### `pnpm release:utils`
+
+发布工具包。此命令会发布 `packages/yto-utils` 包。
+
+```bash
+pnpm release:utils
 ```
 
 #### `pnpm commit`
@@ -311,13 +288,7 @@ dist/
 然后执行以下命令发布：
 
 ```bash
-pnpm publish:pkg
-```
-
-删除已发布的指定版本：
-
-```bash
-npm unpublish @yto/custom@x.x.x-beta
+pnpm release:ui
 ```
 
 ## 常见问题
@@ -326,9 +297,10 @@ npm unpublish @yto/custom@x.x.x-beta
 
 如果构建失败，请尝试以下步骤：
 
-1. 清理缓存：`pnpm clean`
-2. 重新安装依赖：`pnpm install`
-3. 重新构建：`pnpm build`
+1. 清理缓存：`pnpm clean:cache`
+2. 清理构建输出：`pnpm clean`
+3. 重新安装依赖：`pnpm install`
+4. 重新构建：`pnpm build`
 
 ### 组件不显示
 

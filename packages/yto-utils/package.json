@@ -1,6 +1,6 @@
 {
   "name": "@yto/utils",
-  "version": "1.5.3",
+  "version": "2.0.0",
   "description": "",
   "type": "module",
   "module": "./dist/index.mjs",
@@ -18,7 +18,8 @@
     "email": "02393963@yto.net.cn"
   },
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "release": "release-it --verbose"
   },
   "keywords": [],
   "license": "ISC",

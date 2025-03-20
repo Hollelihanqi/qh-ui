@@ -1,7 +1,9 @@
 <template>
-  <yto-text-ellipsis :content="text">
-    <template #action="{ expanded }"> {{ expanded ? 'Collapse' : 'Expand' }} </template>
-  </yto-text-ellipsis>
+  <ClientOnly>
+    <yto-text-ellipsis :content="text">
+      <template #action="{ expanded }"> {{ expanded ? 'Collapse' : 'Expand' }} </template>
+    </yto-text-ellipsis>
+  </ClientOnly>
 </template>
 <script lang="tsx">
 export default {

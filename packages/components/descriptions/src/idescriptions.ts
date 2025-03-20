@@ -7,6 +7,7 @@ interface LabelProps {
 
 export interface ListProps extends LabelProps {
   render?: Function
+  labelRender?: Function
   span?: number
   enum?: any
   show?: boolean | Function
@@ -15,6 +16,7 @@ export interface ListProps extends LabelProps {
 
 export interface DescriptionsListProps extends LabelProps {
   render?: Function
+  labelRender?: Function
   span?: number
   enum?: any
   show?: boolean | Function

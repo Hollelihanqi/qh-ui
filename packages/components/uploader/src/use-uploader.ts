@@ -98,11 +98,14 @@ const useUploader = (props: UploaderProps, emits: any) => {
     }
     if (props.onFileAdded) {
       const bool = props.onFileAdded(file)
-      if (!bool) {
+      if (bool === false) {
         __removeFile(file)
+        return false
       }
-      return bool
     }
+
+    // 当文件添加时触发update:modelValue事件
+    emits('update:modelValue', UPLOADER.value.fileList)
     return true
   }
 
@@ -113,6 +116,8 @@ const useUploader = (props: UploaderProps, emits: any) => {
     if (props.onFileRemoved) {
       props.onFileRemoved(file)
     }
+    // 当文件移除时触发update:modelValue事件
+    emits('update:modelValue', UPLOADER.value.fileList)
   }
 
   //文件添加到上传队列之后，可用于开始上传当前添加的文件时触发，可用于开始上传当前添加的文件
@@ -158,6 +163,8 @@ const useUploader = (props: UploaderProps, emits: any) => {
     if (props.onFileSuccess) {
       props.onFileSuccess(rootFile, file, message, chunk)
     }
+    // 当文件上传成功时触发update:modelValue事件
+    emits('update:modelValue', UPLOADER.value.fileList)
   }
 
   // 文件上传错误
@@ -165,6 +172,8 @@ const useUploader = (props: UploaderProps, emits: any) => {
     if (props.onFileError) {
       props.onFileError(rootFile, file, message, chunk)
     }
+    // 当文件上传失败时触发update:modelValue事件
+    emits('update:modelValue', UPLOADER.value.fileList)
   }
 
   // 在整个上传任务完成后触发，通常是在所有文件上传完成时。
@@ -260,10 +269,13 @@ const useUploader = (props: UploaderProps, emits: any) => {
 
   const clearFiles = () => {
     UPLOADER.value.fileList = []
+    // 当文件清空时触发update:modelValue事件
+    emits('update:modelValue', [])
   }
 
   const removeFile = (file: any) => {
     file._removeFile(file)
+    // 文件移除时的update:modelValue事件由fileRemoved事件处理
   }
 
   const getFileList = () => {
@@ -296,6 +308,20 @@ const useUploader = (props: UploaderProps, emits: any) => {
     UPLOADER.value.getFileList = getFileList
     UPLOADER.value._upload = __upload
     props.getInstance(UPLOADER)
+    if (props.exposeRef) {
+      props.exposeRef.value = {
+        clearFiles,
+        removeFile,
+        getFileList,
+        // 触发文件选择框
+        triggerUpload: () => {
+          __upload()
+        },
+        _upload: __upload,
+        upload: UPLOADER.value.upload,
+        cancel: UPLOADER.value.cancel,
+      }
+    }
     setInputMultiple(false)
   })
 

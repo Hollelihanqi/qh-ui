@@ -1,7 +1,7 @@
 <template>
-  <div class="collapse-icon flex items-center mr-4" v-bind="$attrs">
+  <div class="collapse-icon flex items-center mr-4" @click="toggle">
     <svg
-      v-if="collapse"
+      v-if="isFullscreen"
       t="1739154932136"
       class="icon"
       viewBox="0 0 1024 1024"
@@ -39,7 +39,6 @@
   </div>
 </template>
 <script setup lang="ts">
-defineProps<{
-  collapse: boolean
-}>()
+import { useFullscreen } from '@yto-custom/hooks'
+const { isFullscreen, toggle } = useFullscreen()
 </script>

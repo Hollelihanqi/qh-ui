@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "inputs": ["production", "^production"]
+    }
+  },
+  "defaultBase": "master",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "!{projectRoot}/**/node_modules/**/*"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.test.ts",
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/.eslintrc.json"
+    ]
+  },
+  "release": {
+    "projectsRelationship": "independent",
+    "releaseTagPattern": "v{version}",
+    "changelog": {
+      "workspaceChangelog": true,
+      "projectChangelogs": false
+    },
+    "version": {
+      "git": {
+        "commitMessage": "chore(release): publish ${name}@${version}",
+        "push": true,
+        "tag": true,
+        "signOff": false
+      }
+    }
+  }
+}

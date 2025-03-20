@@ -18,9 +18,13 @@ export const layoutHeaderProps = buildProps({
     type: Boolean,
     default: true,
   },
+  fullscreenHide: {
+    type: Boolean,
+    default: false,
+  },
   userInfo: {
     type: Object,
-    default: () => ({}),
+    default: () => null,
   },
 })
 

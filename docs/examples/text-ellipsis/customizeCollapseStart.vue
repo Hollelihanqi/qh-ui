@@ -1,5 +1,7 @@
 <template>
-  <yto-text-ellipsis rows="1" :content="text" expand-text="expand" collapse-text="collapse" position="start" />
+  <ClientOnly>
+    <yto-text-ellipsis rows="1" :content="text" expand-text="expand" collapse-text="collapse" position="start" />
+  </ClientOnly>
 </template>
 <script lang="tsx">
 export default {

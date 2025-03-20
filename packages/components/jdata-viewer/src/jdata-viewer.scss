@@ -173,6 +173,8 @@
 
   .html-content {
     display: inline-block;
+    flex: 1;
+    width: 0;
 
     // 重置继承的样式，让内联样式生效
     * {
@@ -183,7 +185,32 @@
     // 让带style属性的元素使用其内联样式
     [style] {
       all: revert;
-      display: inline;
+      // display: inline;
+    }
+
+    table {
+      display: table !important;
+      caption {
+        display: table-caption;
+        text-align: center;
+        unicode-bidi: isolate;
+      }
+      tr {
+        display: table-row !important;
+        vertical-align: inherit;
+        unicode-bidi: isolate;
+        th {
+          display: table-cell !important;
+          vertical-align: inherit;
+          text-align: -internal-center;
+          unicode-bidi: isolate;
+        }
+        td {
+          display: table-cell !important;
+          vertical-align: inherit;
+          unicode-bidi: isolate;
+        }
+      }
     }
   }
 }

@@ -28,7 +28,7 @@ export default {
     // console.log('import.meta.env.SSR', import.meta.env.SSR)
     if (!import.meta.env.SSR) {
       // @ts-ignore
-      const custom = await import('@yto/custom')
+      const custom = await import('@yto/custom').then((m) => m)
       app.use(custom.default)
     }
   },

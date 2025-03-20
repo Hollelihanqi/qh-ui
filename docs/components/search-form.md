@@ -16,60 +16,50 @@ search-form/basic
 
 ## SearchForm 属性
 
-| 属性名              | 说明                                                            | 类型             | 可选值     | 默认值                                  |
-| ------------------- | --------------------------------------------------------------- | ---------------- | ---------- | --------------------------------------- |
-| v-model:searchModel | 数据绑定                                                        | Object           | —          | --                                      |
-| colConfig           | 全局配置不同屏幕下一行所显示的控件个数, 参考 `FormControlsItem` | [Number, Object] | —          | `{ xs: 1, sm: 2, md: 2, lg: 3, xl: 4 }` |
-| formControls        | 搜索项配置项，参考 `ColConfigItem`                              | Array            | —          | []                                      |
-| filterFields        | 搜索项过滤字段                                                  | Array            | —          | []                                      |
-| collapsedRows       | 默认收起行数                                                    | Number           | —          | 1                                       |
-| modelDefault        | 默认值,可以同时支持多个表单项的默认值配置                       | Object           | —          | null                                    |
-| clearDefaultValue   | 是否在重置的时候清除默认值                                      | Boolean          | —          | true                                    |
-| okpos               | 确认按钮位置                                                    | String           | right/left | right                                   |
-| collapse            | 展开收起,默认展开                                               | Boolean          | true/false | false                                   |
-| isResetParams       | 点击重置按钮时，是否重置查询默认参数为空                        | Boolean          | true/false | false                                   |
-| afterSearchFun      | 查询按钮点击后，触发的回调                                      | Function         | —          | —                                       |
-| afterResetFun       | 重置按钮点击后，触发的回调                                      | Function         | —          | —                                       |
-| beforeResetFun      | 重置按钮点击之前，触发的回调                                    | Function         | —          | —                                       |
-
-### ColConfigItem 属性
-
-| 属性名 | 说明                          | 类型   | 默认值 |
-| ------ | ----------------------------- | ------ | ------ |
-| `xs`   | width < 768                   | Number | 1      |
-| `sm`   | width >= 768 && width < 992   | Number | 2      |
-| `md`   | width >= 992 && width < 1200  | Number | 2      |
-| `lg`   | width >= 1200 && width < 1920 | Number | 3      |
-| `xl`   | width >= 1920                 | Number | 4      |
+| 属性名              | 说明                                      | 类型             | 可选值     | 默认值                                  |
+| ------------------- | ----------------------------------------- | ---------------- | ---------- | --------------------------------------- |
+| v-model:searchModel | 数据绑定                                  | Object           | —          | null                                    |
+| colConfig           | 全局配置不同屏幕下一行所显示的控件个数    | [Number, Object] | —          | `{ xs: 1, sm: 2, md: 3, lg: 4, xl: 6 }` |
+| formControls        | 搜索项配置项，参考 `FormControlsItem`     | Array            | —          | []                                      |
+| collapsedRows       | 默认收起行数                              | Number           | —          | 1                                       |
+| modelDefault        | 默认值,可以同时支持多个表单项的默认值配置 | Object           | —          | null                                    |
+| clearDefaultValue   | 是否在重置的时候清除默认值                | Boolean          | —          | true                                    |
+| okpos               | 确认按钮位置                              | String           | right/left | right                                   |
+| collapse            | 展开收起,默认收起                         | Boolean          | true/false | false                                   |
+| afterSearchFun      | 查询按钮点击后，触发的回调                | Function         | —          | () => ({})                              |
+| afterResetFun       | 重置按钮点击后，触发的回调                | Function         | —          | () => ({})                              |
+| beforeResetFun      | 重置按钮点击之前，触发的回调              | Function         | —          | () => ({})                              |
 
 ### FormControlsItem 属性
 
-| 属性名       | 说明                                                                                                | 类型                                            | 默认值 |
-| ------------ | --------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ------ |
-| `el`         | `input 、 select 、 tree-select 、 date-picker 、 time-picker 、 time-select 、 switch 、 checkbox` | String                                          | -      |
-| props        | el-form 表单元素属性，可查看 element-plus                                                           | Object                                          | -      |
-| label        | 所有控件显示的 label 文字                                                                           | String                                          | -      |
-| field        | 搜索字段名称                                                                                        | String                                          | -      |
-| defaultValue | 搜索控件默认值                                                                                      | `String 、 Number 、 Boolean 、 Function 、 []` | -      |
-| formatValue  | 格式化表单值                                                                                        | Function                                        | -      |
-| span         | 搜索项所占用的列数，默认为 1 列                                                                     |                                                 | 1      |
-| offset       | 搜索字段左侧偏移列数                                                                                |                                                 | 0      |
-| options      | `el` 为 select 时，option 配置列表                                                                  | `[{label:string,value:any}]`                    | []     |
-| ...colConfig | 对 `colConfig` 的属性展开可单独配置到任意一个搜索项中                                               | Number                                          | -      |
-| render       | 自定义渲染，可传入一个 Vue 组件,支持 JSX、h 函数                                                    | Function                                        | -      |
-| isRemote     | `el` 为 select 时，是否通过调用接口，获取下拉列表数据                                               | Boolean                                         | false  |
-| remoteProps  | 远程搜索配置,[参考-remote-search](http://10.130.136.69:7200/examples/remote-search/)                | Object                                          | -      |
+| 属性名       | 说明                                                                                               | 类型                                                   | 默认值 |
+| ------------ | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------ |
+| el           | 表单元素类型：`input`、`select`、`tree-select`、`date-picker`、`time-picker`、`switch`、`checkbox` | String                                                 | -      |
+| props        | element-plus 表单元素原生属性                                                                      | Object                                                 | -      |
+| label        | 表单项标签文本                                                                                     | String                                                 | -      |
+| field        | 搜索字段名称                                                                                       | String                                                 | -      |
+| defaultValue | 搜索控件默认值                                                                                     | `String \| Number \| Boolean \| Function \| Array`     | -      |
+| formatValue  | 格式化表单值                                                                                       | Function                                               | -      |
+| fieldFormat  | 格式化字段名                                                                                       | Function                                               | -      |
+| span         | 搜索项所占用的列数，默认为 1 列                                                                    | Number                                                 | 1      |
+| offset       | 搜索字段左侧偏移列数                                                                               | Number                                                 | 0      |
+| options      | `el` 为 select 时的选项列表                                                                        | `Array<{label: string, value: any}>`                   | []     |
+| colConfig    | 响应式布局配置，可覆盖全局配置                                                                     | Number \| Record<'xs'\|'sm'\|'md'\|'lg'\|'xl', number> | -      |
+| render       | 自定义渲染函数，支持 JSX                                                                           | Function                                               | -      |
+| isRemote     | `el` 为 select 时，是否启用远程搜索                                                                | Boolean                                                | false  |
+| remoteProps  | 远程搜索配置，参考 RemoteSearch 组件文档                                                           | Object                                                 | -      |
+| hide         | 控制表单项是否隐藏的函数                                                                           | () => boolean                                          | -      |
 
 ### SearchForm 事件
 
-| 名称         | 说明                 |
-| ------------ | -------------------- |
-| on-search    | 点击搜索按钮回调函数 |
-| on-reset     | 点击重置回调函数     |
-| after-remote | 远程搜索之后回调     |
+| 事件名             | 说明               | 参数                 |
+| ------------------ | ------------------ | -------------------- |
+| update:searchModel | 表单数据更新时触发 | (value: any) => void |
+| on-search          | 点击搜索按钮时触发 | -                    |
+| on-reset           | 点击重置按钮时触发 | -                    |
 
 ### SearchForm 方法
 
-| 名称            | 说明                                                               |
-| --------------- | ------------------------------------------------------------------ |
-| getFormatValues | 获取格式化后的 Form 值，会动态判断表单配置项中是否有 `formatValue` |
+| 名称            | 说明                                                  | 参数 |
+| --------------- | ----------------------------------------------------- | ---- |
+| getFormatValues | 获取格式化后的表单值，会应用表单项的 formatValue 函数 | -    |
