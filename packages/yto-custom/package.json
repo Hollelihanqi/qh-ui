@@ -10,7 +10,9 @@
       "import": "./es/index.mjs"
     },
     "./global": {
-      "types": "./global.d.ts"
+      "types": "./global.d.ts",
+      "import": "./global.d.ts",
+      "default": "./global.d.ts"
     },
     "./es": {
       "types": "./es/index.d.ts",
