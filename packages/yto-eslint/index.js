@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
 import VueEslintParser from 'vue-eslint-parser'
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended'
-import tsListParser from '@typescript-eslint/parser'
+import tsLintParser from '@typescript-eslint/parser'
 
 export default [
   {
@@ -18,7 +18,7 @@ export default [
       },
       parser: VueEslintParser,
       parserOptions: {
-        parser: tsListParser,
+        parser: tsLintParser,
         ecmaFeatures: {
           jsx: true,
         },

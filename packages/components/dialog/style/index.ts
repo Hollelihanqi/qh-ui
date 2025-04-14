@@ -1,1 +1,0 @@
-import '@yto-custom/components/dialog/src/dialog.scss'

@@ -3,8 +3,6 @@ import { YtoCustomFieldConfig } from '@yto-custom/components/custom-field-config
 import { YtoCustomFieldContainer } from '@yto-custom/components/custom-field-container'
 import { YtoDatePicker } from '@yto-custom/components/date-picker'
 import { YtoDescriptions } from '@yto-custom/components/descriptions'
-import { YtoDialog } from '@yto-custom/components/dialog'
-import { YtoEchart } from '@yto-custom/components/echart'
 import { YtoEllipsisTag } from '@yto-custom/components/ellipsis-tag'
 import { YtoEmpty } from '@yto-custom/components/empty'
 import { YtoForm } from '@yto-custom/components/form'
@@ -18,7 +16,6 @@ import { YtoLayoutRouter } from '@yto-custom/components/layout-router'
 import { YtoMenu } from '@yto-custom/components/menu'
 import { YtoRadio } from '@yto-custom/components/radio'
 import { YtoRemoteSearch } from '@yto-custom/components/remote-search'
-import { YtoSearchContainer } from '@yto-custom/components/search-container'
 import { YtoSearchForm } from '@yto-custom/components/search-form'
 import { YtoSticky } from '@yto-custom/components/sticky'
 import { YtoStickyContainer } from '@yto-custom/components/sticky-container'
@@ -39,8 +36,6 @@ export default [
   YtoCustomFieldContainer,
   YtoDatePicker,
   YtoDescriptions,
-  YtoDialog,
-  YtoEchart,
   YtoEllipsisTag,
   YtoEmpty,
   YtoForm,
@@ -54,7 +49,6 @@ export default [
   YtoMenu,
   YtoRadio,
   YtoRemoteSearch,
-  YtoSearchContainer,
   YtoSearchForm,
   YtoSticky,
   YtoStickyContainer,
@@ -66,5 +60,5 @@ export default [
   YtoTimeLine,
   YtoUploader,
   YtoUserSearch,
-  YtoWaterMark
+  YtoWaterMark,
 ] as Plugin[]

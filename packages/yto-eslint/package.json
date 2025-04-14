@@ -1,6 +1,6 @@
 {
   "name": "@yto/eslint-config",
-  "version": "9.10.0-9",
+  "version": "9.10.0-12",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -15,12 +15,11 @@
     "name": "西安技术平台部用户体验设计-李涵祺",
     "email": "02393963@yto.net.cn"
   },
-  "license": "ISC",
   "dependencies": {
+    "eslint": "^9.9.1",
     "@eslint/js": "^9.9.1",
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
-    "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-vue": "^9.27.0",
@@ -28,5 +27,8 @@
     "prettier": "^3.3.3",
     "typescript-eslint": "^8.6.0",
     "vue-eslint-parser": "^10.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.1"
   }
 }

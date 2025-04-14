@@ -1,1 +1,0 @@
-import '@yto-custom/components/echart/src/echart.scss'

@@ -32,7 +32,8 @@
     "release:utils": "pnpm -C packages/yto-utils release",
     "clean:cache": "npx nx reset",
     "build:verbose": "NX_VERBOSE_LOGGING=true pnpm build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build:vite": "pnpm run -C internal/build2 build"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.0",
@@ -44,7 +45,7 @@
     "@swc-node/register": "^1.10.9",
     "@swc/core": "^1.11.8",
     "@unocss/core": "0.53.4",
-    "@vitejs/plugin-vue": "^4.4.0",
+    "@vitejs/plugin-vue": "^5.2.3",
     "@vue/runtime-dom": "^3.5.13",
     "@yto/eslint-config": "9.10.0-9",
     "chokidar": "^3.6.0",
@@ -62,7 +63,7 @@
     "sass": "^1.83.4",
     "through2": "^4.0.2",
     "ts-node": "^10.9.2",
-    "tsx": "^4.19.2",
+    "tsx": "^4.19.3",
     "type-fest": "^4.27.0",
     "typescript": "5.5.4",
     "unocss": "^0.48.0",
@@ -70,14 +71,14 @@
     "unplugin-element-plus": "^0.8.0",
     "unplugin-vue-components": "^0.25.2",
     "unplugin-vue-macros": "^0.11.2",
-    "vite": "^5.4.10",
+    "vite": "^6.2.4",
     "vite-plugin-vue-setup-extend": "^0.4.0",
     "vue-tsc": "^2.1.6"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "@types/node": "^18.18.5",
-    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "@vitejs/plugin-vue-jsx": "^4.1.2",
     "@vue/runtime-core": "^3.3.4",
     "@vue/shared": "^3.2.37",
     "@vueuse/core": "^12.4.0",

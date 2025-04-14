@@ -1,1 +1,0 @@
-import '@yto-custom/components/search-container/src/search-container.scss'
