@@ -1,0 +1,54 @@
+{
+  "run": {
+    "command": "nx run-many -t build -p yto-utils,internal-build-constants,internal-build-utils,internal-resolvers",
+    "startTime": "2025-03-25T05:54:06.877Z",
+    "endTime": "2025-03-25T05:54:06.928Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "internal-build-utils:build",
+      "target": "build",
+      "projectName": "internal-build-utils",
+      "hash": "11895507717696028978",
+      "startTime": "2025-03-25T05:54:06.904Z",
+      "endTime": "2025-03-25T05:54:06.908Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "internal-build-constants:build",
+      "target": "build",
+      "projectName": "internal-build-constants",
+      "hash": "8514436626684755145",
+      "startTime": "2025-03-25T05:54:06.904Z",
+      "endTime": "2025-03-25T05:54:06.912Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "yto-utils:build",
+      "target": "build",
+      "projectName": "yto-utils",
+      "hash": "7291856329938452794",
+      "startTime": "2025-03-25T05:54:06.904Z",
+      "endTime": "2025-03-25T05:54:06.915Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "internal-resolvers:build",
+      "target": "build",
+      "projectName": "internal-resolvers",
+      "hash": "9390162847953018721",
+      "startTime": "2025-03-25T05:54:06.918Z",
+      "endTime": "2025-03-25T05:54:06.925Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[2m> [22mcd internal/build-utils && pnpm build
+
+
+> @yto-custom/build-utils@0.0.1 build /Users/hq/workspase/yto-test-ui/internal/build-utils
+> unbuild
+
+[36mℹ[39m [36mBuilding build-utils[39m
+[36mℹ[39m Cleaning dist directory: [36m./dist[39m
+[32m✔[39m [32mBuild succeeded for build-utils[39m
+  [1mdist/index.cjs[22m (total size: [36m3.76 kB[39m, chunk size: [36m3.76 kB[39m, exports: [90mbuildOutput, buildRoot, compPackage, compRoot, directivePackage, directiveRoot, docPackage, docRoot, docsDirName, ensureDir, errorAndExit, excludeFiles, getPackageDependencies, getPackageManifest, getWorkspaceNames, getWorkspacePackages, hookPackage, hookRoot, pkgRoot, projPackage, projRoot, themePackage, themeRoot, utilPackage, utilRoot, vpRoot, writeJson, ytoCustomRoot, ytoOutput, ytoPackage[39m)
+
+  [1mdist/index.mjs[22m (total size: [36m2.9 kB[39m, chunk size: [36m2.9 kB[39m, exports: [90mbuildOutput, buildRoot, compPackage, compRoot, directivePackage, directiveRoot, docPackage, docRoot, docsDirName, ensureDir, errorAndExit, excludeFiles, getPackageDependencies, getPackageManifest, getWorkspaceNames, getWorkspacePackages, hookPackage, hookRoot, pkgRoot, projPackage, projRoot, themePackage, themeRoot, utilPackage, utilRoot, vpRoot, writeJson, ytoCustomRoot, ytoOutput, ytoPackage[39m)
+
+Σ Total dist size (byte size): [36m12.5 kB[39m
+

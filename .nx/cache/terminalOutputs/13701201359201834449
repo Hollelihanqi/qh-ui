@@ -1,0 +1,4 @@
+[38;2;255;165;0m[39m
+[38;2;255;165;0mRegistry detected in the 'publishConfig' of the package manifest: packages/yto-custom/package.json. Configuring the registry in this way is not recommended because it prevents the registry from being overridden in project configuration or via the --registry argument. To customize the registry for specific packages, see https://nx.dev/recipes/nx-release/configure-custom-registries[39m
+[38;2;255;165;0m[39m
+pnpm publish error:

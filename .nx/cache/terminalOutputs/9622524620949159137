@@ -1,0 +1,13 @@
+[2m> [22mcd packages/yto-utils && pnpm build
+
+
+> @yto/utils@2.0.0 build /Users/hq/workspase/yto-test-ui/packages/yto-utils
+> unbuild
+
+[36mℹ[39m [36mBuilding utils[39m
+[36mℹ[39m Cleaning dist directory: [36m./dist[39m
+[32m✔[39m [32mBuild succeeded for utils[39m
+  [1mdist/index.mjs[22m (total size: [36m11.9 kB[39m, chunk size: [36m11.9 kB[39m, exports: [90maddWaterMarker, bridge, copyStr, debounceFun, downloadFileDataCSV, downloadFileStream, formatDuration, formatNumber, guid, isEmptyFun, isFunctionFun, isInteger, ocrValueMapping, removeWatermark, thousandsSeparator[39m)
+
+Σ Total dist size (byte size): [36m22.6 kB[39m
+

@@ -1,0 +1,13 @@
+[2m> [22mcd internal/resolvers && pnpm build
+
+
+> @yto-custom/yto-custom-resolver@0.0.1 build /Users/hq/workspase/yto-test-ui/internal/resolvers
+> unbuild
+
+[36mℹ[39m [36mBuilding yto-custom-resolver[39m
+[36mℹ[39m Cleaning dist directory: [36m./dist[39m
+[32m✔[39m [32mBuild succeeded for yto-custom-resolver[39m
+  [1mdist/index.mjs[22m (total size: [36m741 B[39m, chunk size: [36m741 B[39m, exports: [90mYtoCustomResolver[39m)
+
+Σ Total dist size (byte size): [36m1.57 kB[39m
+

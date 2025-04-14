@@ -1,0 +1,1467 @@
+[2m> [22mpnpm build
+
+
+> yto@0.4.0 prebuild /Users/hq/workspase/yto-test-ui
+> npx nx run-many -t build -p yto-utils,internal-build-constants,internal-build-utils,internal-resolvers
+
+[1G[0K[?25l[0K
+[0J[1A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠼[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠼[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠼[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠴[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠴[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠴[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠦[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠦[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠦[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠧[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠧[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠧[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠇[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠇[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠇[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠏[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠏[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠏[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠋[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠋[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠋[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠼[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠼[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠼[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠴[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠴[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠴[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠦[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠦[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠦[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/4 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠧[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠧[39m[22m  [2mnx run[22m internal-build-constants:build[0K
+   [2m[36m⠧[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+[0J[9A
+   [32m✔[39m  [2mnx run[22m internal-build-constants:build[2m (2s)[22m[0K
+[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0K
+[0J[4A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 2/3 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠇[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠇[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+[0K
+   [32m✔[39m  1/1 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[12A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/3 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠏[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠏[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+   [2m[36m⠏[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  1/1 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[13A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/3 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠋[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠋[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+   [2m[36m⠋[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  1/1 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[13A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/3 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  1/1 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[13A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 3/3 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m internal-build-utils:build[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  1/1 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[13A   [32m✔[39m  [2mnx run[22m internal-build-utils:build[2m (2s)[22m[0K
+[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0K
+[0J[4A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 2/2 remaining tasks in parallel...[22m[0K
+[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m yto-utils:build[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  2/2 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[12A   [32m✔[39m  [2mnx run[22m yto-utils:build[2m (2s)[22m[0K
+[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0K
+[0J[4A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠼[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠴[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠦[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠧[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠇[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠏[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠋[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠙[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠹[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠸[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠼[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠴[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠦[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[2m   [36m→[39m  Executing 1/1 remaining tasks...[22m[0K
+[0K
+   [2m[36m⠧[39m[22m  [2mnx run[22m internal-resolvers:build[0K
+[0K
+   [32m✔[39m  3/3 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[11A   [32m✔[39m  [2mnx run[22m internal-resolvers:build[2m (2s)[22m[0K
+[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0K
+[0J[4A[0K
+[2m[36m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for 4 projects[39m[0K
+[0K
+[0K
+   [32m✔[39m  4/4 succeeded [2m[0 read from cache][22m[0K
+[0K
+[0J[8A[0K
+[2m[32m———————————————————————————————————————————————————————————————————————————————————[39m[22m[0K
+[0K
+[0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target [1mbuild[22m for 4 projects[39m[2m[37m (3s)[39m[22m[0K
+[0K
+[0J[?25h[?25h[1G[0K⠙[1G[0K
+> yto@0.4.0 build /Users/hq/workspase/yto-test-ui
+> pnpm run -C internal/build start
+
+
+> @yto-custom/build@0.0.1 start /Users/hq/workspase/yto-test-ui/internal/build
+> gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts
+
+[[90m18:23:31[39m] Requiring external module [35m@esbuild-kit/cjs-loader[39m
+[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+[[90m18:23:32[39m] Using gulpfile [35m~/workspase/yto-test-ui/internal/build/gulpfile.ts[39m
+[[90m18:23:32[39m] Starting '[36mdefault[39m'...
+[[90m18:23:32[39m] Starting '[36mclean[39m'...
+[36mℹ[39m run: [32mpnpm run clean[39m                                                  [90m6:23:32 PM[39m
+
+> yto@0.4.0 clean /Users/hq/workspase/yto-test-ui
+> pnpm run clean:dist
+
+
+> yto@0.4.0 clean:dist /Users/hq/workspase/yto-test-ui
+> rimraf dist
+
+[[90m18:23:33[39m] Finished '[36mclean[39m' after [35m863 ms[39m
+[[90m18:23:33[39m] Starting '[36mcreateOutput[39m'...
+[[90m18:23:33[39m] Finished '[36mcreateOutput[39m' after [35m708 μs[39m
+[[90m18:23:33[39m] Starting '[36mshellTask:buildModules[39m'...
+[[90m18:23:33[39m] Starting '[36mshellTask:generateTypesDefinitions[39m'...
+[36mℹ[39m run: [32mpnpm run start buildModules[39m                                     [90m6:23:33 PM[39m
+[36mℹ[39m run: [32mpnpm run start generateTypesDefinitions[39m                         [90m6:23:33 PM[39m
+[[90m18:23:33[39m] Starting '[36mbuildThemeChalk[39m'...
+[36mℹ[39m run: [32mpnpm run -C packages/theme-chalk build[39m                          [90m6:23:33 PM[39m
+
+> @yto-custom/build@0.0.1 start /Users/hq/workspase/yto-test-ui/internal/build
+> gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts "generateTypesDefinitions"
+
+
+> @yto-custom/build@0.0.1 start /Users/hq/workspase/yto-test-ui/internal/build
+> gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts "buildModules"
+
+
+> theme-chalk3@1.0.0 build /Users/hq/workspase/yto-test-ui/packages/theme-chalk
+> pnpm clean && pnpm gen-entry && pnpm build:all && pnpm build:components && tsx tasks/cleanJS.ts
+
+[[90m18:23:33[39m] Requiring external module [35m@esbuild-kit/cjs-loader[39m
+[[90m18:23:33[39m] Requiring external module [35m@esbuild-kit/cjs-loader[39m
+
+> theme-chalk3@1.0.0 clean /Users/hq/workspase/yto-test-ui/packages/theme-chalk
+> rimraf dist
+
+[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+> theme-chalk3@1.0.0 gen-entry /Users/hq/workspase/yto-test-ui/packages/theme-chalk
+> tsx gen-entry.ts
+
+[[90m18:23:34[39m] Using gulpfile [35m~/workspase/yto-test-ui/internal/build/gulpfile.ts[39m
+[[90m18:23:34[39m] Starting '[36mbuildModules[39m'...
+[[90m18:23:34[39m] Starting '[36mbuildModulesComponents[39m'...
+[[90m18:23:34[39m] Using gulpfile [35m~/workspase/yto-test-ui/internal/build/gulpfile.ts[39m
+[[90m18:23:34[39m] Starting '[36mgenerateTypesDefinitions[39m'...
+[90m[[90m6:23:34 PM[90m][39m [36mℹ[39m run: [32mnpx vue-tsc -p tsconfig.web.json --declaration --emitDeclarationOnly --declarationDir dist/types[39m
+[1G[0K
+> theme-chalk3@1.0.0 build:all /Users/hq/workspase/yto-test-ui/packages/theme-chalk
+> vite build --config vite.global.config.ts
+
+[36mvite v6.0.11 [32mbuilding for production...[36m[39m
+[33m[33m"build.lib.formats" will be ignored because "build.rollupOptions.output" is already an array format.[39m[39m
+[2K[1Gtransforming (1) [2mentry.ts[22m[2K[1Gtransforming (35) [2m../components/descriptions/src/descriptions.tsx[22m[33mGenerated an empty chunk: "utils/vue/typescript".[39m
+[33mGenerated an empty chunk: "components/adaption-container/src/instance".[39m
+[33mGenerated an empty chunk: "components/custom-field-config/src/instance".[39m
+[33mGenerated an empty chunk: "components/date-picker/src/instance".[39m
+[33mGenerated an empty chunk: "components/descriptions/src/instance".[39m
+[33mGenerated an empty chunk: "components/custom-field-container/src/instance".[39m
+[33mGenerated an empty chunk: "components/dialog/src/instance".[39m
+[33mGenerated an empty chunk: "components/echart/src/instance".[39m
+[33mGenerated an empty chunk: "components/empty/src/instance".[39m
+[33mGenerated an empty chunk: "components/form-items/src/instance".[39m
+[33mGenerated an empty chunk: "components/form/src/instance".[39m
+[33mGenerated an empty chunk: "components/layout/src/instance".[39m
+[33mGenerated an empty chunk: "components/jdata-viewer/src/instance".[39m
+[33mGenerated an empty chunk: "components/layout-frame/src/instance".[39m
+[33mGenerated an empty chunk: "components/ellipsis-tag/src/instance".[39m
+[33mGenerated an empty chunk: "components/layout-header/src/instance".[39m
+[33mGenerated an empty chunk: "components/layout-menu/src/instance".[39m
+[33mGenerated an empty chunk: "components/layout-router/src/instance".[39m
+[33mGenerated an empty chunk: "components/menu/src/instance".[39m
+[33mGenerated an empty chunk: "components/radio/src/instance".[39m
+[33mGenerated an empty chunk: "components/remote-search/src/instance".[39m
+[33mGenerated an empty chunk: "components/search-container/src/instance".[39m
+[33mGenerated an empty chunk: "components/search-form/src/instance".[39m
+[33mGenerated an empty chunk: "components/sticky-container/src/instance".[39m
+[33mGenerated an empty chunk: "components/table-editor/src/instance".[39m
+[33mGenerated an empty chunk: "components/sticky/src/instance".[39m
+[33mGenerated an empty chunk: "components/table/src/instance".[39m
+[33mGenerated an empty chunk: "components/tabs/src/instance".[39m
+[33mGenerated an empty chunk: "components/time-line/src/instance".[39m
+[33mGenerated an empty chunk: "components/tarea-tag/src/instance".[39m
+[33mGenerated an empty chunk: "components/text-ellipsis/src/instance".[39m
+[33mGenerated an empty chunk: "components/uploader/src/instance".[39m
+[33mGenerated an empty chunk: "components/user-search/src/instance".[39m
+[33mGenerated an empty chunk: "components/water-mark/src/instance".[39m
+[33mGenerated an empty chunk: "utils/vue/props/util".[39m
+[33mGenerated an empty chunk: "utils/vue/props/types".[39m
+[33mGenerated an empty chunk: "components/search-form/src/components/Grid/interface/index".[39m
+[[90m18:23:37[39m] Finished '[36mbuildModulesComponents[39m' after [35m2.75 s[39m
+[[90m18:23:37[39m] Finished '[36mbuildModules[39m' after [35m2.75 s[39m
+[[90m18:23:37[39m] Finished '[36mshellTask:buildModules[39m' after [35m4.11 s[39m
+[2K[1Gtransforming (61) [2m../components/sticky/src/sticky.tsx[22m[2K[1Gtransforming (82) [2m../components/user-search/src/user-search.scss[22m[2K[1Gtransforming (91) [2m../components/adaption-container/src/adaption-container.vue[[2K[1Gtransforming (154) [2m../../../../../../@unocss/5dbcb4fe.css[22m[2K[1Gtransforming (178) [2m../../../../../../@unocss/610a3acd.css[22m[2K[1Gtransforming (214) [2m../utils/create/index.ts[22m[2K[1Gtransforming (331) [2m../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/loda[2K[1Gtransforming (483) [2m../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/loda[2K[1Gtransforming (628) [2m../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/loda[2K[1Gtransforming (756) [2m../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/loda[2K[1Gtransforming (939) [2m../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/loda[2K[1G[32m✓[39m 998 modules transformed.
+[2K[1Grendering chunks (1)...[2K[1G[2K[1Gcomputing gzip size (0)...[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1G[2mdist/[22m[35mindex.css  [39m[1m[2m 38.19 kB[22m[1m[22m[2m │ gzip:  7.39 kB[22m
+[2mdist/[22m[36mindex.js   [39m[1m[2m219.23 kB[22m[1m[22m[2m │ gzip: 60.27 kB[22m
+[32m✓ built in 2.98s[39m
+
+> theme-chalk3@1.0.0 build:components /Users/hq/workspase/yto-test-ui/packages/theme-chalk
+> vite build --config vite.module.config.ts
+
+[36mvite v6.0.11 [32mbuilding for production...[36m[39m
+[33m[33m"build.lib.formats" will be ignored because "build.rollupOptions.output" is already an array format.[39m[39m
+[2K[1Gtransforming (1) [2mentries/empty/index.ts[22m[1G[0K⠙[1G[0K[[90m18:23:40[39m] Finished '[36mgenerateTypesDefinitions[39m' after [35m6.37 s[39m
+[[90m18:23:40[39m] Finished '[36mshellTask:generateTypesDefinitions[39m' after [35m7.7 s[39m
+[2K[1Gtransforming (34) [2m../components/empty/src/empty.tsx[22m[2K[1Gtransforming (43) [2m../components/text-ellipsis/src/text-ellipsis.tsx[22m[2K[1Gtransforming (73) [2m../../../../../../@unocss/c96a3c2a.css[22m[2K[1Gtransforming (90) [2m../components/layout-header/src/layout-header.vue[22m[2K[1Gtransforming (154) [2m../../../../../../@unocss/b9d0e2a7.css[22m[2K[1Gtransforming (179) [2m../../../../../../@unocss/21b60140.css[22m[2K[1Gtransforming (234) [2m../components/layout-header/src/fullScreen.ts[22m[2K[1Gtransforming (396) [2m../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/loda[2K[1Gtransforming (643) [2m../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/loda[2K[1Gtransforming (832) [2m../components/form-items/src/form-controls/itemInput.vue[22[2K[1G[32m✓[39m 997 modules transformed.
+[2K[1Grendering chunks (1)...[2K[1Grendering chunks (2)...[2K[1Grendering chunks (3)...[2K[1Grendering chunks (4)...[2K[1Grendering chunks (5)...[2K[1Grendering chunks (6)...[2K[1Grendering chunks (7)...[2K[1Grendering chunks (8)...[2K[1Grendering chunks (9)...[2K[1Grendering chunks (10)...[2K[1Grendering chunks (11)...[2K[1Grendering chunks (12)...[2K[1Grendering chunks (13)...[2K[1Grendering chunks (14)...[2K[1Grendering chunks (15)...[2K[1Grendering chunks (16)...[2K[1Grendering chunks (17)...[2K[1Grendering chunks (18)...[2K[1Grendering chunks (19)...[2K[1Grendering chunks (20)...[2K[1Grendering chunks (21)...[2K[1Grendering chunks (22)...[2K[1Grendering chunks (23)...[2K[1Grendering chunks (24)...[2K[1Grendering chunks (25)...[2K[1Grendering chunks (26)...[2K[1Grendering chunks (27)...[2K[1Grendering chunks (28)...[2K[1Grendering chunks (29)...[2K[1Grendering chunks (30)...[2K[1Grendering chunks (31)...[2K[1Grendering chunks (32)...[2K[1Grendering chunks (33)...[2K[1Grendering chunks (34)...[2K[1Grendering chunks (35)...[2K[1Grendering chunks (36)...[2K[1Grendering chunks (37)...[2K[1Grendering chunks (38)...[2K[1Grendering chunks (39)...[2K[1Grendering chunks (40)...[2K[1Grendering chunks (41)...[2K[1Grendering chunks (42)...[2K[1Grendering chunks (43)...[2K[1Grendering chunks (44)...[2K[1G[2K[1Gcomputing gzip size (0)...[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1Gcomputing gzip size (3)...[2K[1Gcomputing gzip size (4)...[2K[1Gcomputing gzip size (5)...[2K[1Gcomputing gzip size (6)...[2K[1Gcomputing gzip size (7)...[2K[1Gcomputing gzip size (8)...[2K[1Gcomputing gzip size (9)...[2K[1Gcomputing gzip size (10)...[2K[1Gcomputing gzip size (11)...[2K[1Gcomputing gzip size (12)...[2K[1Gcomputing gzip size (13)...[2K[1Gcomputing gzip size (14)...[2K[1Gcomputing gzip size (15)...[2K[1Gcomputing gzip size (16)...[2K[1Gcomputing gzip size (17)...[2K[1Gcomputing gzip size (18)...[2K[1Gcomputing gzip size (19)...[2K[1Gcomputing gzip size (20)...[2K[1Gcomputing gzip size (21)...[2K[1Gcomputing gzip size (22)...[2K[1Gcomputing gzip size (23)...[2K[1Gcomputing gzip size (24)...[2K[1Gcomputing gzip size (25)...[2K[1Gcomputing gzip size (26)...[2K[1Gcomputing gzip size (27)...[2K[1Gcomputing gzip size (28)...[2K[1Gcomputing gzip size (29)...[2K[1Gcomputing gzip size (30)...[2K[1Gcomputing gzip size (31)...[2K[1Gcomputing gzip size (32)...[2K[1Gcomputing gzip size (33)...[2K[1Gcomputing gzip size (34)...[2K[1Gcomputing gzip size (35)...[2K[1Gcomputing gzip size (36)...[2K[1Gcomputing gzip size (37)...[2K[1Gcomputing gzip size (38)...[2K[1Gcomputing gzip size (39)...[2K[1Gcomputing gzip size (40)...[2K[1Gcomputing gzip size (41)...[2K[1Gcomputing gzip size (42)...[2K[1Gcomputing gzip size (43)...[2K[1Gcomputing gzip size (44)...[2K[1Gcomputing gzip size (45)...[2K[1Gcomputing gzip size (46)...[2K[1Gcomputing gzip size (47)...[2K[1Gcomputing gzip size (48)...[2K[1Gcomputing gzip size (49)...[2K[1Gcomputing gzip size (50)...[2K[1Gcomputing gzip size (51)...[2K[1Gcomputing gzip size (52)...[2K[1Gcomputing gzip size (53)...[2K[1Gcomputing gzip size (54)...[2K[1Gcomputing gzip size (55)...[2K[1Gcomputing gzip size (56)...[2K[1Gcomputing gzip size (57)...[2K[1Gcomputing gzip size (58)...[2K[1Gcomputing gzip size (59)...[2K[1Gcomputing gzip size (60)...[2K[1Gcomputing gzip size (61)...[2K[1Gcomputing gzip size (62)...[2K[1Gcomputing gzip size (63)...[2K[1Gcomputing gzip size (64)...[2K[1Gcomputing gzip size (65)...[2K[1Gcomputing gzip size (66)...[2K[1Gcomputing gzip size (67)...[2K[1Gcomputing gzip size (68)...[2K[1Gcomputing gzip size (69)...[2K[1Gcomputing gzip size (70)...[2K[1Gcomputing gzip size (71)...[2K[1Gcomputing gzip size (72)...[2K[1Gcomputing gzip size (73)...[2K[1Gcomputing gzip size (74)...[2K[1Gcomputing gzip size (75)...[2K[1Gcomputing gzip size (76)...[2K[1G[2mdist/[22m[35myto-form-items.css                                     [39m[1m[2m 0.02 kB[22m[1m[22m[2m │ gzip:  0.04 kB[22m
+[2mdist/[22m[35myto-user-search.css                                    [39m[1m[2m 0.02 kB[22m[1m[22m[2m │ gzip:  0.04 kB[22m
+[2mdist/[22m[35myto-dialog.css                                         [39m[1m[2m 0.02 kB[22m[1m[22m[2m │ gzip:  0.04 kB[22m
+[2mdist/[22m[35myto-echart.css                                         [39m[1m[2m 0.05 kB[22m[1m[22m[2m │ gzip:  0.07 kB[22m
+[2mdist/[22m[35myto-date-picker.css                                    [39m[1m[2m 0.09 kB[22m[1m[22m[2m │ gzip:  0.10 kB[22m
+[2mdist/[22m[35myto-sticky-container.css                               [39m[1m[2m 0.11 kB[22m[1m[22m[2m │ gzip:  0.10 kB[22m
+[2mdist/[22m[35myto-adaption-container.css                             [39m[1m[2m 0.15 kB[22m[1m[22m[2m │ gzip:  0.13 kB[22m
+[2mdist/[22m[35myto-form.css                                           [39m[1m[2m 0.16 kB[22m[1m[22m[2m │ gzip:  0.13 kB[22m
+[2mdist/[22m[35myto-remote-search.css                                  [39m[1m[2m 0.16 kB[22m[1m[22m[2m │ gzip:  0.15 kB[22m
+[2mdist/[22m[35myto-empty.css                                          [39m[1m[2m 0.20 kB[22m[1m[22m[2m │ gzip:  0.16 kB[22m
+[2mdist/[22m[35myto-sticky-container2.css                              [39m[1m[2m 0.20 kB[22m[1m[22m[2m │ gzip:  0.16 kB[22m
+[2mdist/[22m[35myto-table-editor.css                                   [39m[1m[2m 0.24 kB[22m[1m[22m[2m │ gzip:  0.12 kB[22m
+[2mdist/[22m[35myto-custom-field-container.css                         [39m[1m[2m 0.41 kB[22m[1m[22m[2m │ gzip:  0.24 kB[22m
+[2mdist/[22m[35myto-text-ellipsis.css                                  [39m[1m[2m 0.59 kB[22m[1m[22m[2m │ gzip:  0.25 kB[22m
+[2mdist/[22m[35myto-descriptions.css                                   [39m[1m[2m 0.67 kB[22m[1m[22m[2m │ gzip:  0.34 kB[22m
+[2mdist/[22m[35myto-tabs.css                                           [39m[1m[2m 0.73 kB[22m[1m[22m[2m │ gzip:  0.34 kB[22m
+[2mdist/[22m[35myto-tarea-tag.css                                      [39m[1m[2m 0.80 kB[22m[1m[22m[2m │ gzip:  0.37 kB[22m
+[2mdist/[22m[35myto-custom-field-config.css                            [39m[1m[2m 0.81 kB[22m[1m[22m[2m │ gzip:  0.30 kB[22m
+[2mdist/[22m[35myto-sticky.css                                         [39m[1m[2m 0.82 kB[22m[1m[22m[2m │ gzip:  0.31 kB[22m
+[2mdist/[22m[35myto-search-form.css                                    [39m[1m[2m 0.97 kB[22m[1m[22m[2m │ gzip:  0.50 kB[22m
+[2mdist/[22m[35myto-ellipsis-tag.css                                   [39m[1m[2m 1.09 kB[22m[1m[22m[2m │ gzip:  0.48 kB[22m
+[2mdist/[22m[35myto-radio.css                                          [39m[1m[2m 1.23 kB[22m[1m[22m[2m │ gzip:  0.49 kB[22m
+[2mdist/[22m[35myto-layout-header.css                                  [39m[1m[2m 1.48 kB[22m[1m[22m[2m │ gzip:  0.57 kB[22m
+[2mdist/[22m[35myto-time-line.css                                      [39m[1m[2m 1.56 kB[22m[1m[22m[2m │ gzip:  0.59 kB[22m
+[2mdist/[22m[35myto-search-container.css                               [39m[1m[2m 1.71 kB[22m[1m[22m[2m │ gzip:  0.69 kB[22m
+[2mdist/[22m[35myto-layout-frame.css                                   [39m[1m[2m 1.86 kB[22m[1m[22m[2m │ gzip:  0.55 kB[22m
+[2mdist/[22m[35myto-table.css                                          [39m[1m[2m 1.96 kB[22m[1m[22m[2m │ gzip:  0.73 kB[22m
+[2mdist/[22m[35myto-jdata-viewer.css                                   [39m[1m[2m 3.07 kB[22m[1m[22m[2m │ gzip:  0.95 kB[22m
+[2mdist/[22m[35myto-layout.css                                         [39m[1m[2m 3.56 kB[22m[1m[22m[2m │ gzip:  0.84 kB[22m
+[2mdist/[22m[35myto-uploader.css                                       [39m[1m[2m 4.25 kB[22m[1m[22m[2m │ gzip:  1.27 kB[22m
+[2mdist/[22m[35myto-layout-router.css                                  [39m[1m[2m 6.50 kB[22m[1m[22m[2m │ gzip:  1.39 kB[22m
+[2mdist/[22m[35myto-layout-menu.css                                    [39m[1m[2m10.64 kB[22m[1m[22m[2m │ gzip:  1.53 kB[22m
+[2mdist/[22m[36myto-empty.js                                           [39m[1m[2m 0.07 kB[22m[1m[22m[2m │ gzip:  0.08 kB[22m
+[2mdist/[22m[36myto-remote-search.js                                   [39m[1m[2m 0.09 kB[22m[1m[22m[2m │ gzip:  0.09 kB[22m
+[2mdist/[22m[36myto-sticky-container.js                                [39m[1m[2m 0.09 kB[22m[1m[22m[2m │ gzip:  0.10 kB[22m
+[2mdist/[22m[36minstall-DSBu8iS4.js                                    [39m[1m[2m 0.15 kB[22m[1m[22m[2m │ gzip:  0.14 kB[22m
+[2mdist/[22m[36mindex-CZBtA_03.js                                      [39m[1m[2m 0.18 kB[22m[1m[22m[2m │ gzip:  0.16 kB[22m
+[2mdist/[22m[36mindex-CPzX4ICD.js                                      [39m[1m[2m 0.53 kB[22m[1m[22m[2m │ gzip:  0.31 kB[22m
+[2mdist/[22m[36myto-adaption-container.js                              [39m[1m[2m 1.11 kB[22m[1m[22m[2m │ gzip:  0.53 kB[22m
+[2mdist/[22m[36msticky-container-D9pLD7kr.js                           [39m[1m[2m 1.14 kB[22m[1m[22m[2m │ gzip:  0.61 kB[22m
+[2mdist/[22m[36myto-user-search.js                                     [39m[1m[2m 1.24 kB[22m[1m[22m[2m │ gzip:  0.72 kB[22m
+[2mdist/[22m[36myto-date-picker.js                                     [39m[1m[2m 1.24 kB[22m[1m[22m[2m │ gzip:  0.64 kB[22m
+[2mdist/[22m[36myto-menu.js                                            [39m[1m[2m 1.30 kB[22m[1m[22m[2m │ gzip:  0.58 kB[22m
+[2mdist/[22m[36myto-water-mark.js                                      [39m[1m[2m 1.50 kB[22m[1m[22m[2m │ gzip:  0.68 kB[22m
+[2mdist/[22m[36mindex-CEHN0AUo.js                                      [39m[1m[2m 1.50 kB[22m[1m[22m[2m │ gzip:  0.73 kB[22m
+[2mdist/[22m[36mruntime-D66m9OJg.js                                    [39m[1m[2m 1.78 kB[22m[1m[22m[2m │ gzip:  0.95 kB[22m
+[2mdist/[22m[36myto-tabs.js                                            [39m[1m[2m 1.96 kB[22m[1m[22m[2m │ gzip:  0.85 kB[22m
+[2mdist/[22m[36myto-custom-field-config.js                             [39m[1m[2m 2.24 kB[22m[1m[22m[2m │ gzip:  0.91 kB[22m
+[2mdist/[22m[36myto-radio.js                                           [39m[1m[2m 2.31 kB[22m[1m[22m[2m │ gzip:  0.99 kB[22m
+[2mdist/[22m[36myto-time-line.js                                       [39m[1m[2m 2.32 kB[22m[1m[22m[2m │ gzip:  0.96 kB[22m
+[2mdist/[22m[36myto-custom-field-container.js                          [39m[1m[2m 2.58 kB[22m[1m[22m[2m │ gzip:  1.01 kB[22m
+[2mdist/[22m[36myto-ellipsis-tag.js                                    [39m[1m[2m 2.95 kB[22m[1m[22m[2m │ gzip:  1.14 kB[22m
+[2mdist/[22m[36myto-form-items.js                                      [39m[1m[2m 3.04 kB[22m[1m[22m[2m │ gzip:  1.08 kB[22m
+[2mdist/[22m[36myto-layout-frame.js                                    [39m[1m[2m 3.07 kB[22m[1m[22m[2m │ gzip:  1.30 kB[22m
+[2mdist/[22m[36myto-descriptions.js                                    [39m[1m[2m 3.41 kB[22m[1m[22m[2m │ gzip:  1.32 kB[22m
+[2mdist/[22m[36myto-dialog.js                                          [39m[1m[2m 3.74 kB[22m[1m[22m[2m │ gzip:  1.24 kB[22m
+[2mdist/[22m[36myto-text-ellipsis.js                                   [39m[1m[2m 3.83 kB[22m[1m[22m[2m │ gzip:  1.61 kB[22m
+[2mdist/[22m[36myto-tarea-tag.js                                       [39m[1m[2m 3.89 kB[22m[1m[22m[2m │ gzip:  1.47 kB[22m
+[2mdist/[22m[36myto-table-editor.js                                    [39m[1m[2m 4.10 kB[22m[1m[22m[2m │ gzip:  1.59 kB[22m
+[2mdist/[22m[36mindex-CueL_C_H.js                                      [39m[1m[2m 5.40 kB[22m[1m[22m[2m │ gzip:  1.58 kB[22m
+[2mdist/[22m[36mindex-BVnxSbOJ.js                                      [39m[1m[2m 5.42 kB[22m[1m[22m[2m │ gzip:  2.27 kB[22m
+[2mdist/[22m[36myto-sticky.js                                          [39m[1m[2m 5.59 kB[22m[1m[22m[2m │ gzip:  2.10 kB[22m
+[2mdist/[22m[36myto-form.js                                            [39m[1m[2m 6.18 kB[22m[1m[22m[2m │ gzip:  1.57 kB[22m
+[2mdist/[22m[36mIndex.vue_vue_type_script_setup_true_lang-BdCBM3u4.js  [39m[1m[2m 6.57 kB[22m[1m[22m[2m │ gzip:  1.19 kB[22m
+[2mdist/[22m[36myto-search-container.js                                [39m[1m[2m 6.65 kB[22m[1m[22m[2m │ gzip:  2.40 kB[22m
+[2mdist/[22m[36mremote-search-pP7AV5Jh.js                              [39m[1m[2m 7.07 kB[22m[1m[22m[2m │ gzip:  2.38 kB[22m
+[2mdist/[22m[36myto-echart.js                                          [39m[1m[2m 7.21 kB[22m[1m[22m[2m │ gzip:  2.04 kB[22m
+[2mdist/[22m[36myto-jdata-viewer.js                                    [39m[1m[2m 7.28 kB[22m[1m[22m[2m │ gzip:  2.52 kB[22m
+[2mdist/[22m[36myto-layout-router.js                                   [39m[1m[2m 8.56 kB[22m[1m[22m[2m │ gzip:  2.94 kB[22m
+[2mdist/[22m[36mempty-DBEuKO5L.js                                      [39m[1m[2m 9.66 kB[22m[1m[22m[2m │ gzip:  3.62 kB[22m
+[2mdist/[22m[36myto-layout.js                                          [39m[1m[2m10.31 kB[22m[1m[22m[2m │ gzip:  3.42 kB[22m
+[2mdist/[22m[36myto-layout-menu.js                                     [39m[1m[2m11.33 kB[22m[1m[22m[2m │ gzip:  3.22 kB[22m
+[2mdist/[22m[36myto-layout-header.js                                   [39m[1m[2m11.35 kB[22m[1m[22m[2m │ gzip:  3.27 kB[22m
+[2mdist/[22m[36myto-uploader.js                                        [39m[1m[2m13.57 kB[22m[1m[22m[2m │ gzip:  4.86 kB[22m
+[2mdist/[22m[36myto-search-form.js                                     [39m[1m[2m15.45 kB[22m[1m[22m[2m │ gzip:  4.95 kB[22m
+[2mdist/[22m[36myto-table.js                                           [39m[1m[2m42.86 kB[22m[1m[22m[2m │ gzip: 13.58 kB[22m
+[32m✓ built in 2.52s[39m
+[35m◐[39m 开始合并 CSS 文件                                                     [90m6:23:42 PM[39m
+[32m✔[39m 合并 CSS 文件完成, 文件已复制到目标目录                              [90m6:23:42 PM[39m
+[35m◐[39m 开始清理 JS 文件                                                      [90m6:23:43 PM[39m
+[32m✔[39m JS 文件清理完成                                                      [90m6:23:43 PM[39m
+[[90m18:23:43[39m] Finished '[36mbuildThemeChalk[39m' after [35m10 s[39m
+[[90m18:23:43[39m] Starting '[36mbuildResolves[39m'...
+[36mℹ[39m run: [32mpnpm run -C internal/resolvers build[39m                            [90m6:23:43 PM[39m
+
+> @yto-custom/yto-custom-resolver@0.0.1 build /Users/hq/workspase/yto-test-ui/internal/resolvers
+> unbuild
+
+[36mℹ[39m [36mBuilding yto-custom-resolver[39m                                         [90m6:23:44 PM[39m
+[36mℹ[39m Cleaning dist directory: [36m./dist[39m                                      [90m6:23:44 PM[39m
+[32m✔[39m [32mBuild succeeded for yto-custom-resolver[39m                              [90m6:23:44 PM[39m
+[90m[[90m6:23:44 PM[90m][39m   [1mdist/index.mjs[22m (total size: [36m741 B[39m, chunk size: [36m741 B[39m, exports: [90mYtoCustomResolver[39m)
+
+Σ Total dist size (byte size): [36m1.57 kB[39m
+                                                                        [90m6:23:44 PM[39m
+[[90m18:23:44[39m] Finished '[36mbuildResolves[39m' after [35m1.5 s[39m
+[[90m18:23:44[39m] Starting '[36mcopyResolvers[39m'...
+[[90m18:23:44[39m] Finished '[36mcopyResolvers[39m' after [35m3.7 ms[39m
+[[90m18:23:44[39m] Starting '[36mcopyTypesDefinitions[39m'...
+[[90m18:23:44[39m] Starting '[36mcopyFiles[39m'...
+[[90m18:23:44[39m] Starting '[36mcopyTypes:esm[39m'...
+[[90m18:23:44[39m] Finished '[36mcopyFiles[39m' after [35m863 μs[39m
+[[90m18:23:44[39m] Finished '[36mcopyTypes:esm[39m' after [35m115 ms[39m
+[[90m18:23:44[39m] Finished '[36mcopyTypesDefinitions[39m' after [35m115 ms[39m
+[[90m18:23:44[39m] Finished '[36mdefault[39m' after [35m13 s[39m
+[2m> [22mcd dist/yto-custom && npm publish --dry-run
+
+[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K[1mnpm[22m [33mwarn[39m [94mpublish[39m npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+[1G[0K⠴[1G[0K[1mnpm[22m [33mwarn[39m [94mpublish[39m errors corrected:
+[1mnpm[22m [33mwarn[39m [94mpublish[39m "repository" was changed from a string to an object
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m 📦  @yto/custom@2.0.0-beta.8
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m [94mTarball Contents[39m
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m 7.6kB README.md
+[1mnpm[22m [96mnotice[39m 248B es/_virtual/plugin-vue_export-helper.mjs
+[1mnpm[22m [96mnotice[39m 550B es/_virtual/plugin-vue_export-helper.mjs.map
+[1mnpm[22m [96mnotice[39m 94B es/component.d.ts
+[1mnpm[22m [96mnotice[39m 2.9kB es/component.mjs
+[1mnpm[22m [96mnotice[39m 3.6kB es/component.mjs.map
+[1mnpm[22m [96mnotice[39m 348B es/components/adaption-container/index.d.ts
+[1mnpm[22m [96mnotice[39m 357B es/components/adaption-container/index.mjs
+[1mnpm[22m [96mnotice[39m 620B es/components/adaption-container/index.mjs.map
+[1mnpm[22m [96mnotice[39m 590B es/components/adaption-container/src/adaption-container.d.ts
+[1mnpm[22m [96mnotice[39m 386B es/components/adaption-container/src/adaption-container.mjs
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/adaption-container/src/adaption-container.mjs.map
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/adaption-container/src/adaption-container.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/adaption-container/src/adaption-container.vue.mjs
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/adaption-container/src/adaption-container.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 143B es/components/adaption-container/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/adaption-container/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/adaption-container/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 83B es/components/adaption-container/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 350B es/components/custom-field-config/index.d.ts
+[1mnpm[22m [96mnotice[39m 383B es/components/custom-field-config/index.mjs
+[1mnpm[22m [96mnotice[39m 623B es/components/custom-field-config/index.mjs.map
+[1mnpm[22m [96mnotice[39m 38.5kB es/components/custom-field-config/src/custom-field-config.d.ts
+[1mnpm[22m [96mnotice[39m 2.4kB es/components/custom-field-config/src/custom-field-config.mjs
+[1mnpm[22m [96mnotice[39m 5.1kB es/components/custom-field-config/src/custom-field-config.mjs.map
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/custom-field-config/src/icustom-field-config.d.ts
+[1mnpm[22m [96mnotice[39m 683B es/components/custom-field-config/src/icustom-field-config.mjs
+[1mnpm[22m [96mnotice[39m 1.9kB es/components/custom-field-config/src/icustom-field-config.mjs.map
+[1mnpm[22m [96mnotice[39m 144B es/components/custom-field-config/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/custom-field-config/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/custom-field-config/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 85B es/components/custom-field-config/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 374B es/components/custom-field-container/index.d.ts
+[1mnpm[22m [96mnotice[39m 413B es/components/custom-field-container/index.mjs
+[1mnpm[22m [96mnotice[39m 653B es/components/custom-field-container/index.mjs.map
+[1mnpm[22m [96mnotice[39m 679B es/components/custom-field-container/src/custom-field-container.d.ts
+[1mnpm[22m [96mnotice[39m 448B es/components/custom-field-container/src/custom-field-container.mjs
+[1mnpm[22m [96mnotice[39m 1.2kB es/components/custom-field-container/src/custom-field-container.mjs.map
+[1mnpm[22m [96mnotice[39m 4.2kB es/components/custom-field-container/src/custom-field-container.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.5kB es/components/custom-field-container/src/custom-field-container.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 156B es/components/custom-field-container/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/custom-field-container/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/custom-field-container/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 91B es/components/custom-field-container/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 302B es/components/date-picker/index.d.ts
+[1mnpm[22m [96mnotice[39m 321B es/components/date-picker/index.mjs
+[1mnpm[22m [96mnotice[39m 557B es/components/date-picker/index.mjs.map
+[1mnpm[22m [96mnotice[39m 539B es/components/date-picker/src/date-picker.d.ts
+[1mnpm[22m [96mnotice[39m 359B es/components/date-picker/src/date-picker.mjs
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/date-picker/src/date-picker.mjs.map
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/date-picker/src/date-picker.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/date-picker/src/date-picker.vue.mjs
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/date-picker/src/date-picker.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 115B es/components/date-picker/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/date-picker/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/date-picker/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 69B es/components/date-picker/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 311B es/components/descriptions/index.d.ts
+[1mnpm[22m [96mnotice[39m 315B es/components/descriptions/index.mjs
+[1mnpm[22m [96mnotice[39m 569B es/components/descriptions/index.mjs.map
+[1mnpm[22m [96mnotice[39m 1.3kB es/components/descriptions/src/descriptions.d.ts
+[1mnpm[22m [96mnotice[39m 3.9kB es/components/descriptions/src/descriptions.mjs
+[1mnpm[22m [96mnotice[39m 9.1kB es/components/descriptions/src/descriptions.mjs.map
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/descriptions/src/idescriptions.d.ts
+[1mnpm[22m [96mnotice[39m 812B es/components/descriptions/src/idescriptions.mjs
+[1mnpm[22m [96mnotice[39m 2.5kB es/components/descriptions/src/idescriptions.mjs.map
+[1mnpm[22m [96mnotice[39m 118B es/components/descriptions/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/descriptions/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/descriptions/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 71B es/components/descriptions/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 272B es/components/dialog/index.d.ts
+[1mnpm[22m [96mnotice[39m 360B es/components/dialog/index.mjs
+[1mnpm[22m [96mnotice[39m 584B es/components/dialog/index.mjs.map
+[1mnpm[22m [96mnotice[39m 1.2kB es/components/dialog/src/dialog.d.ts
+[1mnpm[22m [96mnotice[39m 592B es/components/dialog/src/dialog.mjs
+[1mnpm[22m [96mnotice[39m 2.0kB es/components/dialog/src/dialog.mjs.map
+[1mnpm[22m [96mnotice[39m 5.3kB es/components/dialog/src/dialog.vue.mjs
+[1mnpm[22m [96mnotice[39m 6.3kB es/components/dialog/src/dialog.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 98B es/components/dialog/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/dialog/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/dialog/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 59B es/components/dialog/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 272B es/components/echart/index.d.ts
+[1mnpm[22m [96mnotice[39m 283B es/components/echart/index.mjs
+[1mnpm[22m [96mnotice[39m 518B es/components/echart/index.mjs.map
+[1mnpm[22m [96mnotice[39m 420B es/components/echart/src/BarChart.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/echart/src/BarChart.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.2kB es/components/echart/src/BarChart.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 768B es/components/echart/src/BaseChart.vue.d.ts
+[1mnpm[22m [96mnotice[39m 3.4kB es/components/echart/src/BaseChart.vue.mjs
+[1mnpm[22m [96mnotice[39m 5.0kB es/components/echart/src/BaseChart.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 3.2kB es/components/echart/src/common/chartConfig.d.ts
+[1mnpm[22m [96mnotice[39m 2.6kB es/components/echart/src/common/chartConfig.mjs
+[1mnpm[22m [96mnotice[39m 5.9kB es/components/echart/src/common/chartConfig.mjs.map
+[1mnpm[22m [96mnotice[39m 125B es/components/echart/src/common/echartsComposable.d.ts
+[1mnpm[22m [96mnotice[39m 309B es/components/echart/src/common/echartsComposable.mjs
+[1mnpm[22m [96mnotice[39m 640B es/components/echart/src/common/echartsComposable.mjs.map
+[1mnpm[22m [96mnotice[39m 150B es/components/echart/src/common/util.d.ts
+[1mnpm[22m [96mnotice[39m 239B es/components/echart/src/common/util.mjs
+[1mnpm[22m [96mnotice[39m 543B es/components/echart/src/common/util.mjs.map
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/echart/src/echart.d.ts
+[1mnpm[22m [96mnotice[39m 424B es/components/echart/src/echart.mjs
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/echart/src/echart.mjs.map
+[1mnpm[22m [96mnotice[39m 2.5kB es/components/echart/src/echart.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/echart/src/echart.vue.mjs
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/echart/src/echart.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 98B es/components/echart/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/echart/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/echart/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 420B es/components/echart/src/LineChart.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.8kB es/components/echart/src/LineChart.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.4kB es/components/echart/src/LineChart.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 420B es/components/echart/src/PieChart.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.9kB es/components/echart/src/PieChart.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.6kB es/components/echart/src/PieChart.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 59B es/components/echart/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 309B es/components/ellipsis-tag/index.d.ts
+[1mnpm[22m [96mnotice[39m 312B es/components/ellipsis-tag/index.mjs
+[1mnpm[22m [96mnotice[39m 566B es/components/ellipsis-tag/index.mjs.map
+[1mnpm[22m [96mnotice[39m 493B es/components/ellipsis-tag/src/ellipsis-tag.d.ts
+[1mnpm[22m [96mnotice[39m 271B es/components/ellipsis-tag/src/ellipsis-tag.mjs
+[1mnpm[22m [96mnotice[39m 879B es/components/ellipsis-tag/src/ellipsis-tag.mjs.map
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/ellipsis-tag/src/ellipsis-tag.vue.d.ts
+[1mnpm[22m [96mnotice[39m 4.9kB es/components/ellipsis-tag/src/ellipsis-tag.vue.mjs
+[1mnpm[22m [96mnotice[39m 3.6kB es/components/ellipsis-tag/src/ellipsis-tag.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 119B es/components/ellipsis-tag/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/ellipsis-tag/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/ellipsis-tag/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 71B es/components/ellipsis-tag/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 262B es/components/empty/index.d.ts
+[1mnpm[22m [96mnotice[39m 259B es/components/empty/index.mjs
+[1mnpm[22m [96mnotice[39m 506B es/components/empty/index.mjs.map
+[1mnpm[22m [96mnotice[39m 2.1kB es/components/empty/src/empty.d.ts
+[1mnpm[22m [96mnotice[39m 9.8kB es/components/empty/src/empty.mjs
+[1mnpm[22m [96mnotice[39m 14.7kB es/components/empty/src/empty.mjs.map
+[1mnpm[22m [96mnotice[39m 905B es/components/empty/src/iempty.d.ts
+[1mnpm[22m [96mnotice[39m 602B es/components/empty/src/iempty.mjs
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/empty/src/iempty.mjs.map
+[1mnpm[22m [96mnotice[39m 90B es/components/empty/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/empty/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/empty/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 57B es/components/empty/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 295B es/components/form-items/index.d.ts
+[1mnpm[22m [96mnotice[39m 312B es/components/form-items/index.mjs
+[1mnpm[22m [96mnotice[39m 550B es/components/form-items/index.mjs.map
+[1mnpm[22m [96mnotice[39m 538B es/components/form-items/src/form-controls/Index.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.8kB es/components/form-items/src/form-controls/Index.vue.mjs
+[1mnpm[22m [96mnotice[39m 1.8kB es/components/form-items/src/form-controls/Index.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemCascader.vue.d.ts
+[1mnpm[22m [96mnotice[39m 956B es/components/form-items/src/form-controls/itemCascader.vue.mjs
+[1mnpm[22m [96mnotice[39m 616B es/components/form-items/src/form-controls/itemCascader.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemCheckbox.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.8kB es/components/form-items/src/form-controls/itemCheckbox.vue.mjs
+[1mnpm[22m [96mnotice[39m 806B es/components/form-items/src/form-controls/itemCheckbox.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemDate.vue.d.ts
+[1mnpm[22m [96mnotice[39m 915B es/components/form-items/src/form-controls/itemDate.vue.mjs
+[1mnpm[22m [96mnotice[39m 595B es/components/form-items/src/form-controls/itemDate.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemDateTime.vue.d.ts
+[1mnpm[22m [96mnotice[39m 957B es/components/form-items/src/form-controls/itemDateTime.vue.mjs
+[1mnpm[22m [96mnotice[39m 621B es/components/form-items/src/form-controls/itemDateTime.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemInput.vue.d.ts
+[1mnpm[22m [96mnotice[39m 910B es/components/form-items/src/form-controls/itemInput.vue.mjs
+[1mnpm[22m [96mnotice[39m 574B es/components/form-items/src/form-controls/itemInput.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemInputNumber.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/form-items/src/form-controls/itemInputNumber.vue.mjs
+[1mnpm[22m [96mnotice[39m 651B es/components/form-items/src/form-controls/itemInputNumber.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemRadio.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.8kB es/components/form-items/src/form-controls/itemRadio.vue.mjs
+[1mnpm[22m [96mnotice[39m 849B es/components/form-items/src/form-controls/itemRadio.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemRate.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/form-items/src/form-controls/itemRate.vue.mjs
+[1mnpm[22m [96mnotice[39m 584B es/components/form-items/src/form-controls/itemRate.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemSelect.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/form-items/src/form-controls/itemSelect.vue.mjs
+[1mnpm[22m [96mnotice[39m 625B es/components/form-items/src/form-controls/itemSelect.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemSwitch.vue.d.ts
+[1mnpm[22m [96mnotice[39m 917B es/components/form-items/src/form-controls/itemSwitch.vue.mjs
+[1mnpm[22m [96mnotice[39m 589B es/components/form-items/src/form-controls/itemSwitch.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemTimePicker.vue.d.ts
+[1mnpm[22m [96mnotice[39m 945B es/components/form-items/src/form-controls/itemTimePicker.vue.mjs
+[1mnpm[22m [96mnotice[39m 609B es/components/form-items/src/form-controls/itemTimePicker.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 576B es/components/form-items/src/form-controls/itemTimeSelect.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/form-items/src/form-controls/itemTimeSelect.vue.mjs
+[1mnpm[22m [96mnotice[39m 657B es/components/form-items/src/form-controls/itemTimeSelect.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 1.2kB es/components/form-items/src/form-items.d.ts
+[1mnpm[22m [96mnotice[39m 751B es/components/form-items/src/form-items.mjs
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/form-items/src/form-items.mjs.map
+[1mnpm[22m [96mnotice[39m 3.0kB es/components/form-items/src/form-items.vue.d.ts
+[1mnpm[22m [96mnotice[39m 3.8kB es/components/form-items/src/form-items.vue.mjs
+[1mnpm[22m [96mnotice[39m 1.9kB es/components/form-items/src/form-items.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 111B es/components/form-items/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/form-items/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/form-items/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 67B es/components/form-items/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 258B es/components/form/index.d.ts
+[1mnpm[22m [96mnotice[39m 265B es/components/form/index.mjs
+[1mnpm[22m [96mnotice[39m 502B es/components/form/index.mjs.map
+[1mnpm[22m [96mnotice[39m 1.3kB es/components/form/src/form.d.ts
+[1mnpm[22m [96mnotice[39m 795B es/components/form/src/form.mjs
+[1mnpm[22m [96mnotice[39m 1.8kB es/components/form/src/form.mjs.map
+[1mnpm[22m [96mnotice[39m 3.5kB es/components/form/src/form.vue.d.ts
+[1mnpm[22m [96mnotice[39m 7.8kB es/components/form/src/form.vue.mjs
+[1mnpm[22m [96mnotice[39m 3.9kB es/components/form/src/form.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 90B es/components/form/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/form/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/form/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 55B es/components/form/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/index.d.ts
+[1mnpm[22m [96mnotice[39m 4.6kB es/components/index.mjs
+[1mnpm[22m [96mnotice[39m 155B es/components/index.mjs.map
+[1mnpm[22m [96mnotice[39m 306B es/components/jdata-viewer/index.d.ts
+[1mnpm[22m [96mnotice[39m 309B es/components/jdata-viewer/index.mjs
+[1mnpm[22m [96mnotice[39m 563B es/components/jdata-viewer/index.mjs.map
+[1mnpm[22m [96mnotice[39m 928B es/components/jdata-viewer/src/ijdata-viewer.d.ts
+[1mnpm[22m [96mnotice[39m 682B es/components/jdata-viewer/src/ijdata-viewer.mjs
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/jdata-viewer/src/ijdata-viewer.mjs.map
+[1mnpm[22m [96mnotice[39m 115B es/components/jdata-viewer/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/jdata-viewer/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/jdata-viewer/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 2.2kB es/components/jdata-viewer/src/jdata-viewer.d.ts
+[1mnpm[22m [96mnotice[39m 6.7kB es/components/jdata-viewer/src/jdata-viewer.mjs
+[1mnpm[22m [96mnotice[39m 14.9kB es/components/jdata-viewer/src/jdata-viewer.mjs.map
+[1mnpm[22m [96mnotice[39m 220B es/components/jdata-viewer/src/use-view.d.ts
+[1mnpm[22m [96mnotice[39m 3.1kB es/components/jdata-viewer/src/use-view.mjs
+[1mnpm[22m [96mnotice[39m 7.2kB es/components/jdata-viewer/src/use-view.mjs.map
+[1mnpm[22m [96mnotice[39m 71B es/components/jdata-viewer/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 309B es/components/layout-frame/index.d.ts
+[1mnpm[22m [96mnotice[39m 330B es/components/layout-frame/index.mjs
+[1mnpm[22m [96mnotice[39m 566B es/components/layout-frame/index.mjs.map
+[1mnpm[22m [96mnotice[39m 361B es/components/layout-frame/src/constants.d.ts
+[1mnpm[22m [96mnotice[39m 729B es/components/layout-frame/src/constants.mjs
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/layout-frame/src/constants.mjs.map
+[1mnpm[22m [96mnotice[39m 119B es/components/layout-frame/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/layout-frame/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/layout-frame/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 699B es/components/layout-frame/src/layout-frame.d.ts
+[1mnpm[22m [96mnotice[39m 465B es/components/layout-frame/src/layout-frame.mjs
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/layout-frame/src/layout-frame.mjs.map
+[1mnpm[22m [96mnotice[39m 2.2kB es/components/layout-frame/src/layout-frame.vue.d.ts
+[1mnpm[22m [96mnotice[39m 3.9kB es/components/layout-frame/src/layout-frame.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.7kB es/components/layout-frame/src/layout-frame.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 71B es/components/layout-frame/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 316B es/components/layout-header/index.d.ts
+[1mnpm[22m [96mnotice[39m 339B es/components/layout-header/index.mjs
+[1mnpm[22m [96mnotice[39m 575B es/components/layout-header/index.mjs.map
+[1mnpm[22m [96mnotice[39m 361B es/components/layout-header/src/constants.d.ts
+[1mnpm[22m [96mnotice[39m 729B es/components/layout-header/src/constants.mjs
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/layout-header/src/constants.mjs.map
+[1mnpm[22m [96mnotice[39m 103B es/components/layout-header/src/fullScreen.d.ts
+[1mnpm[22m [96mnotice[39m 1.3kB es/components/layout-header/src/fullScreen.mjs
+[1mnpm[22m [96mnotice[39m 2.8kB es/components/layout-header/src/fullScreen.mjs.map
+[1mnpm[22m [96mnotice[39m 369B es/components/layout-header/src/FullscreenSwitch.vue.d.ts
+[1mnpm[22m [96mnotice[39m 5.5kB es/components/layout-header/src/FullscreenSwitch.vue.mjs
+[1mnpm[22m [96mnotice[39m 164B es/components/layout-header/src/FullscreenSwitch.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 123B es/components/layout-header/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/layout-header/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/layout-header/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 799B es/components/layout-header/src/layout-header.d.ts
+[1mnpm[22m [96mnotice[39m 544B es/components/layout-header/src/layout-header.mjs
+[1mnpm[22m [96mnotice[39m 1.2kB es/components/layout-header/src/layout-header.mjs.map
+[1mnpm[22m [96mnotice[39m 2.3kB es/components/layout-header/src/layout-header.vue.d.ts
+[1mnpm[22m [96mnotice[39m 5.0kB es/components/layout-header/src/layout-header.vue.mjs
+[1mnpm[22m [96mnotice[39m 4.2kB es/components/layout-header/src/layout-header.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 369B es/components/layout-header/src/MenuSwitch.vue.d.ts
+[1mnpm[22m [96mnotice[39m 2.6kB es/components/layout-header/src/MenuSwitch.vue.mjs
+[1mnpm[22m [96mnotice[39m 158B es/components/layout-header/src/MenuSwitch.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 73B es/components/layout-header/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 302B es/components/layout-menu/index.d.ts
+[1mnpm[22m [96mnotice[39m 321B es/components/layout-menu/index.mjs
+[1mnpm[22m [96mnotice[39m 557B es/components/layout-menu/index.mjs.map
+[1mnpm[22m [96mnotice[39m 361B es/components/layout-menu/src/constants.d.ts
+[1mnpm[22m [96mnotice[39m 729B es/components/layout-menu/src/constants.mjs
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/layout-menu/src/constants.mjs.map
+[1mnpm[22m [96mnotice[39m 115B es/components/layout-menu/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/layout-menu/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/layout-menu/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/layout-menu/src/layout-menu.d.ts
+[1mnpm[22m [96mnotice[39m 997B es/components/layout-menu/src/layout-menu.mjs
+[1mnpm[22m [96mnotice[39m 2.4kB es/components/layout-menu/src/layout-menu.mjs.map
+[1mnpm[22m [96mnotice[39m 4.4kB es/components/layout-menu/src/layout-menu.vue.d.ts
+[1mnpm[22m [96mnotice[39m 11.1kB es/components/layout-menu/src/layout-menu.vue.mjs
+[1mnpm[22m [96mnotice[39m 7.4kB es/components/layout-menu/src/layout-menu.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 923B es/components/layout-menu/src/Logo.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/layout-menu/src/Logo.vue.mjs
+[1mnpm[22m [96mnotice[39m 140B es/components/layout-menu/src/Logo.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 823B es/components/layout-menu/src/MenuNode.vue.d.ts
+[1mnpm[22m [96mnotice[39m 3.7kB es/components/layout-menu/src/MenuNode.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.6kB es/components/layout-menu/src/MenuNode.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 50B es/components/layout-menu/src/use-menu.d.ts
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/layout-menu/src/use-menu.mjs
+[1mnpm[22m [96mnotice[39m 2.4kB es/components/layout-menu/src/use-menu.mjs.map
+[1mnpm[22m [96mnotice[39m 69B es/components/layout-menu/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 316B es/components/layout-router/index.d.ts
+[1mnpm[22m [96mnotice[39m 339B es/components/layout-router/index.mjs
+[1mnpm[22m [96mnotice[39m 575B es/components/layout-router/index.mjs.map
+[1mnpm[22m [96mnotice[39m 361B es/components/layout-router/src/constants.d.ts
+[1mnpm[22m [96mnotice[39m 729B es/components/layout-router/src/constants.mjs
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/layout-router/src/constants.mjs.map
+[1mnpm[22m [96mnotice[39m 123B es/components/layout-router/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/layout-router/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/layout-router/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/layout-router/src/layout-router.d.ts
+[1mnpm[22m [96mnotice[39m 847B es/components/layout-router/src/layout-router.mjs
+[1mnpm[22m [96mnotice[39m 1.9kB es/components/layout-router/src/layout-router.mjs.map
+[1mnpm[22m [96mnotice[39m 4.3kB es/components/layout-router/src/layout-router.vue.d.ts
+[1mnpm[22m [96mnotice[39m 5.1kB es/components/layout-router/src/layout-router.vue.mjs
+[1mnpm[22m [96mnotice[39m 4.6kB es/components/layout-router/src/layout-router.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 702B es/components/layout-router/src/NavTabs.vue.d.ts
+[1mnpm[22m [96mnotice[39m 5.5kB es/components/layout-router/src/NavTabs.vue.mjs
+[1mnpm[22m [96mnotice[39m 6.6kB es/components/layout-router/src/NavTabs.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 237B es/components/layout-router/src/use-route.d.ts
+[1mnpm[22m [96mnotice[39m 2.0kB es/components/layout-router/src/use-route.mjs
+[1mnpm[22m [96mnotice[39m 4.3kB es/components/layout-router/src/use-route.mjs.map
+[1mnpm[22m [96mnotice[39m 73B es/components/layout-router/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 272B es/components/layout/index.d.ts
+[1mnpm[22m [96mnotice[39m 283B es/components/layout/index.mjs
+[1mnpm[22m [96mnotice[39m 520B es/components/layout/index.mjs.map
+[1mnpm[22m [96mnotice[39m 361B es/components/layout/src/constants.d.ts
+[1mnpm[22m [96mnotice[39m 729B es/components/layout/src/constants.mjs
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/layout/src/constants.mjs.map
+[1mnpm[22m [96mnotice[39m 98B es/components/layout/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/layout/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/layout/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/layout/src/layout.d.ts
+[1mnpm[22m [96mnotice[39m 850B es/components/layout/src/layout.mjs
+[1mnpm[22m [96mnotice[39m 2.0kB es/components/layout/src/layout.mjs.map
+[1mnpm[22m [96mnotice[39m 4.2kB es/components/layout/src/layout.vue.d.ts
+[1mnpm[22m [96mnotice[39m 6.0kB es/components/layout/src/layout.vue.mjs
+[1mnpm[22m [96mnotice[39m 4.9kB es/components/layout/src/layout.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 1.2kB es/components/layout/src/NavTabs.vue.d.ts
+[1mnpm[22m [96mnotice[39m 9.3kB es/components/layout/src/NavTabs.vue.mjs
+[1mnpm[22m [96mnotice[39m 13.5kB es/components/layout/src/NavTabs.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 59B es/components/layout/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 255B es/components/menu/index.d.ts
+[1mnpm[22m [96mnotice[39m 262B es/components/menu/index.mjs
+[1mnpm[22m [96mnotice[39m 497B es/components/menu/index.mjs.map
+[1mnpm[22m [96mnotice[39m 1.0kB es/components/menu/src/imenu.d.ts
+[1mnpm[22m [96mnotice[39m 438B es/components/menu/src/imenu.mjs
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/menu/src/imenu.mjs.map
+[1mnpm[22m [96mnotice[39m 86B es/components/menu/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/menu/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/menu/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 8.6kB es/components/menu/src/menu.d.ts
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/menu/src/menu.mjs
+[1mnpm[22m [96mnotice[39m 3.8kB es/components/menu/src/menu.mjs.map
+[1mnpm[22m [96mnotice[39m 55B es/components/menu/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 265B es/components/radio/index.d.ts
+[1mnpm[22m [96mnotice[39m 274B es/components/radio/index.mjs
+[1mnpm[22m [96mnotice[39m 509B es/components/radio/index.mjs.map
+[1mnpm[22m [96mnotice[39m 94B es/components/radio/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/radio/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/radio/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.2kB es/components/radio/src/radio.d.ts
+[1mnpm[22m [96mnotice[39m 578B es/components/radio/src/radio.mjs
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/radio/src/radio.mjs.map
+[1mnpm[22m [96mnotice[39m 2.6kB es/components/radio/src/radio.vue.d.ts
+[1mnpm[22m [96mnotice[39m 3.0kB es/components/radio/src/radio.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.7kB es/components/radio/src/radio.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 57B es/components/radio/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 313B es/components/remote-search/index.d.ts
+[1mnpm[22m [96mnotice[39m 336B es/components/remote-search/index.mjs
+[1mnpm[22m [96mnotice[39m 576B es/components/remote-search/index.mjs.map
+[1mnpm[22m [96mnotice[39m 119B es/components/remote-search/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/remote-search/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/remote-search/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 2.7kB es/components/remote-search/src/iremote-search.d.ts
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/remote-search/src/iremote-search.mjs
+[1mnpm[22m [96mnotice[39m 3.6kB es/components/remote-search/src/iremote-search.mjs.map
+[1mnpm[22m [96mnotice[39m 3.6kB es/components/remote-search/src/remote-search.d.ts
+[1mnpm[22m [96mnotice[39m 7.2kB es/components/remote-search/src/remote-search.mjs
+[1mnpm[22m [96mnotice[39m 16.9kB es/components/remote-search/src/remote-search.mjs.map
+[1mnpm[22m [96mnotice[39m 73B es/components/remote-search/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 337B es/components/search-container/index.d.ts
+[1mnpm[22m [96mnotice[39m 366B es/components/search-container/index.mjs
+[1mnpm[22m [96mnotice[39m 603B es/components/search-container/index.mjs.map
+[1mnpm[22m [96mnotice[39m 135B es/components/search-container/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/search-container/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/search-container/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.2kB es/components/search-container/src/search-container.d.ts
+[1mnpm[22m [96mnotice[39m 734B es/components/search-container/src/search-container.mjs
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/search-container/src/search-container.mjs.map
+[1mnpm[22m [96mnotice[39m 3.4kB es/components/search-container/src/search-container.vue.d.ts
+[1mnpm[22m [96mnotice[39m 10.5kB es/components/search-container/src/search-container.vue.mjs
+[1mnpm[22m [96mnotice[39m 17.3kB es/components/search-container/src/search-container.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 79B es/components/search-container/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 299B es/components/search-form/index.d.ts
+[1mnpm[22m [96mnotice[39m 318B es/components/search-form/index.mjs
+[1mnpm[22m [96mnotice[39m 554B es/components/search-form/index.mjs.map
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/search-form/src/components/Grid/components/GridItem.vue.d.ts
+[1mnpm[22m [96mnotice[39m 2.5kB es/components/search-form/src/components/Grid/components/GridItem.vue.mjs
+[1mnpm[22m [96mnotice[39m 4.6kB es/components/search-form/src/components/Grid/components/GridItem.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/search-form/src/components/Grid/index.vue.d.ts
+[1mnpm[22m [96mnotice[39m 2.2kB es/components/search-form/src/components/Grid/index.vue.mjs
+[1mnpm[22m [96mnotice[39m 7.0kB es/components/search-form/src/components/Grid/index.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 129B es/components/search-form/src/components/Grid/interface/index.d.ts
+[1mnpm[22m [96mnotice[39m 36B es/components/search-form/src/components/Grid/interface/index.mjs
+[1mnpm[22m [96mnotice[39m 90B es/components/search-form/src/components/Grid/interface/index.mjs.map
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/search-form/src/components/SearchFormItem.vue.d.ts
+[1mnpm[22m [96mnotice[39m 313B es/components/search-form/src/components/SearchFormItem.vue.mjs
+[1mnpm[22m [96mnotice[39m 110B es/components/search-form/src/components/SearchFormItem.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 4.3kB es/components/search-form/src/components/SearchFormItem.vue2.mjs
+[1mnpm[22m [96mnotice[39m 9.5kB es/components/search-form/src/components/SearchFormItem.vue2.mjs.map
+[1mnpm[22m [96mnotice[39m 111B es/components/search-form/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/search-form/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/search-form/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 3.7kB es/components/search-form/src/isearch-form.d.ts
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/search-form/src/isearch-form.mjs
+[1mnpm[22m [96mnotice[39m 4.4kB es/components/search-form/src/isearch-form.mjs.map
+[1mnpm[22m [96mnotice[39m 4.7kB es/components/search-form/src/search-form.d.ts
+[1mnpm[22m [96mnotice[39m 14.6kB es/components/search-form/src/search-form.mjs
+[1mnpm[22m [96mnotice[39m 31.7kB es/components/search-form/src/search-form.mjs.map
+[1mnpm[22m [96mnotice[39m 69B es/components/search-form/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 334B es/components/sticky-container/index.d.ts
+[1mnpm[22m [96mnotice[39m 363B es/components/sticky-container/index.mjs
+[1mnpm[22m [96mnotice[39m 600B es/components/sticky-container/index.mjs.map
+[1mnpm[22m [96mnotice[39m 131B es/components/sticky-container/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/sticky-container/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/sticky-container/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 226B es/components/sticky-container/src/isticky-container.d.ts
+[1mnpm[22m [96mnotice[39m 249B es/components/sticky-container/src/isticky-container.mjs
+[1mnpm[22m [96mnotice[39m 520B es/components/sticky-container/src/isticky-container.mjs.map
+[1mnpm[22m [96mnotice[39m 331B es/components/sticky-container/src/sticky-container.d.ts
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/sticky-container/src/sticky-container.mjs
+[1mnpm[22m [96mnotice[39m 2.9kB es/components/sticky-container/src/sticky-container.mjs.map
+[1mnpm[22m [96mnotice[39m 79B es/components/sticky-container/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 269B es/components/sticky/index.d.ts
+[1mnpm[22m [96mnotice[39m 280B es/components/sticky/index.mjs
+[1mnpm[22m [96mnotice[39m 515B es/components/sticky/index.mjs.map
+[1mnpm[22m [96mnotice[39m 137B es/components/sticky/src/hooks/index.d.ts
+[1mnpm[22m [96mnotice[39m 296B es/components/sticky/src/hooks/index.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/sticky/src/hooks/index.mjs.map
+[1mnpm[22m [96mnotice[39m 454B es/components/sticky/src/hooks/useEventListener.d.ts
+[1mnpm[22m [96mnotice[39m 1.3kB es/components/sticky/src/hooks/useEventListener.mjs
+[1mnpm[22m [96mnotice[39m 3.1kB es/components/sticky/src/hooks/useEventListener.mjs.map
+[1mnpm[22m [96mnotice[39m 134B es/components/sticky/src/hooks/useRect.d.ts
+[1mnpm[22m [96mnotice[39m 617B es/components/sticky/src/hooks/useRect.mjs
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/sticky/src/hooks/useRect.mjs.map
+[1mnpm[22m [96mnotice[39m 403B es/components/sticky/src/hooks/useScrollParent.d.ts
+[1mnpm[22m [96mnotice[39m 953B es/components/sticky/src/hooks/useScrollParent.mjs
+[1mnpm[22m [96mnotice[39m 2.2kB es/components/sticky/src/hooks/useScrollParent.mjs.map
+[1mnpm[22m [96mnotice[39m 150B es/components/sticky/src/hooks/useVisibilityChange.d.ts
+[1mnpm[22m [96mnotice[39m 782B es/components/sticky/src/hooks/useVisibilityChange.mjs
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/sticky/src/hooks/useVisibilityChange.mjs.map
+[1mnpm[22m [96mnotice[39m 94B es/components/sticky/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/sticky/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/sticky/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.2kB es/components/sticky/src/isticky.d.ts
+[1mnpm[22m [96mnotice[39m 561B es/components/sticky/src/isticky.mjs
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/sticky/src/isticky.mjs.map
+[1mnpm[22m [96mnotice[39m 3.6kB es/components/sticky/src/sticky.d.ts
+[1mnpm[22m [96mnotice[39m 5.4kB es/components/sticky/src/sticky.mjs
+[1mnpm[22m [96mnotice[39m 13.2kB es/components/sticky/src/sticky.mjs.map
+[1mnpm[22m [96mnotice[39m 59B es/components/sticky/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 309B es/components/table-editor/index.d.ts
+[1mnpm[22m [96mnotice[39m 330B es/components/table-editor/index.mjs
+[1mnpm[22m [96mnotice[39m 568B es/components/table-editor/index.mjs.map
+[1mnpm[22m [96mnotice[39m 680B es/components/table-editor/src/components/BaseItem.vue.d.ts
+[1mnpm[22m [96mnotice[39m 283B es/components/table-editor/src/components/BaseItem.vue.mjs
+[1mnpm[22m [96mnotice[39m 104B es/components/table-editor/src/components/BaseItem.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/table-editor/src/components/BaseItem.vue2.mjs
+[1mnpm[22m [96mnotice[39m 3.4kB es/components/table-editor/src/components/BaseItem.vue2.mjs.map
+[1mnpm[22m [96mnotice[39m 119B es/components/table-editor/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/table-editor/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/table-editor/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.9kB es/components/table-editor/src/table-editor.d.ts
+[1mnpm[22m [96mnotice[39m 511B es/components/table-editor/src/table-editor.mjs
+[1mnpm[22m [96mnotice[39m 1.9kB es/components/table-editor/src/table-editor.mjs.map
+[1mnpm[22m [96mnotice[39m 3.6kB es/components/table-editor/src/table-editor.vue.d.ts
+[1mnpm[22m [96mnotice[39m 4.2kB es/components/table-editor/src/table-editor.vue.mjs
+[1mnpm[22m [96mnotice[39m 3.1kB es/components/table-editor/src/table-editor.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 71B es/components/table-editor/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 265B es/components/table/index.d.ts
+[1mnpm[22m [96mnotice[39m 274B es/components/table/index.mjs
+[1mnpm[22m [96mnotice[39m 509B es/components/table/index.mjs.map
+[1mnpm[22m [96mnotice[39m 990B es/components/table/src/components/Setting.vue.d.ts
+[1mnpm[22m [96mnotice[39m 3.2kB es/components/table/src/components/Setting.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.4kB es/components/table/src/components/Setting.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 582B es/components/table/src/components/TableColumn.vue.d.ts
+[1mnpm[22m [96mnotice[39m 298B es/components/table/src/components/TableColumn.vue.mjs
+[1mnpm[22m [96mnotice[39m 107B es/components/table/src/components/TableColumn.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 5.6kB es/components/table/src/components/TableColumn.vue2.mjs
+[1mnpm[22m [96mnotice[39m 12.1kB es/components/table/src/components/TableColumn.vue2.mjs.map
+[1mnpm[22m [96mnotice[39m 94B es/components/table/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/table/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/table/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 5.9kB es/components/table/src/table.d.ts
+[1mnpm[22m [96mnotice[39m 2.2kB es/components/table/src/table.mjs
+[1mnpm[22m [96mnotice[39m 6.0kB es/components/table/src/table.mjs.map
+[1mnpm[22m [96mnotice[39m 28.9kB es/components/table/src/table.vue.d.ts
+[1mnpm[22m [96mnotice[39m 9.7kB es/components/table/src/table.vue.mjs
+[1mnpm[22m [96mnotice[39m 5.6kB es/components/table/src/table.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 320B es/components/table/src/use-controller.d.ts
+[1mnpm[22m [96mnotice[39m 4.1kB es/components/table/src/use-controller.mjs
+[1mnpm[22m [96mnotice[39m 8.5kB es/components/table/src/use-controller.mjs.map
+[1mnpm[22m [96mnotice[39m 819B es/components/table/src/use-table.d.ts
+[1mnpm[22m [96mnotice[39m 6.6kB es/components/table/src/use-table.mjs
+[1mnpm[22m [96mnotice[39m 14.2kB es/components/table/src/use-table.mjs.map
+[1mnpm[22m [96mnotice[39m 57B es/components/table/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 255B es/components/tabs/index.d.ts
+[1mnpm[22m [96mnotice[39m 262B es/components/tabs/index.mjs
+[1mnpm[22m [96mnotice[39m 497B es/components/tabs/index.mjs.map
+[1mnpm[22m [96mnotice[39m 86B es/components/tabs/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/tabs/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/tabs/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 791B es/components/tabs/src/itabs.d.ts
+[1mnpm[22m [96mnotice[39m 459B es/components/tabs/src/itabs.mjs
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/tabs/src/itabs.mjs.map
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/tabs/src/tabs.d.ts
+[1mnpm[22m [96mnotice[39m 2.4kB es/components/tabs/src/tabs.mjs
+[1mnpm[22m [96mnotice[39m 5.4kB es/components/tabs/src/tabs.mjs.map
+[1mnpm[22m [96mnotice[39m 55B es/components/tabs/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 288B es/components/tarea-tag/index.d.ts
+[1mnpm[22m [96mnotice[39m 303B es/components/tarea-tag/index.mjs
+[1mnpm[22m [96mnotice[39m 541B es/components/tarea-tag/index.mjs.map
+[1mnpm[22m [96mnotice[39m 107B es/components/tarea-tag/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/tarea-tag/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/tarea-tag/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 842B es/components/tarea-tag/src/tarea-tag.d.ts
+[1mnpm[22m [96mnotice[39m 552B es/components/tarea-tag/src/tarea-tag.mjs
+[1mnpm[22m [96mnotice[39m 1.3kB es/components/tarea-tag/src/tarea-tag.mjs.map
+[1mnpm[22m [96mnotice[39m 2.2kB es/components/tarea-tag/src/tarea-tag.vue.d.ts
+[1mnpm[22m [96mnotice[39m 5.5kB es/components/tarea-tag/src/tarea-tag.vue.mjs
+[1mnpm[22m [96mnotice[39m 7.0kB es/components/tarea-tag/src/tarea-tag.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 65B es/components/tarea-tag/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 253B es/components/text-ellipsis/index.d.ts
+[1mnpm[22m [96mnotice[39m 336B es/components/text-ellipsis/index.mjs
+[1mnpm[22m [96mnotice[39m 512B es/components/text-ellipsis/index.mjs.map
+[1mnpm[22m [96mnotice[39m 119B es/components/text-ellipsis/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/text-ellipsis/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/text-ellipsis/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/text-ellipsis/src/itext-ellipsis.d.ts
+[1mnpm[22m [96mnotice[39m 505B es/components/text-ellipsis/src/itext-ellipsis.mjs
+[1mnpm[22m [96mnotice[39m 999B es/components/text-ellipsis/src/itext-ellipsis.mjs.map
+[1mnpm[22m [96mnotice[39m 3.1kB es/components/text-ellipsis/src/text-ellipsis.d.ts
+[1mnpm[22m [96mnotice[39m 5.4kB es/components/text-ellipsis/src/text-ellipsis.mjs
+[1mnpm[22m [96mnotice[39m 12.9kB es/components/text-ellipsis/src/text-ellipsis.mjs.map
+[1mnpm[22m [96mnotice[39m 136B es/components/text-ellipsis/src/use-window-size.d.ts
+[1mnpm[22m [96mnotice[39m 613B es/components/text-ellipsis/src/use-window-size.mjs
+[1mnpm[22m [96mnotice[39m 1.3kB es/components/text-ellipsis/src/use-window-size.mjs.map
+[1mnpm[22m [96mnotice[39m 899B es/components/text-ellipsis/src/utils.d.ts
+[1mnpm[22m [96mnotice[39m 775B es/components/text-ellipsis/src/utils.mjs
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/text-ellipsis/src/utils.mjs.map
+[1mnpm[22m [96mnotice[39m 73B es/components/text-ellipsis/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 288B es/components/time-line/index.d.ts
+[1mnpm[22m [96mnotice[39m 303B es/components/time-line/index.mjs
+[1mnpm[22m [96mnotice[39m 541B es/components/time-line/index.mjs.map
+[1mnpm[22m [96mnotice[39m 107B es/components/time-line/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/time-line/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/time-line/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/time-line/src/time-line.d.ts
+[1mnpm[22m [96mnotice[39m 458B es/components/time-line/src/time-line.mjs
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/time-line/src/time-line.mjs.map
+[1mnpm[22m [96mnotice[39m 2.9kB es/components/time-line/src/time-line.vue.d.ts
+[1mnpm[22m [96mnotice[39m 3.6kB es/components/time-line/src/time-line.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.2kB es/components/time-line/src/time-line.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 65B es/components/time-line/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 286B es/components/uploader/index.d.ts
+[1mnpm[22m [96mnotice[39m 301B es/components/uploader/index.mjs
+[1mnpm[22m [96mnotice[39m 538B es/components/uploader/index.mjs.map
+[1mnpm[22m [96mnotice[39m 106B es/components/uploader/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/uploader/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/uploader/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 58B es/components/uploader/src/toast.d.ts
+[1mnpm[22m [96mnotice[39m 795B es/components/uploader/src/toast.mjs
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/uploader/src/toast.mjs.map
+[1mnpm[22m [96mnotice[39m 2.7kB es/components/uploader/src/uploader.d.ts
+[1mnpm[22m [96mnotice[39m 1.7kB es/components/uploader/src/uploader.mjs
+[1mnpm[22m [96mnotice[39m 3.8kB es/components/uploader/src/uploader.mjs.map
+[1mnpm[22m [96mnotice[39m 7.6kB es/components/uploader/src/uploader.vue.d.ts
+[1mnpm[22m [96mnotice[39m 3.0kB es/components/uploader/src/uploader.vue.mjs
+[1mnpm[22m [96mnotice[39m 1.8kB es/components/uploader/src/uploader.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/uploader/src/UploadInfo.vue.d.ts
+[1mnpm[22m [96mnotice[39m 7.9kB es/components/uploader/src/UploadInfo.vue.mjs
+[1mnpm[22m [96mnotice[39m 9.9kB es/components/uploader/src/UploadInfo.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 517B es/components/uploader/src/use-uploader.d.ts
+[1mnpm[22m [96mnotice[39m 8.2kB es/components/uploader/src/use-uploader.mjs
+[1mnpm[22m [96mnotice[39m 19.5kB es/components/uploader/src/use-uploader.mjs.map
+[1mnpm[22m [96mnotice[39m 63B es/components/uploader/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 299B es/components/user-search/index.d.ts
+[1mnpm[22m [96mnotice[39m 318B es/components/user-search/index.mjs
+[1mnpm[22m [96mnotice[39m 556B es/components/user-search/index.mjs.map
+[1mnpm[22m [96mnotice[39m 111B es/components/user-search/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/user-search/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/user-search/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 206B es/components/user-search/src/iuser-search.d.ts
+[1mnpm[22m [96mnotice[39m 224B es/components/user-search/src/iuser-search.mjs
+[1mnpm[22m [96mnotice[39m 702B es/components/user-search/src/iuser-search.mjs.map
+[1mnpm[22m [96mnotice[39m 435B es/components/user-search/src/user-search.d.ts
+[1mnpm[22m [96mnotice[39m 1.4kB es/components/user-search/src/user-search.mjs
+[1mnpm[22m [96mnotice[39m 3.3kB es/components/user-search/src/user-search.mjs.map
+[1mnpm[22m [96mnotice[39m 69B es/components/user-search/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 295B es/components/water-mark/index.d.ts
+[1mnpm[22m [96mnotice[39m 312B es/components/water-mark/index.mjs
+[1mnpm[22m [96mnotice[39m 550B es/components/water-mark/index.mjs.map
+[1mnpm[22m [96mnotice[39m 111B es/components/water-mark/src/instance.d.ts
+[1mnpm[22m [96mnotice[39m 39B es/components/water-mark/src/instance.mjs
+[1mnpm[22m [96mnotice[39m 93B es/components/water-mark/src/instance.mjs.map
+[1mnpm[22m [96mnotice[39m 1.1kB es/components/water-mark/src/water-mark.d.ts
+[1mnpm[22m [96mnotice[39m 647B es/components/water-mark/src/water-mark.mjs
+[1mnpm[22m [96mnotice[39m 1.5kB es/components/water-mark/src/water-mark.mjs.map
+[1mnpm[22m [96mnotice[39m 2.8kB es/components/water-mark/src/water-mark.vue.d.ts
+[1mnpm[22m [96mnotice[39m 1.6kB es/components/water-mark/src/water-mark.vue.mjs
+[1mnpm[22m [96mnotice[39m 2.0kB es/components/water-mark/src/water-mark.vue.mjs.map
+[1mnpm[22m [96mnotice[39m 67B es/components/water-mark/style/index.d.ts
+[1mnpm[22m [96mnotice[39m 122B es/defaults.d.ts
+[1mnpm[22m [96mnotice[39m 212B es/defaults.mjs
+[1mnpm[22m [96mnotice[39m 301B es/defaults.mjs.map
+[1mnpm[22m [96mnotice[39m 90B es/directives/copy/index.d.ts
+[1mnpm[22m [96mnotice[39m 770B es/directives/copy/index.mjs
+[1mnpm[22m [96mnotice[39m 1.9kB es/directives/copy/index.mjs.map
+[1mnpm[22m [96mnotice[39m 100B es/directives/draggable/index.d.ts
+[1mnpm[22m [96mnotice[39m 940B es/directives/draggable/index.mjs
+[1mnpm[22m [96mnotice[39m 2.2kB es/directives/draggable/index.mjs.map
+[1mnpm[22m [96mnotice[39m 261B es/directives/index.d.ts
+[1mnpm[22m [96mnotice[39m 346B es/directives/index.mjs
+[1mnpm[22m [96mnotice[39m 94B es/directives/index.mjs.map
+[1mnpm[22m [96mnotice[39m 163B es/directives/longpress/index.d.ts
+[1mnpm[22m [96mnotice[39m 975B es/directives/longpress/index.mjs
+[1mnpm[22m [96mnotice[39m 2.4kB es/directives/longpress/index.mjs.map
+[1mnpm[22m [96mnotice[39m 103B es/directives/resize-element/index.d.ts
+[1mnpm[22m [96mnotice[39m 699B es/directives/resize-element/index.mjs
+[1mnpm[22m [96mnotice[39m 1.7kB es/directives/resize-element/index.mjs.map
+[1mnpm[22m [96mnotice[39m 96B es/directives/show-tip/index.d.ts
+[1mnpm[22m [96mnotice[39m 967B es/directives/show-tip/index.mjs
+[1mnpm[22m [96mnotice[39m 2.3kB es/directives/show-tip/index.mjs.map
+[1mnpm[22m [96mnotice[39m 173B es/directives/water-marker/index.d.ts
+[1mnpm[22m [96mnotice[39m 245B es/directives/water-marker/index.mjs
+[1mnpm[22m [96mnotice[39m 565B es/directives/water-marker/index.mjs.map
+[1mnpm[22m [96mnotice[39m 35B es/hooks/index.d.ts
+[1mnpm[22m [96mnotice[39m 96B es/hooks/index.mjs
+[1mnpm[22m [96mnotice[39m 90B es/hooks/index.mjs.map
+[1mnpm[22m [96mnotice[39m 46B es/hooks/use-full-screen/index.d.ts
+[1mnpm[22m [96mnotice[39m 1.2kB es/hooks/use-full-screen/index.mjs
+[1mnpm[22m [96mnotice[39m 2.7kB es/hooks/use-full-screen/index.mjs.map
+[1mnpm[22m [96mnotice[39m 322B es/index.d.ts
+[1mnpm[22m [96mnotice[39m 6.0kB es/index.mjs
+[1mnpm[22m [96mnotice[39m 561B es/index.mjs.map
+[1mnpm[22m [96mnotice[39m 162B es/make-installer.d.ts
+[1mnpm[22m [96mnotice[39m 330B es/make-installer.mjs
+[1mnpm[22m [96mnotice[39m 748B es/make-installer.mjs.map
+[1mnpm[22m [96mnotice[39m 218B es/theme-chalk/entries/adaption-container/index.d.ts
+[1mnpm[22m [96mnotice[39m 218B es/theme-chalk/entries/custom-field-config/index.d.ts
+[1mnpm[22m [96mnotice[39m 240B es/theme-chalk/entries/custom-field-container/index.d.ts
+[1mnpm[22m [96mnotice[39m 176B es/theme-chalk/entries/date-picker/index.d.ts
+[1mnpm[22m [96mnotice[39m 180B es/theme-chalk/entries/descriptions/index.d.ts
+[1mnpm[22m [96mnotice[39m 148B es/theme-chalk/entries/dialog/index.d.ts
+[1mnpm[22m [96mnotice[39m 148B es/theme-chalk/entries/echart/index.d.ts
+[1mnpm[22m [96mnotice[39m 182B es/theme-chalk/entries/ellipsis-tag/index.d.ts
+[1mnpm[22m [96mnotice[39m 138B es/theme-chalk/entries/empty/index.d.ts
+[1mnpm[22m [96mnotice[39m 170B es/theme-chalk/entries/form-items/index.d.ts
+[1mnpm[22m [96mnotice[39m 136B es/theme-chalk/entries/form/index.d.ts
+[1mnpm[22m [96mnotice[39m 178B es/theme-chalk/entries/jdata-viewer/index.d.ts
+[1mnpm[22m [96mnotice[39m 182B es/theme-chalk/entries/layout-frame/index.d.ts
+[1mnpm[22m [96mnotice[39m 188B es/theme-chalk/entries/layout-header/index.d.ts
+[1mnpm[22m [96mnotice[39m 176B es/theme-chalk/entries/layout-menu/index.d.ts
+[1mnpm[22m [96mnotice[39m 188B es/theme-chalk/entries/layout-router/index.d.ts
+[1mnpm[22m [96mnotice[39m 148B es/theme-chalk/entries/layout/index.d.ts
+[1mnpm[22m [96mnotice[39m 132B es/theme-chalk/entries/menu/index.d.ts
+[1mnpm[22m [96mnotice[39m 142B es/theme-chalk/entries/radio/index.d.ts
+[1mnpm[22m [96mnotice[39m 184B es/theme-chalk/entries/remote-search/index.d.ts
+[1mnpm[22m [96mnotice[39m 206B es/theme-chalk/entries/search-container/index.d.ts
+[1mnpm[22m [96mnotice[39m 172B es/theme-chalk/entries/search-form/index.d.ts
+[1mnpm[22m [96mnotice[39m 202B es/theme-chalk/entries/sticky-container/index.d.ts
+[1mnpm[22m [96mnotice[39m 144B es/theme-chalk/entries/sticky/index.d.ts
+[1mnpm[22m [96mnotice[39m 182B es/theme-chalk/entries/table-editor/index.d.ts
+[1mnpm[22m [96mnotice[39m 142B es/theme-chalk/entries/table/index.d.ts
+[1mnpm[22m [96mnotice[39m 132B es/theme-chalk/entries/tabs/index.d.ts
+[1mnpm[22m [96mnotice[39m 164B es/theme-chalk/entries/tarea-tag/index.d.ts
+[1mnpm[22m [96mnotice[39m 184B es/theme-chalk/entries/text-ellipsis/index.d.ts
+[1mnpm[22m [96mnotice[39m 164B es/theme-chalk/entries/time-line/index.d.ts
+[1mnpm[22m [96mnotice[39m 160B es/theme-chalk/entries/uploader/index.d.ts
+[1mnpm[22m [96mnotice[39m 172B es/theme-chalk/entries/user-search/index.d.ts
+[1mnpm[22m [96mnotice[39m 170B es/theme-chalk/entries/water-mark/index.d.ts
+[1mnpm[22m [96mnotice[39m 1.3kB es/theme-chalk/entry.d.ts
+[1mnpm[22m [96mnotice[39m 11B es/theme-chalk/gen-entry.d.ts
+[1mnpm[22m [96mnotice[39m 95B es/theme-chalk/plugins/my-merge-css.d.ts
+[1mnpm[22m [96mnotice[39m 11B es/theme-chalk/tasks/cleanJS.d.ts
+[1mnpm[22m [96mnotice[39m 67B es/theme-chalk/tasks/copyCSS.d.ts
+[1mnpm[22m [96mnotice[39m 85B es/theme-chalk/uno.config.d.ts
+[1mnpm[22m [96mnotice[39m 76B es/theme-chalk/vite.global.config.d.ts
+[1mnpm[22m [96mnotice[39m 76B es/theme-chalk/vite.module.config.d.ts
+[1mnpm[22m [96mnotice[39m 106B es/utils/browser.d.ts
+[1mnpm[22m [96mnotice[39m 131B es/utils/browser.mjs
+[1mnpm[22m [96mnotice[39m 328B es/utils/browser.mjs.map
+[1mnpm[22m [96mnotice[39m 185B es/utils/console-log/index.d.ts
+[1mnpm[22m [96mnotice[39m 725B es/utils/console-log/index.mjs
+[1mnpm[22m [96mnotice[39m 1.6kB es/utils/console-log/index.mjs.map
+[1mnpm[22m [96mnotice[39m 662B es/utils/create/index.d.ts
+[1mnpm[22m [96mnotice[39m 1.3kB es/utils/create/index.mjs
+[1mnpm[22m [96mnotice[39m 3.3kB es/utils/create/index.mjs.map
+[1mnpm[22m [96mnotice[39m 51B es/utils/dom/index.d.ts
+[1mnpm[22m [96mnotice[39m 271B es/utils/dom/index.mjs
+[1mnpm[22m [96mnotice[39m 91B es/utils/dom/index.mjs.map
+[1mnpm[22m [96mnotice[39m 823B es/utils/dom/scroll.d.ts
+[1mnpm[22m [96mnotice[39m 3.6kB es/utils/dom/scroll.mjs
+[1mnpm[22m [96mnotice[39m 7.7kB es/utils/dom/scroll.mjs.map
+[1mnpm[22m [96mnotice[39m 358B es/utils/dom/style.d.ts
+[1mnpm[22m [96mnotice[39m 1.1kB es/utils/dom/style.mjs
+[1mnpm[22m [96mnotice[39m 2.6kB es/utils/dom/style.mjs.map
+[1mnpm[22m [96mnotice[39m 92B es/utils/easings.d.ts
+[1mnpm[22m [96mnotice[39m 239B es/utils/easings.mjs
+[1mnpm[22m [96mnotice[39m 692B es/utils/easings.mjs.map
+[1mnpm[22m [96mnotice[39m 289B es/utils/index.d.ts
+[1mnpm[22m [96mnotice[39m 1.3kB es/utils/index.mjs
+[1mnpm[22m [96mnotice[39m 105B es/utils/index.mjs.map
+[1mnpm[22m [96mnotice[39m 398B es/utils/objects.d.ts
+[1mnpm[22m [96mnotice[39m 437B es/utils/objects.mjs
+[1mnpm[22m [96mnotice[39m 1.1kB es/utils/objects.mjs.map
+[1mnpm[22m [96mnotice[39m 106B es/utils/raf.d.ts
+[1mnpm[22m [96mnotice[39m 278B es/utils/raf.mjs
+[1mnpm[22m [96mnotice[39m 621B es/utils/raf.mjs.map
+[1mnpm[22m [96mnotice[39m 999B es/utils/request/index.d.ts
+[1mnpm[22m [96mnotice[39m 1.3kB es/utils/request/index.mjs
+[1mnpm[22m [96mnotice[39m 4.1kB es/utils/request/index.mjs.map
+[1mnpm[22m [96mnotice[39m 661B es/utils/types.d.ts
+[1mnpm[22m [96mnotice[39m 984B es/utils/types.mjs
+[1mnpm[22m [96mnotice[39m 2.0kB es/utils/types.mjs.map
+[1mnpm[22m [96mnotice[39m 459B es/utils/typescript.d.ts
+[1mnpm[22m [96mnotice[39m 91B es/utils/typescript.mjs
+[1mnpm[22m [96mnotice[39m 648B es/utils/typescript.mjs.map
+[1mnpm[22m [96mnotice[39m 82B es/utils/vue/index.d.ts
+[1mnpm[22m [96mnotice[39m 240B es/utils/vue/index.mjs
+[1mnpm[22m [96mnotice[39m 91B es/utils/vue/index.mjs.map
+[1mnpm[22m [96mnotice[39m 1.9kB es/utils/vue/install.d.ts
+[1mnpm[22m [96mnotice[39m 892B es/utils/vue/install.mjs
+[1mnpm[22m [96mnotice[39m 3.9kB es/utils/vue/install.mjs.map
+[1mnpm[22m [96mnotice[39m 76B es/utils/vue/props/index.d.ts
+[1mnpm[22m [96mnotice[39m 129B es/utils/vue/props/index.mjs
+[1mnpm[22m [96mnotice[39m 90B es/utils/vue/props/index.mjs.map
+[1mnpm[22m [96mnotice[39m 1.6kB es/utils/vue/props/runtime.d.ts
+[1mnpm[22m [96mnotice[39m 1.6kB es/utils/vue/props/runtime.mjs
+[1mnpm[22m [96mnotice[39m 5.2kB es/utils/vue/props/runtime.mjs.map
+[1mnpm[22m [96mnotice[39m 4.2kB es/utils/vue/props/types.d.ts
+[1mnpm[22m [96mnotice[39m 36B es/utils/vue/props/types.mjs
+[1mnpm[22m [96mnotice[39m 90B es/utils/vue/props/types.mjs.map
+[1mnpm[22m [96mnotice[39m 348B es/utils/vue/props/util.d.ts
+[1mnpm[22m [96mnotice[39m 35B es/utils/vue/props/util.mjs
+[1mnpm[22m [96mnotice[39m 89B es/utils/vue/props/util.mjs.map
+[1mnpm[22m [96mnotice[39m 286B es/utils/vue/typescript.d.ts
+[1mnpm[22m [96mnotice[39m 41B es/utils/vue/typescript.mjs
+[1mnpm[22m [96mnotice[39m 95B es/utils/vue/typescript.mjs.map
+[1mnpm[22m [96mnotice[39m 46B es/version.d.ts
+[1mnpm[22m [96mnotice[39m 89B es/version.mjs
+[1mnpm[22m [96mnotice[39m 196B es/version.mjs.map
+[1mnpm[22m [96mnotice[39m 82B es/yto-utils/build.config.d.ts
+[1mnpm[22m [96mnotice[39m 7.7kB es/yto-utils/dist/index.mjs
+[1mnpm[22m [96mnotice[39m 20.8kB es/yto-utils/dist/index.mjs.map
+[1mnpm[22m [96mnotice[39m 972B es/yto-utils/src/bridge/basic.d.ts
+[1mnpm[22m [96mnotice[39m 580B es/yto-utils/src/bridge/index.d.ts
+[1mnpm[22m [96mnotice[39m 734B es/yto-utils/src/download.d.ts
+[1mnpm[22m [96mnotice[39m 491B es/yto-utils/src/duration-formatter.d.ts
+[1mnpm[22m [96mnotice[39m 210B es/yto-utils/src/index.d.ts
+[1mnpm[22m [96mnotice[39m 664B es/yto-utils/src/number2utils.d.ts
+[1mnpm[22m [96mnotice[39m 535B es/yto-utils/src/ocr.d.ts
+[1mnpm[22m [96mnotice[39m 1.5kB es/yto-utils/src/utils.d.ts
+[1mnpm[22m [96mnotice[39m 801B es/yto-utils/src/water-marker.d.ts
+[1mnpm[22m [96mnotice[39m 10B global.d.ts
+[1mnpm[22m [96mnotice[39m 1.9kB package.json
+[1mnpm[22m [96mnotice[39m 413B resolvers/index.d.mts
+[1mnpm[22m [96mnotice[39m 413B resolvers/index.d.ts
+[1mnpm[22m [96mnotice[39m 741B resolvers/index.mjs
+[1mnpm[22m [96mnotice[39m 38.2kB theme-chalk/index.css
+[1mnpm[22m [96mnotice[39m 148B theme-chalk/yto-adaption-container.css
+[1mnpm[22m [96mnotice[39m 813B theme-chalk/yto-custom-field-config.css
+[1mnpm[22m [96mnotice[39m 406B theme-chalk/yto-custom-field-container.css
+[1mnpm[22m [96mnotice[39m 94B theme-chalk/yto-date-picker.css
+[1mnpm[22m [96mnotice[39m 673B theme-chalk/yto-descriptions.css
+[1mnpm[22m [96mnotice[39m 22B theme-chalk/yto-dialog.css
+[1mnpm[22m [96mnotice[39m 50B theme-chalk/yto-echart.css
+[1mnpm[22m [96mnotice[39m 1.1kB theme-chalk/yto-ellipsis-tag.css
+[1mnpm[22m [96mnotice[39m 199B theme-chalk/yto-empty.css
+[1mnpm[22m [96mnotice[39m 20B theme-chalk/yto-form-items.css
+[1mnpm[22m [96mnotice[39m 157B theme-chalk/yto-form.css
+[1mnpm[22m [96mnotice[39m 3.1kB theme-chalk/yto-jdata-viewer.css
+[1mnpm[22m [96mnotice[39m 1.9kB theme-chalk/yto-layout-frame.css
+[1mnpm[22m [96mnotice[39m 1.5kB theme-chalk/yto-layout-header.css
+[1mnpm[22m [96mnotice[39m 10.6kB theme-chalk/yto-layout-menu.css
+[1mnpm[22m [96mnotice[39m 6.5kB theme-chalk/yto-layout-router.css
+[1mnpm[22m [96mnotice[39m 3.6kB theme-chalk/yto-layout.css
+[1mnpm[22m [96mnotice[39m 0B theme-chalk/yto-menu.css
+[1mnpm[22m [96mnotice[39m 1.2kB theme-chalk/yto-radio.css
+[1mnpm[22m [96mnotice[39m 159B theme-chalk/yto-remote-search.css
+[1mnpm[22m [96mnotice[39m 1.7kB theme-chalk/yto-search-container.css
+[1mnpm[22m [96mnotice[39m 971B theme-chalk/yto-search-form.css
+[1mnpm[22m [96mnotice[39m 308B theme-chalk/yto-sticky-container.css
+[1mnpm[22m [96mnotice[39m 820B theme-chalk/yto-sticky.css
+[1mnpm[22m [96mnotice[39m 237B theme-chalk/yto-table-editor.css
+[1mnpm[22m [96mnotice[39m 2.0kB theme-chalk/yto-table.css
+[1mnpm[22m [96mnotice[39m 731B theme-chalk/yto-tabs.css
+[1mnpm[22m [96mnotice[39m 802B theme-chalk/yto-tarea-tag.css
+[1mnpm[22m [96mnotice[39m 594B theme-chalk/yto-text-ellipsis.css
+[1mnpm[22m [96mnotice[39m 1.6kB theme-chalk/yto-time-line.css
+[1mnpm[22m [96mnotice[39m 4.3kB theme-chalk/yto-uploader.css
+[1mnpm[22m [96mnotice[39m 20B theme-chalk/yto-user-search.css
+[1mnpm[22m [96mnotice[39m 0B theme-chalk/yto-water-mark.css
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m [94mTarball Details[39m
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m name: @yto/custom
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m version: 2.0.0-beta.8
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m filename: yto-custom-2.0.0-beta.8.tgz
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m package size: 277.9 kB
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m unpacked size: 1.3 MB
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m shasum: 2be87c50eea0909347952c6f4da388cf253782b4
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m integrity: sha512-pX1siQqAWutVr[...]lvqe2WoclKexQ==
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m total files: 795
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m
+[1G[0K⠴[1G[0K[1mnpm[22m [96mnotice[39m Publishing to https://npm.yto.net.cn/ with tag latest and public access (dry-run)
+[1G[0K⠴[1G[0K+ @yto/custom@2.0.0-beta.8
+[1G[0K⠴[1G[0K[2m> [22mecho "✅ Dry run publish completed"
+
+✅ Dry run publish completed

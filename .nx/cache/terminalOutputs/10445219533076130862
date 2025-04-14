@@ -1,0 +1,11 @@
+[2m> [22mcd internal/build-constants && pnpm build
+
+
+> @yto-custom/build-constants@0.0.1 build /Users/hq/workspase/yto-test-ui/internal/build-constants
+> unbuild
+
+[36mℹ[39m [36mBuilding @yto-custom/build-constants[39m
+[32m✔[39m [32mBuild succeeded for @yto-custom/build-constants[39m
+  [1mdist/index.cjs[22m (size: [36m646 B[39m, exports: [90mPKG_BRAND_NAME, PKG_CAMELCASE_NAME, PKG_NAME, PKG_PREFIX, REPO_BRANCH, REPO_NAME, REPO_OWNER, REPO_PATH[39m)
+  [1mdist/index.mjs[22m (size: [36m401 B[39m, exports: [90mPKG_BRAND_NAME, PKG_CAMELCASE_NAME, PKG_NAME, PKG_PREFIX, REPO_BRANCH, REPO_NAME, REPO_OWNER, REPO_PATH[39m)
+
