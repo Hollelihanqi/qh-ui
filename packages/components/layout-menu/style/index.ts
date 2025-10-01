@@ -1,1 +1,0 @@
-import '@yto-custom/components/layout-menu/src/layout-menu.scss'

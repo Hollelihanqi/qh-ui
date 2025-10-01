@@ -5,8 +5,7 @@
   "type": "module",
   "description": "Modern Build Toolchain for YTO Custom UI",
   "scripts": {
-    "build": "tsx build.ts",
-    "tp": "npx vue-tsc -p ../../tsconfig.web.json --declaration --emitDeclarationOnly --declarationDir ./dist/types"
+    "build": "tsx build.ts"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",

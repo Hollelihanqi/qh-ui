@@ -1,1 +1,0 @@
-import '@yto-custom/components/layout-router/src/layout-router.scss'

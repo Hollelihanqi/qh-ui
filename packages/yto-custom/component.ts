@@ -5,14 +5,7 @@ import { YtoDatePicker } from '@yto-custom/components/date-picker'
 import { YtoDescriptions } from '@yto-custom/components/descriptions'
 import { YtoEllipsisTag } from '@yto-custom/components/ellipsis-tag'
 import { YtoEmpty } from '@yto-custom/components/empty'
-import { YtoForm } from '@yto-custom/components/form'
-import { YtoFormItems } from '@yto-custom/components/form-items'
 import { YtoJdataViewer } from '@yto-custom/components/jdata-viewer'
-import { YtoLayout } from '@yto-custom/components/layout'
-import { YtoLayoutFrame } from '@yto-custom/components/layout-frame'
-import { YtoLayoutHeader } from '@yto-custom/components/layout-header'
-import { YtoLayoutMenu } from '@yto-custom/components/layout-menu'
-import { YtoLayoutRouter } from '@yto-custom/components/layout-router'
 import { YtoMenu } from '@yto-custom/components/menu'
 import { YtoRadio } from '@yto-custom/components/radio'
 import { YtoRemoteSearch } from '@yto-custom/components/remote-search'
@@ -38,14 +31,7 @@ export default [
   YtoDescriptions,
   YtoEllipsisTag,
   YtoEmpty,
-  YtoForm,
-  YtoFormItems,
   YtoJdataViewer,
-  YtoLayout,
-  YtoLayoutFrame,
-  YtoLayoutHeader,
-  YtoLayoutMenu,
-  YtoLayoutRouter,
   YtoMenu,
   YtoRadio,
   YtoRemoteSearch,

@@ -10,7 +10,7 @@
     "clean": "pnpm run clean:dist",
     "clean:dist": "rimraf dist",
     "prebuild": "npx nx run-many -t build -p yto-utils,internal-build-constants,internal-build-utils,internal-resolvers",
-    "build": "pnpm run -C internal/build start",
+    "build": "pnpm run -C internal/build2 build",
     "build:utils": "pnpm run -C packages/yto-utils build",
     "play:dev": "pnpm run -C play dev",
     "docs:dev": "pnpm run -C docs docs:dev",

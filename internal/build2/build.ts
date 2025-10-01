@@ -120,8 +120,8 @@ async function main() {
     // 改为顺序执行
     await buildComponents()
     await generateTypesDefinitions()
-    // await buildThemeChalk();
-    // await copyResolvers();
+    await buildThemeChalk()
+    await copyResolvers()
 
     // 复制附加文件
     await copyMiscFiles()

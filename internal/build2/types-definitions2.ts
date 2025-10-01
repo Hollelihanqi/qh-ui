@@ -36,22 +36,23 @@ export const generateTypesDefinitions = async () => {
 
   // console.log(`开始检查生成的类型文件`)
 
-  // const typesDir = path.join(buildOutput, 'types', 'packages')
-  // const filePaths = await glob(`**/*.d.ts`, {
-  //   cwd: typesDir,
-  //   absolute: true,
-  //   ignore: ['**/yto-utils/**']
-  // })
+  const typesDir = path.join(buildOutput, 'types', 'packages')
+  const filePaths = await glob(`**/*.d.ts`, {
+    cwd: typesDir,
+    absolute: true,
+    ignore: ['**/yto-utils/**'],
+  })
 
-  // const rewriteTasks = filePaths.map(async (filePath) => {
-  //   const content = await readFile(filePath, 'utf8')
-  //   await writeFile(filePath, pathRewriter('esm')(content), 'utf8')
-  // })
+  const rewriteTasks = filePaths.map(async (filePath) => {
+    const content = await readFile(filePath, 'utf8')
+    await writeFile(filePath, pathRewriter('esm')(content), 'utf8')
+  })
 
-  // await Promise.all(rewriteTasks)
+  await Promise.all(rewriteTasks)
 
   // const sourceDir = path.join(typesDir, 'yto-custom')
 
+  // console.log('sourceDir', sourceDir)
   // await copy(sourceDir, typesDir)
   // await remove(sourceDir)
   // copyTypesDefinitions()
