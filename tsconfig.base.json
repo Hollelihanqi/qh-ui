@@ -3,9 +3,8 @@
     "outDir": "dist",
     "target": "ESNext",
     "module": "ESNext",
-    "baseUrl": ".",
     "sourceMap": false,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowJs": false,
     "strict": true,
     "noUnusedLocals": true,
@@ -16,8 +15,8 @@
     "rootDir": ".",
     "types": [],
     "paths": {
-      "@yto-custom/*": ["packages/*"],
-      "yto-custom": ["packages/yto-custom"]
+      "@yto-custom/*": ["./packages/*"],
+      "yto-custom": ["./packages/yto-custom"]
     },
     "preserveSymlinks": true
   }

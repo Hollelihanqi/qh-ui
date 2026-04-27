@@ -3,7 +3,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "strict": true,
     "jsx": "preserve",
@@ -21,16 +21,15 @@
     "types": [
       "vite/client"
     ],
-    "baseUrl": ".", // 解析非相对模块的基准目录
     "paths": {
       "@": [
-        "src/"
+        "./src/"
       ],
       "@/*": [
-        "src/*"
+        "./src/*"
       ],
       "@main/*": [
-        "src/packages/*"
+        "./src/packages/*"
       ]
     },
     "removeComments": true
