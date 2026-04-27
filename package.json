@@ -3,7 +3,7 @@
   "version": "2.0.1",
   "type": "module",
   "scripts": {
-    "gc": "pnpm exec bash scripts/create-component2.sh",
+    "gc": "tsx scripts/create-component.ts",
     "watch:components": "tsx scripts/watch-components.ts",
     "gen-component-import": "tsx scripts/gen-component-import.ts",
     "rc": "tsx scripts/remove-component.ts",
