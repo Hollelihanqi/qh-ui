@@ -1,1 +1,0 @@
-import '@yto-custom/components/custom-field-config/src/custom-field-config.scss'

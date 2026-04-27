@@ -69,8 +69,8 @@ async function main() {
     throw new Error(`组件 '${componentName}' 不存在于 ${componentDir}`)
   }
 
-  const confirm = await ask(`确定要删除组件 '${componentName}' 吗？此操作不可恢复 (y/N)：`)
-  if (confirm !== 'y' && confirm !== 'Y') {
+  const confirm = await ask(`确定要删除组件 '${componentName}' 吗？此操作不可恢复 (Y/n)：`)
+  if (confirm && confirm !== 'y' && confirm !== 'Y') {
     console.log('操作已取消')
     return
   }
