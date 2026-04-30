@@ -1,9 +1,9 @@
 image: node:18
 
 variables:
-  CUSTOM_VERSION_FILE: 'packages/yto-custom/project.json'
+  CUSTOM_VERSION_FILE: 'packages/hd-custom/project.json'
   DEPLOY_SERVER: '10.130.136.69'
-  DEPLOY_PATH: '/var/www/projects/webapp/yto-custom'
+  DEPLOY_PATH: '/var/www/projects/webapp/hd-custom'
 
 stages:
   - check_version

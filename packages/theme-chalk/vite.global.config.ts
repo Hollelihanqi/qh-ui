@@ -20,7 +20,6 @@ export default defineConfig({
       entry: {
         index: './entry.ts',
       },
-      formats: ['es'],
     },
     rollupOptions: {
       input: {

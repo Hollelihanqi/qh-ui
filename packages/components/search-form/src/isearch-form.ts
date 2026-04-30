@@ -1,10 +1,10 @@
 import type { ExtractPropTypes, PropType } from 'vue'
-import { buildProps } from '@yto-custom/utils'
+import { buildProps } from '@hd-custom/utils'
 import { InputProps, ElSelect, SwitchProps, TimePickerDefaultProps, CheckboxProps, ElDatePicker } from 'element-plus'
 import { TimeSelectProps } from 'element-plus/es/components/time-select/src/time-select'
-import { YtoRemoteSearch } from '@yto-custom/components/remote-search'
+import { HdRemoteSearch } from '@hd-custom/components/remote-search'
 
-export type RemoteSelectProps = Partial<typeof YtoRemoteSearch.__defaults>
+export type RemoteSelectProps = Partial<typeof HdRemoteSearch.__defaults>
 type ElDatePickerProps = typeof ElDatePicker.props
 type ElSelectProps = typeof ElSelect.props
 interface _SelectProps {
@@ -37,11 +37,11 @@ interface SearchProps<T extends keyof FormEl> {
   props?: FormEl[T]
   label?: string
   field?: string // 搜索字段名称
-  defaultValue?: string | number | boolean | Function | any[] // 搜索项默认值
+  defaultValue?: string | number | boolean | Function | any[] // 搜索项默认�?
   clearDefaultValue?: boolean
   formatValue?: Function
   fieldFormat?: Function
-  span?: number // 搜索项所占用的列数，默认为1列
+  span?: number // 搜索项所占用的列数，默认�?�?
   offset?: number // 搜索字段左侧偏移列数
   options?: SelectOptionsProps[]
   colConfig?: number | Record<BreakPoint, number>

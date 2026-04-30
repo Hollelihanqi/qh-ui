@@ -1,4 +1,4 @@
-import { PKG_NAME, PKG_PREFIX } from '@yto-custom/build-constants'
+import { PKG_NAME, PKG_PREFIX } from '@hd-custom/build-constants'
 import { buildConfig } from './build-info'
 
 import type { Module } from './build-info'

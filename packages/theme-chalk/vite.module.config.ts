@@ -6,6 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import UnoCSS from 'unocss/vite'
 import { readdirSync } from 'node:fs'
 import myMergeCssPlugin from './plugins/my-merge-css'
+import { COMPONENT_STYLE_PREFIX, getComponentStyleName } from '@hd-custom/build-constants'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
@@ -16,7 +17,7 @@ const entries = readdirSync(resolve(__dirname, 'entries'), { withFileTypes: true
 
 const input = entries.reduce((acc, path) => {
   const componentName = basename(dirname(path))
-  acc[`yto-${componentName}`] = resolve(__dirname, path)
+  acc[getComponentStyleName(componentName)] = resolve(__dirname, path)
   return acc
 }, {})
 
@@ -32,7 +33,6 @@ export default defineConfig({
   build: {
     lib: {
       entry: {},
-      formats: ['es'],
     },
     rollupOptions: {
       input,
@@ -43,14 +43,15 @@ export default defineConfig({
             symbols: false,
           },
           assetFileNames: (assetInfo) => {
-            if (assetInfo.name.endsWith('.css')) {
-              if (assetInfo.name.startsWith('yto-')) {
-                return assetInfo.name
+            const assetName = assetInfo.names?.[0] ?? assetInfo.name ?? 'style.css'
+            if (assetName.endsWith('.css')) {
+              if (assetName.startsWith(`${COMPONENT_STYLE_PREFIX}-`)) {
+                return assetName
               }
-              const name = assetInfo.name.replace('.css', '')
-              return `yto-${name}.css`
+              const name = assetName.replace('.css', '')
+              return `${getComponentStyleName(name)}.css`
             }
-            return assetInfo.name
+            return assetName
           },
         },
       ],

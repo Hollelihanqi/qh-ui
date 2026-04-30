@@ -1,8 +1,8 @@
 <template>
   <ClientOnly>
-    <yto-text-ellipsis :content="text">
+    <hd-text-ellipsis :content="text">
       <template #action="{ expanded }"> {{ expanded ? 'Collapse' : 'Expand' }} </template>
-    </yto-text-ellipsis>
+    </hd-text-ellipsis>
   </ClientOnly>
 </template>
 <script lang="tsx">

@@ -4,31 +4,8 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('@/layout/Index.vue'),
+    redirect: '/date-picker',
     children: [
-      {
-        path: '/adaption-container',
-        name: 'adaption-container',
-        component: () => import('@/views/adaption-container/Index.vue'),
-        meta: {
-          title: 'adaption-container',
-        },
-      },
-      {
-        path: '/custom-field-config',
-        name: 'custom-field-config',
-        component: () => import('@/views/custom-field-config/Index.vue'),
-        meta: {
-          title: 'custom-field-config',
-        },
-      },
-      {
-        path: '/custom-field-container',
-        name: 'custom-field-container',
-        component: () => import('@/views/custom-field-container/Index.vue'),
-        meta: {
-          title: 'custom-field-container',
-        },
-      },
       {
         path: '/date-picker',
         name: 'date-picker',
@@ -83,22 +60,6 @@ export const routes: RouteRecordRaw[] = [
         component: () => import('@/views/search-form/Index.vue'),
         meta: {
           title: 'search-form',
-        },
-      },
-      {
-        path: '/form',
-        name: 'form',
-        component: () => import('@/views/from/Index.vue'),
-        meta: {
-          title: 'form',
-        },
-      },
-      {
-        path: '/form-items',
-        name: 'form-items',
-        component: () => import('@/views/form-items/Index.vue'),
-        meta: {
-          title: 'form-items',
         },
       },
       {

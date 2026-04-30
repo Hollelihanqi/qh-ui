@@ -1,1 +1,0 @@
-import '@yto-custom/components/water-mark/src/water-mark.scss'

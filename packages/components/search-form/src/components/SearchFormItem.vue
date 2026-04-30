@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { PropType, defineComponent, defineAsyncComponent, computed } from 'vue'
 import { SearchFormControlProps, SelectOptionsProps } from '../isearch-form'
-import RemoteSearch from '@yto-custom/components/remote-search'
+import RemoteSearch from '@hd-custom/components/remote-search'
 
 const _elNameMap: any = {
   input: 'ElInput',
@@ -40,7 +40,7 @@ export default defineComponent({
     const _placeholder = (control: SearchFormControlProps | undefined) => {
       return control?.props?.placeholder ?? (control?.el === 'input' ? '请输入' : '请选择')
     }
-    // 是否有清除按钮 (当搜索项有默认值时，清除按钮不显示)
+    // 是否有清除按�?(当搜索项有默认值时，清除按钮不显示)
     const _clearable = (control: SearchFormControlProps | undefined) => {
       return control?.props?.clearable ?? (control?.defaultValue == null || control?.defaultValue == undefined)
     }

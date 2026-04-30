@@ -1,6 +1,7 @@
 import { defineComponent, Transition, Fragment } from 'vue'
 import { jdataViewerProps } from './ijdata-viewer'
 import { useView } from './use-view'
+import type { StyleValue } from 'vue'
 
 export default defineComponent({
   name: 'JdataViewer',
@@ -10,6 +11,7 @@ export default defineComponent({
   props: jdataViewerProps,
   setup(props: any) {
     const { _nodes, isCollapsed, toggleRoot, handleCopy } = useView(props)
+    const css = (value: Record<string, string>) => value as StyleValue
 
     // 修复拼写错误：paseKey -> parseKey
     const parseKey = (key: string) => {
@@ -71,7 +73,7 @@ export default defineComponent({
     // 定义一个箭头组件，用于显示展开和收起的状态
     const CollapseArrow = ({ toggleClick, isCollapsed }: any) => (
       <div
-        style={{ cursor: 'pointer', display: 'inline-block' }}
+        style={css({ cursor: 'pointer', display: 'inline-block' })}
         class={`color-f triangle-arrow ${isCollapsed ? 'triangle-right' : 'triangle-down'}`}
         onClick={toggleClick}
       ></div>
@@ -86,10 +88,10 @@ export default defineComponent({
           const colorIndex = index % COLORS.length
           return (
             <div
-              style={{
+              style={css({
                 padding: '2px 0',
                 transition: 'background-color 0.2s',
-              }}
+              })}
             >
               <CollapseArrow toggleClick={() => toggleExpand(_node)} isCollapsed={_node.collapse} />
               <div style="display:inline-block;word-break: break-all;">
@@ -99,11 +101,11 @@ export default defineComponent({
                     <span style="fontWeight:bold">：</span>
                   </Fragment>
                 )}
-                <strong style={{ color: COLORS[colorIndex] }}>{type === 'object' ? '{' : '['}</strong>
+                <strong style={css({ color: COLORS[colorIndex] })}>{type === 'object' ? '{' : '['}</strong>
               </div>
-              {_node.collapse ? <span style={{ color: COLORS[colorIndex] }}>...</span> : ''}
+              {_node.collapse ? <span style={css({ color: COLORS[colorIndex] })}>...</span> : ''}
               <Transition name="expand">
-                <div v-show={!_node.collapse} style={{ paddingLeft: '16px' }}>
+                <div v-show={!_node.collapse} style={css({ paddingLeft: '16px' })}>
                   {children.map((child: any) => {
                     return (
                       <div key={child.level}>
@@ -113,7 +115,7 @@ export default defineComponent({
                   })}
                 </div>
               </Transition>
-              <span style={{ color: COLORS[colorIndex] }}>
+              <span style={css({ color: COLORS[colorIndex] })}>
                 <strong>{type === 'object' ? '}' : ']'}</strong>
               </span>
               {_node.isArrayChild && <span>，</span>}
@@ -122,7 +124,10 @@ export default defineComponent({
         } else {
           return (
             <div
-              style={{ display: props.renderHTag && isHtml(node) ? 'flex' : 'inline-block', wordBreak: 'break-all' }}
+              style={css({
+                display: props.renderHTag && isHtml(node) ? 'flex' : 'inline-block',
+                wordBreak: 'break-all',
+              })}
             >
               {type !== 'array' && (
                 <Fragment>
@@ -161,8 +166,8 @@ export default defineComponent({
             )}
           </div>
           <Transition>
-            <div v-show={!isCollapsed.value} style={{ marginLeft: '16px' }}>
-              <div style={{ paddingLeft: '16px' }}>
+            <div v-show={!isCollapsed.value} style={css({ marginLeft: '16px' })}>
+              <div style={css({ paddingLeft: '16px' })}>
                 {data.map((node: any) => (
                   <JsonNode node={node} />
                 ))}

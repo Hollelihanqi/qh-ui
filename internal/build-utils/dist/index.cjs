@@ -9,8 +9,7 @@ const findWorkspacePackages = require('@pnpm/find-workspace-packages');
 
 const writeJson = (path, data, spaces = 0) => promises.writeFile(path, JSON.stringify(data, void 0, spaces), "utf-8");
 const ensureDir = async (path) => {
-  if (!fs.existsSync(path))
-    await promises.mkdir(path, { recursive: true });
+  if (!fs.existsSync(path)) await promises.mkdir(path, { recursive: true });
 };
 
 function errorAndExit(err) {
@@ -20,25 +19,25 @@ function errorAndExit(err) {
 
 const projRoot = path.resolve(__dirname, "..", "..", "..");
 const pkgRoot = path.resolve(projRoot, "packages");
-const ytoCustomRoot = path.resolve(pkgRoot, "yto-custom");
+const hdCustomRoot = path.resolve(pkgRoot, "hd-custom");
 const compRoot = path.resolve(pkgRoot, "components");
 const themeRoot = path.resolve(pkgRoot, "theme-chalk");
 const hookRoot = path.resolve(pkgRoot, "hooks");
 const directiveRoot = path.resolve(pkgRoot, "directives");
 const utilRoot = path.resolve(pkgRoot, "utils");
-const buildRoot = path.resolve(projRoot, "internal", "build");
+const buildRoot = path.resolve(projRoot, "internal", "build2");
 const docsDirName = "docs";
 const docRoot = path.resolve(projRoot, docsDirName);
 const vpRoot = path.resolve(docRoot, ".vitepress");
 const buildOutput = path.resolve(projRoot, "dist");
-const ytoOutput = path.resolve(buildOutput, "yto-custom");
+const hdOutput = path.resolve(buildOutput, "hd-custom");
 const projPackage = path.resolve(projRoot, "package.json");
 const compPackage = path.resolve(compRoot, "package.json");
 const themePackage = path.resolve(themeRoot, "package.json");
 const hookPackage = path.resolve(hookRoot, "package.json");
 const directivePackage = path.resolve(directiveRoot, "package.json");
 const utilPackage = path.resolve(utilRoot, "package.json");
-const ytoPackage = path.resolve(ytoCustomRoot, "package.json");
+const hdPackage = path.resolve(hdCustomRoot, "package.json");
 const docPackage = path.resolve(docRoot, "package.json");
 
 const getWorkspacePackages = () => findWorkspacePackages.findWorkspacePackages(projRoot);
@@ -78,6 +77,9 @@ exports.getPackageDependencies = getPackageDependencies;
 exports.getPackageManifest = getPackageManifest;
 exports.getWorkspaceNames = getWorkspaceNames;
 exports.getWorkspacePackages = getWorkspacePackages;
+exports.hdCustomRoot = hdCustomRoot;
+exports.hdOutput = hdOutput;
+exports.hdPackage = hdPackage;
 exports.hookPackage = hookPackage;
 exports.hookRoot = hookRoot;
 exports.pkgRoot = pkgRoot;
@@ -89,6 +91,3 @@ exports.utilPackage = utilPackage;
 exports.utilRoot = utilRoot;
 exports.vpRoot = vpRoot;
 exports.writeJson = writeJson;
-exports.ytoCustomRoot = ytoCustomRoot;
-exports.ytoOutput = ytoOutput;
-exports.ytoPackage = ytoPackage;

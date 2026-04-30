@@ -1,13 +1,13 @@
 <template>
   <div style="padding: 16px">
-    <yto-uploader
+    <hd-uploader
       :get-instance="getInstance"
       :options="options"
       @file-success="handleUploadSuccess"
       @file-removed="handleFileRemoved"
     >
       <template #uploaderBtn> <ElButton type="primary" plain :icon="Plus">文件上传</ElButton></template>
-    </yto-uploader>
+    </hd-uploader>
   </div>
 </template>
 

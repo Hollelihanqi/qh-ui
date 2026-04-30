@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
-import { compRoot } from '@yto-custom/build-utils'
+import { compRoot } from '@hd-custom/build-utils'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
@@ -63,7 +63,7 @@ function generateComponentEntry() {
       // 生成入口文件内容
       const entryContent = `
 ${styleContent}
-import ${camelCaseName} from '@yto-custom/components/${name}/src/${name}${componentExt === '.tsx' ? '' : componentExt}'
+import ${camelCaseName} from '@hd-custom/components/${name}/src/${name}${componentExt === '.tsx' ? '' : componentExt}'
 
 export { ${camelCaseName} }
 `

@@ -2,13 +2,13 @@ import { resolve } from 'path'
 
 export const projRoot = resolve(__dirname, '..', '..', '..')
 export const pkgRoot = resolve(projRoot, 'packages')
-export const ytoCustomRoot = resolve(pkgRoot, 'yto-custom')
+export const hdCustomRoot = resolve(pkgRoot, 'hd-custom')
 export const compRoot = resolve(pkgRoot, 'components')
 export const themeRoot = resolve(pkgRoot, 'theme-chalk')
 export const hookRoot = resolve(pkgRoot, 'hooks')
 export const directiveRoot = resolve(pkgRoot, 'directives')
 export const utilRoot = resolve(pkgRoot, 'utils')
-export const buildRoot = resolve(projRoot, 'internal', 'build')
+export const buildRoot = resolve(projRoot, 'internal', 'build2')
 
 // Docs
 export const docsDirName = 'docs'
@@ -17,8 +17,8 @@ export const vpRoot = resolve(docRoot, '.vitepress')
 
 /** `/dist` */
 export const buildOutput = resolve(projRoot, 'dist')
-/** `/dist/yto-custom` */
-export const ytoOutput = resolve(buildOutput, 'yto-custom')
+/** `/dist/hd-custom` */
+export const hdOutput = resolve(buildOutput, 'hd-custom')
 
 export const projPackage = resolve(projRoot, 'package.json')
 export const compPackage = resolve(compRoot, 'package.json')
@@ -26,5 +26,5 @@ export const themePackage = resolve(themeRoot, 'package.json')
 export const hookPackage = resolve(hookRoot, 'package.json')
 export const directivePackage = resolve(directiveRoot, 'package.json')
 export const utilPackage = resolve(utilRoot, 'package.json')
-export const ytoPackage = resolve(ytoCustomRoot, 'package.json')
+export const hdPackage = resolve(hdCustomRoot, 'package.json')
 export const docPackage = resolve(docRoot, 'package.json')

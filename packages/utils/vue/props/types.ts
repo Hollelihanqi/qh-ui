@@ -1,4 +1,4 @@
-import type { ytoPropKey } from './runtime'
+import type { hdPropKey } from './runtime'
 import type { ExtractPropTypes, PropType } from 'vue'
 import type { IfNever, UnknownToNever, WritableArray } from './util'
 
@@ -56,25 +56,18 @@ export type EpPropMergeType<Type, Value, Validator> =
  *
  * 处理输入参数的默认值（约束）
  */
-export type EpPropInputDefault<
-  Required extends boolean,
-  Default
-> = Required extends true
+export type EpPropInputDefault<Required extends boolean, Default> = Required extends true
   ? never
   : Default extends Record<string, unknown> | Array<any>
-  ? () => Default
-  : (() => Default) | Default
+    ? () => Default
+    : (() => Default) | Default
 
 /**
  * Native prop types, e.g: `BooleanConstructor`, `StringConstructor`, `null`, `undefined`, etc.
  *
  * 原生 prop `类型，BooleanConstructor`、`StringConstructor`、`null`、`undefined` 等
  */
-export type NativePropType =
-  | ((...args: any) => any)
-  | { new(...args: any): any }
-  | undefined
-  | null
+export type NativePropType = ((...args: any) => any) | { new (...args: any): any } | undefined | null
 export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N
 
 /**
@@ -98,7 +91,7 @@ export type EpPropInput<
   Value,
   Validator,
   Default extends EpPropMergeType<Type, Value, Validator>,
-  Required extends boolean
+  Required extends boolean,
 > = {
   type?: Type
   required?: Required
@@ -127,28 +120,23 @@ export type EpProp<Type, Default, Required> = {
   readonly type: PropType<Type>
   readonly required: [Required] extends [true] ? true : false
   readonly validator: ((val: unknown) => boolean) | undefined
-  [ytoPropKey]: true
+  [hdPropKey]: true
 } & IfNever<Default, unknown, { readonly default: Default }>
 
 /**
  * Determine if it is `EpProp`
  */
-export type IfEpProp<T, Y, N> = T extends { [ytoPropKey]: true } ? Y : N
+export type IfEpProp<T, Y, N> = T extends { [hdPropKey]: true } ? Y : N
 
 /**
  * Converting input to output.
  *
  * 将输入转换为输出
  */
-export type EpPropConvert<Input> = Input extends EpPropInput<
-  infer Type,
-  infer Value,
-  infer Validator,
-  any,
-  infer Required
->
-  ? EpPropFinalized<Type, Value, Validator, Input['default'], Required>
-  : never
+export type EpPropConvert<Input> =
+  Input extends EpPropInput<infer Type, infer Value, infer Validator, any, infer Required>
+    ? EpPropFinalized<Type, Value, Validator, Input['default'], Required>
+    : never
 
 /**
  * Finalized conversion output
@@ -161,4 +149,4 @@ export type EpPropFinalized<Type, Value, Validator, Default, Required> = EpProp<
   Required
 >
 
-export { }
+export {}

@@ -1,1 +1,1 @@
-import '@yto-custom/components/time-line/src/time-line.scss'
+import '@hd-custom/components/time-line/src/time-line.scss'

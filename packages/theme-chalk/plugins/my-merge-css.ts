@@ -11,12 +11,13 @@ import {
   rmSync,
 } from 'node:fs'
 import { Plugin, PluginOption } from 'vite'
-import { ytoOutput } from '@yto-custom/build-utils'
+import { hdOutput } from '@hd-custom/build-utils'
 import { consola } from 'consola'
+import { getComponentStyleName } from '@hd-custom/build-constants'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 // 确保目标目录存在
-const targetDir = resolve(ytoOutput, 'theme-chalk')
+const targetDir = resolve(hdOutput, 'theme-chalk')
 
 async function mergeCssFiles(distPath: string): Promise<void> {
   // 获取所有的组件名称（通过某种方式，这里需要您提供组件列表）
@@ -63,7 +64,7 @@ function getComponentNames(): string[] {
 
   return Array.from(componentMatches)
     .map((match) => match[1])
-    .map((name) => `yto-${name}`)
+    .map((name) => getComponentStyleName(name))
 }
 
 export default function myMergeCssPlugin(): PluginOption {

@@ -5,7 +5,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { YtoCustomResolver } from '@yto/custom/resolvers'
+import { HdCustomResolver } from '@hd/custom/resolvers'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
@@ -16,7 +16,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 //     if (!importStyle)
 //         return;
 //     return [
-//         "@yto/custom/theme-chalk/yto-".concat(componentName, ".css")
+//         "@hd/custom/theme-chalk/hd-".concat(componentName, ".css")
 //     ];
 // }
 
@@ -50,24 +50,7 @@ export default defineConfig({
           // importStyle: 'sass',
           directives: true,
         }),
-        YtoCustomResolver(),
-        // {
-        //   type: 'component',
-        //   resolve: (name: string) => {
-        //     console.log("name1", name)
-        //     if (name.startsWith('Yto')) {
-        //       const componentName = name.slice(3) // 去除 'Yto' 前缀
-        //       const jsname = componentName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
-        //       console.log("name2", jsname)
-        //       //play/node_modules/@yto/custom/es/components/tabs/index.mjs
-        //       return {
-        //         name: name,
-        //         from: `@yto/custom/es/components/${jsname}/index.mjs`,
-        //         sideEffects: getSideEffects(jsname, true)
-        //       }
-        //     }
-        //   },
-        // }
+        HdCustomResolver(),
       ],
     }),
     visualizer(),
@@ -92,18 +75,18 @@ export default defineConfig({
     },
     proxy: {
       '/api/v2': {
-        // target: 'http://10.130.137.53:8000', // sit
-        target: 'http://10.130.17.91:8000', // uat
+        // target: 'https://api.example.com', // example
+        target: 'https://api.example.com',
         changeOrigin: true,
       },
       '/api/v3': {
-        // target: 'http://10.130.137.53:8000', //sit
-        target: 'http://10.130.17.91:8000', // uat
+        // target: 'https://api.example.com', // example
+        target: 'https://api.example.com',
         changeOrigin: true,
       },
       '/api': {
-        // target: 'http://10.130.137.53:8000',
-        target: 'https://xl-admin.yto56test.com',
+        // target: 'https://api.example.com',
+        target: 'https://api.example.com',
         changeOrigin: true,
       },
     },

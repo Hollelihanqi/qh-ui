@@ -5,6 +5,6 @@ export default defineComponent({
   props: componentProps,
   emits: componentEmits,
   setup(props, { emit, slots }) {
-    return () => <div class="yto-component">组件内容</div>
+    return () => <div class="hd-component">组件内容</div>
   },
 })

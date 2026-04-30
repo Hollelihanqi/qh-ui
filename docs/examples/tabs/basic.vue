@@ -1,8 +1,8 @@
 <template>
-  <yto-tabs v-model="tabAct" :tabs="orgTabs" w="160px"> </yto-tabs>
+  <hd-tabs v-model="tabAct" :tabs="orgTabs" w="160px"> </hd-tabs>
 </template>
 <script lang="tsx" setup>
-import { TabItemProps } from '@yto/custom'
+import { TabItemProps } from '@hd/custom'
 const tabAct = ref('HEAD')
 
 const test = ref(12)

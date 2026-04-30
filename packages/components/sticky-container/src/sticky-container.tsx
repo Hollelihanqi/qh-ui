@@ -17,7 +17,7 @@ export default defineComponent({
       },
     })
     return () => (
-      <div class="yto-sticky-container staicky-w h-full flex flex-col overflow-y-hidden">
+      <div class="hd-sticky-container staicky-w h-full flex flex-col overflow-y-hidden">
         {slots.header && <div class="staicky-h"> {slots.header()}</div>}
         <div class="staicky-c flex-1 h-0">
           <ElScrollbar ref={scrollbarRef} height="100%" {...attrs}>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <yto-search-form
+    <hd-search-form
       v-model:search-model="filterData"
       :form-controls="list"
       :col-config="{ xs: 1, sm: 2, md: 2, lg: 2, xl: 2 }"
@@ -10,12 +10,12 @@
       <template #input2="scope">
         <ElInput v-model="scope._value.value" placeholder="自定义插槽template"></ElInput>
       </template>
-    </yto-search-form>
+    </hd-search-form>
   </div>
 </template>
 <script lang="tsx" setup>
 import RenderCSelect from './renderc.vue'
-import { SearchFormControlProps } from '@yto/custom'
+import { SearchFormControlProps } from '@hd/custom'
 import { ElInput } from 'element-plus'
 
 const filterData = ref<any>({})

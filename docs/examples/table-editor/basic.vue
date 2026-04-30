@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
     <ElButton @click="onAdd" type="primary" class="mb-2">新增</ElButton>
-    <yto-table-editor :columns="columns" :data="tableData"></yto-table-editor>
+    <hd-table-editor :columns="columns" :data="tableData"></hd-table-editor>
   </div>
 </template>
 <script lang="ts" setup>
@@ -20,15 +20,14 @@ const columns = [
     itemType: 'select',
     options: [
       {
-        label: '男',  
+        label: '男',
         value: '1',
       },
       {
         label: '女',
         value: '2',
       },
-
-    ]
+    ],
   },
   {
     prop: 'age',
@@ -38,7 +37,7 @@ const columns = [
     itemProps: {
       activeText: '启用',
       inactiveText: '禁用',
-    }
+    },
   },
 ]
 const tableData = ref([
@@ -47,9 +46,9 @@ const tableData = ref([
     age: '18',
     sex: '1',
   },
-  {}
+  {},
 ])
-const onAdd = () => { 
+const onAdd = () => {
   tableData.value.push({})
 }
 </script>

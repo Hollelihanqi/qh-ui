@@ -1,9 +1,9 @@
 <script lang="ts">
-import { YtoRemoteSearch } from '@yto/custom'
+import { HdRemoteSearch } from '@hd/custom'
 export default defineComponent({
   setup(props, context) {
     return () => {
-      return h(YtoRemoteSearch, {
+      return h(HdRemoteSearch, {
         baseURL: '',
         url: '/service-api/index/user/search',
         remote: true,

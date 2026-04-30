@@ -1,5 +1,5 @@
 ---
-title: "技术平台部业务组件库"
+title: '个人业务组件库'
 sidebar: false
 ---
 

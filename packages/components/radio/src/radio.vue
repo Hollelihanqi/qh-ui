@@ -1,5 +1,5 @@
 <template>
-  <div class="yto-radio flex">
+  <div class="hd-radio flex">
     <div
       v-for="(op, idx) in props.options"
       :key="idx"

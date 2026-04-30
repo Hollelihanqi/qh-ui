@@ -1,8 +1,11 @@
 {
-  "name": "@yto-custom/utils",
+  "name": "@hd-custom/utils",
   "private": true,
   "license": "MIT",
   "main": "index.ts",
+  "dependencies": {
+    "@hd-custom/build-constants": "workspace:^"
+  },
   "peerDependencies": {
     "vue": "^3.2.0"
   }

@@ -1,6 +1,5 @@
 <template>
-  
-  <yto-table
+  <hd-table
     ref="tableRef"
     :columns="columns"
     :table-data="tableData"
@@ -14,7 +13,7 @@
     <template #tableHeader>
       <el-button type="primary" @click="handleAdd">新增</el-button>
     </template>
-  </yto-table>
+  </hd-table>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
@@ -47,11 +46,11 @@ const tableData = [
     dream: '妻妾成群',
   },
   {
-    name: '李涵祺',
+    name: 'Your Name',
     age: '26岁',
     sex: '男',
     isWife: '未婚',
-    dream: '你好，我是 李涵祺',
+    dream: '你好，我是 Your Name',
   },
   {
     name: '闫萌',
@@ -61,7 +60,7 @@ const tableData = [
     dream: '按时下班',
   },
   {
-    name: '李炳儒',
+    name: 'Example User',
     age: '26岁',
     sex: '男',
     isWife: '已婚',

@@ -2,7 +2,7 @@ import { defineComponent, ref, computed, watch, nextTick, provide, onActivated, 
 import { ElForm, ElFormItem, ElButton } from 'element-plus'
 import { searchFormProps, searchFormEmits, SearchFormControlProps } from './isearch-form'
 import { BreakPoint } from './components/Grid/interface/index'
-import { ResizeElement } from '@yto-custom/directives'
+import { ResizeElement } from '@hd-custom/directives'
 import Grid from './components/Grid/index.vue'
 import GridItem from './components/Grid/components/GridItem.vue'
 import SearchFormItem from './components/SearchFormItem.vue'
@@ -127,7 +127,7 @@ export default defineComponent({
     const getFormatValues = () => {
       return props.formControls.reduce((acc: any, item: SearchFormControlProps) => {
         const { field, formatValue } = item as any
-        // 只处理那些有 formatValue 函数的属性
+        // 只处理那些有 formatValue 函数的属�?
         if (typeof formatValue === 'function') {
           const value = _searchModel.value[field]
           // 只添加那些经过formatValue处理的属性到累加器对象中
@@ -146,7 +146,7 @@ export default defineComponent({
       return props.formControls.reduce((acc: any, item: SearchFormControlProps) => {
         const { field, fieldFormat } = item as any
         if (field && fieldFormat) {
-          // 将 fieldFormat 的结果添加到累加器中，而不是覆盖
+          // �?fieldFormat 的结果添加到累加器中，而不是覆�?
           const formatResult = fieldFormat(_searchModel.value[field])
           if (typeof formatResult === 'object') {
             // 如果返回的是对象，展开合并
@@ -169,7 +169,7 @@ export default defineComponent({
       return values
     }
 
-    // 获取响应式设置
+    // 获取响应式设�?
     const getResponsive = (control: SearchFormControlProps, index: number) => {
       return {
         span: control?.span,
@@ -190,7 +190,7 @@ export default defineComponent({
       return ''
     }
 
-    // 处理默认值
+    // 处理默认�?
     const handleDefaultValue = () => {
       const _dv: any = {}
       if (props.modelDefault) {
@@ -325,7 +325,7 @@ export default defineComponent({
         <div
           ref={searchFormInstance}
           v-resizeElement={handleResize}
-          class="yto-search-form relative bg-white px-[16px] pt-[20px]"
+          class="hd-search-form relative bg-white px-[16px] pt-[20px]"
         >
           <ElForm model={_searchModel.value} class="search-form" label-width="auto">
             <Grid

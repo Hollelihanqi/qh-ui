@@ -2,11 +2,11 @@
   <div class="p-4">
     <div>开始时间： {{ formData.start }}</div>
     <div class="my-2">结束时间： {{ formData.end }}</div>
-    <yto-date-picker
+    <hd-date-picker
       v-model:start="formData.start"
       v-model:end="formData.end"
       value-format="YYYY-MM-DD HH:mm:ss"
-    ></yto-date-picker>
+    ></hd-date-picker>
   </div>
 </template>
 

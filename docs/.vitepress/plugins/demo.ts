@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { docRoot } from '@yto-custom/build-utils'
+import { docRoot } from '@hd-custom/build-utils'
 import type { MarkdownRenderer } from 'vitepress'
 
 interface ContainerOpts {
@@ -23,17 +23,14 @@ function createDemoContainer(md: MarkdownRenderer): ContainerOpts {
         const sourceFile = sourceFileToken.children?.[0].content ?? ''
 
         if (sourceFileToken.type === 'inline') {
-          source = fs.readFileSync(
-            path.resolve(docRoot, 'examples', `${sourceFile}.vue`),
-            'utf-8'
-          )
+          source = fs.readFileSync(path.resolve(docRoot, 'examples', `${sourceFile}.vue`), 'utf-8')
         }
         if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
 
         return `<Demo source="${encodeURIComponent(
-          md.render(`\`\`\` vue\n${source}\`\`\``)
+          md.render(`\`\`\` vue\n${source}\`\`\``),
         )}" path="${sourceFile}" raw-source="${encodeURIComponent(
-          source
+          source,
         )}" description="${encodeURIComponent(md.render(description))}">
   <template #source><yt-${sourceFile.replaceAll('/', '-')}/></template>`
       } else {

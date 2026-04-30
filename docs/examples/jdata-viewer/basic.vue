@@ -3,7 +3,7 @@
     <ElButton @click="actionDialog">预览JSON</ElButton>
   </div>
   <ElDrawer v-model="dialogVisible" title="详细信息" direction="rtl" :before-close="handleClose" size="600px">
-    <yto-jdata-viewer :data="testData" class="!p-0" />
+    <hd-jdata-viewer :data="testData" class="!p-0" />
     <template #footer>
       <div class="flex items-center justify-end">
         <ElButton type="default" @click="handleClose">取消</ElButton>
@@ -69,8 +69,8 @@ const testData = {
   instancePort: '8002',
   macAddress: null,
   systemService: null,
-  actionClass: 'cn.yto.courier.api.controller.ImCallAPi',
-  topic: 'XZ_courier-app-api',
+  actionClass: 'cn.hd.example.controller.MockApi',
+  topic: 'HD_example-api',
   applicationId: '6',
   data_dt: '20240403',
   ipCountryName: '中国',
@@ -110,7 +110,7 @@ const testData = {
   sessionId: 'f92323614f4ef923d1f4bfdbc3ac17d091d69ebc1ee8c64325ee6da435b85fec',
   userName: '杨勉',
   osName: 'unknown',
-  url: 'http://courier-app.yto56.com.cn:10443/courierAppApi/imCall/queryPhoneInShortVmByControl/3',
+  url: 'http://api.example.com/mock/query',
   ipCityName: '南阳市',
   requestTime: '2024-04-03 13:09:50',
   clientAddr: '39.144.181.223',

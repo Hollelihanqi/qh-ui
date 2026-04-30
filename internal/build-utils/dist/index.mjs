@@ -7,8 +7,7 @@ import { findWorkspacePackages } from '@pnpm/find-workspace-packages';
 
 const writeJson = (path, data, spaces = 0) => writeFile(path, JSON.stringify(data, void 0, spaces), "utf-8");
 const ensureDir = async (path) => {
-  if (!existsSync(path))
-    await mkdir(path, { recursive: true });
+  if (!existsSync(path)) await mkdir(path, { recursive: true });
 };
 
 function errorAndExit(err) {
@@ -18,25 +17,25 @@ function errorAndExit(err) {
 
 const projRoot = resolve(__dirname, "..", "..", "..");
 const pkgRoot = resolve(projRoot, "packages");
-const ytoCustomRoot = resolve(pkgRoot, "yto-custom");
+const hdCustomRoot = resolve(pkgRoot, "hd-custom");
 const compRoot = resolve(pkgRoot, "components");
 const themeRoot = resolve(pkgRoot, "theme-chalk");
 const hookRoot = resolve(pkgRoot, "hooks");
 const directiveRoot = resolve(pkgRoot, "directives");
 const utilRoot = resolve(pkgRoot, "utils");
-const buildRoot = resolve(projRoot, "internal", "build");
+const buildRoot = resolve(projRoot, "internal", "build2");
 const docsDirName = "docs";
 const docRoot = resolve(projRoot, docsDirName);
 const vpRoot = resolve(docRoot, ".vitepress");
 const buildOutput = resolve(projRoot, "dist");
-const ytoOutput = resolve(buildOutput, "yto-custom");
+const hdOutput = resolve(buildOutput, "hd-custom");
 const projPackage = resolve(projRoot, "package.json");
 const compPackage = resolve(compRoot, "package.json");
 const themePackage = resolve(themeRoot, "package.json");
 const hookPackage = resolve(hookRoot, "package.json");
 const directivePackage = resolve(directiveRoot, "package.json");
 const utilPackage = resolve(utilRoot, "package.json");
-const ytoPackage = resolve(ytoCustomRoot, "package.json");
+const hdPackage = resolve(hdCustomRoot, "package.json");
 const docPackage = resolve(docRoot, "package.json");
 
 const getWorkspacePackages = () => findWorkspacePackages(projRoot);
@@ -60,4 +59,4 @@ const excludeFiles = (files) => {
   return files.filter((path) => !excludes.some((exclude) => path.includes(exclude)));
 };
 
-export { buildOutput, buildRoot, compPackage, compRoot, directivePackage, directiveRoot, docPackage, docRoot, docsDirName, ensureDir, errorAndExit, excludeFiles, getPackageDependencies, getPackageManifest, getWorkspaceNames, getWorkspacePackages, hookPackage, hookRoot, pkgRoot, projPackage, projRoot, themePackage, themeRoot, utilPackage, utilRoot, vpRoot, writeJson, ytoCustomRoot, ytoOutput, ytoPackage };
+export { buildOutput, buildRoot, compPackage, compRoot, directivePackage, directiveRoot, docPackage, docRoot, docsDirName, ensureDir, errorAndExit, excludeFiles, getPackageDependencies, getPackageManifest, getWorkspaceNames, getWorkspacePackages, hdCustomRoot, hdOutput, hdPackage, hookPackage, hookRoot, pkgRoot, projPackage, projRoot, themePackage, themeRoot, utilPackage, utilRoot, vpRoot, writeJson };

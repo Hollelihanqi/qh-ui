@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <yto-text-ellipsis :content="text" expand-text="expand" collapse-text="collapse" />
+    <hd-text-ellipsis :content="text" expand-text="expand" collapse-text="collapse" />
   </ClientOnly>
 </template>
 <script lang="tsx">

@@ -1,5 +1,5 @@
 import type { ExtractPropTypes } from 'vue'
-import { buildProps } from '@yto-custom/utils'
+import { buildProps } from '@hd-custom/utils'
 
 export const remoteSearchProps = buildProps({
   url: {

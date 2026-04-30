@@ -2,8 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import { camelize } from '@vue/shared'
 import glob from 'fast-glob'
-import { docRoot, docsDirName, projRoot } from '@yto-custom/build-utils'
-// import { REPO_BRANCH, REPO_PATH } from "@yto-uplus/build-constants";
+import { docRoot, docsDirName, projRoot } from '@hd-custom/build-utils'
+// import { REPO_BRANCH, REPO_PATH } from "@hd-uplus/build-constants";
 // import { getLang, languages } from "../utils/lang";
 // import footerLocale from "../i18n/component/footer.json";
 
@@ -15,7 +15,7 @@ let compPaths: string[]
 
 export function MarkdownTransform(): Plugin {
   return {
-    name: 'yto-custom-md-transform',
+    name: 'hd-custom-md-transform',
 
     enforce: 'pre',
 
@@ -33,7 +33,7 @@ export function MarkdownTransform(): Plugin {
       if (id.includes('docs/index.md') || id.includes('docs/home/index.md')) {
         return code
       }
-      //E:/yto-engine/docs/index.md
+      //E:/hd-engine/docs/index.md
       const componentId = path.basename(id, '.md')
       let append: any = {
         headers: [],
@@ -96,7 +96,7 @@ const transformComponentMarkdown = (id: string, componentId: string, code: strin
   // const lang = getLang(id);
   // const docUrl = `${GITHUB_BLOB_URL}/${docsDirName}/en-US/component/${componentId}.md`;
   // const componentUrl = `${GITHUB_TREE_URL}/packages/components/${componentId}`;
-  const componentPath = path.resolve(projRoot, `packages/yto-custom/src/components/${componentId}`)
+  const componentPath = path.resolve(projRoot, `packages/hd-custom/src/components/${componentId}`)
 
   const isComponent = fs.existsSync(componentPath)
 

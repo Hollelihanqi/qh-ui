@@ -1,9 +1,14 @@
 <template>
   <div class="p-4">
-    <ElButton @click="onLook" type="primary" >只读</ElButton>
+    <ElButton @click="onLook" type="primary">只读</ElButton>
     <ElButton @click="onDisabled" type="primary">禁用</ElButton>
     <ElButton @click="onHidden" type="primary">隐藏某一项</ElButton>
-    <yto-table-editor :columns="tableColumns" :data="formData.tableData" :readonly="isReadonly" :disabled="isDisabled"></yto-table-editor>  
+    <hd-table-editor
+      :columns="tableColumns"
+      :data="formData.tableData"
+      :readonly="isReadonly"
+      :disabled="isDisabled"
+    ></hd-table-editor>
   </div>
 </template>
 
@@ -33,7 +38,6 @@ const tableColumns = [
     prop: 'name',
     label: '姓名',
     itemType: 'input',
-   
   },
   {
     prop: 'age',
@@ -47,42 +51,44 @@ const tableColumns = [
     itemType: 'select',
     options: [
       {
-        label: '男',  
+        label: '男',
         value: '1',
       },
       {
         label: '女',
         value: '2',
       },
-
-    ]
+    ],
   },
   {
     prop: 'common',
     label: '备注',
     itemType: 'input',
     isHidden: (row: any) => isHidden.value && row.sex === '1',
-  }
+  },
 ]
 const formData = ref<any>({
-  tableData: [{
-    name: '张三',
-    age: '18',
-    sex: '1',
-    common: '时间是个美丽'
-  },{
-    name: '李思',
-    age: '18',
-    sex: '1',
-    common: '时间是个美丽'
-  },{}]
+  tableData: [
+    {
+      name: '张三',
+      age: '18',
+      sex: '1',
+      common: '时间是个美丽',
+    },
+    {
+      name: '李思',
+      age: '18',
+      sex: '1',
+      common: '时间是个美丽',
+    },
+    {},
+  ],
 })
-
 </script>
 <style scoped lang="scss">
 :deep(.el-form-item__content) {
   > div {
-  width: 100%;
+    width: 100%;
   }
 }
 </style>

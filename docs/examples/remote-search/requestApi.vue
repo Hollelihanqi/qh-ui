@@ -1,11 +1,11 @@
 <template>
-  <yto-remote-search
+  <hd-remote-search
     v-model="user"
     remote
     value-key="userCode"
     :opt-temp="optTemp"
     :request-api="getList"
-  ></yto-remote-search>
+  ></hd-remote-search>
 </template>
 <script lang="ts" setup>
 import { h, ref } from 'vue'

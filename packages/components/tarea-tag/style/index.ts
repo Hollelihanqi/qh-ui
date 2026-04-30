@@ -1,1 +1,1 @@
-import '@yto-custom/components/tarea-tag/src/tarea-tag.scss'
+import '@hd-custom/components/tarea-tag/src/tarea-tag.scss'

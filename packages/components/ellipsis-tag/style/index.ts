@@ -1,1 +1,1 @@
-import '@yto-custom/components/ellipsis-tag/src/ellipsis-tag.scss'
+import '@hd-custom/components/ellipsis-tag/src/ellipsis-tag.scss'

@@ -1,40 +1,39 @@
 <template>
   <div class="view-w">
     <div class="wrapper w-[300px]">
-      <yto-ellipsis-tag :tags="tags">
+      <hd-ellipsis-tag :tags="tags">
         <!-- <template #default="scope">
         <div class="h-[22px] bg-red-300">{{ scope.info }}</div>
       </template> -->
         <template #ellipsis>
           <span class="bg-red-300">123</span>
         </template>
-      </yto-ellipsis-tag>
-      <yto-ellipsis-tag :tags="tags">
+      </hd-ellipsis-tag>
+      <hd-ellipsis-tag :tags="tags">
         <!-- <template #default="scope">
         <div class="h-[22px] bg-red-300">{{ scope.info }}</div>
       </template> -->
-      </yto-ellipsis-tag>
-      <yto-ellipsis-tag :tags="tags">
+      </hd-ellipsis-tag>
+      <hd-ellipsis-tag :tags="tags">
         <!-- <template #default="scope">
         <div class="h-[22px] bg-red-300">{{ scope.info }}</div>
       </template> -->
-      </yto-ellipsis-tag>
-      <yto-ellipsis-tag :tags="tags">
+      </hd-ellipsis-tag>
+      <hd-ellipsis-tag :tags="tags">
         <!-- <template #default="scope">
         <div class="h-[22px] bg-red-300">{{ scope.info }}</div>
       </template> -->
-      </yto-ellipsis-tag>
-      <yto-ellipsis-tag :tags="tags">
+      </hd-ellipsis-tag>
+      <hd-ellipsis-tag :tags="tags">
         <!-- <template #default="scope">
         <div class="h-[22px] bg-red-300">{{ scope.info }}</div>
       </template> -->
-      </yto-ellipsis-tag>
+      </hd-ellipsis-tag>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const list = ['sdfwe', 'fwewegwgw', 'rtyrtyrtyrt', 'h4h4h4h']
 const tags = ref([
   {
     value: 1,

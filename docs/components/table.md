@@ -101,10 +101,10 @@ table/customColumnHeader
 
 ::: tip
 
-通过 `YtoCTableInstance.value.ElTableInstance` 可调用所有 el-table 方法。
+通过 `HdCTableInstance.value.ElTableInstance` 可调用所有 el-table 方法。
 
 :::
- 
+
 ### Table 插槽
 
 | 名称        | 说明           |

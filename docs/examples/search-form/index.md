@@ -62,7 +62,7 @@
 | `...colConfig` | 对 `colConfig` 的属性展开可单独配置到任意一个搜索项中                                               | Number                                          | -      |
 | `render`       | 自定义渲染，可传入一个 Vue 组件,支持 JSX、h 函数                                                    | Function                                        | -      |
 | `isRemote`     | `el` 为 select 时，是否通过调用接口，获取下拉列表数据                                               | Boolean                                         | false  |
-| `remoteProps`  | 远程搜索配置,[参考-remote-search](http://10.130.136.69:7200/examples/remote-search/)                | Object                                          | -      |
+| `remoteProps`  | 远程搜索配置,[参考-remote-search](https://docs.example.com/examples/remote-search/)                 | Object                                          | -      |
 
 ## SearchForm 事件
 

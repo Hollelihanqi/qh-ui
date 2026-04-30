@@ -1,1 +1,1 @@
-import '@yto-custom/components/descriptions/src/descriptions.scss'
+import '@hd-custom/components/descriptions/src/descriptions.scss'

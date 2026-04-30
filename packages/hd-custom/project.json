@@ -1,0 +1,117 @@
+{
+  "name": "@hd/custom",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/hd-custom",
+  "projectType": "library",
+  "targets": {
+    "clean": {
+      "executor": "nx:run-commands",
+      "cache": false,
+      "options": {
+        "command": "tsx internal/build2/build.ts clean",
+        "cwd": "."
+      }
+    },
+    "build:ui": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "projects": ["internal-build-constants", "internal-build-utils", "share"],
+          "target": "build"
+        },
+        {
+          "target": "clean"
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist/hd-custom/es"],
+      "options": {
+        "command": "tsx internal/build2/build.ts ui",
+        "cwd": "."
+      }
+    },
+    "build:theme": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "build:ui"
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/packages/theme-chalk/dist",
+        "{workspaceRoot}/dist/hd-custom/theme-chalk"
+      ],
+      "options": {
+        "command": "tsx internal/build2/build.ts theme",
+        "cwd": "."
+      }
+    },
+    "build:types": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "build:theme"
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist/hd-custom/es/**/*.d.ts"],
+      "options": {
+        "command": "tsx internal/build2/build.ts types",
+        "cwd": "."
+      }
+    },
+    "copy:resolvers": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "build:types"
+        },
+        {
+          "projects": "internal-resolvers",
+          "target": "build"
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist/hd-custom/resolvers"],
+      "options": {
+        "command": "tsx internal/build2/build.ts copy-resolvers",
+        "cwd": "."
+      }
+    },
+    "copy:files": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "copy:resolvers"
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/dist/hd-custom/package.json",
+        "{workspaceRoot}/dist/hd-custom/README.md",
+        "{workspaceRoot}/dist/hd-custom/global.d.ts"
+      ],
+      "options": {
+        "command": "tsx internal/build2/build.ts copy-files",
+        "cwd": "."
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "copy:files"
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist/hd-custom"],
+      "options": {
+        "command": "tsx internal/build2/build.ts summary",
+        "cwd": "."
+      }
+    },
+    "version": {
+      "executor": "@nx/js:version",
+      "options": {
+        "trackDeps": false,
+        "push": true,
+        "changelog": true
+      }
+    }
+  }
+}

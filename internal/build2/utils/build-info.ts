@@ -1,6 +1,6 @@
 import path from 'path'
-import { PKG_NAME } from '@yto-custom/build-constants'
-import { ytoOutput } from '@yto-custom/build-utils'
+import { PKG_NAME } from '@hd-custom/build-constants'
+import { hdOutput } from '@hd-custom/build-utils'
 export const modules = ['esm'] as const
 export type Module = (typeof modules)[number]
 export interface BuildInfo {
@@ -27,7 +27,7 @@ export const buildConfig: Record<Module, BuildInfo> = {
     ext: 'mjs',
     output: {
       name: 'es',
-      path: path.resolve(ytoOutput, 'es'),
+      path: path.resolve(hdOutput, 'es'),
     },
     bundle: {
       path: `${PKG_NAME}/es`,
@@ -39,7 +39,7 @@ export const buildConfig: Record<Module, BuildInfo> = {
   //   ext: 'js',
   //   output: {
   //     name: 'lib',
-  //     path: path.resolve(ytoOutput, 'lib'),
+  //     path: path.resolve(hdOutput, 'lib'),
   //   },
   //   bundle: {
   //     path: `${PKG_NAME}/lib`,

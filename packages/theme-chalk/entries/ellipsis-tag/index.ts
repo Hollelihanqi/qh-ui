@@ -1,4 +1,5 @@
-import '@yto-custom/components/ellipsis-tag/src/ellipsis-tag.scss'
-import ellipsisTag from '@yto-custom/components/ellipsis-tag/src/ellipsis-tag.vue'
+import '@hd-custom/components/ellipsis-tag/src/ellipsis-tag.scss'
+
+import ellipsisTag from '@hd-custom/components/ellipsis-tag/src/ellipsis-tag.vue'
 
 export { ellipsisTag }

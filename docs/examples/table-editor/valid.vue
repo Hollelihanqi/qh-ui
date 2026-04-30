@@ -1,9 +1,9 @@
 <template>
   <div class="p-4 h-[300px] overflow-y-auto">
     <ElForm ref="formRef" :model="tableData" class="">
-      <yto-table-editor :columns="columns" :data="tableData" :setRules="setRules"></yto-table-editor>
+      <hd-table-editor :columns="columns" :data="tableData" :setRules="setRules"></hd-table-editor>
     </ElForm>
-   <ElButton @click="onSave" type="primary" class="ml-[85%]">保存</ElButton>
+    <ElButton @click="onSave" type="primary" class="ml-[85%]">保存</ElButton>
   </div>
 </template>
 
@@ -28,16 +28,15 @@ const columns = [
     itemType: 'select',
     options: [
       {
-        label: '男',  
+        label: '男',
         value: '1',
       },
       {
         label: '女',
         value: '2',
       },
-
-    ]
-  }
+    ],
+  },
 ]
 const tableData = ref([
   {
@@ -50,15 +49,15 @@ const tableData = ref([
     age: '19',
     sex: '2',
   },
-  {}
+  {},
 ])
 const formRef = ref()
 const setRules = (scope: any, item: any) => {
   return {
     required: true,
     message: `${item.label}不能为空`,
-  };
-};
+  }
+}
 const onSave = async () => {
   try {
     await formRef.value?.validate()

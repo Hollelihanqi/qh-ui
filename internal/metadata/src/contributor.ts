@@ -5,8 +5,8 @@ import { Octokit } from 'octokit'
 import { consola } from 'consola'
 import chalk from 'chalk'
 import { chunk, mapValues, uniqBy } from 'lodash-unified'
-import { ensureDir, errorAndExit, writeJson, projRoot } from '@yto-custom/build-utils'
-import { REPO_BRANCH, REPO_NAME, REPO_OWNER } from '@yto-custom/build-constants'
+import { ensureDir, errorAndExit, writeJson, projRoot } from '@hd-custom/build-utils'
+import { REPO_BRANCH, REPO_NAME, REPO_OWNER } from '@hd-custom/build-constants'
 
 interface FetchOption {
   key: string

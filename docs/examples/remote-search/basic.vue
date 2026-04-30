@@ -1,6 +1,6 @@
 <template>
   <div class="basic-com">
-    <yto-remote-search
+    <hd-remote-search
       v-model="user"
       base-u-r-l=""
       url="/service-api/index/user/search"
@@ -9,7 +9,7 @@
       value-key="userCode"
       label-key="userName"
       :data-callback="dataCallback"
-    ></yto-remote-search>
+    ></hd-remote-search>
   </div>
 </template>
 <script lang="tsx" setup>

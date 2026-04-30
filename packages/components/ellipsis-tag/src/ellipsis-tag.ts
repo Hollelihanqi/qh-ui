@@ -20,5 +20,4 @@ export const ellipsisTagProps = {
   },
 }
 
-
 export type EllipsisTagProps = ExtractPropTypes<typeof ellipsisTagProps>

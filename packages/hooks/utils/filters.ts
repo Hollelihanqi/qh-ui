@@ -162,7 +162,6 @@ export function throttleFilter(...args: any[]) {
   let rejectOnCancel: boolean
   if (!isRef(args[0]) && typeof args[0] === 'object')
     ({ delay: ms, trailing = true, leading = true, rejectOnCancel = false } = args[0])
-  // eslint-disable-next-line prettier/prettier
   else [ms, trailing = true, leading = true, rejectOnCancel = false] = args
   const clear = () => {
     if (timer) {

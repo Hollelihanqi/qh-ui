@@ -3,8 +3,8 @@
   "compilerOptions": {
     "composite": true,
     "jsx": "preserve",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
+    "jsxImportSource": "vue",
+    "noUnusedLocals": false,
     "noImplicitAny": false,
     "lib": [
       "ESNext",
@@ -19,13 +19,12 @@
     "skipLibCheck": true,
   },
   "include": [
-    "packages",
     "typings/env.d.ts",
-    "packages/components/**/*.tsx",
-    "packages/components/**/*.vue",
-    "internal/resolve",
-    "packages/theme-chalk/**/*.ts",
-    "packages/theme-chalk/**/*.d.ts"
+    "packages/hd-custom",
+    "packages/components",
+    "packages/directives",
+    "packages/hooks",
+    "packages/utils"
   ],
   "exclude": [
     "node_modules",

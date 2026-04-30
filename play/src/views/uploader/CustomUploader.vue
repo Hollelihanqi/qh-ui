@@ -1,5 +1,5 @@
 <template>
-  <yto-uploader
+  <hd-uploader
     v-bind="$attrs"
     :options="uploaderOptions"
     @on-exceed-limit="handleExceedLimit"
@@ -11,14 +11,12 @@
         <el-button type="primary" plain>文件上传</el-button>
       </slot>
     </template>
-  </yto-uploader>
+  </hd-uploader>
 </template>
 
 <script lang="ts" setup>
 import { mergeFile } from '@/api'
 import { getToken } from '@/utils'
-// import Uploader from '@yto-custom/components/uploader/src/uploader.vue'
-// import '@yto-custom/components/uploader/src/uploader.scss'
 import { ElMessage } from 'element-plus'
 const props = defineProps({
   requestParams: {

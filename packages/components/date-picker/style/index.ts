@@ -1,1 +1,1 @@
-import '@yto-custom/components/date-picker/src/date-picker.scss'
+import '@hd-custom/components/date-picker/src/date-picker.scss'

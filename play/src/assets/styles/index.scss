@@ -1,15 +1,2 @@
-// @use './variables.scss' as *;
 @use './common.scss' as *;
 @use './reset.css';
-
-// 全局样式变量
-#app {
-  // --yto-layout-nav-background: transparent;
-}
-
-// 全局菜单风格配置
-#app .layout-menu {
-  img {
-    border: none;
-  }
-}

@@ -12,7 +12,7 @@
   </div>
 </template>
 <script lang="tsx" setup>
-import Basic from './basic.vue'
-import Bordert from './bordert.vue'
+import Basic from './Basic.vue'
+import Bordert from './Bordert.vue'
 const radio = ref('1')
 </script>

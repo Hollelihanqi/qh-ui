@@ -1,5 +1,5 @@
 <template>
-  <div class="yto-time-line w-full time-line">
+  <div class="hd-time-line w-full time-line">
     <div v-for="(item, index) in props.timeData" :key="'timer' + index" class="flex w-full time-line-item">
       <slot name="prepend" :item="item">
         <div
@@ -40,9 +40,9 @@ defineOptions({
 })
 
 const props = defineProps(timeLineProps)
-const emit = defineEmits(timeLineEmits)
+defineEmits(timeLineEmits)
 
-// 安全地获取item的值
+// 安全地获取item的�?
 const getItemValue = (item: any, key: string) => {
   const configKey = props.propsConfig[key] || key
   return item[configKey]

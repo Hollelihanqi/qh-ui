@@ -1,4 +1,5 @@
-import '@yto-custom/components/sticky-container/src/sticky-container.scss'
-import stickyContainer from '@yto-custom/components/sticky-container/src/sticky-container'
+import '@hd-custom/components/sticky-container/src/sticky-container.scss'
+
+import stickyContainer from '@hd-custom/components/sticky-container/src/sticky-container'
 
 export { stickyContainer }

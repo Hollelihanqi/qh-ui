@@ -1,12 +1,12 @@
 <template>
-  <YtoTable :columns="columns" :table-data="tableData" pagination-hide>
+  <HdTable :columns="columns" :table-data="tableData" pagination-hide>
     <template #ageHeader>
       <ElButton type="primary">年龄</ElButton>
     </template>
     <template #sexHeader>
       <ElText type="danger">性别</ElText>
     </template>
-  </YtoTable>
+  </HdTable>
 </template>
 <script lang="tsx" setup>
 import { h } from 'vue'
@@ -14,39 +14,39 @@ import { ElTag, ElButton, ElText } from 'element-plus'
 
 const tableData = [
   {
-    name: '魏春霈',
+    name: 'User 001',
     age: '26岁',
     sex: 0,
     isWife: 0,
-    dream: '妻妾成群',
+    dream: '示例目标 001',
   },
   {
-    name: '李涵祺',
+    name: 'User 002',
     age: '26岁',
     sex: 1,
     isWife: 0,
-    dream: '你好，我是 李涵祺',
+    dream: '示例目标 002',
   },
   {
-    name: '闫萌',
+    name: 'User 003',
     age: '26岁',
     sex: 0,
     isWife: 1,
-    dream: '按时下班',
+    dream: '示例目标 003',
   },
   {
-    name: '李炳儒',
+    name: 'User 004',
     age: '26岁',
     sex: 1,
     isWife: 1,
-    dream: '有为青年',
+    dream: '示例目标 004',
   },
   {
-    name: '柯发泽',
+    name: 'User 005',
     age: '26岁',
     sex: 0,
     isWife: 1,
-    dream: '天天发财',
+    dream: '示例目标 005',
   },
 ]
 

@@ -1,10 +1,10 @@
-import { withInstall } from '@yto-custom/utils'
+import { withInstall } from '@hd-custom/utils'
 
 import Table from './src/table.vue'
-import type { SFCWithInstall } from '@yto-custom/utils'
+import type { SFCWithInstall } from '@hd-custom/utils'
 
-export const YtoTable: SFCWithInstall<typeof Table> = withInstall(Table)
-export default YtoTable
+export const HdTable: SFCWithInstall<typeof Table> = withInstall(Table)
+export default HdTable
 
 export * from './src/table'
 export type { TableInstance } from './src/instance'

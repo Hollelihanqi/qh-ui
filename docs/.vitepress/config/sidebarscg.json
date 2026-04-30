@@ -12,32 +12,12 @@
     "text": "组件",
     "items": [
       {
-        "text": "AdaptionContainer 适配容器组件",
-        "link": "/adaption-container"
-      },
-      {
-        "text": "CustomFieldConfig 自定义字段配置",
-        "link": "/custom-field-config"
-      },
-      {
-        "text": "CustomFieldContainer 自定义字段容器",
-        "link": "/custom-field-container"
-      },
-      {
         "text": "DatePicker 日期选择器",
         "link": "/date-picker"
       },
       {
         "text": "Descriptions 描述列表",
         "link": "/descriptions"
-      },
-      {
-        "text": "Dialog 对话框",
-        "link": "/dialog"
-      },
-      {
-        "text": "Echart 图表",
-        "link": "/echart"
       },
       {
         "text": "EllipsisTag 省略标签",
@@ -48,40 +28,8 @@
         "link": "/empty"
       },
       {
-        "text": "form",
-        "link": "/form"
-      },
-      {
-        "text": "form-items",
-        "link": "/form-items"
-      },
-      {
         "text": "JDataViewer JSON数据查看器",
         "link": "/jdata-viewer"
-      },
-      {
-        "text": "Layout 布局",
-        "link": "/layout"
-      },
-      {
-        "text": "LayoutFrame 布局框架",
-        "link": "/layout-frame"
-      },
-      {
-        "text": "LayoutHeader 布局头部",
-        "link": "/layout-header"
-      },
-      {
-        "text": "LayoutMenu 布局菜单",
-        "link": "/layout-menu"
-      },
-      {
-        "text": "LayoutRouter 布局路由",
-        "link": "/layout-router"
-      },
-      {
-        "text": "Menu 菜单",
-        "link": "/menu"
       },
       {
         "text": "Radio 单选框",
@@ -92,16 +40,8 @@
         "link": "/remote-search"
       },
       {
-        "text": "SearchContainer 搜索容器",
-        "link": "/search-container"
-      },
-      {
         "text": "SearchForm 搜索表单",
         "link": "/search-form"
-      },
-      {
-        "text": "Sticky 粘性布局",
-        "link": "/sticky"
       },
       {
         "text": "StickyContainer 粘性容器",
@@ -134,52 +74,6 @@
       {
         "text": "Uploader 文件上传",
         "link": "/uploader"
-      },
-      {
-        "text": "UserSearch 用户搜索",
-        "link": "/user-search"
-      },
-      {
-        "text": "WaterMark 水印",
-        "link": "/water-mark"
-      }
-    ]
-  },
-  "others": {
-    "text": "其它",
-    "items": [
-      {
-        "text": "表单状态",
-        "link": "/form-readonly-class"
-      },
-      {
-        "text": "系统维护",
-        "link": "/system"
-      }
-    ]
-  },
-  "yto-utils": {
-    "text": "工具函数",
-    "items": [
-      {
-        "text": "分享",
-        "link": "/share"
-      },
-      {
-        "text": "其他",
-        "link": "/other"
-      },
-      {
-        "text": "时间转换",
-        "link": "/time"
-      },
-      {
-        "text": "水印",
-        "link": "/waterMarker"
-      },
-      {
-        "text": "文件下载",
-        "link": "/download"
       }
     ]
   }

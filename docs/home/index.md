@@ -12,8 +12,8 @@ hero:
       text: 快速开始
       link: /guide/fast
     - theme: alt
-      text: 在 GitLab 查看源码
-      link: https://git.yto.net.cn/XiAnCenter/XiAn_yto_t/software-development-kit/yto-engine
+      text: 在 GitHub 查看源码
+      link: https://github.com/your-name/hd-ui
 ---
 
 <script setup>

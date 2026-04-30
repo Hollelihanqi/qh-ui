@@ -5,8 +5,8 @@ import DefaultTheme from 'vitepress/theme'
 
 // import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-// import YtoCustom from '@yto/custom'
-import '@yto/custom/theme-chalk/index.css'
+// import HdCustom from '@hd/custom'
+import '@hd/custom/theme-chalk/index.css'
 
 import 'virtual:uno.css'
 import './style.css'
@@ -21,14 +21,14 @@ export default {
   Layout: VPApp,
   async enhanceApp({ app, router }) {
     // app.use(ElementPlus)
-    // app.use(YtoCustom)
+    // app.use(HdCustom)
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp)
     })
     // console.log('import.meta.env.SSR', import.meta.env.SSR)
     if (!import.meta.env.SSR) {
       // @ts-ignore
-      const custom = await import('@yto/custom').then((m) => m)
+      const custom = await import('@hd/custom').then((m) => m)
       app.use(custom.default)
     }
   },

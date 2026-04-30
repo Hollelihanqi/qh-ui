@@ -21,7 +21,7 @@ interface Config {
 const config: Config = {
   docsDir: path.resolve(__dirname, '../'),
   outputFile: path.resolve(__dirname, '../.vitepress/config/sidebarscg.json'),
-  include: ['guide', 'components', 'others', 'yto-utils'],
+  include: ['guide', 'components'],
 }
 
 interface SidebarItem {
@@ -142,6 +142,6 @@ async function main() {
 }
 
 // 运行脚本
-; (async () => {
+;(async () => {
   await main()
 })()

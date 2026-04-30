@@ -1,5 +1,5 @@
 <template>
-  <yto-descriptions :data="formModel" :list="infosList"> </yto-descriptions>
+  <hd-descriptions :data="formModel" :list="infosList"> </hd-descriptions>
 </template>
 <script lang="tsx" setup>
 const RISK_LEVEL = [
@@ -29,7 +29,7 @@ const formModel = {
   u_time: '2023-10-12 14:13:19',
   is_delete: '0',
   id: 'FB-20231012-0008',
-  project_name: '【勿删】星辰流程测试（李路）',
+  project_name: '示例流程项目',
   component_name: '',
   component_id: '',
   demand_name: '测试移动端  --否',

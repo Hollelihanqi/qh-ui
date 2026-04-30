@@ -1,5 +1,5 @@
 <template>
-  <div class="yto-table table-w h-[100%] w-full flex flex-col">
+  <div class="hd-table table-w h-[100%] w-full flex flex-col">
     <div v-if="$slots.tableHeader || toolBar" class="table-header flex items-center">
       <div class="flex-1 flex items-center">
         <slot name="tableHeader"></slot>
@@ -39,7 +39,7 @@
           :reserve-selection="item.type === 'selection'"
         >
         </ElTableColumn>
-        <!-- expand 支持 tsx 语法 && 作用域插槽 (tsx > slot) -->
+        <!-- expand 支持 tsx 语法 && 作用域插�?(tsx > slot) -->
         <ElTableColumn v-else-if="item.type === 'expand'" v-slot="scope" v-bind="item" :align="item.align ?? 'center'">
           <component :is="item.render" v-if="item.render" :row="scope.row" v-bind="scope"> </component>
           <slot v-else :name="item.type" :row="scope.row"></slot>
@@ -72,11 +72,10 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTable, ElTableColumn, ElPagination, ElButton } from 'element-plus'
-import { vLoading as vQoding } from 'element-plus/es/components/loading/src/directive'
+import { ElTable, ElTableColumn, ElPagination, ElButton, ElLoadingDirective as vQoding } from 'element-plus'
 import TableColumn from './components/TableColumn.vue'
 import SettingV from './components/Setting.vue'
-import Empty from '@yto-custom/components/empty'
+import Empty from '@hd-custom/components/empty'
 import { Setting } from '@element-plus/icons-vue'
 import useController from './use-controller'
 import useTable from './use-table'

@@ -1,11 +1,11 @@
 <script lang="tsx">
 import { defineComponent, h } from 'vue'
-import { YtoRemoteSearch } from '@yto/custom'
+import { HdRemoteSearch } from '@hd/custom'
 import { getToken } from '@/utils'
 export default defineComponent({
   setup(_, context) {
     return () => {
-      return h(YtoRemoteSearch, {
+      return h(HdRemoteSearch, {
         url: '/api/v2/searchEmployees',
         remote: true,
         searchField: 'search',

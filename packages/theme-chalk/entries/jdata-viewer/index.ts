@@ -1,4 +1,5 @@
-import '@yto-custom/components/jdata-viewer/src/jdata-viewer.scss'
-import jdataViewer from '@yto-custom/components/jdata-viewer/src/jdata-viewer'
+import '@hd-custom/components/jdata-viewer/src/jdata-viewer.scss'
+
+import jdataViewer from '@hd-custom/components/jdata-viewer/src/jdata-viewer'
 
 export { jdataViewer }

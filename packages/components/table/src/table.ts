@@ -1,7 +1,7 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 import type { PaginationProps } from 'element-plus'
-import { buildProps } from '@yto-custom/utils'
-import type { EmptyProps } from '@yto-custom/components/empty'
+import { buildProps } from '@hd-custom/utils'
+import type { EmptyProps } from '@hd-custom/components/empty'
 
 export interface ColumnsItemProps {
   label?: string

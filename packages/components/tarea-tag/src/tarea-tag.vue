@@ -1,7 +1,7 @@
 <template>
   <div
     ref="editDiv"
-    class="yto-tarea-tag custom-edit-div"
+    class="hd-tarea-tag custom-edit-div"
     :class="{ 'red-b': !valid, 'focus-border': isFocus && valid, 'event-none': disabled }"
     @click="handleEditDClick"
   >
@@ -127,7 +127,7 @@ const checkText = (value: any) => {
     }
   }
 
-  // 使用 map 来创建一个新数组，并过滤掉所有 null 值
+  // 使用 map 来创建一个新数组，并过滤掉所�?null �?
   const newTags = value.map(validateItem).filter(Boolean)
   return [...newTags]
 }

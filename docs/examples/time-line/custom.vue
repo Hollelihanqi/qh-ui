@@ -1,7 +1,7 @@
 <template>
   <ClientOnly>
     <div class="p-10">
-      <yto-time-line :timeData="timeData">
+      <hd-time-line :timeData="timeData">
         <template #dot>
           <div class="triangle"></div>
         </template>
@@ -20,7 +20,7 @@
             </ElDescriptions>
           </div>
         </template>
-      </yto-time-line>
+      </hd-time-line>
     </div>
   </ClientOnly>
 </template>

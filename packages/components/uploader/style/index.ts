@@ -1,1 +1,1 @@
-import '@yto-custom/components/uploader/src/uploader.scss'
+import '@hd-custom/components/uploader/src/uploader.scss'

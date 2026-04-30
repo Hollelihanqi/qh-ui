@@ -1,10 +1,10 @@
-import { withInstall } from '@yto-custom/utils'
+import { withInstall } from '@hd-custom/utils'
 
 import Radio from './src/radio.vue'
-import type { SFCWithInstall } from '@yto-custom/utils'
+import type { SFCWithInstall } from '@hd-custom/utils'
 
-export const YtoRadio: SFCWithInstall<typeof Radio> = withInstall(Radio)
-export default YtoRadio
+export const HdRadio: SFCWithInstall<typeof Radio> = withInstall(Radio)
+export default HdRadio
 
 export * from './src/radio'
 export type { RadioInstance } from './src/instance'

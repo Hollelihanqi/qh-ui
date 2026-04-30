@@ -64,17 +64,20 @@ const statusText = {
 } as any
 
 const status2 = ref('waiting')
+let timer: ReturnType<typeof setTimeout> | null = null
 
 watch(
   () => status2.value,
   (newStatus, oldStatus) => {
-    let timer: any = null
     if (oldStatus && newStatus === 'uploading' && oldStatus !== 'uploading') {
       timer = setTimeout(() => {
         progressingClass.value = 'uploader-file-progressing'
       }, 300)
     } else {
-      clearTimeout(timer)
+      if (timer) {
+        clearTimeout(timer)
+        timer = null
+      }
       progressingClass.value = ''
     }
   },

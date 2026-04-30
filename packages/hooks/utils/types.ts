@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import type { ComputedRef, MaybeRef, MaybeRefOrGetter, Ref, ShallowRef, WatchOptions, WatchSource } from 'vue'
 
 export type {

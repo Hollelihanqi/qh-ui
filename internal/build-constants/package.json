@@ -1,6 +1,7 @@
 {
-  "name": "@yto-custom/build-constants",
+  "name": "@hd-custom/build-constants",
   "version": "0.0.1",
+  "type": "module",
   "description": "Build constants for Element Plus",
   "keywords": [
     "element-plus"
@@ -15,6 +16,8 @@
     "stub": "unbuild --stub"
   },
   "devDependencies": {
-    "unbuild": "^0.7.4"
+    "typescript": "6.0.3",
+    "unbuild": "^3.6.1",
+    "vue-tsc": "3.2.7"
   }
 }

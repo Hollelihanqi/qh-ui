@@ -1,86 +1,22 @@
-# YTO UI 现代构建系统
+# HD UI 现代构建系统
 
-这是 YTO UI 组件库的现代构建系统，基于 Vite 重构，专注于输出 ES 模块格式。
+`internal/build2` 是当前唯一保留的组件库构建链，负责把源码构建到 `dist/hd-custom`。
 
-## 特点
+## 构建流程
 
-- 🚀 基于 Vite 的高性能构建
-- 📦 专注于 ES 模块格式，完全兼容 Node.js 22+
-- 🔄 并行构建流程提高效率
-- 📝 TypeScript 类型生成集成
-- 🧩 模块化设计，易于维护
+1. 清理输出目录。
+2. 构建组件 ES 模块。
+3. 构建主题样式并复制到主包产物。
+4. 生成 TypeScript 类型声明。
+5. 构建并复制 resolver。
+6. 复制主包发布所需的附加文件。
 
-## ESM 兼容性处理
+## 关键约定
 
-构建系统使用了完全的 ESM 模块格式，解决了 Node.js 22+ 的兼容性问题：
+- 主包源码目录：`packages/hd-custom`
+- 主包输出目录：`dist/hd-custom`
+- 组件导出名前缀：`Hd`
+- 样式文件名前缀：`hd`
+- resolver 导出：`HdCustomResolver`
 
-1. **`__dirname` 和 `__filename` 替代方案**：
-
-   ```typescript
-   import { dirname } from 'path'
-   import { fileURLToPath } from 'url'
-
-   const __filename = fileURLToPath(import.meta.url)
-   const __dirname = dirname(__filename)
-   ```
-
-2. **package.json 设置**：
-
-   ```json
-   {
-     "type": "module"
-   }
-   ```
-
-3. **TypeScript 配置**：
-   ```json
-   {
-     "compilerOptions": {
-       "module": "ESNext",
-       "moduleResolution": "Node"
-     }
-   }
-   ```
-
-## 使用方法
-
-```bash
-# 安装依赖
-pnpm install
-
-# 执行构建
-pnpm build
-```
-
-## 构建输出
-
-构建完成后，所有文件会输出到 `dist/yto-custom` 目录，目录结构如下：
-
-```
-dist/yto-custom/
-├── es/                 # ES 模块
-├── types/              # TypeScript 类型定义
-├── theme-chalk/        # 主题样式
-├── resolvers/          # Vite/Webpack 解析器
-├── dist/               # 打包后的 CSS
-├── package.json        # 包信息
-├── README.md           # 说明文档
-└── global.d.ts         # 全局类型定义
-```
-
-## 与旧构建系统的区别
-
-相比于基于 Gulp + Rollup 的旧构建系统，本系统有如下优势：
-
-1. **现代化**: 使用 Vite 替代 Gulp + Rollup 组合
-2. **性能更佳**: Vite 的优化使构建速度显著提升
-3. **简化配置**: 集中的配置文件，易于维护
-4. **ESM 原生支持**: 完全兼容 Node.js 22+
-5. **并行构建**: 提升构建效率
-
-## 技术栈
-
-- Vite
-- TypeScript
-- fs-extra
-- consola & chalk (日志美化)
+这些前缀来自 `internal/build-constants/src/pkg.ts`，不要在构建脚本里硬编码。

@@ -142,10 +142,8 @@ const useUploader = (props: UploaderProps, emits: any) => {
 
   // 处理服务器返回的数据
   const processResponse = (message: any, file: any) => {
-    let res = message
     try {
-      res = JSON.parse(message)
-      file._response = res
+      file._response = JSON.parse(message)
     } catch (error) {
       console.error('processResponse', error)
     }

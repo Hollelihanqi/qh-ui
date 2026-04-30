@@ -6,18 +6,18 @@ title: 快速开始
 
 ### 安装
 
-npm 源 https://npm.yto.net.cn/
+npm 源 https://registry.npmjs.org/
 
 使用快速的，节省磁盘空间的包管理工具 [pnpm](https://pnpm.io/zh) 进行安装
 
 ```shell
-pnpm add @yto/custom
+pnpm add @hd/custom
 ```
 
 ### 更新
 
 ```shell
-    pnpm up @yto/custom@latest
+    pnpm up @hd/custom@latest
 
 ```
 
@@ -35,7 +35,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { YtoCustomResolver } from '@yto/custom/resolvers'
+import { HdCustomResolver } from '@hd/custom/resolvers'
 
 export default defineConfig({
   plugins: [
@@ -48,7 +48,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver(), YtoCustomResolver()],
+      resolvers: [ElementPlusResolver(), HdCustomResolver()],
     }),
   ],
 })
@@ -62,40 +62,11 @@ export default defineConfig({
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import YtoCustom from '@yto/custom'
-import '@yto/custom/theme-chalk/index.css'
+import HdCustom from '@hd/custom'
+import '@hd/custom/theme-chalk/index.css'
 
-createApp(App).use(YtoCustom).mount('#app')
+createApp(App).use(HdCustom).mount('#app')
 ```
-
-## 指令
-
-> [!tip]
-> 所有的指令都被迁移至 `@yto/custom/directives` 路径下
-
-### 使用方式
-
-::: code-group
-
-```ts [xxx.tsx]
-import { ResizeElement } from '@yto-custom/directives'
-export default defineComponent({
-  directives: { ResizeElement },
-   setup(props, { emit, expose, slots }) {
-    return () => (<div v-resizeElement={handleResize}></div>)
-   }
-})
-```
-
-```vue [xxx.vue]
-import { ResizeElement as vResizeElement } from '@yto-custom/directives'
-
-<template>
-  <div v-resize-element="resizeHandler"></div>
-</template>
-```
-
-:::
 
 ::: warning
 

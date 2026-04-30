@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 export const isClient = typeof window !== 'undefined' && typeof document !== 'undefined'
 // @ts-expect-error - WorkerGlobalScope is not defined in the global scope
 export const isWorker = typeof WorkerGlobalScope !== 'undefined' && globalThis instanceof WorkerGlobalScope

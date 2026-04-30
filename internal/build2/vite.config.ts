@@ -1,35 +1,37 @@
+import path, { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
+import glob from 'fast-glob'
 import { defineConfig, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import path, { resolve, dirname } from 'path'
-import { fileURLToPath } from 'url'
 import VueMacros from 'unplugin-vue-macros/rollup'
-import { pkgRoot, ytoOutput, ytoCustomRoot, excludeFiles } from '@yto-custom/build-utils'
-import glob from 'fast-glob'
-import { generateExternal } from '../build/src/utils'
-// 在 ESM 中获取当前文件路径
+import { excludeFiles, hdOutput, pkgRoot } from '@hd-custom/build-utils'
+import { generateExternal } from './utils'
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-// 获取包依赖
-// const { dependencies, peerDependencies } = getPackageDependencies(ytoPackage)
-
-// // 外部依赖
-// const external = [
-//   'vue',
-//   'vue-router',
-//   '@vueuse/core',
-//   ...Object.keys(dependencies || {}),
-//   ...Object.keys(peerDependencies || {}),
-// ]
-
-// 获取目标环境
 const target = 'es2018'
 
+function formatEntryFileName(chunkName: string) {
+  // packages/hd-custom 是发布包自身，不应在 dist/hd-custom/es 下再套一层 hd-custom。
+  // 其它源码包仍按 components/hooks/directives 等目录输出，保留按需导入结构。
+  const publicName = chunkName.replace(/^hd-custom\//, '')
+  return `${publicName}.mjs`
+}
+
 export default defineConfig(async (): Promise<UserConfig> => {
+  const input = excludeFiles(
+    await glob('**/*.{js,ts,tsx,vue}', {
+      cwd: pkgRoot,
+      absolute: true,
+      onlyFiles: true,
+      ignore: ['**/hd-eslint/**', '**/share/**', '**/theme-chalk/**', '**/style/index.ts'],
+    }),
+  )
+
   return {
     plugins: [
-      // 使用与原 modules.ts 相同的 Vue 配置
       VueMacros({
         setupComponent: false,
         setupSFC: false,
@@ -48,44 +50,30 @@ export default defineConfig(async (): Promise<UserConfig> => {
       }),
     ],
     build: {
-      outDir: path.resolve(ytoOutput, 'es'),
+      outDir: path.resolve(hdOutput, 'es'),
       emptyOutDir: true,
       minify: false,
       sourcemap: true,
-      target, // 使用与原构建系统相同的目标
+      target,
       lib: {
-        entry: resolve(__dirname, '../..', 'packages/yto-custom/index.ts'),
-        name: 'YtoCustom',
-        formats: ['es'], // 只输出 ES 格式
-        fileName: () => `index.mjs`,
+        entry: resolve(__dirname, '../..', 'packages/hd-custom/index.ts'),
+        name: 'HdCustom',
+        formats: ['es'],
+        fileName: () => 'index.mjs',
       },
       rollupOptions: {
-        input: excludeFiles(
-          await glob('**/*.{js,ts,tsx,vue}', {
-            cwd: pkgRoot,
-            absolute: true,
-            onlyFiles: true,
-            ignore: ['**/yto-eslint/**', '**/yto-utils/**', '**/theme-chalk/**', '**/style/index.ts'],
-          }),
-        ),
+        input,
         external: await generateExternal({ full: false }),
         treeshake: {
           moduleSideEffects: false,
         },
-        exports: undefined,
         output: {
-          // 与原 modules.ts 相似的输出配置
+          // 对齐 Element Plus 的模块发布思路：保留 packages 下的模块结构，再把主包目录压平。
           preserveModules: true,
-          preserveModulesRoot: ytoCustomRoot,
-          entryFileNames: `[name].mjs`,
-          // 避免跳过样式文件
-          assetFileNames: `[name].[ext]`,
+          preserveModulesRoot: pkgRoot,
+          entryFileNames: (chunkInfo) => formatEntryFileName(chunkInfo.name),
+          assetFileNames: '[name].[ext]',
         },
-      },
-    },
-    optimizeDeps: {
-      esbuildOptions: {
-        target,
       },
     },
   }

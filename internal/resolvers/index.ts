@@ -1,36 +1,36 @@
-// 定义解析器选项接口
-export interface YtoCustomResolverOptions {
+import { COMPONENT_EXPORT_PREFIX, getComponentStyleName } from '../build-constants/src/pkg'
+
+export interface HdCustomResolverOptions {
   /**
-   * 是否导入样式文件
+   * 是否自动导入组件样式文件。
+   *
    * @default true
    */
   importStyle?: boolean
 }
 
-// 获取样式副作用
 function getSideEffects(componentName: string, importStyle: boolean) {
   if (!importStyle) return
-  return [
-    `@yto/custom/theme-chalk/yto-${componentName}.css`
-  ]
+  return [`@hd/custom/theme-chalk/${getComponentStyleName(componentName)}.css`]
 }
 
-export const YtoCustomResolver = (options: YtoCustomResolverOptions = {}) => {
+export const HdCustomResolver = (options: HdCustomResolverOptions = {}) => {
   const resolvedOptions = {
     importStyle: true,
-    ...options
+    ...options,
   }
 
   return {
     type: 'component' as const,
     resolve: (name: string) => {
-      if (name.startsWith('Yto')) {
-        const componentName = name.slice(3) // 去除 'Yto' 前缀
+      if (name.startsWith(COMPONENT_EXPORT_PREFIX)) {
+        const componentName = name.slice(COMPONENT_EXPORT_PREFIX.length)
         const jsname = componentName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+
         return {
-          name: name,
-          from: `@yto/custom/es/components/${jsname}/index.mjs`,
-          sideEffects: getSideEffects(jsname, resolvedOptions.importStyle)
+          name,
+          from: `@hd/custom/es/components/${jsname}/index.mjs`,
+          sideEffects: getSideEffects(jsname, resolvedOptions.importStyle),
         }
       }
     },

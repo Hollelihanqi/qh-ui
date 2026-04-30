@@ -158,7 +158,7 @@ export default defineComponent({
     useExpose({ toggle })
 
     return () => (
-      <div ref={root} class="yto-text-ellipsis text-ellipsis">
+      <div ref={root} class="hd-text-ellipsis text-ellipsis">
         {expanded.value ? props.content : text.value}
         {hasAction.value ? renderAction() : null}
       </div>

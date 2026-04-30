@@ -1,1 +1,1 @@
-import '@yto-custom/components/jdata-viewer/src/jdata-viewer.scss'
+import '@hd-custom/components/jdata-viewer/src/jdata-viewer.scss'

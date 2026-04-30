@@ -1,46 +1,46 @@
 <template>
-  <YtoTable :columns="columns" :request-api="getList" :data-callback="dataCallback">
+  <HdTable :columns="columns" :request-api="getList" :data-callback="dataCallback">
     <template #callStatus="scope">
       <span>{{ scope.row.status }}</span>
     </template>
-  </YtoTable>
+  </HdTable>
 </template>
 <script lang="ts" setup>
 const tableData = [
   {
-    name: '魏春霈',
+    name: 'User 001',
     age: '26岁',
     sex: '男',
     isWife: '未婚',
-    dream: '妻妾成群',
+    dream: '示例目标 001',
   },
   {
-    name: '李涵祺',
+    name: 'User 002',
     age: '26岁',
     sex: '男',
     isWife: '未婚',
-    dream: '你好，我是 李涵祺',
+    dream: '示例目标 002',
   },
   {
-    name: '闫萌',
+    name: 'User 003',
     age: '26岁',
     sex: '女',
     isWife: '已婚',
-    dream: '按时下班',
+    dream: '示例目标 003',
   },
   {
-    name: '李炳儒',
+    name: 'User 004',
     age: '26岁',
     sex: '男',
     isWife: '已婚',
-    dream: '有为青年',
+    dream: '示例目标 004',
   },
   {
-    name: '柯发泽',
+    name: 'User 005',
     age: '26岁',
     sex: '男',
     isWife: '已婚',
-    dream: '天天发财',
+    dream: '示例目标 005',
   },
 ]
 

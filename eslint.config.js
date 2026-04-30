@@ -1,4 +1,4 @@
-import myEslintConfig from '@yto/eslint-config'
+import myEslintConfig from '@hd/eslint-config'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -26,10 +26,10 @@ export default [
       'eslint.config.js',
       'docs/*',
       'template/*',
-      'packages/yto-eslint/*',
+      'packages/hd-eslint/*',
       'internal/*',
       'packages/utils/*',
-      'packages/yto-utils/*',
+      'packages/share/*',
     ],
   },
 ]

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper w-[330px] p-[16px]">
-    <yto-ellipsis-tag :tags="tags"></yto-ellipsis-tag>
+    <hd-ellipsis-tag :tags="tags"></hd-ellipsis-tag>
   </div>
 </template>
 

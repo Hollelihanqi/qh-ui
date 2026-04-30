@@ -1,8 +1,8 @@
 {
-  "name": "@yto-custom/build-utils",
+  "name": "@hd-custom/build-utils",
   "version": "0.0.1",
   "private": true,
-  "description": "Build utils for @Yto/custom",
+  "description": "Build utils for @hd/custom",
   "keywords": [],
   "license": "MIT",
   "main": "./dist/index.cjs",
@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@pnpm/find-workspace-packages": "^6.0.9",
-    "@pnpm/types": "^11.0.0",
-    "consola": "^3.2.3"
+    "@pnpm/types": "^1101.0.0",
+    "consola": "^3.4.2"
   },
   "devDependencies": {
-    "unbuild": "^2.0.0"
+    "typescript": "6.0.3",
+    "unbuild": "^3.6.1",
+    "vue-tsc": "3.2.7"
   }
 }

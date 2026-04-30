@@ -1,7 +1,7 @@
 <template>
   <div class="basic-com">
     <h3>自定义 option</h3>
-    <yto-remote-search
+    <hd-remote-search
       v-model="user"
       base-u-r-l=""
       url="/service-api/index/user/search"
@@ -11,9 +11,9 @@
       label-key="userName"
       :data-callback="dataCallback"
       :opt-temp="optTemp"
-    ></yto-remote-search>
+    ></hd-remote-search>
     <h3>自定义 label</h3>
-    <yto-remote-search
+    <hd-remote-search
       v-model="user2"
       base-u-r-l=""
       url="/service-api/index/user/search"
@@ -24,7 +24,7 @@
       placeholder="请输入用户编号/姓名"
       :data-callback="dataCallback2"
       :opt-temp="optTemp"
-    ></yto-remote-search>
+    ></hd-remote-search>
   </div>
 </template>
 <script lang="tsx" setup>

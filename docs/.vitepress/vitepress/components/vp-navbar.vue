@@ -23,8 +23,7 @@ const { theme, page } = useData()
     <div class="header-container">
       <div class="logo-container">
         <a href="/home/" class="flex items-center gap-2">
-          <img class="logo" src="/images/yto-plus-logo.svg" alt="Yto Plus Logo" />
-          <span>YtoCustom</span>
+          <span>HdCustom</span>
         </a>
       </div>
       <div class="content">
@@ -46,16 +45,6 @@ const { theme, page } = useData()
   height: var(--header-height);
   > a {
     height: 28px;
-    width: 128px;
-  }
-  .logo {
-    position: relative;
-    height: 100%;
-  }
-}
-.dark {
-  .logo {
-    filter: drop-shadow(2px 2px 6px #9547ec);
   }
 }
 </style>

@@ -1,25 +1,34 @@
 {
-  "name": "@yto-custom/build2",
+  "name": "@hd-custom/build2",
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "description": "Modern Build Toolchain for YTO Custom UI",
+  "description": "Modern Build Toolchain for Hd Custom UI",
   "scripts": {
-    "build": "tsx build.ts"
+    "build": "tsx build.ts",
+    "build:ui": "tsx build.ts ui",
+    "build:theme": "tsx build.ts theme",
+    "build:types": "tsx build.ts types"
   },
   "dependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "chalk": "^5.3.0",
-    "consola": "^3.2.3",
-    "fast-glob": "^3.3.2",
-    "fs-extra": "^11.1.1",
-    "rollup-plugin-esbuild": "^6.1.1",
-    "unplugin-vue-macros": "^0.11.2"
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "chalk": "^5.6.2",
+    "consola": "^3.4.2",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.4",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "unplugin-vue-macros": "^2.14.5"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.5.1",
-    "typescript": "5.5.4"
+    "@types/node": "^25.6.0",
+    "@vitejs/plugin-vue": "6.0.6",
+    "@vitejs/plugin-vue-jsx": "5.1.5",
+    "esbuild": "0.28.0",
+    "tsx": "4.21.0",
+    "typescript": "6.0.3",
+    "vite": "8.0.10",
+    "vue-tsc": "3.2.7"
   }
 }

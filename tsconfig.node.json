@@ -15,8 +15,8 @@
     "internal/**/*.json",
     "scripts/**/*",
     "packages/theme-chalk/*",
-    "packages/yto-custom/version.ts",
-    "packages/yto-custom/package.json"
+    "packages/hd-custom/version.ts",
+    "packages/hd-custom/package.json"
   ],
   "exclude": [
     "**/__tests__/**",

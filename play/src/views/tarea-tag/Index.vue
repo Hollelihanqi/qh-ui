@@ -2,50 +2,48 @@
   <div class="view-w">
     <div class="p-4">
       <h3>基本使用</h3>
-      <yto-tarea-tag
+      <hd-tarea-tag
         v-model="textList"
         :disabled="_disabled"
         placeholder="请输入工号，多个 工号 请使用半角“,”符合、回车、空格进行分割。"
       >
-      </yto-tarea-tag>
+      </hd-tarea-tag>
     </div>
     <div class="p-4">
       <h3>自定正则</h3>
-      <yto-tarea-tag
+      <hd-tarea-tag
         v-model="ips"
         :regular="IpReg"
         placeholder="请输入IP，多个 IP 请使用半角“,”符合、回车、空格进行分割。"
       >
-      </yto-tarea-tag>
+      </hd-tarea-tag>
     </div>
     <div class="p-4">
       <h3>自定验证函数</h3>
-      <yto-tarea-tag
+      <hd-tarea-tag
         v-model="phone"
         :regular="checkPhone"
         :disabled="false"
         placeholder="请输入手机号，多个手机号请使用半角“,”符合、回车、空格进行分割。例如：187293911xx,187293911xx 187293911xx"
         @on-updated="handleUpdated"
-      ></yto-tarea-tag>
+      ></hd-tarea-tag>
     </div>
     <div class="p-4">
       <h3>自定验证函数</h3>
-      <yto-tarea-tag
-        ref="YtoTareaInstance"
+      <hd-tarea-tag
+        ref="HdTareaInstance"
         v-model="retrieve_content"
         :autosize="{ minRows: 2 }"
         required
         :regular="sreg"
         placeholder="请输入K码，多个K码请使用半角“,”符合、回车、空格进行分割"
         @on-updated="handleUpdated2"
-      ></yto-tarea-tag>
+      ></hd-tarea-tag>
     </div>
   </div>
 </template>
 <script lang="tsx" setup>
-import YtoTareaTag from '@yto-custom/components/tarea-tag/src/tarea-tag.vue'
-import '@yto-custom/components/tarea-tag/src/tarea-tag.scss'
-const YtoTareaInstance = ref()
+const HdTareaInstance = ref()
 const sreg = /k\d+/i
 const retrieve_content = ref('')
 const textList = ref<any>('ouooueortoeuot')
@@ -68,7 +66,7 @@ const _disabled = ref(false)
 
 const handleUpdated2 = () => {
   setTimeout(() => {
-    console.log(YtoTareaInstance.value.validState())
+    console.log(HdTareaInstance.value.validState())
   }, 200)
 }
 </script>

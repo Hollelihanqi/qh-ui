@@ -1,5 +1,5 @@
 {
-  "name": "@yto-custom/yto-custom-resolver",
+  "name": "@hd-custom/hd-custom-resolver",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
@@ -14,8 +14,9 @@
   "scripts": {
     "build": "unbuild"
   },
-  "dependencies": {},
   "devDependencies": {
-    "unbuild": "^2.0.0"
+    "typescript": "6.0.3",
+    "unbuild": "^3.6.1",
+    "vue-tsc": "3.2.7"
   }
 }

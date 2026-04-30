@@ -15,12 +15,11 @@ import type {
   NativePropType,
 } from './types'
 
-export const ytoPropKey = '__ytoPropKey'
+export const hdPropKey = '__hdPropKey'
 
 export const definePropType = <T>(val: any): PropType<T> => val
 
-export const isYtoProp = (val: unknown): val is EpProp<any, any, any> =>
-  isObject(val) && !!(val as any)[ytoPropKey]
+export const isHdProp = (val: unknown): val is EpProp<any, any, any> => isObject(val) && !!(val as any)[hdPropKey]
 
 /**
  * @description Build prop. It can better optimize prop types
@@ -47,75 +46,57 @@ export const buildProp = <
   Value = never,
   Validator = never,
   Default extends EpPropMergeType<Type, Value, Validator> = never,
-  Required extends boolean = false
+  Required extends boolean = false,
 >(
   prop: EpPropInput<Type, Value, Validator, Default, Required>,
-  key?: string
+  key?: string,
 ): EpPropFinalized<Type, Value, Validator, Default, Required> => {
   // filter native prop type and nested prop, e.g `null`, `undefined` (from `buildProps`)
-  if (!isObject(prop) || isYtoProp(prop)) return prop as any
+  if (!isObject(prop) || isHdProp(prop)) return prop as any
 
   const { values, required, default: defaultValue, type, validator } = prop
 
   const _validator =
     values || validator
       ? (val: unknown) => {
-        let valid = false
-        let allowedValues: unknown[] = []
+          let valid = false
+          let allowedValues: unknown[] = []
 
-        if (values) {
-          allowedValues = Array.from(values)
-          if (hasOwn(prop, 'default')) {
-            allowedValues.push(defaultValue)
+          if (values) {
+            allowedValues = Array.from(values)
+            if (hasOwn(prop, 'default')) {
+              allowedValues.push(defaultValue)
+            }
+            valid ||= allowedValues.includes(val)
           }
-          valid ||= allowedValues.includes(val)
-        }
-        if (validator) valid ||= validator(val)
+          if (validator) valid ||= validator(val)
 
-        if (!valid && allowedValues.length > 0) {
-          const allowValuesText = [...new Set(allowedValues)]
-            .map((value) => JSON.stringify(value))
-            .join(', ')
-          warn(
-            `Invalid prop: validation failed${key ? ` for prop "${key}"` : ''
-            }. Expected one of [${allowValuesText}], got value ${JSON.stringify(
-              val
-            )}.`
-          )
+          if (!valid && allowedValues.length > 0) {
+            const allowValuesText = [...new Set(allowedValues)].map((value) => JSON.stringify(value)).join(', ')
+            warn(
+              `Invalid prop: validation failed${
+                key ? ` for prop "${key}"` : ''
+              }. Expected one of [${allowValuesText}], got value ${JSON.stringify(val)}.`,
+            )
+          }
+          return valid
         }
-        return valid
-      }
       : undefined
 
   const epProp: any = {
     type,
     required: !!required,
     validator: _validator,
-    [ytoPropKey]: true,
+    [hdPropKey]: true,
   }
   if (hasOwn(prop, 'default')) epProp.default = defaultValue
   return epProp
 }
 
 export const buildProps = <
-  Props extends Record<
-    string,
-    | { [ytoPropKey]: true }
-    | NativePropType
-    | EpPropInput<any, any, any, any, any>
-  >
+  Props extends Record<string, { [hdPropKey]: true } | NativePropType | EpPropInput<any, any, any, any, any>>,
 >(
-  props: Props
+  props: Props,
 ): {
-    [K in keyof Props]: IfEpProp<
-      Props[K],
-      Props[K],
-      IfNativePropType<Props[K], Props[K], EpPropConvert<Props[K]>>
-    >
-  } =>
-  fromPairs(
-    Object.entries(props).map(([key, option]) => [
-      key,
-      buildProp(option as any, key),
-    ])
-  ) as any
+  [K in keyof Props]: IfEpProp<Props[K], Props[K], IfNativePropType<Props[K], Props[K], EpPropConvert<Props[K]>>>
+} => fromPairs(Object.entries(props).map(([key, option]) => [key, buildProp(option as any, key)])) as any

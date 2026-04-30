@@ -1,9 +1,9 @@
 <template>
-  <yto-table :columns="columns" :table-data="[]" :total="total" tool-bar :show-hide-fields="showHideFields">
+  <hd-table :columns="columns" :table-data="[]" :total="total" tool-bar :show-hide-fields="showHideFields">
     <template #tableHeader>
       <el-button @click="_show = !_show">显示列</el-button>
     </template>
-  </yto-table>
+  </hd-table>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
@@ -35,11 +35,11 @@ const showHideFields = ['name', 'sex']
 //   },
 //   {
 //     id: 2,
-//     name: '李涵祺',
+//     name: 'Your Name',
 //     age: '26岁',
 //     sex: '男',
 //     isWife: '未婚',
-//     dream: '你好，我是 李涵祺',
+//     dream: '你好，我是 Your Name',
 //   },
 //   {
 //     id: 3,
@@ -51,7 +51,7 @@ const showHideFields = ['name', 'sex']
 //   },
 //   {
 //     id: 4,
-//     name: '李炳儒',
+//     name: 'Example User',
 //     age: '26岁',
 //     sex: '男',
 //     isWife: '已婚',

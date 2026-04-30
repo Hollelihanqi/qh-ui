@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" v-resize-element="resizeHandle" class="yto-ellipsis-tag ellipsis-tag flex w-full">
+  <div ref="containerRef" v-resize-element="resizeHandle" class="hd-ellipsis-tag ellipsis-tag flex w-full">
     <div class="flex-1 overflow-hidden">
       <div class="tag-box" ref="tagBoxRef">
         <template v-for="(tag, index) in tags">
@@ -40,11 +40,11 @@ import { ref, watch, nextTick } from 'vue'
 import { ElIcon, ElPopover } from 'element-plus'
 import { MoreFilled } from '@element-plus/icons-vue'
 import { ellipsisTagProps, ResizeInfo } from './ellipsis-tag'
-import { debounceFun } from '@yto/utils'
-import { ResizeElement as vResizeElement } from '@yto-custom/directives'
+import { debounceFun } from '@hd-custom/share'
+import { ResizeElement as vResizeElement } from '@hd-custom/directives'
 
 defineOptions({
-  name: 'EllipsisTag', // 组件名称 大驼峰
+  name: 'EllipsisTag', // 组件名称 大驼�?
 })
 
 const props = defineProps(ellipsisTagProps)

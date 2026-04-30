@@ -41,7 +41,7 @@ export default defineComponent({
 
     return () => {
       return (
-        <div class="w-full flex h-[32px] yto-tabs">
+        <div class="w-full flex h-[32px] hd-tabs">
           <div class="ltabs-box  flex">
             {props.tabs.map((item: TabItemProps, index: number) => {
               return (

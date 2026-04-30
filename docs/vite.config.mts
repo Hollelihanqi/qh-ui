@@ -10,8 +10,8 @@ import Components from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { YtoCustomResolver } from '@yto/custom/resolvers'
-import { getPackageDependencies, ytoPackage, docPackage, projRoot } from '@yto-custom/build-utils'
+import { HdCustomResolver } from '@hd/custom/resolvers'
+import { getPackageDependencies, hdPackage, docPackage, projRoot } from '@hd-custom/build-utils'
 
 //主要用于在本地开发环境中创建和管理 HTTPS 证书。
 // import mkcert from "vite-plugin-mkcert";
@@ -20,13 +20,13 @@ import type { Alias } from 'vite'
 // dns.setDefaultResultOrder("verbatim");
 // // https://vitejs.dev/config/
 
-const { dependencies: epDeps } = getPackageDependencies(ytoPackage)
+const { dependencies: epDeps } = getPackageDependencies(hdPackage)
 const { dependencies: docsDeps } = getPackageDependencies(docPackage)
 
 const optimizeDeps = [...new Set([...epDeps, ...docsDeps])].filter(
   (dep) =>
     !dep.startsWith('@types/') &&
-    !['@yto-custom/metadata', 'yto-custom'].includes(dep)
+    !['@hd-custom/metadata', 'hd-custom'].includes(dep)
 )
 
 const alias: Alias[] = [
@@ -38,11 +38,11 @@ const alias: Alias[] = [
     ? []
     : [
       {
-        find: /^yto-custom(\/(es|lib))?$/,
-        replacement: path.resolve(projRoot, 'packages/yto-custom/index.ts'),
+        find: /^hd-custom(\/(es|lib))?$/,
+        replacement: path.resolve(projRoot, 'packages/hd-custom/index.ts'),
       },
       {
-        find: /^yto-custom\/(es|lib)\/(.*)$/,
+        find: /^hd-custom\/(es|lib)\/(.*)$/,
         replacement: `${path.resolve(projRoot, 'packages')}/$2`,
       },
     ]),
@@ -73,7 +73,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
             importStyle: false,
             directives: true,
           }),
-          // YtoCustomResolver(),
+          // HdCustomResolver(),
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       }),
@@ -108,11 +108,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       },
       proxy: {
         '/service-api': {
-          target: 'http://10.130.16.149:8082',
+          target: 'https://api.example.com',
           changeOrigin: true,
         },
         '/api/v2': {
-          target: 'http://10.130.137.53:8000', // sit
+          target: 'https://api.example.com', // example
           changeOrigin: true,
         },
       },

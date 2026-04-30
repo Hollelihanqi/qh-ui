@@ -1,10 +1,10 @@
-import { withInstall } from '@yto-custom/utils'
+import { withInstall } from '@hd-custom/utils'
 
 import Uploader from './src/uploader.vue'
-import type { SFCWithInstall } from '@yto-custom/utils'
+import type { SFCWithInstall } from '@hd-custom/utils'
 
-export const YtoUploader: SFCWithInstall<typeof Uploader> = withInstall(Uploader)
-export default YtoUploader
+export const HdUploader: SFCWithInstall<typeof Uploader> = withInstall(Uploader)
+export default HdUploader
 
 export * from './src/uploader'
 export type { UploaderInstance } from './src/instance'

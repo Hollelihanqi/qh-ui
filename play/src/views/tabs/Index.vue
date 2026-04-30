@@ -1,17 +1,16 @@
 <template>
   <div class="view-w">
-    <yto-tabs v-model="tabAct" :tabs="orgTabs" w="160px"> </yto-tabs>
+    <hd-tabs v-model="tabAct" :tabs="orgTabs" w="160px"> </hd-tabs>
   </div>
 </template>
 <script lang="tsx" setup>
-import type { TabItemProps } from '@yto/custom'
+import type { TabItemProps } from '@hd/custom'
 const tabAct = ref('HEAD')
-
 
 const test = ref(12)
 const test1 = ref(12)
 
-const orgTabs: TabItemProps = [
+const orgTabs: TabItemProps[] = [
   {
     label: '总部',
     value: 'HEAD',

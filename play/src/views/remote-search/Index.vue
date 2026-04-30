@@ -1,9 +1,8 @@
 <template>
   <div class="view-w">
-    <yto-remote-search v-model="user" remote valueKey="userCode" :requestApi="getList"></yto-remote-search>
+    <hd-remote-search v-model="user" remote valueKey="userCode" :requestApi="getList"></hd-remote-search>
     <CustomStaffSelect v-model="user" />
   </div>
-
 </template>
 
 <script lang="ts" setup>

@@ -33,5 +33,6 @@
         "signOff": false
       }
     }
-  }
+  },
+  "analytics": true
 }

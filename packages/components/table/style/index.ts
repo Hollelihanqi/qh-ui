@@ -1,1 +1,1 @@
-import '@yto-custom/components/table/src/table.scss'
+import '@hd-custom/components/table/src/table.scss'

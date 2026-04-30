@@ -1,1 +1,1 @@
-import '@yto-custom/components/radio/src/radio.scss'
+import '@hd-custom/components/radio/src/radio.scss'

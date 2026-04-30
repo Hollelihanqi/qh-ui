@@ -1,0 +1,16 @@
+{
+  "name": "share",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/share/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/**/*", "!{projectRoot}/dist/**/*"],
+      "options": {
+        "command": "cd packages/share && pnpm build",
+        "cwd": "."
+      }
+    }
+  }
+}

@@ -1,28 +1,28 @@
 <template>
   <div class="p-4">
     <h3>基本使用</h3>
-    <yto-tarea-tag v-model="textList" placeholder="请输入工号，多个 工号 请使用半角“,”符合、回车、空格进行分割。">
-    </yto-tarea-tag>
+    <hd-tarea-tag v-model="textList" placeholder="请输入工号，多个 工号 请使用半角“,”符合、回车、空格进行分割。">
+    </hd-tarea-tag>
   </div>
   <div class="p-4">
     <h3>自定正则</h3>
-    <yto-tarea-tag
+    <hd-tarea-tag
       v-model="ips"
       :regular="IpReg"
       placeholder="请输入IP，多个 IP 请使用半角“,”符合、回车、空格进行分割。"
     >
-    </yto-tarea-tag>
+    </hd-tarea-tag>
   </div>
   <div class="p-4">
     <h3>自定验证函数</h3>
-    <yto-tarea-tag
+    <hd-tarea-tag
       v-model="phone"
       :regular="checkPhone"
       :autosize="{ minRows: 2 }"
       required
       placeholder="请输入手机号，多个手机号请使用半角“,”符合、回车、空格进行分割。例如：187293911xx,187293911xx 187293911xx"
       @on-updated="handleUpdated"
-    ></yto-tarea-tag>
+    ></hd-tarea-tag>
   </div>
 </template>
 <script lang="tsx" setup>

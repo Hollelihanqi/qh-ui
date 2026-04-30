@@ -1,0 +1,23 @@
+{
+  "name": "@hd-custom/share",
+  "version": "2.0.0",
+  "private": true,
+  "description": "",
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "scripts": {
+    "build": "unbuild"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "unbuild": "^3.6.1",
+    "vue-tsc": "3.2.7"
+  }
+}

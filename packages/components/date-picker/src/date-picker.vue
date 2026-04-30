@@ -1,7 +1,7 @@
 <template>
   <el-date-picker
     v-model="timer"
-    class="yto-date-picker yto-c-date-picker"
+    class="hd-date-picker hd-c-date-picker"
     :type="type"
     range-separator="-"
     start-placeholder="开始日期"

@@ -1,20 +1,7 @@
 <template>
-  <yto-descriptions :data="formModel" :list="infosList"> </yto-descriptions>
+  <hd-descriptions :data="formModel" :list="infosList"> </hd-descriptions>
 </template>
 <script lang="tsx" setup>
-const RISK_LEVEL = [
-  { label: 'R0', value: 'R0', color: '#52c31f' },
-  { label: 'R0-1', value: 'R0-1', color: '#3a7dff' },
-  { label: 'R1', value: 'R1', color: '#faad18' },
-  { label: 'R2', value: 'R2', color: '#fe4d50' },
-]
-const MRISK_LEVEL: any = {
-  R0: RISK_LEVEL[0],
-  'R0-1': RISK_LEVEL[1],
-  R1: RISK_LEVEL[2],
-  R2: RISK_LEVEL[3],
-}
-
 enum IStatus {
   '需求待评估' = 1,
   '评估完成' = 2,
@@ -29,7 +16,7 @@ const formModel = {
   u_time: '2023-10-12 14:13:19',
   is_delete: '0',
   id: 'FB-20231012-0008',
-  project_name: '【勿删】星辰流程测试（李路）',
+  project_name: '示例流程项目',
   component_name: '',
   component_id: '',
   demand_name: '测试移动端  --否',

@@ -1,5 +1,5 @@
 <template>
-  <div class="yto-component">
+  <div class="hd-component">
     <!-- 组件内容 -->
   </div>
 </template>
@@ -11,5 +11,5 @@ defineOptions({
 })
 
 const props = defineProps(componentProps)
-const emit = defineEmits(componentEmits) 
+const emit = defineEmits(componentEmits)
 </script>

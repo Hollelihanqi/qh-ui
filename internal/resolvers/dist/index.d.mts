@@ -1,17 +1,19 @@
-interface YtoCustomResolverOptions {
+interface HdCustomResolverOptions {
     /**
-     * 是否导入样式文件
+     * 是否自动导入组件样式文件。
+     *
      * @default true
      */
     importStyle?: boolean;
 }
-declare const YtoCustomResolver: (options?: YtoCustomResolverOptions) => {
+declare const HdCustomResolver: (options?: HdCustomResolverOptions) => {
     type: "component";
     resolve: (name: string) => {
         name: string;
         from: string;
-        sideEffects: string[];
-    };
+        sideEffects: string[] | undefined;
+    } | undefined;
 };
 
-export { YtoCustomResolver, type YtoCustomResolverOptions };
+export { HdCustomResolver };
+export type { HdCustomResolverOptions };

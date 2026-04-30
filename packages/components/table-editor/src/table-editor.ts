@@ -1,5 +1,5 @@
 import type { ExtractPropTypes, PropType } from 'vue'
-import { buildProps } from '@yto-custom/utils'
+import { buildProps } from '@hd-custom/utils'
 
 export interface ITableEditorAnyObject {
   [key: string]: any

@@ -1,1 +1,1 @@
-import '@yto-custom/components/sticky-container/src/sticky-container.scss'
+import '@hd-custom/components/sticky-container/src/sticky-container.scss'

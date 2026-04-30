@@ -1,5 +1,5 @@
 <template>
-  <ElTable class="yto-table-editor">
+  <ElTable class="hd-table-editor">
     <ElTableColumn
       v-for="item in columns"
       :prop="item.prop"
@@ -49,7 +49,7 @@ defineOptions({
 })
 
 const props = defineProps(tableEditorProps)
-const emit = defineEmits(tableEditorEmits)
+defineEmits(tableEditorEmits)
 
 const getVisible = (item: IColumn, row: ITableEditorAnyObject) => {
   return !('isHidden' in item && (item.isHidden instanceof Function ? item?.isHidden(row) : item.isHidden))

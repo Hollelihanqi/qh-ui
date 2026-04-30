@@ -1,4 +1,5 @@
-import '@yto-custom/components/time-line/src/time-line.scss'
-import timeLine from '@yto-custom/components/time-line/src/time-line.vue'
+import '@hd-custom/components/time-line/src/time-line.scss'
+
+import timeLine from '@hd-custom/components/time-line/src/time-line.vue'
 
 export { timeLine }

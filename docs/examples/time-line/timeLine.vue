@@ -1,6 +1,6 @@
 <template>
   <div class="p-10">
-    <yto-time-line :timeData="timeData"></yto-time-line>
+    <hd-time-line :timeData="timeData"></hd-time-line>
   </div>
 </template>
 <script setup lang="ts">

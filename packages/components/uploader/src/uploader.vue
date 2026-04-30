@@ -1,5 +1,5 @@
 <template>
-  <div class="yto-uploader uploader-w" :style="styles">
+  <div class="hd-uploader uploader-w" :style="styles">
     <div>
       <label ref="uploadBtn" style="margin-right: 8px">
         <slot name="uploaderBtn">

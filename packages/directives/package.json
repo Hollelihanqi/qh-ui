@@ -1,7 +1,7 @@
 {
-  "name": "@yto-custom/directives",
+  "name": "@hd-custom/directives",
   "version": "0.0.5",
-  "description": "Yto directives",
+  "description": "Hd directives",
   "license": "MIT",
   "main": "index.ts",
   "module": "index.ts",

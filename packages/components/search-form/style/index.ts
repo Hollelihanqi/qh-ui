@@ -1,1 +1,1 @@
-import '@yto-custom/components/search-form/src/search-form.scss'
+import '@hd-custom/components/search-form/src/search-form.scss'

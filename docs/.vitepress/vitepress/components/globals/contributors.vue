@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { computed } from "vue";
-// import _contributors from '@yto-uplus/metadata/dist/contributors.json'
+import { computed } from 'vue'
+// import _contributors from '@hd-uplus/metadata/dist/contributors.json'
 
-import VpLink from "../common/vp-link.vue";
+import VpLink from '../common/vp-link.vue'
 
-const _contributors = {};
-const props = defineProps<{ id: string }>();
+const _contributors = {}
+const props = defineProps<{ id: string }>()
 
-const contributors = computed(() => _contributors[props.id]?.filter((c) => c.login !== "renovate[bot]"));
+const contributors = computed(() => _contributors[props.id]?.filter((c) => c.login !== 'renovate[bot]'))
 
 const withSize = (rawURL: string) => {
-  return `${rawURL}${rawURL.includes("?") ? "&" : "?"}size=64`;
-};
+  return `${rawURL}${rawURL.includes('?') ? '&' : '?'}size=64`
+}
 </script>
 
 <template>

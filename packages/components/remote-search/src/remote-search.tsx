@@ -1,7 +1,7 @@
 import { defineComponent, h, ref, getCurrentInstance, onMounted, nextTick } from 'vue'
 import { remoteSearchProps, remoteSearchEmits, RemoteSearchProps } from './iremote-search'
 import { ElSelect, ElOption, ElSelectV2 } from 'element-plus'
-import { request } from '@yto-custom/utils'
+import { request } from '@hd-custom/utils'
 import { useDebounceFn } from '@vueuse/core'
 
 export default defineComponent({
@@ -20,11 +20,11 @@ export default defineComponent({
     }
 
     const setDefaultFirstOption = (list: any) => {
-      // 如果设置了defaultFirstOption且有数据，将第一条数据设为默认值
+      // 如果设置了defaultFirstOption且有数据，将第一条数据设为默认�?
       if (props.defaultFirstOption && list.length > 0 && !attrs.modelValue) {
         const firstItem = list[0]
         const value = props.modelItem ? firstItem : firstItem[props.valueKey]
-        // 使用nextTick确保在DOM更新后设置值
+        // 使用nextTick确保在DOM更新后设置�?
         nextTick(() => {
           if (attrs['onUpdate:modelValue']) {
             attrs['onUpdate:modelValue'](value)
@@ -62,7 +62,7 @@ export default defineComponent({
             cancelToken: source.token,
           })
           .then((res: any) => {
-            // 处理空响应
+            // 处理空响�?
             if (!res) {
               setData([])
               emit('after-remote', res)
@@ -114,7 +114,7 @@ export default defineComponent({
       }
     }
 
-    // 一次性获取所有数据,不需要动态搜索
+    // 一次性获取所有数�?不需要动态搜�?
     if (props.requestAuto && props.url && !props.isRemoteSearch) {
       updateData(props.requestParams)
     } else if (props.requestAuto && props.requestApi && !props.isRemoteSearch) {
@@ -191,7 +191,7 @@ export default defineComponent({
       return h(
         ElSelect,
         {
-          class: 'yto-remote-search remote-search-select',
+          class: 'hd-remote-search remote-search-select',
           ref: RemoteSearchSelectInstance,
           loading: loading.value,
           'value-key': props.valueKey,
@@ -242,7 +242,7 @@ export default defineComponent({
       }
       return (
         <ElSelectV2
-          class="yto-remote-search remote-search-select"
+          class="hd-remote-search remote-search-select"
           style={{ width: props.w }}
           options={options.value}
           value-key={props.valueKey}

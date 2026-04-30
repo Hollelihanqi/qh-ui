@@ -1,6 +1,6 @@
 <template>
   <div class="sk-w">
-    <yto-sticky-container>
+    <hd-sticky-container>
       <div class="context-box">
         <div>主要内容</div>
       </div>
@@ -10,7 +10,7 @@
       <template #footer>
         <div class="footer">footer123123</div>
       </template>
-    </yto-sticky-container>
+    </hd-sticky-container>
   </div>
 </template>
 <style lang="scss">
