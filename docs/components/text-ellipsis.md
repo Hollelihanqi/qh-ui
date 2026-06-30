@@ -80,14 +80,14 @@ text-ellipsis/customizeAction
 该组件导出以下类型定义：
 
 ```ts
-import type { TextEllipsisProps, TextEllipsisInstance, TextEllipsisThemeVars } from '@hd/custom'
+import type { TextEllipsisProps, TextEllipsisInstance, TextEllipsisThemeVars } from '@rdeam/qui'
 ```
 
 `TextEllipsisInstance` 是组件实例的类型：
 
 ```ts
 import { ref } from 'vue'
-import type { TextEllipsisInstance } from '@hd/custom'
+import type { TextEllipsisInstance } from '@rdeam/qui'
 
 const textEllipsisRef = ref<TextEllipsisInstance>()
 

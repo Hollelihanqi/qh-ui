@@ -16,7 +16,7 @@ import { pathRewriter, run } from './utils'
  * 1. dist/types 只是临时目录，不应该发布。
  * 2. dist/hd-custom/es 才是 npm 包最终暴露给用户的 ESM 类型目录。
  * 3. 发布目录里的类型声明不能保留 @hd-custom/* 源码别名。
- * 4. 发布目录里的类型声明也不能保留 @hd/custom/es/* 包名自引用。
+ * 4. 发布目录里的类型声明也不能保留 @rdeam/qui/es/* 包名自引用。
  * 5. 相对导入需要补成 .js / index.js，和最终 ESM 产物保持一致。
  */
 export const generateTypesDefinitions = async () => {
@@ -50,13 +50,13 @@ export const generateTypesDefinitions = async () => {
   )
 
   // 找到 vue-tsc 生成的所有声明文件。
-  // share 现在是随 @hd/custom 发布的内部工具产物，需要保留它的类型声明。
+  // share 现在是随 @rdeam/qui 发布的内部工具产物，需要保留它的类型声明。
   const filePaths = await glob('**/*.d.ts', {
     cwd: packagesTypesDir,
     absolute: true,
   })
 
-  // 第一轮路径重写：把源码别名 @hd-custom/* 改成发布包路径 @hd/custom/es/*。
+  // 第一轮路径重写：把源码别名 @hd-custom/* 改成发布包路径 @rdeam/qui/es/*。
   // 这一步仍发生在临时目录里，目的是先把源码别名统一成发布语义。
   await Promise.all(
     filePaths.map(async (filePath) => {
@@ -71,7 +71,7 @@ export const generateTypesDefinitions = async () => {
   // 将临时类型目录里真正属于主包发布面的类型复制到 dist/hd-custom/es。
   await copyPackageTypesToPublishDir(packagesTypesDir, publishTypesDir)
 
-  // share 使用 unbuild 单独生成 dist，随 @hd/custom 发布时需要把它的类型一起放进主包。
+  // share 使用 unbuild 单独生成 dist，随 @rdeam/qui 发布时需要把它的类型一起放进主包。
   await copyBuiltShareTypes(publishTypesDir)
 
   // 第二轮路径重写：从最终发布目录视角，把包名自引用改成相对路径，并补齐 .js 后缀。
@@ -91,7 +91,7 @@ export const generateTypesDefinitions = async () => {
  * share 现在不独立发布 npm 包，但它的 JS 会随主包落到：
  * dist/hd-custom/es/share/dist/index.mjs
  *
- * 为了让 @hd/custom/share 这个子路径同时拥有类型声明，这里把：
+ * 为了让 @rdeam/qui/share 这个子路径同时拥有类型声明，这里把：
  * packages/share/dist/index.d.ts
  *
  * 复制到：
@@ -145,7 +145,7 @@ async function cleanPublishTypes(publishTypesDir: string) {
  * dist/hd-custom/es/share/...
  */
 async function copyPackageTypesToPublishDir(packagesTypesDir: string, publishTypesDir: string) {
-  // 只复制 @hd/custom 发布包需要暴露或内部引用需要的类型目录。
+  // 只复制 @rdeam/qui 发布包需要暴露或内部引用需要的类型目录。
   const publishTypeDirs = ['hd-custom', 'components', 'directives', 'hooks', 'utils', 'share']
 
   for (const dirName of publishTypeDirs) {
@@ -180,7 +180,7 @@ async function copyPackageTypesToPublishDir(packagesTypesDir: string, publishTyp
  * 重写最终发布目录里的所有类型导入路径。
  *
  * 处理两类问题：
- * 1. @hd/custom/es/components 这种包名自引用，改成 ./components/index.js。
+ * 1. @rdeam/qui/es/components 这种包名自引用，改成 ./components/index.js。
  * 2. ./components 这种无后缀相对导入，改成 ./components/index.js 或 ./xxx.js。
  */
 async function rewritePublishTypeImports(publishTypesDir: string) {
@@ -194,7 +194,7 @@ async function rewritePublishTypeImports(publishTypesDir: string) {
     dtsFilePaths.map(async (filePath) => {
       const content = await readFile(filePath, 'utf8')
 
-      // 先把 @hd/custom/es/* 和 @hd-custom/* 改成发布目录内部的相对路径。
+      // 先把 @rdeam/qui/es/* 和 @hd-custom/* 改成发布目录内部的相对路径。
       const withoutSelfAlias = rewriteSelfPackageImports(content, filePath, publishTypesDir)
 
       // 再把相对路径补成真实 ESM 产物可以对应上的 .js / index.js 形式。
@@ -209,12 +209,12 @@ async function rewritePublishTypeImports(publishTypesDir: string) {
  * 将内部别名或发布包自引用改成相对路径。
  *
  * 示例：
- * @hd/custom/es/components -> ./components
+ * @rdeam/qui/es/components -> ./components
  * @hd-custom/utils -> ../../utils
  */
 function rewriteSelfPackageImports(content: string, filePath: string, publishTypesDir: string) {
   return content.replace(
-    /(["'])(@hd\/custom\/es(?:\/[^"']*)?|@hd-custom\/(?:components|directives|hooks|utils|share)(?:\/[^"']*)?)\1/g,
+    /(["'])(@rdeam\/qui\/es(?:\/[^"']*)?|@hd-custom\/(?:components|directives|hooks|utils|share)(?:\/[^"']*)?)\1/g,
     (matched, quote: string, moduleId: string) => {
       const relativeModuleId = getRelativePublishModuleId(moduleId, filePath, publishTypesDir)
       return relativeModuleId ? `${quote}${relativeModuleId}${quote}` : matched
@@ -242,7 +242,7 @@ function rewriteRelativeTypeImports(content: string, filePath: string) {
  * dist/hd-custom/es/components/date-picker/index.d.ts
  *
  * moduleId 是：
- * @hd/custom/es/utils
+ * @rdeam/qui/es/utils
  *
  * 那么会转换成：
  * ../../utils
@@ -265,18 +265,18 @@ function getRelativePublishModuleId(moduleId: string, filePath: string, publishT
  * 把各种内部模块名映射成 dist/hd-custom/es 下的子路径。
  *
  * 示例：
- * @hd/custom/es/components/date-picker -> components/date-picker
+ * @rdeam/qui/es/components/date-picker -> components/date-picker
  * @hd-custom/components/date-picker -> components/date-picker
  * @hd-custom/utils -> utils
  * @hd-custom/share -> share
  */
 function getPublishSubPath(moduleId: string) {
-  if (moduleId === '@hd/custom/es') {
+  if (moduleId === '@rdeam/qui/es') {
     return ''
   }
 
-  if (moduleId.startsWith('@hd/custom/es/')) {
-    return moduleId.slice('@hd/custom/es/'.length)
+  if (moduleId.startsWith('@rdeam/qui/es/')) {
+    return moduleId.slice('@rdeam/qui/es/'.length)
   }
 
   for (const aliasName of ['components', 'directives', 'hooks', 'utils', 'share']) {
@@ -362,7 +362,7 @@ async function assertPublishEntrypoints(publishTypesDir: string) {
   }
 
   const indexDts = await readFile(indexDtsPath, 'utf8')
-  if (indexDts.includes('@hd/custom/es') || indexDts.includes('@hd-custom/')) {
+  if (indexDts.includes('@rdeam/qui/es') || indexDts.includes('@hd-custom/')) {
     throw new Error(`发布类型入口仍包含内部别名或包名自引用：${indexDtsPath}`)
   }
 }

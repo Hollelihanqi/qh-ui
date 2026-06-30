@@ -33,8 +33,8 @@ function run(command: string, args: string[], cwd = projRoot) {
   return new Promise<void>((resolveCommand, rejectCommand) => {
     const child = spawn(command, args, {
       cwd,
-      // Windows 下部分命令是 shim 文件，需要 shell 才能正常解析。
-      shell: process.platform === 'win32',
+      // git 是真实可执行文件，不能走 shell：否则 tag message 里的 `()`、空格会被 shell 二次拆分。
+      shell: false,
       stdio: 'inherit',
     })
 
@@ -60,7 +60,7 @@ function tagExists(tag: string) {
     // `git tag --list <tag>` 命中时输出 tag 名，未命中时输出为空。
     const child = spawn('git', ['tag', '--list', tag], {
       cwd: projRoot,
-      shell: process.platform === 'win32',
+      shell: false,
     })
 
     let output = ''

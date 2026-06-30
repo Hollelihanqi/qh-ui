@@ -1,5 +1,5 @@
 <script lang="ts">
-import { HdRemoteSearch } from '@hd/custom'
+import { HdRemoteSearch } from '@rdeam/qui'
 export default defineComponent({
   setup(props, context) {
     return () => {

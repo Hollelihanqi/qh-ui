@@ -10,7 +10,7 @@ import Components from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { HdCustomResolver } from '@hd/custom/resolvers'
+import { HdCustomResolver } from '@rdeam/qui/resolvers'
 import { getPackageDependencies, hdPackage, docPackage, projRoot } from '@hd-custom/build-utils'
 
 //主要用于在本地开发环境中创建和管理 HTTPS 证书。

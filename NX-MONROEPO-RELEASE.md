@@ -1,6 +1,6 @@
 ﻿# Nx Monorepo 鍙戝竷鎸囧崡
 
-鏈枃妗ｈ缁嗚鏄庡浣曞湪 monorepo 椤圭洰涓娇鐢?Nx 杩涜鍖呯殑鍙戝竷绠＄悊锛屽熀浜?`@hd/custom` UI 缁勪欢搴撻」鐩疄璺点€?
+鏈枃妗ｈ缁嗚鏄庡浣曞湪 monorepo 椤圭洰涓娇鐢?Nx 杩涜鍖呯殑鍙戝竷绠＄悊锛屽熀浜?`@rdeam/qui` UI 缁勪欢搴撻」鐩疄璺点€?
 
 ## 鐩綍
 
@@ -30,7 +30,7 @@ hd-test-ui/
 
 ### 鍖呰鏄?
 
-1. **@hd/custom**
+1. **@rdeam/qui**
    - 涓昏鐨?UI 缁勪欢搴撳寘
    - 褰撳墠鐗堟湰锛?.0.0-beta.x
    - 鍙戝竷鐩綍锛歞ist/hd-custom
@@ -58,7 +58,7 @@ hd-test-ui/
 
 ```mermaid
 graph TD
-    A[share] --> D[@hd/custom]
+    A[share] --> D[@rdeam/qui]
     B[build-constants] --> D
     C[build-utils] --> D
     E[resolvers] --> D
@@ -155,7 +155,7 @@ theme-chalk 鐨勬瀯寤鸿緭鍑轰紭鍖栵紙vite.module.config.ts锛夛細
 }
 ```
 
-杩欎釜閰嶇疆涓撻棬閽堝 `@hd/custom` 鍖呯殑鍙戝竷锛岀‘淇濓細
+杩欎釜閰嶇疆涓撻棬閽堝 `@rdeam/qui` 鍖呯殑鍙戝竷锛岀‘淇濓細
 
 - 鐗堟湰鐙珛绠＄悊
 - 鑷姩鍒涘缓瑙勮寖鐨?git tag
@@ -202,7 +202,7 @@ docs(readme): update installation instructions
 {
   "scripts": {
     "check-git": "git diff-index --quiet HEAD || (echo '鍙戠幇鏈彁浜ょ殑浠ｇ爜鏀瑰姩锛岃鍏堟墽琛?pnpm commit 鎻愪氦浠ｇ爜' && exit 1)",
-    "update-version": "npx nx release version --projects=@hd/custom",
+    "update-version": "npx nx release version --projects=@rdeam/qui",
     "commit-version": "git add packages/hd-custom/package.json && git commit -m \"chore(release): update package version\" || true",
     "build-after-version": "pnpm build",
     "publish-custom": "cd dist/hd-custom && npm publish",
@@ -406,7 +406,7 @@ dist/hd-custom/
 
 | 鏃ユ湡     | 鐗堟湰 | 鏇存柊鍐呭                                         |
 | ---------- | ------ | --------------------------------------------------- |
-| 2024-03-xx | 1.0.0  | 鍒濆鐗堟湰锛屽熀浜?@hd/custom 2.0.0-beta.15 瀹炶返 |
+| 2024-03-xx | 1.0.0  | 鍒濆鐗堟湰锛屽熀浜?@rdeam/qui 2.0.0-beta.15 瀹炶返 |
 
 ## 鍙傝€冭祫鏂?
 

@@ -14,8 +14,8 @@ hd/
 鈹?  鈹溾攢鈹€ directives/       # 鎸囦护婧愮爜
 鈹?  鈹溾攢鈹€ hooks/            # hooks 婧愮爜
 鈹?  鈹溾攢鈹€ theme-chalk/      # 涓婚鏍峰紡
-鈹?  鈹溾攢鈹€ utils/            # 缁勪欢搴撳唴閮ㄥ伐鍏?鈹?  鈹溾攢鈹€ hd-custom/        # @hd/custom 涓诲寘鍏ュ彛
-鈹?  鈹溾攢鈹€ share/         # @hd/custom/share 宸ュ叿鍖?鈹?  鈹斺攢鈹€ hd-eslint/        # @hd/eslint-config
+鈹?  鈹溾攢鈹€ utils/            # 缁勪欢搴撳唴閮ㄥ伐鍏?鈹?  鈹溾攢鈹€ hd-custom/        # @rdeam/qui 涓诲寘鍏ュ彛
+鈹?  鈹溾攢鈹€ share/         # @rdeam/qui/share 宸ュ叿鍖?鈹?  鈹斺攢鈹€ hd-eslint/        # @hd/eslint-config
 鈹溾攢鈹€ play/                 # 鏈湴璋冭瘯宸ョ▼
 鈹斺攢鈹€ scripts/              # 寮€鍙戝拰鐢熸垚鑴氭湰
 ```
@@ -32,7 +32,7 @@ pnpm docs:dev
 
 ## 鏋勫缓璇存槑
 
-`pnpm build` 浼氬厛閫氳繃 Nx 鏋勫缓鍐呴儴宸ュ叿鍖呭拰 `@hd/custom/share`锛屽啀杩涘叆 `internal/build2` 鎵ц缁熶竴鏋勫缓閾撅細
+`pnpm build` 浼氬厛閫氳繃 Nx 鏋勫缓鍐呴儴宸ュ叿鍖呭拰 `@rdeam/qui/share`锛屽啀杩涘叆 `internal/build2` 鎵ц缁熶竴鏋勫缓閾撅細
 
 1. 娓呯悊 `dist/hd-custom`銆?2. 浣跨敤 Vite 鏋勫缓缁勪欢 ES 妯″潡銆?3. 鏋勫缓 `packages/theme-chalk` 涓婚鏍峰紡銆?4. 浣跨敤 `vue-tsc` 鐢熸垚绫诲瀷澹版槑銆?5. 鏋勫缓骞跺鍒?`HdCustomResolver`銆?6. 澶嶅埗 `package.json`銆乣README.md`銆乣global.d.ts` 绛夐檮鍔犳枃浠躲€?
 
@@ -52,8 +52,8 @@ pnpm build
 
 ## 鍙戝竷鍏ュ彛
 
-- 涓诲寘锛歚@hd/custom`
-- 宸ュ叿鍖咃細`@hd/custom/share`
+- 涓诲寘锛歚@rdeam/qui`
+- 宸ュ叿鍖咃細`@rdeam/qui/share`
 - ESLint 閰嶇疆锛歚@hd/eslint-config`
 
 涓诲寘鏋勫缓浜х墿浣嶄簬 `dist/hd-custom`锛屼富棰樻枃浠朵綅浜?`dist/hd-custom/theme-chalk`銆?

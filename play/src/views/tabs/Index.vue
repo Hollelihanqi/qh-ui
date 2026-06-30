@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang="tsx" setup>
-import type { TabItemProps } from '@hd/custom'
+import type { TabItemProps } from '@rdeam/qui'
 const tabAct = ref('HEAD')
 
 const test = ref(12)

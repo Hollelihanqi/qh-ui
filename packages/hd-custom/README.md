@@ -1,13 +1,13 @@
 一个基于 Element Plus 的综合业务组件库，适用于 vue3 项目当中。
 
-[@hd/custom](https://docs.example.com/)
+[@rdeam/qui](https://docs.example.com/)
 
 # 安装
 
 ## pnpm
 
 ```shell
-pnpm add  @hd/custom
+pnpm add  @rdeam/qui
 ```
 
 ## 完整引入
@@ -18,8 +18,8 @@ pnpm add  @hd/custom
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import HdCustom from '@hd/custom'
-import '@hd/custom/styles'
+import HdCustom from '@rdeam/qui'
+import '@rdeam/qui/styles'
 
 createApp(App).use(HdCustom).mount('#app')
 ```

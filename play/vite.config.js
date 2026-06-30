@@ -5,7 +5,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { HdCustomResolver } from '@hd/custom/resolvers'
+import { HdCustomResolver } from '@rdeam/qui/resolvers'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
@@ -16,7 +16,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 //     if (!importStyle)
 //         return;
 //     return [
-//         "@hd/custom/theme-chalk/hd-".concat(componentName, ".css")
+//         "@rdeam/qui/theme-chalk/hd-".concat(componentName, ".css")
 //     ];
 // }
 
