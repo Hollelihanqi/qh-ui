@@ -26,12 +26,7 @@
       "projectChangelogs": false
     },
     "version": {
-      "git": {
-        "commitMessage": "chore(release): publish ${name}@${version}",
-        "push": true,
-        "tag": true,
-        "signOff": false
-      }
+      "updateDependents": "never"
     }
   },
   "analytics": true

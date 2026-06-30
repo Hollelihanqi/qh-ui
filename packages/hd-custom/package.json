@@ -1,6 +1,6 @@
 {
   "name": "@hd/custom",
-  "version": "2.0.0-beta.32",
+  "version": "2.0.0",
   "type": "module",
   "module": "es/index.mjs",
   "types": "es/index.d.ts",
