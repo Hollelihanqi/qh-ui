@@ -15,6 +15,7 @@
     "docs:dev": "pnpm run -C docs docs:dev",
     "docs:build": "pnpm run -C docs docs:build",
     "docs:preview": "pnpm run -C docs docs:preview",
+    "docs:deploy": "powershell -ExecutionPolicy Bypass -File ./docs/deploy.ps1",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "prettier:check": "prettier --check .",

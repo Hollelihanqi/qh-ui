@@ -1,0 +1,10 @@
+services:
+  docs:
+    image: nginx:alpine
+    container_name: hd-ui-docs
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro

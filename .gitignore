@@ -13,3 +13,7 @@ dist
 
 .nx/cache
 .nx/workspace-data
+
+# docs 本地部署残留
+.deploy-stage
+docs-deploy.tgz
