@@ -1,5 +1,7 @@
 <script lang="ts">
+import { h, defineComponent } from 'vue'
 import { HdRemoteSearch } from '@rdeam/hd-ui'
+import { request } from './request'
 export default defineComponent({
   setup(props, context) {
     return () => {
@@ -11,6 +13,7 @@ export default defineComponent({
         valueKey: 'userCode',
         labelKey: 'userName',
         placeholder: '请输入用户编号/姓名',
+        requester: request,
         requestParams: {
           pageNum: 1,
           pageSize: 50,

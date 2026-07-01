@@ -9,6 +9,7 @@
       search-field="keyword"
       value-key="userCode"
       label-key="userName"
+      :requester="request"
       :data-callback="dataCallback"
       :opt-temp="optTemp"
     ></hd-remote-search>
@@ -22,6 +23,7 @@
       value-key="userCode"
       label-key="selText"
       placeholder="请输入用户编号/姓名"
+      :requester="request"
       :data-callback="dataCallback2"
       :opt-temp="optTemp"
     ></hd-remote-search>
@@ -29,6 +31,7 @@
 </template>
 <script lang="tsx" setup>
 import { h } from 'vue'
+import { request } from './request'
 const user = ref('')
 const user2 = ref('')
 const dataCallback = (data: any) => {

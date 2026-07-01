@@ -1,6 +1,15 @@
 import type { ExtractPropTypes } from 'vue'
 import { buildProps } from '@hd-custom/utils'
 
+/**
+ * 外部注入的请求器。组件不再内置 axios 实例，url 模式下必须由调用方传入自己的 request，
+ * 以走各自工程的拦截器（鉴权 / 代理前缀 / 业务码解包 / 加密等）。
+ * 仅要求实现 request 方法；返回值约定为已解包的业务数据。
+ */
+export type RemoteRequester = {
+  request: (config: Record<string, any>) => Promise<any>
+}
+
 export const remoteSearchProps = buildProps({
   url: {
     type: String,
@@ -86,6 +95,11 @@ export const remoteSearchProps = buildProps({
   defaultFirstOption: {
     type: Boolean,
     default: false,
+  },
+  // 外部请求器：url 模式必传（requestApi 模式不经过它）。
+  requester: {
+    type: [Function, Object],
+    default: null,
   },
 })
 

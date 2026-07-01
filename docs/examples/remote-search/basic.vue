@@ -8,11 +8,13 @@
       search-field="keyword"
       value-key="userCode"
       label-key="userName"
+      :requester="request"
       :data-callback="dataCallback"
     ></hd-remote-search>
   </div>
 </template>
 <script lang="tsx" setup>
+import { request } from './request'
 const user = ref('')
 const dataCallback = (data: any) => {
   return data.results.map((item: any) => {

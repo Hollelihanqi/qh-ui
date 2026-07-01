@@ -26,11 +26,16 @@ remote-search/requestApi
 
 [完整配置请参考-element-plus](https://element-plus.org/zh-CN/component/table.html)
 
+::: warning
+组件**不再内置 axios 实例**。使用 `url` 模式（即通过 `url` 发起请求）时，**必须**通过 `requester` 传入你自己工程的请求器（axios 实例），以便走你方的拦截器（鉴权 / 代理前缀 / 业务码解包 / 加密等）。`requestApi` 模式不经过 `requester`，无需传入。
+:::
+
 ### RemoteSearch 属性
 
 | 属性名         | 说明                                                                                                                                    | 类型             | 可选值             | 默认值  |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------ | ------- |
 | url            | 远程搜索地址                                                                                                                            | String           | —                  | ""      |
+| requester      | 外部请求器，`url` 模式必传。要求实现 `request(config): Promise<any>`，返回值约定为已解包的业务数据                                      | Object、Function | —                  | —       |
 | exposeRef      | 组件暴露出的Api引用                                                                                                                     | Object           | —                  | {}      |
 | method         | 请求方式                                                                                                                                | String           | —                  | "GET"   |
 | isRemoteSearch | 如果只需要请求一次，请设置为 false                                                                                                      | Boolean          | —                  | true    |

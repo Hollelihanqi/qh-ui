@@ -1,7 +1,6 @@
-import { defineComponent, h, ref, getCurrentInstance, onMounted, nextTick } from 'vue'
-import { remoteSearchProps, remoteSearchEmits, RemoteSearchProps } from './iremote-search'
+import { defineComponent, h, ref, getCurrentInstance, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { remoteSearchProps, remoteSearchEmits, RemoteSearchProps, type RemoteRequester } from './iremote-search'
 import { ElSelect, ElOption, ElSelectV2 } from 'element-plus'
-import { request } from '@hd-custom/utils'
 import { useDebounceFn } from '@vueuse/core'
 
 export default defineComponent({
@@ -33,10 +32,24 @@ export default defineComponent({
       }
     }
 
-    const source = request.CancelToken.source()
+    // 当前正在使用的请求取消器。每次发起新请求前先取消上一条，避免旧请求返回覆盖最新结果。
+    const requestController = ref<AbortController | null>(null)
+    const cancelPendingRequest = () => {
+      if (requestController.value) {
+        requestController.value.abort()
+        requestController.value = null
+      }
+    }
+
     const updateData = (params = {}) => {
-      source.cancel()
-      source.token = request.CancelToken.source().token
+      cancelPendingRequest()
+      if (!props.requester) {
+        console.error('[HdRemoteSearch] url 模式必须通过 requester 传入请求器（你的 axios 实例），否则无法发起请求。')
+        return
+      }
+      const currentController = new AbortController()
+      requestController.value = currentController
+      const requester = props.requester as RemoteRequester
       let _headers: any = { ...props.requestHeaders }
       if (typeof props.requestHeaders === 'function') {
         _headers = props.requestHeaders()
@@ -51,49 +64,60 @@ export default defineComponent({
       }
       try {
         loading.value = true
-        request
+        requester
           .request({
             url: props.url,
             method: props.method,
             ...(props.method.toUpperCase() === 'POST' ? { data: _params } : { params: _params }),
-            // params: _params,
-            // data: JSON.stringify(_params),
             headers: _headers,
-            cancelToken: source.token,
+            signal: currentController.signal,
           })
           .then((res: any) => {
-            // 处理空响�?
-            if (!res) {
+            // 兼容「已解包的业务数据」与「原始响应」两种形态
+            const responseData = res?.data ?? res
+            const payload = responseData?.data ?? responseData
+            // 处理空响应
+            if (!payload) {
               setData([])
-              emit('after-remote', res)
+              emit('after-remote', responseData)
               return
             }
 
             // 使用数据回调处理
             if (props.dataCallback) {
-              setData(props.dataCallback(res) ?? [])
-              emit('after-remote', res)
+              setData(props.dataCallback(payload) ?? [])
+              emit('after-remote', payload)
               return
             }
 
             // 处理数组响应
-            if (Array.isArray(res)) {
-              setData(res)
-              emit('after-remote', res)
+            if (Array.isArray(payload)) {
+              setData(payload)
+              emit('after-remote', payload)
               return
             }
 
             // 处理对象响应
-            if (props.resultKey && Array.isArray(res[props.resultKey])) {
-              setData(res[props.resultKey])
+            if (props.resultKey && Array.isArray(payload[props.resultKey])) {
+              setData(payload[props.resultKey])
             } else {
               setData([])
             }
 
-            emit('after-remote', res)
+            emit('after-remote', payload)
+          })
+          .catch((error: any) => {
+            // 主动取消的请求静默忽略
+            if (error?.code === 'ERR_CANCELED' || error?.name === 'CanceledError') {
+              return
+            }
+            console.error('获取数据失败', error)
           })
           .finally(() => {
             loading.value = false
+            if (requestController.value === currentController) {
+              requestController.value = null
+            }
           })
       } catch (error) {
         console.error('获取数据失败', error)
@@ -172,6 +196,10 @@ export default defineComponent({
         props.getExposed(getCurrentInstance()?.exposed)
       }
       disLabelEvent()
+    })
+
+    onBeforeUnmount(() => {
+      cancelPendingRequest()
     })
 
     const _exposeApi = {

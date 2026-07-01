@@ -2,6 +2,7 @@
 import { defineComponent, h } from 'vue'
 import { HdRemoteSearch } from '@rdeam/hd-ui'
 import { getToken } from '@/utils'
+import { request } from '@/api'
 export default defineComponent({
   setup(_, context) {
     return () => {
@@ -10,6 +11,7 @@ export default defineComponent({
         remote: true,
         searchField: 'search',
         valueKey: 'id',
+        requester: request,
         labelKey: 'selText',
         requestHeaders: {
           authorization: getToken(),
