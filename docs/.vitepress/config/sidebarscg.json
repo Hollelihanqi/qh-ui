@@ -32,6 +32,10 @@
         "link": "/jdata-viewer"
       },
       {
+        "text": "ProTable 高级表格",
+        "link": "/pro-table"
+      },
+      {
         "text": "Radio 单选框",
         "link": "/radio"
       },
