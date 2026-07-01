@@ -27,6 +27,9 @@ export default defineConfig({
     vueJsx(),
     UnoCSS({
       mode: 'per-module',
+      outputToCssLayers: {
+        cssLayerName: (layer) => `hd-ui-${layer}`,
+      },
     }),
     myMergeCssPlugin(),
   ],
