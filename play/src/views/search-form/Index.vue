@@ -21,7 +21,7 @@
 
 <script lang="tsx" setup>
 import { ref } from 'vue'
-import type { SearchFormControlProps } from '@rdeam/qui'
+import type { SearchFormControlProps } from '@rdeam/hd-ui'
 
 const filterData = ref<Record<string, unknown>>({})
 const showKeyword = ref(false)

@@ -15,7 +15,7 @@
 </template>
 <script lang="tsx" setup>
 import RenderCSelect from './renderc.vue'
-import { SearchFormControlProps } from '@rdeam/qui'
+import { SearchFormControlProps } from '@rdeam/hd-ui'
 import { ElInput } from 'element-plus'
 
 const filterData = ref<any>({})

@@ -1,5 +1,5 @@
 export const PKG_PREFIX = '@hd-custom'
-export const PKG_NAME = '@rdeam/qui'
+export const PKG_NAME = '@rdeam/hd-ui'
 export const PKG_CAMELCASE_NAME = 'HdCustom'
 export const PKG_BRAND_NAME = 'Hd Custom'
 

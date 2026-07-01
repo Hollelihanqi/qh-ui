@@ -11,13 +11,13 @@ npm 源 https://registry.npmjs.org/
 使用快速的，节省磁盘空间的包管理工具 [pnpm](https://pnpm.io/zh) 进行安装
 
 ```shell
-pnpm add @rdeam/qui
+pnpm add @rdeam/hd-ui
 ```
 
 ### 更新
 
 ```shell
-    pnpm up @rdeam/qui@latest
+    pnpm up @rdeam/hd-ui@latest
 
 ```
 
@@ -35,7 +35,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { HdCustomResolver } from '@rdeam/qui/resolvers'
+import { HdCustomResolver } from '@rdeam/hd-ui/resolvers'
 
 export default defineConfig({
   plugins: [
@@ -62,8 +62,8 @@ export default defineConfig({
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import HdCustom from '@rdeam/qui'
-import '@rdeam/qui/theme-chalk/index.css'
+import HdCustom from '@rdeam/hd-ui'
+import '@rdeam/hd-ui/theme-chalk/index.css'
 
 createApp(App).use(HdCustom).mount('#app')
 ```

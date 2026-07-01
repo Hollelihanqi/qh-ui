@@ -1,5 +1,5 @@
 declare const PKG_PREFIX = "@hd-custom";
-declare const PKG_NAME = "@hd/custom";
+declare const PKG_NAME = "@rdeam/hd-ui";
 declare const PKG_CAMELCASE_NAME = "HdCustom";
 declare const PKG_BRAND_NAME = "Hd Custom";
 /**

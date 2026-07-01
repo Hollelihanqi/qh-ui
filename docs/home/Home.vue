@@ -141,7 +141,7 @@ const features = [
 ]
 
 const workflow = [
-  { no: 'A', title: '安装组件库', desc: '通过 @rdeam/qui 引入组件、主题样式和解析器。' },
+  { no: 'A', title: '安装组件库', desc: '通过 @rdeam/hd-ui 引入组件、主题样式和解析器。' },
   { no: 'B', title: '配置按需解析', desc: '在 Vite 中接入 HdCustomResolver，减少手写 import。' },
   { no: 'C', title: '组合业务页面', desc: '使用沉淀组件快速搭建表单、表格、详情和上传页面。' },
 ]

@@ -11,7 +11,7 @@ export interface HdCustomResolverOptions {
 
 function getSideEffects(componentName: string, importStyle: boolean) {
   if (!importStyle) return
-  return [`@rdeam/qui/theme-chalk/${getComponentStyleName(componentName)}.css`]
+  return [`@rdeam/hd-ui/theme-chalk/${getComponentStyleName(componentName)}.css`]
 }
 
 export const HdCustomResolver = (options: HdCustomResolverOptions = {}) => {
@@ -29,7 +29,7 @@ export const HdCustomResolver = (options: HdCustomResolverOptions = {}) => {
 
         return {
           name,
-          from: `@rdeam/qui/es/components/${jsname}/index.mjs`,
+          from: `@rdeam/hd-ui/es/components/${jsname}/index.mjs`,
           sideEffects: getSideEffects(jsname, resolvedOptions.importStyle),
         }
       }

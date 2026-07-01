@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { defineComponent, h } from 'vue'
-import { HdRemoteSearch } from '@rdeam/qui'
+import { HdRemoteSearch } from '@rdeam/hd-ui'
 import { getToken } from '@/utils'
 export default defineComponent({
   setup(_, context) {

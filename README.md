@@ -1,26 +1,28 @@
-﻿# HD 缁勪欢搴撳紑鍙戞枃妗?
+# HD 组件库开发文档
 
-HD 缁勪欢搴撴槸鍩轰簬 Element Plus 灏佽鐨勪笟鍔＄粍浠跺簱锛屼娇鐢?Vue 3銆乀ypeScript銆乂ite 鍜?pnpm workspace 绠＄悊婧愮爜銆佹枃妗ｃ€佽皟璇曞伐绋嬩笌鍐呴儴鏋勫缓宸ュ叿銆?
+HD 组件库是基于 Element Plus 封装的业务组件库，使用 Vue 3、TypeScript、Vite、pnpm workspace 管理源码、文档、调试工程与内部构建工具。
 
-## 椤圭洰缁撴瀯
+## 项目结构
 
 ```text
 hd/
-鈹溾攢鈹€ dist/                 # 鏋勫缓杈撳嚭
-鈹溾攢鈹€ docs/                 # VitePress 鏂囨。绔欑偣
-鈹溾攢鈹€ internal/             # 鍐呴儴鏋勫缓宸ュ叿銆佸父閲忓拰 resolver
-鈹溾攢鈹€ packages/
-鈹?  鈹溾攢鈹€ components/       # 缁勪欢婧愮爜
-鈹?  鈹溾攢鈹€ directives/       # 鎸囦护婧愮爜
-鈹?  鈹溾攢鈹€ hooks/            # hooks 婧愮爜
-鈹?  鈹溾攢鈹€ theme-chalk/      # 涓婚鏍峰紡
-鈹?  鈹溾攢鈹€ utils/            # 缁勪欢搴撳唴閮ㄥ伐鍏?鈹?  鈹溾攢鈹€ hd-custom/        # @rdeam/qui 涓诲寘鍏ュ彛
-鈹?  鈹溾攢鈹€ share/         # @rdeam/qui/share 宸ュ叿鍖?鈹?  鈹斺攢鈹€ hd-eslint/        # @hd/eslint-config
-鈹溾攢鈹€ play/                 # 鏈湴璋冭瘯宸ョ▼
-鈹斺攢鈹€ scripts/              # 寮€鍙戝拰鐢熸垚鑴氭湰
+├── dist/                 # 构建输出
+├── docs/                 # VitePress 文档站点
+├── internal/             # 内部构建工具、常量和 resolver
+├── packages/
+│   ├── components/       # 组件源码
+│   ├── directives/       # 指令源码
+│   ├── hooks/            # hooks 源码
+│   ├── theme-chalk/      # 主题样式
+│   ├── utils/            # 组件库内部工具
+│   ├── hd-custom/        # @rdeam/hd-ui 主包入口
+│   ├── share/            # @rdeam/hd-ui/share 工具包
+│   └── hd-eslint/        # @hd/eslint-config
+├── play/                 # 本地调试工程
+└── scripts/              # 开发和生成脚本
 ```
 
-## 甯哥敤鍛戒护
+## 常用命令
 
 ```bash
 pnpm install
@@ -30,30 +32,35 @@ pnpm play:dev
 pnpm docs:dev
 ```
 
-## 鏋勫缓璇存槑
+## 构建说明
 
-`pnpm build` 浼氬厛閫氳繃 Nx 鏋勫缓鍐呴儴宸ュ叿鍖呭拰 `@rdeam/qui/share`锛屽啀杩涘叆 `internal/build2` 鎵ц缁熶竴鏋勫缓閾撅細
+`pnpm build` 会先通过 Nx 构建内部工具包和 `@rdeam/hd-ui/share`，再进入 `internal/build2` 执行统一构建链：
 
-1. 娓呯悊 `dist/hd-custom`銆?2. 浣跨敤 Vite 鏋勫缓缁勪欢 ES 妯″潡銆?3. 鏋勫缓 `packages/theme-chalk` 涓婚鏍峰紡銆?4. 浣跨敤 `vue-tsc` 鐢熸垚绫诲瀷澹版槑銆?5. 鏋勫缓骞跺鍒?`HdCustomResolver`銆?6. 澶嶅埗 `package.json`銆乣README.md`銆乣global.d.ts` 绛夐檮鍔犳枃浠躲€?
+1. 清理 `dist/hd-custom`。
+2. 使用 Vite 构建组件 ES 模块。
+3. 构建 `packages/theme-chalk` 主题样式。
+4. 使用 `vue-tsc` 生成类型声明。
+5. 构建并复制 `HdCustomResolver`。
+6. 复制 `package.json`、`README.md`、`global.d.ts` 等附加文件。
 
-## 鍓嶇紑閰嶇疆
+## 前缀配置
 
-缁勪欢瀵煎嚭鍚嶅墠缂€銆乂ue 娉ㄥ唽鍚嶅墠缂€銆佹牱寮忔枃浠跺悕鍓嶇紑缁熶竴閰嶇疆鍦?`internal/build-constants/src/pkg.ts`锛?
+组件导出名前缀、Vue 注册名前缀、样式文件名前缀统一配置在 `internal/build-constants/src/pkg.ts`：
 
 - `COMPONENT_EXPORT_PREFIX = 'Hd'`
 - `COMPONENT_STYLE_PREFIX = 'hd'`
 
-鏈潵闇€瑕佹敼缁勪欢鍚嶇О銆佸鍑哄悕绉般€佷富棰樻枃浠跺悕鎴?resolver 瑙ｆ瀽瑙勫垯鏃讹紝浼樺厛鏀硅繖閲岋紝鍐嶆墽琛岋細
+未来需要改组件名称、导出名称、主题文件名、resolver 解析规则时，优先改这里，再执行：
 
 ```bash
 pnpm gen-component-import
 pnpm build
 ```
 
-## 鍙戝竷鍏ュ彛
+## 发布入口
 
-- 涓诲寘锛歚@rdeam/qui`
-- 宸ュ叿鍖咃細`@rdeam/qui/share`
-- ESLint 閰嶇疆锛歚@hd/eslint-config`
+- 主包：`@rdeam/hd-ui`
+- 工具包：`@rdeam/hd-ui/share`
+- ESLint 配置：`@hd/eslint-config`
 
-涓诲寘鏋勫缓浜х墿浣嶄簬 `dist/hd-custom`锛屼富棰樻枃浠朵綅浜?`dist/hd-custom/theme-chalk`銆?
+主包构建产物位于 `dist/hd-custom`，主题文件位于 `dist/hd-custom/theme-chalk`。

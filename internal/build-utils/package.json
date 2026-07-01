@@ -2,7 +2,7 @@
   "name": "@hd-custom/build-utils",
   "version": "0.0.1",
   "private": true,
-  "description": "Build utils for @rdeam/qui",
+  "description": "Build utils for @rdeam/hd-ui",
   "keywords": [],
   "license": "MIT",
   "main": "./dist/index.cjs",

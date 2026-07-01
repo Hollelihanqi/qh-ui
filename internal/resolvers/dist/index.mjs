@@ -6,7 +6,7 @@ function getComponentStyleName(componentName) {
 
 function getSideEffects(componentName, importStyle) {
   if (!importStyle) return;
-  return [`@hd/custom/theme-chalk/${getComponentStyleName(componentName)}.css`];
+  return [`@rdeam/hd-ui/theme-chalk/${getComponentStyleName(componentName)}.css`];
 }
 const HdCustomResolver = (options = {}) => {
   const resolvedOptions = {
@@ -21,7 +21,7 @@ const HdCustomResolver = (options = {}) => {
         const jsname = componentName.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
         return {
           name,
-          from: `@hd/custom/es/components/${jsname}/index.mjs`,
+          from: `@rdeam/hd-ui/es/components/${jsname}/index.mjs`,
           sideEffects: getSideEffects(jsname, resolvedOptions.importStyle)
         };
       }

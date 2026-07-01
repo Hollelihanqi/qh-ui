@@ -228,7 +228,7 @@ importers:
       '@highlightjs/vue-plugin':
         specifier: ^2.1.0
         version: 2.1.0(highlight.js@11.11.1)(vue@3.5.33(typescript@6.0.3))
-      '@rdeam/qui':
+      '@rdeam/hd-ui':
         specifier: link:..\dist\hd-custom
         version: link:../dist/hd-custom
       '@vue/shared':
@@ -704,7 +704,7 @@ importers:
       '@element-plus/icons-vue':
         specifier: ^2.3.2
         version: 2.3.2(vue@3.5.33(typescript@6.0.3))
-      '@rdeam/qui':
+      '@rdeam/hd-ui':
         specifier: link:..\dist\hd-custom
         version: link:../dist/hd-custom
       '@vueuse/core':

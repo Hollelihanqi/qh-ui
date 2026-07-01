@@ -6,8 +6,8 @@ import App from './App.vue'
 
 import './assets/styles/index.scss'
 
-// import HdCustom from '@rdeam/qui'
-// import '@rdeam/qui/theme-chalk/index.css'
+// import HdCustom from '@rdeam/hd-ui'
+// import '@rdeam/hd-ui/theme-chalk/index.css'
 // import ElementPlus from 'element-plus'
 import 'element-plus/theme-chalk/index.css'
 

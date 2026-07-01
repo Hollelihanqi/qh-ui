@@ -1,70 +1,70 @@
-﻿# Nx Monorepo 鍙戝竷鎸囧崡
+# Nx Monorepo 发布指南
 
-鏈枃妗ｈ缁嗚鏄庡浣曞湪 monorepo 椤圭洰涓娇鐢?Nx 杩涜鍖呯殑鍙戝竷绠＄悊锛屽熀浜?`@rdeam/qui` UI 缁勪欢搴撻」鐩疄璺点€?
+本文档详细说明如何在 monorepo 项目中使用 Nx 进行包的发布管理，基于 `@rdeam/hd-ui` UI 组件库项目实践。
 
-## 鐩綍
+## 目录
 
-- [椤圭洰缁撴瀯](#椤圭洰缁撴瀯)
-- [鍓嶆彁鏉′欢](#鍓嶆彁鏉′欢)
-- [閰嶇疆鏂囦欢璇存槑](#閰嶇疆鏂囦欢璇存槑)
-- [鍙戝竷娴佺▼](#鍙戝竷娴佺▼)
-- [甯歌闂](#甯歌闂)
-- [鏈€浣冲疄璺礭(#鏈€浣冲疄璺?
+- [项目结构](#项目结构)
+- [前提条件](#前提条件)
+- [配置文件说明](#配置文件说明)
+- [发布流程](#发布流程)
+- [常见问题](#常见问题)
+- [最佳实践](#最佳实践)
 
-## 椤圭洰缁撴瀯
+## 项目结构
 
 ```bash
 hd-test-ui/
-鈹溾攢鈹€ packages/
-鈹?  鈹溾攢鈹€ hd-custom/          # 涓昏鍙戝竷鍖?
-鈹?  鈹溾攢鈹€ theme-chalk/         # 鏍峰紡鍖?
-鈹?  鈹斺攢鈹€ share/          # 宸ュ叿鍖?
-鈹溾攢鈹€ internal/
-鈹?  鈹溾攢鈹€ build/              # 鏋勫缓鑴氭湰
-鈹?  鈹溾攢鈹€ build-constants/    # 鏋勫缓甯搁噺
-鈹?  鈹溾攢鈹€ build-utils/        # 鏋勫缓宸ュ叿
-鈹?  鈹斺攢鈹€ resolvers/         # 瑙ｆ瀽鍣?
-鈹溾攢鈹€ nx.json                 # Nx 閰嶇疆
-鈹斺攢鈹€ package.json           # 椤圭洰閰嶇疆
+├── packages/
+│   ├── hd-custom/          # 主要发布包
+│   ├── theme-chalk/         # 样式包
+│   └── share/          # 工具包
+├── internal/
+│   ├── build/              # 构建脚本
+│   ├── build-constants/    # 构建常量
+│   ├── build-utils/        # 构建工具
+│   └── resolvers/         # 解析器
+├── nx.json                 # Nx 配置
+└── package.json           # 项目配置
 ```
 
-### 鍖呰鏄?
+### 包说明
 
-1. **@rdeam/qui**
-   - 涓昏鐨?UI 缁勪欢搴撳寘
-   - 褰撳墠鐗堟湰锛?.0.0-beta.x
-   - 鍙戝竷鐩綍锛歞ist/hd-custom
+1. **@rdeam/hd-ui**
+   - 主要的 UI 组件库包
+   - 当前版本：2.0.0-beta.x
+   - 发布目录：dist/hd-custom
 
 2. **theme-chalk**
-   - UI 缁勪欢鐨勬牱寮忓寘
-   - 鏋勫缓閰嶇疆锛歷ite.module.config.ts 鍜?vite.global.config.ts
-   - 杈撳嚭浼樺寲閰嶇疆宸叉坊鍔?
+   - UI 组件的样式包
+   - 构建配置：vite.module.config.ts 和 vite.global.config.ts
+   - 输出优化配置已添加
 
 3. **share**
-   - 宸ュ叿鍑芥暟鍖?
-   - 琚富鍖呬緷璧?
-   - 闇€瑕佸湪涓诲寘鏋勫缓鍓嶆瀯寤?
+   - 工具函数包
+   - 被主包依赖
+   - 需要在主包构建前构建
 
-## 鍓嶆彁鏉′欢
+## 前提条件
 
 - Node.js >= 18
 - pnpm >= 8
 - nx >= 20.5.0
 - git
 
-## 鏋勫缓绯荤粺
+## 构建系统
 
-### 1. 鏋勫缓渚濊禆鍏崇郴
+### 1. 构建依赖关系
 
 ```mermaid
 graph TD
-    A[share] --> D[@rdeam/qui]
+    A[share] --> D[@rdeam/hd-ui]
     B[build-constants] --> D
     C[build-utils] --> D
     E[resolvers] --> D
 ```
 
-杩欏氨鏄负浠€涔堟垜浠殑 prebuild 鑴氭湰浼氶鍏堟瀯寤鸿繖浜涗緷璧栵細
+这就是为什么我们的 prebuild 脚本会首先构建这些依赖：
 
 ```json
 {
@@ -72,9 +72,9 @@ graph TD
 }
 ```
 
-### 2. 缂撳瓨鏈哄埗
+### 2. 缓存机制
 
-褰撳墠椤圭洰浣跨敤浜?Nx 鐨勭紦瀛樻満鍒讹紝鍦?nx.json 涓厤缃細
+当前项目使用了 Nx 的缓存机制，在 nx.json 中配置：
 
 ```json
 {
@@ -98,15 +98,15 @@ graph TD
 }
 ```
 
-缂撳瓨鍛戒腑鏃朵細鏄剧ず锛?
+缓存命中时会显示：
 
 ```bash
-鉁?nx run share:build [existing outputs match the cache, left as is]
+✔ nx run share:build [existing outputs match the cache, left as is]
 ```
 
-### 3. 鏋勫缓浼樺寲
+### 3. 构建优化
 
-theme-chalk 鐨勬瀯寤鸿緭鍑轰紭鍖栵紙vite.module.config.ts锛夛細
+theme-chalk 的构建输出优化（vite.module.config.ts）：
 
 ```js
 {
@@ -117,9 +117,9 @@ theme-chalk 鐨勬瀯寤鸿緭鍑轰紭鍖栵紙vite.module.config.ts锛夛細
 }
 ```
 
-## 鍙戝竷閰嶇疆璇﹁В
+## 发布配置详解
 
-### 1. nx.json 鍙戝竷閰嶇疆
+### 1. nx.json 发布配置
 
 ```json
 {
@@ -155,30 +155,30 @@ theme-chalk 鐨勬瀯寤鸿緭鍑轰紭鍖栵紙vite.module.config.ts锛夛細
 }
 ```
 
-杩欎釜閰嶇疆涓撻棬閽堝 `@rdeam/qui` 鍖呯殑鍙戝竷锛岀‘淇濓細
+这个配置专门针对 `@rdeam/hd-ui` 包的发布，确保：
 
-- 鐗堟湰鐙珛绠＄悊
-- 鑷姩鍒涘缓瑙勮寖鐨?git tag
-- 鑷姩鐢熸垚鍙樻洿鏃ュ織
-  - 鏀寔宸ヤ綔鍖哄拰椤圭洰绾у埆鐨?changelog
-  - 鏍规嵁鎻愪氦绫诲瀷鑷姩鍒嗙被
-  - 淇濆瓨鍒?CHANGELOG.md 鏂囦欢
-- 鑷姩鎻愪氦鍜屾帹閫?
+- 版本独立管理
+- 自动创建规范的 git tag
+- 自动生成变更日志
+  - 支持工作区和项目级别的 changelog
+  - 根据提交类型自动分类
+  - 保存到 CHANGELOG.md 文件
+- 自动提交和推送
 
-### Changelog 鐢熸垚璇存槑
+### Changelog 生成说明
 
-鍙樻洿鏃ュ織浼氭牴鎹?git commit 淇℃伅鑷姩鐢熸垚锛屾敮鎸佷互涓嬬被鍨嬶細
+变更日志会根据 git commit 信息自动生成，支持以下类型：
 
-- `feat`: 鏂板姛鑳?
-- `fix`: Bug 淇
-- `chore`: 鏋勫缓/宸ュ叿閾?渚濊禆绛変慨鏀?
-- `docs`: 鏂囨。鏇存柊
-- `style`: 浠ｇ爜鏍煎紡淇敼
-- `refactor`: 浠ｇ爜閲嶆瀯
-- `perf`: 鎬ц兘浼樺寲
-- `test`: 娴嬭瘯鐩稿叧
+- `feat`: 新功能
+- `fix`: Bug 修复
+- `chore`: 构建/工具链/依赖等修改
+- `docs`: 文档更新
+- `style`: 代码格式修改
+- `refactor`: 代码重构
+- `perf`: 性能优化
+- `test`: 测试相关
 
-涓轰簡纭繚 changelog 姝ｇ‘鐢熸垚锛屾彁浜や俊鎭繀椤婚伒寰?Conventional Commits 瑙勮寖锛?
+为了确保 changelog 正确生成，提交信息必须遵循 Conventional Commits 规范：
 
 ```bash
 <type>(<scope>): <description>
@@ -188,7 +188,7 @@ theme-chalk 鐨勬瀯寤鸿緭鍑轰紭鍖栵紙vite.module.config.ts锛夛細
 [optional footer]
 ```
 
-渚嬪锛?
+例如：
 
 ```bash
 feat(button): add size prop to Button component
@@ -196,13 +196,13 @@ fix(input): resolve input blur event not firing
 docs(readme): update installation instructions
 ```
 
-### 2. 鍙戝竷鑴氭湰瑙ｆ瀽
+### 2. 发布脚本解析
 
 ```json
 {
   "scripts": {
-    "check-git": "git diff-index --quiet HEAD || (echo '鍙戠幇鏈彁浜ょ殑浠ｇ爜鏀瑰姩锛岃鍏堟墽琛?pnpm commit 鎻愪氦浠ｇ爜' && exit 1)",
-    "update-version": "npx nx release version --projects=@rdeam/qui",
+    "check-git": "git diff-index --quiet HEAD || (echo '发现未提交的代码改动，请先执行 pnpm commit 提交代码' && exit 1)",
+    "update-version": "npx nx release version --projects=@rdeam/hd-ui",
     "commit-version": "git add packages/hd-custom/package.json && git commit -m \"chore(release): update package version\" || true",
     "build-after-version": "pnpm build",
     "publish-custom": "cd dist/hd-custom && npm publish",
@@ -212,159 +212,159 @@ docs(readme): update installation instructions
 }
 ```
 
-鑴氭湰鎵ц椤哄簭璇存槑锛?
+脚本执行顺序说明：
 
-1. `check-git`: 纭繚宸ヤ綔鍖哄共鍑€
-2. `update-version`: 浣跨敤 nx 鏇存柊鐗堟湰鍙?
-3. `commit-version`: 鎻愪氦鐗堟湰鏇存柊锛堜富瑕佹槸 package.json 鐨勫彉鏇达級
-4. `build-after-version`: 鎵ц瀹屾暣鏋勫缓娴佺▼
-   - 棣栧厛鎵ц prebuild 鏋勫缓渚濊禆
-   - 鐒跺悗鏋勫缓涓诲寘
-5. `publish-custom`: 鍙戝竷鏋勫缓浜х墿
-6. `push-tags`: 鎺ㄩ€?tag 鍜屼唬鐮?
+1. `check-git`: 确保工作区干净
+2. `update-version`: 使用 nx 更新版本号
+3. `commit-version`: 提交版本更新（主要是 package.json 的变更）
+4. `build-after-version`: 执行完整构建流程
+   - 首先执行 prebuild 构建依赖
+   - 然后构建主包
+5. `publish-custom`: 发布构建产物
+6. `push-tags`: 推送 tag 和代码
 
-## 鍙戝竷娴佺▼
+## 发布流程
 
-### 1. 鍑嗗宸ヤ綔
+### 1. 准备工作
 
 ```bash
-# 纭 npm registry
+# 确认 npm registry
 npm config get registry
-# 搴旇杈撳嚭: https://registry.npmjs.org/
+# 应该输出: https://registry.npmjs.org/
 
-# 纭鐧诲綍鐘舵€?
+# 确认登录状态
 npm whoami
 
-# 鎻愪氦鎵€鏈夋洿鏀?
+# 提交所有更改
 pnpm commit
 ```
 
-### 2. 鎵ц鍙戝竷
+### 2. 执行发布
 
 ```bash
 pnpm release:ui
 ```
 
-### 3. 鐗堟湰鍙风鐞?
+### 3. 版本号管理
 
-褰撳墠椤圭洰浣跨敤 beta 鐗堟湰鍙凤紝濡傦細2.0.0-beta.15
+当前项目使用 beta 版本号，如：2.0.0-beta.15
 
-鐗堟湰鍙烽€掑瑙勫垯锛?
+版本号递增规则：
 
-- beta 鐗堟湰锛?.0.0-beta.x 閫掑 x
-- 姝ｅ紡鐗堟湰锛?.0.0 閬靛惊璇箟鍖栫増鏈鑼?
+- beta 版本：2.0.0-beta.x 递增 x
+- 正式版本：2.0.0 遵循语义化版本规范
 
-## 甯歌闂
+## 常见问题
 
-### 1. 鍙戝竷澶辫触澶勭悊
+### 1. 发布失败处理
 
-濡傛灉鍙戝竷杩囩▼涓嚭鐜伴敊璇細
+如果发布过程中出现错误：
 
 ```bash
-# 娓呯悊缂撳瓨
+# 清理缓存
 pnpm clean:cache
 
-# 閲嶆柊鏋勫缓
+# 重新构建
 pnpm build
 
-# 閲嶈瘯鍙戝竷
+# 重试发布
 pnpm release:ui
 ```
 
-### 2. 鐗堟湰鍙峰啿绐?
+### 2. 版本号冲突
 
-濡傛灉閬囧埌鐗堟湰鍙峰啿绐侊細
+如果遇到版本号冲突：
 
 ```bash
-# 鏌ョ湅褰撳墠 tag
+# 查看当前 tag
 git tag
 
-# 鍒犻櫎鏈夐棶棰樼殑 tag
+# 删除有问题的 tag
 git tag -d <tag-name>
 git push origin :refs/tags/<tag-name>
 ```
 
-### 3. 鏈彁浜ょ殑鏇存敼
+### 3. 未提交的更改
 
-濡傛灉鎻愮ず鏈夋湭鎻愪氦鐨勬洿鏀癸細
+如果提示有未提交的更改：
 
 ```bash
-# 鏌ョ湅鐘舵€?
+# 查看状态
 git status
 
-# 鎻愪氦鏇存敼
+# 提交更改
 pnpm commit
 ```
 
-## 鏈€浣冲疄璺?
+## 最佳实践
 
-1. **鎻愪氦瑙勮寖**
-   - 浣跨敤 commitizen 瑙勮寖鎻愪氦淇℃伅
-   - 淇濇寔鎻愪氦绮掑害鍚堥€?
-   - 纭繚鎻愪氦淇℃伅娓呮櫚鏄庝簡
+1. **提交规范**
+   - 使用 commitizen 规范提交信息
+   - 保持提交粒度合适
+   - 确保提交信息清晰明了
 
-2. **鐗堟湰绠＄悊**
-   - Beta 鐗堟湰锛?.0.0-beta.x
-   - 姝ｅ紡鐗堟湰锛?.0.0
-   - 姣忔鍙戝竷鍓嶇‘璁ょ増鏈彿閫掑姝ｇ‘
+2. **版本管理**
+   - Beta 版本：2.0.0-beta.x
+   - 正式版本：2.0.0
+   - 每次发布前确认版本号递增正确
 
-3. **鏋勫缓浼樺寲**
-   - 鍒╃敤 Nx 鐨勭紦瀛樻満鍒舵彁鍗囨瀯寤烘晥鐜?
-   - 閫傚綋閰嶇疆 `reportCompressedSize` 鍜?`cssTarget` 鎺у埗鏋勫缓杈撳嚭
-   - 瀹氭湡娓呯悊缂撳瓨閬垮厤鏋勫缓闂
+3. **构建优化**
+   - 利用 Nx 的缓存机制提升构建效率
+   - 适当配置 `reportCompressedSize` 和 `cssTarget` 控制构建输出
+   - 定期清理缓存避免构建问题
 
-4. \*_鍙戝竷妫€鏌ユ竻鍗?_
-   - [ ] 鎵€鏈変唬鐮佸凡鎻愪氦
-   - [ ] 娴嬭瘯宸查€氳繃
-   - [ ] 鏂囨。宸叉洿鏂?
-   - [ ] 鐗堟湰鍙风鍚堥鏈?
-   - [ ] npm registry 閰嶇疆姝ｇ‘
+4. **发布检查清单**
+   - [ ] 所有代码已提交
+   - [ ] 测试已通过
+   - [ ] 文档已更新
+   - [ ] 版本号符合预期
+   - [ ] npm registry 配置正确
 
-## 娉ㄦ剰浜嬮」
+## 注意事项
 
-1. 纭繚 npm registry 閰嶇疆姝ｇ‘锛?
+1. 确保 npm registry 配置正确：
 
 ```bash
 npm config set registry https://registry.npmjs.org/
 ```
 
-2. 纭繚鏈夊彂甯冩潈闄愶細
+2. 确保有发布权限：
 
 ```bash
 npm whoami
 ```
 
-3. 淇濇寔宸ヤ綔鐩綍骞插噣锛?
+3. 保持工作目录干净：
 
 ```bash
 git status
 ```
 
-4. 瀹氭湡妫€鏌ュ苟娓呯悊缂撳瓨锛?
+4. 定期检查并清理缓存：
 
 ```bash
 pnpm clean:cache
 ```
 
-## 鐩稿叧鍛戒护鍙傝€?
+## 相关命令参考
 
 ```bash
-# 鏌ョ湅椤圭洰缂撳瓨鐘舵€?
+# 查看项目缓存状态
 npx nx show projects --with-target build
 
-# 鏌ョ湅鍙楀奖鍝嶇殑椤圭洰
+# 查看受影响的项目
 npx nx show projects --affected
 
-# 娓呯悊鏋勫缓缂撳瓨
+# 清理构建缓存
 pnpm clean:cache
 
-# 鏋勫缓骞舵煡鐪嬭缁嗘棩蹇?
+# 构建并查看详细日志
 pnpm build:verbose
 ```
 
-## 閰嶇疆浼樺寲寤鸿
+## 配置优化建议
 
-1. **缂撳瓨閰嶇疆**
+1. **缓存配置**
 
 ```json
 {
@@ -378,7 +378,7 @@ pnpm build:verbose
 }
 ```
 
-2. **鏋勫缓杈撳嚭浼樺寲**
+2. **构建输出优化**
 
 ```js
 {
@@ -389,27 +389,27 @@ pnpm build:verbose
 }
 ```
 
-## 鏋勫缓杈撳嚭璇存槑
+## 构建输出说明
 
-鏋勫缓瀹屾垚鍚庣殑鐩綍缁撴瀯锛?
+构建完成后的目录结构：
 
 ```bash
 dist/hd-custom/
-鈹溾攢鈹€ es/                    # ES 妯″潡
-鈹溾攢鈹€ theme-chalk/           # 鏍峰紡鏂囦欢
-鈹溾攢鈹€ resolvers/            # 瑙ｆ瀽鍣?
-鈹溾攢鈹€ package.json          # 鍖呴厤缃?
-鈹斺攢鈹€ README.md            # 璇存槑鏂囨。
+├── es/                    # ES 模块
+├── theme-chalk/           # 样式文件
+├── resolvers/            # 解析器
+├── package.json          # 包配置
+└── README.md            # 说明文档
 ```
 
-## 鏇存柊鍘嗗彶
+## 更新历史
 
-| 鏃ユ湡     | 鐗堟湰 | 鏇存柊鍐呭                                         |
-| ---------- | ------ | --------------------------------------------------- |
-| 2024-03-xx | 1.0.0  | 鍒濆鐗堟湰锛屽熀浜?@rdeam/qui 2.0.0-beta.15 瀹炶返 |
+| 日期       | 版本  | 更新内容                                       |
+| ---------- | ----- | ---------------------------------------------- |
+| 2024-03-xx | 1.0.0 | 初始版本，基于 @rdeam/hd-ui 2.0.0-beta.15 实践 |
 
-## 鍙傝€冭祫鏂?
+## 参考资料
 
-- [Nx 瀹樻柟鏂囨。](https://nx.dev/)
-- [璇箟鍖栫増鏈琞(https://semver.org/lang/zh-CN/)
+- [Nx 官方文档](https://nx.dev/)
+- [语义化版本](https://semver.org/lang/zh-CN/)
 - [Commitizen](https://github.com/commitizen/cz-cli)

@@ -50,7 +50,7 @@
     "@highlightjs/vue-plugin": "^2.1.0",
     "@vue/shared": "^3.5.33",
     "@vueuse/core": "14.2.1",
-    "@rdeam/qui": "link:..\\dist\\hd-custom",
+    "@rdeam/hd-ui": "link:..\\dist\\hd-custom",
     "element-plus": "^2.13.7",
     "highlight.js": "^11.11.1",
     "markdown-it": "^14.1.1",

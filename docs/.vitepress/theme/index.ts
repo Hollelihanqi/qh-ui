@@ -5,8 +5,8 @@ import DefaultTheme from 'vitepress/theme'
 
 // import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-// import HdCustom from '@rdeam/qui'
-import '@rdeam/qui/theme-chalk/index.css'
+// import HdCustom from '@rdeam/hd-ui'
+import '@rdeam/hd-ui/theme-chalk/index.css'
 
 import 'virtual:uno.css'
 import './style.css'
@@ -28,7 +28,7 @@ export default {
     // console.log('import.meta.env.SSR', import.meta.env.SSR)
     if (!import.meta.env.SSR) {
       // @ts-ignore
-      const custom = await import('@rdeam/qui').then((m) => m)
+      const custom = await import('@rdeam/hd-ui').then((m) => m)
       app.use(custom.default)
     }
   },

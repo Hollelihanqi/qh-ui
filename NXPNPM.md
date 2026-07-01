@@ -1,59 +1,59 @@
-﻿# PNPM Monorepo 涓?Nx 闆嗘垚鎸囧崡
+# PNPM Monorepo 与 Nx 集成指南
 
-鏈枃妗ｈ缁嗚鏄庝簡濡備綍鍦ㄩ」鐩腑闆嗘垚鍜屼娇鐢?PNPM Workspace 涓?Nx 鏋勫缓宸ュ叿锛屼互瀹炵幇楂樻晥鐨?monorepo 绠＄悊銆?
+本文档详细说明了如何在项目中集成和使用 PNPM Workspace 与 Nx 构建工具，以实现高效的 monorepo 管理。
 
-## 鐩綍缁撴瀯
+## 目录结构
 
 ```
 .
-鈹溾攢鈹€ packages/          # 鏍稿績鍖呯洰褰?
-鈹?  鈹溾攢鈹€ hd-custom/   # 鑷畾涔夌粍浠跺簱
-鈹?  鈹斺攢鈹€ share/    # 宸ュ叿搴?
-鈹溾攢鈹€ play/             # 缁勪欢婕旂ず椤圭洰
-鈹溾攢鈹€ docs/             # 鏂囨。绔欑偣
-鈹溾攢鈹€ internal/         # 鍐呴儴宸ュ叿鍜屾瀯寤鸿剼鏈?
-鈹溾攢鈹€ pnpm-workspace.yaml  # PNPM workspace 閰嶇疆
-鈹溾攢鈹€ nx.json           # Nx 閰嶇疆鏂囦欢
-鈹溾攢鈹€ package.json      # 鏍归」鐩厤缃?
-鈹斺攢鈹€ .npmrc           # NPM 閰嶇疆鏂囦欢
+├── packages/          # 核心包目录
+│   ├── hd-custom/   # 自定义组件库
+│   └── share/    # 工具库
+├── play/             # 组件演示项目
+├── docs/             # 文档站点
+├── internal/         # 内部工具和构建脚本
+├── pnpm-workspace.yaml  # PNPM workspace 配置
+├── nx.json           # Nx 配置文件
+├── package.json      # 根项目配置
+└── .npmrc           # NPM 配置文件
 ```
 
-## PNPM Workspace 閰嶇疆
+## PNPM Workspace 配置
 
 ### pnpm-workspace.yaml
 
 ```yaml
 packages:
-  - packages/* # 鎵€鏈夋牳蹇冨寘
-  - play # 缁勪欢婕旂ず椤圭洰
-  - docs # 鏂囨。绔欑偣
-  - internal/* # 鍐呴儴宸ュ叿
+  - packages/* # 所有核心包
+  - play # 组件演示项目
+  - docs # 文档站点
+  - internal/* # 内部工具
 ```
 
-杩欎釜閰嶇疆瀹氫箟浜?monorepo 鐨勫伐浣滅┖闂寸粨鏋勶紝鎸囧畾鍝簺鐩綍琚涓哄伐浣滅┖闂寸殑涓€閮ㄥ垎銆?
+这个配置定义了 monorepo 的工作空间结构，指定哪些目录被视为工作空间的一部分。
 
-### .npmrc 閰嶇疆
+### .npmrc 配置
 
 ```ini
-# 宸ヤ綔绌洪棿閰嶇疆
-recursive-install=true              # 閫掑綊瀹夎渚濊禆
-workspace-concurrency=10            # 宸ヤ綔绌洪棿骞跺彂鏁?
-child-concurrency=10               # 瀛愯繘绋嬪苟鍙戞暟
-network-concurrency=20             # 缃戠粶璇锋眰骞跺彂鏁?
-ignore-workspace-root-check=true   # 蹇界暐宸ヤ綔绌洪棿鏍圭洰褰曟鏌?
-git-checks=false                   # 绂佺敤 Git 妫€鏌?
+# 工作空间配置
+recursive-install=true              # 递归安装依赖
+workspace-concurrency=10            # 工作空间并发数
+child-concurrency=10               # 子进程并发数
+network-concurrency=20             # 网络请求并发数
+ignore-workspace-root-check=true   # 忽略工作空间根目录检查
+git-checks=false                   # 禁用 Git 检查
 
-# 闀滃儚閰嶇疆
+# 镜像配置
 @hd:registry=https://registry.npmjs.org/
 registry=https://registry.npmmirror.com/
 
-# Node.js 閰嶇疆
+# Node.js 配置
 node-options=--experimental-specifier-resolution=node
 ```
 
-杩欎簺閰嶇疆浼樺寲浜嗕緷璧栧畨瑁呮€ц兘骞惰缃簡閫傚綋鐨?registry銆?
+这些配置优化了依赖安装性能并设置了适当的 registry。
 
-## Nx 閰嶇疆
+## Nx 配置
 
 ### nx.json
 
@@ -62,11 +62,11 @@ node-options=--experimental-specifier-resolution=node
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"], // 鏋勫缓鏃朵緷璧栧叧绯诲鐞?
-      "cache": true // 鍚敤鏋勫缓缂撳瓨
+      "dependsOn": ["^build"], // 构建时依赖关系处理
+      "cache": true // 启用构建缓存
     }
   },
-  "defaultBase": "master", // 榛樿鍩哄噯鍒嗘敮
+  "defaultBase": "master", // 默认基准分支
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "!{projectRoot}/**/node_modules/**/*"],
     "production": ["default"]
@@ -74,15 +74,15 @@ node-options=--experimental-specifier-resolution=node
 }
 ```
 
-杩欎釜閰嶇疆瀹氫箟浜嗭細
+这个配置定义了：
 
-- 鏋勫缓浠诲姟鐨勪緷璧栧叧绯?
-- 鏋勫缓缂撳瓨绛栫暐
-- 鏂囦欢鐩戝惉鑼冨洿
+- 构建任务的依赖关系
+- 构建缓存策略
+- 文件监听范围
 
-### 椤圭洰绾у埆鐨?project.json
+### 项目级别的 project.json
 
-浠?hd-custom 鍖呬负渚嬶細
+以 hd-custom 包为例：
 
 ```json
 {
@@ -117,11 +117,11 @@ node-options=--experimental-specifier-resolution=node
 }
 ```
 
-## 渚濊禆绠＄悊
+## 依赖管理
 
-### 宸ヤ綔绌洪棿渚濊禆
+### 工作空间依赖
 
-鍦?package.json 涓娇鐢?workspace 鍗忚鏉ュ紩鐢ㄥ唴閮ㄥ寘锛?
+在 package.json 中使用 workspace 协议来引用内部包：
 
 ```json
 {
@@ -132,161 +132,161 @@ node-options=--experimental-specifier-resolution=node
 }
 ```
 
-- `workspace:*`: 鍏佽浠绘剰鐗堟湰
-- `workspace:^`: 閬靛惊璇箟鍖栫増鏈?
+- `workspace:*`: 允许任意版本
+- `workspace:^`: 遵循语义化版本
 
-## 甯哥敤鍛戒护
+## 常用命令
 
-### 渚濊禆瀹夎
+### 依赖安装
 
 ```bash
-# 瀹夎鎵€鏈変緷璧?
+# 安装所有依赖
 pnpm install
 
-# 鍦ㄧ壒瀹氬寘涓畨瑁呬緷璧?
+# 在特定包中安装依赖
 pnpm add <package> --filter <workspace-name>
 ```
 
-### 鏋勫缓鍛戒护
+### 构建命令
 
 ```bash
-# 鏋勫缓鎵€鏈夊寘
+# 构建所有包
 nx run-many -t build
 
-# 鏋勫缓鐗瑰畾鍖?
+# 构建特定包
 nx build hd-custom
 
-# 鏋勫缓渚濊禆鍥句腑鍙楀奖鍝嶇殑鍖?
+# 构建依赖图中受影响的包
 nx affected -t build
 ```
 
-### 鍙戝竷鍛戒护
+### 发布命令
 
 ```bash
-# 鍙戝竷鍖?
+# 发布包
 nx publish hd-custom
 
-# 鐗堟湰鏇存柊
+# 版本更新
 nx version hd-custom
 ```
 
-## 涓轰粈涔堥€夋嫨杩欑閰嶇疆锛?
+## 为什么选择这种配置？
 
-1. \*_PNPM 鐨勪紭鍔?_
-   - 楂樻晥鐨勪緷璧栧瓨鍌?
-   - 涓ユ牸鐨勪緷璧栫鐞?
-   - 蹇€熺殑瀹夎閫熷害
-   - 宸ヤ綔绌洪棿鏀寔
+1. **PNPM 的优势**
+   - 高效的依赖存储
+   - 严格的依赖管理
+   - 快速的安装速度
+   - 工作空间支持
 
-2. \*_Nx 鐨勪紭鍔?_
-   - 鏅鸿兘鏋勫缓缂撳瓨
-   - 澧為噺鏋勫缓
-   - 渚濊禆鍥惧垎鏋?
-   - 浠诲姟缂栨帓
+2. **Nx 的优势**
+   - 智能构建缓存
+   - 增量构建
+   - 依赖图分析
+   - 任务编排
 
-3. **缁勫悎浼樺娍**
-   - PNPM 澶勭悊渚濊禆绠＄悊
-   - Nx 澶勭悊鏋勫缓鍜屼换鍔℃祦绋?
-   - 涓よ€呬紭鍔夸簰琛ワ紝鎻愪緵瀹屾暣鐨?monorepo 瑙ｅ喅鏂规
+3. **组合优势**
+   - PNPM 处理依赖管理
+   - Nx 处理构建和任务流程
+   - 两者优势互补，提供完整的 monorepo 解决方案
 
-## 鏈€浣冲疄璺?
+## 最佳实践
 
-1. **渚濊禆绠＄悊**
-   - 浣跨敤 workspace 鍗忚寮曠敤鍐呴儴鍖?
-   - 鏄庣‘鎸囧畾澶栭儴渚濊禆鐗堟湰
-   - 浣跨敤 peerDependencies 澹版槑妗嗘灦渚濊禆
+1. **依赖管理**
+   - 使用 workspace 协议引用内部包
+   - 明确指定外部依赖版本
+   - 使用 peerDependencies 声明框架依赖
 
-2. **鏋勫缓浼樺寲**
-   - 鍒╃敤 Nx 缂撳瓨鍔犻€熸瀯寤?
-   - 閰嶇疆鍚堥€傜殑渚濊禆鍏崇郴
-   - 浣跨敤 affected 鍛戒护杩涜澧為噺鏋勫缓
+2. **构建优化**
+   - 利用 Nx 缓存加速构建
+   - 配置合适的依赖关系
+   - 使用 affected 命令进行增量构建
 
-3. **鐗堟湰鎺у埗**
-   - 浣跨敤 conventional commits
-   - 閰嶇疆 @jscutlery/semver 鑷姩鍖栫増鏈鐞?
-   - 淇濇寔 changelog 鏇存柊
+3. **版本控制**
+   - 使用 conventional commits
+   - 配置 @jscutlery/semver 自动化版本管理
+   - 保持 changelog 更新
 
-4. **CI/CD 闆嗘垚**
-   - 閰嶇疆 Nx 缂撳瓨
-   - 浣跨敤 affected 鍛戒护浼樺寲 CI 娴佺▼
-   - 鑷姩鍖栧彂甯冩祦绋?
+4. **CI/CD 集成**
+   - 配置 Nx 缓存
+   - 使用 affected 命令优化 CI 流程
+   - 自动化发布流程
 
-## 娉ㄦ剰浜嬮」
+## 注意事项
 
-1. 纭繚 .npmrc 涓厤缃簡姝ｇ‘鐨?registry
-2. 娉ㄦ剰鍖呬箣闂寸殑渚濊禆鍏崇郴锛岄伩鍏嶅惊鐜緷璧?
-3. 鍚堢悊浣跨敤 Nx 缂撳瓨锛岄伩鍏嶄笉蹇呰鐨勯噸澶嶆瀯寤?
-4. 閬靛惊 conventional commits 瑙勮寖锛屼究浜庤嚜鍔ㄥ寲鐗堟湰绠＄悊
-5. 瀹氭湡娓呯悊鏋勫缓缂撳瓨锛岄伩鍏嶅崰鐢ㄨ繃澶氱鐩樼┖闂?
+1. 确保 .npmrc 中配置了正确的 registry
+2. 注意包之间的依赖关系，避免循环依赖
+3. 合理使用 Nx 缓存，避免不必要的重复构建
+4. 遵循 conventional commits 规范，便于自动化版本管理
+5. 定期清理构建缓存，避免占用过多磁盘空间
 
-## 鏋勫缓渚濊禆涓庢墦鍖呭叧绯?
+## 构建依赖与打包关系
 
-### 宸ヤ綔绌洪棿缁撴瀯璁捐
+### 工作空间结构设计
 
-1. \*_鏍稿績鍖呰璁?_
+1. **核心包设计**
 
 ```
 packages/
-鈹溾攢鈹€ hd-custom/        # 缁勪欢搴撲富鍖?
-鈹溾攢鈹€ share/         # 宸ュ叿搴?
-鈹溾攢鈹€ theme-chalk/       # 涓婚鏍峰紡鍖?
-鈹斺攢鈹€ internal/          # 鍐呴儴宸ュ叿鍖?
-    鈹溾攢鈹€ build/         # 涓绘瀯寤虹郴缁燂紝鍩轰簬 Gulp 鐨勬瀯寤烘祦绋?
-    鈹溾攢鈹€ build-constants/ # 鏋勫缓甯搁噺瀹氫箟锛屾彁渚涙瀯寤鸿繃绋嬩腑浣跨敤鐨勫父閲忓€?
-    鈹溾攢鈹€ build-utils/   # 鏋勫缓宸ュ叿鍑芥暟锛屾彁渚涙瀯寤鸿剼鏈娇鐢ㄧ殑宸ュ叿鏂规硶
-    鈹溾攢鈹€ resolvers/     # 缁勪欢瑙ｆ瀽鍣紝鐢ㄤ簬鑷姩瀵煎叆缁勪欢
-    鈹斺攢鈹€ metadata/      # 缁勪欢鍏冩暟鎹紝鐢ㄤ簬鏂囨。鐢熸垚鍜岀被鍨嬫彁绀?
+├── hd-custom/        # 组件库主包
+├── share/         # 工具库
+├── theme-chalk/       # 主题样式包
+└── internal/          # 内部工具包
+    ├── build/         # 主构建系统，基于 Gulp 的构建流程
+    ├── build-constants/ # 构建常量定义，提供构建过程中使用的常量值
+    ├── build-utils/   # 构建工具函数，提供构建脚本使用的工具方法
+    ├── resolvers/     # 组件解析器，用于自动导入组件
+    └── metadata/      # 组件元数据，用于文档生成和类型提示
 ```
 
-2. \*_鍐呴儴宸ュ叿鍖呰鏄?_
+2. **内部工具包说明**
 
-- **build**: 鏍稿績鏋勫缓绯荤粺
-  - 鍖呭惈鍩轰簬 Gulp 鐨勪换鍔″畾涔?
-  - 绠＄悊鏁翠釜鏋勫缓娴佺▼
-  - 澶勭悊鏂囦欢杞崲銆佹墦鍖呭拰杈撳嚭
-  - 鏄瀯寤虹郴缁熺殑"鍐呭眰"鎺у埗涓績
+- **build**: 核心构建系统
+  - 包含基于 Gulp 的任务定义
+  - 管理整个构建流程
+  - 处理文件转换、打包和输出
+  - 是构建系统的"内层"控制中心
 
-- **build-constants**: 鏋勫缓甯搁噺
-  - 瀹氫箟鍖呭悕銆佽矾寰勭瓑甯搁噺
-  - 鎻愪緵鏋勫缓閰嶇疆鍙傛暟
-  - 纭繚鏋勫缓杩囩▼涓殑涓€鑷存€?
-  - 闆嗕腑绠＄悊鍙厤缃」
+- **build-constants**: 构建常量
+  - 定义包名、路径等常量
+  - 提供构建配置参数
+  - 确保构建过程中的一致性
+  - 集中管理可配置项
 
-- **build-utils**: 鏋勫缓宸ュ叿鍑芥暟
-  - 鎻愪緵鏂囦欢澶勭悊鍑芥暟
-  - 鍖呭惈璺緞瑙ｆ瀽宸ュ叿
-  - 鎻愪緵鏃ュ織鍜岄敊璇鐞?
-  - 灏佽甯哥敤鐨勬瀯寤烘搷浣?
+- **build-utils**: 构建工具函数
+  - 提供文件处理函数
+  - 包含路径解析工具
+  - 提供日志和错误处理
+  - 封装常用的构建操作
 
-- **resolvers**: 缁勪欢瑙ｆ瀽鍣?
-  - 瀹炵幇缁勪欢鐨勮嚜鍔ㄥ鍏?
-  - 鏀寔 IDE 鏅鸿兘鎻愮ず
-  - 涓庢墦鍖呭伐鍏烽泦鎴?
-  - 浼樺寲寮€鍙戜綋楠?
+- **resolvers**: 组件解析器
+  - 实现组件的自动导入
+  - 支持 IDE 智能提示
+  - 与打包工具集成
+  - 优化开发体验
 
-- **metadata**: 鍏冩暟鎹鐞?
-  - 鏀堕泦缁勪欢淇℃伅
-  - 鐢熸垚 API 鏂囨。鏁版嵁
-  - 鏀寔绫诲瀷鐢熸垚
-  - 杈呭姪鏂囨。绔欑偣鏋勫缓
+- **metadata**: 元数据处理
+  - 收集组件信息
+  - 生成 API 文档数据
+  - 支持类型生成
+  - 辅助文档站点构建
 
-3. \*_渚濊禆鍏崇郴鍥?_
+3. **依赖关系图**
 
 ```
 hd-custom
-  鈹溾攢鈹€ share
-  鈹溾攢鈹€ theme-chalk
-  鈹斺攢鈹€ internal/*
-      鈹溾攢鈹€ build 鈫?渚濊禆鍏朵粬鎵€鏈夊唴閮ㄥ寘
-      鈹溾攢鈹€ build-constants
-      鈹溾攢鈹€ build-utils 鈫?渚濊禆 build-constants
-      鈹溾攢鈹€ resolvers
-      鈹斺攢鈹€ metadata 鈫?渚濊禆 build-utils
+  ├── share
+  ├── theme-chalk
+  └── internal/*
+      ├── build → 依赖其他所有内部包
+      ├── build-constants
+      ├── build-utils → 依赖 build-constants
+      ├── resolvers
+      └── metadata → 依赖 build-utils
 ```
 
-### 渚濊禆绠＄悊璇﹁В
+### 依赖管理详解
 
-1. **宸ヤ綔绌洪棿渚濊禆澹版槑**
+1. **工作空间依赖声明**
 
 ```json
 // packages/hd-custom/package.json
@@ -294,54 +294,54 @@ hd-custom
   "name": "@hd-custom/components",
   "version": "1.0.0",
   "dependencies": {
-    "@hd-custom/utils": "workspace:*", // 宸ヤ綔绌洪棿渚濊禆锛屼换鎰忕増鏈?
-    "@hd-custom/theme-chalk": "workspace:^" // 宸ヤ綔绌洪棿渚濊禆锛岄伒寰涔夊寲鐗堟湰
+    "@hd-custom/utils": "workspace:*", // 工作空间依赖，任意版本
+    "@hd-custom/theme-chalk": "workspace:^" // 工作空间依赖，遵循语义化版本
   },
   "peerDependencies": {
-    "vue": "^3.5.13" // 澶栭儴渚濊禆澹版槑
+    "vue": "^3.5.13" // 外部依赖声明
   },
   "devDependencies": {
-    "@types/node": "^18.18.5", // 寮€鍙戜緷璧?
-    "vite": "^5.4.10" // 鏋勫缓宸ュ叿渚濊禆
+    "@types/node": "^18.18.5", // 开发依赖
+    "vite": "^5.4.10" // 构建工具依赖
   }
 }
 ```
 
-2. **渚濊禆绫诲瀷璇存槑**
+2. **依赖类型说明**
 
-- `workspace:*`锛氬厑璁镐娇鐢ㄥ伐浣滅┖闂翠腑鐨勪换鎰忕増鏈紝閫傜敤浜庡紑鍙戦樁娈?
-- `workspace:^`锛氶伒寰涔夊寲鐗堟湰锛岄€傜敤浜庣ǔ瀹氱増鏈?
-- `peerDependencies`锛氬０鏄庢鏋朵緷璧栵紝閬垮厤閲嶅瀹夎
-- `devDependencies`锛氫粎鍦ㄥ紑鍙戝拰鏋勫缓鏃朵娇鐢ㄧ殑渚濊禆
+- `workspace:*`：允许使用工作空间中的任意版本，适用于开发阶段
+- `workspace:^`：遵循语义化版本，适用于稳定版本
+- `peerDependencies`：声明框架依赖，避免重复安装
+- `devDependencies`：仅在开发和构建时使用的依赖
 
-### 鏋勫缓娴佺▼璇﹁В
+### 构建流程详解
 
-1. **鏋勫缓椤哄簭鎺у埗**
+1. **构建顺序控制**
 
 ```json
 // nx.json
 {
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"], // 纭繚渚濊禆椤瑰厛鏋勫缓
-      "cache": true // 鍚敤鏋勫缓缂撳瓨
+      "dependsOn": ["^build"], // 确保依赖项先构建
+      "cache": true // 启用构建缓存
     }
   },
   "namedInputs": {
     "default": [
-      "{projectRoot}/**/*", // 鐩戝惉鎵€鏈夋簮鏂囦欢
+      "{projectRoot}/**/*", // 监听所有源文件
       "!{projectRoot}/**/node_modules/**/*",
-      "!{projectRoot}/dist/**/*" // 鎺掗櫎鏋勫缓浜х墿
+      "!{projectRoot}/dist/**/*" // 排除构建产物
     ],
     "production": [
       "default",
-      "!{projectRoot}/**/*.spec.ts" // 鎺掗櫎娴嬭瘯鏂囦欢
+      "!{projectRoot}/**/*.spec.ts" // 排除测试文件
     ]
   }
 }
 ```
 
-2. \*_棰勬瀯寤洪厤缃瑙?_
+2. **预构建配置详解**
 
 ```json
 // root package.json
@@ -355,30 +355,30 @@ hd-custom
 }
 ```
 
-鏋勫缓娴佺▼璇存槑锛?
+构建流程说明：
 
-1. `prebuild` 棣栧厛鏋勫缓鍩虹渚濊禆锛?
-   - share锛氬熀纭€宸ュ叿搴?
-   - internal-build-constants锛氭瀯寤哄父閲?
-   - internal-build-utils锛氭瀯寤哄伐鍏?
-   - internal-resolvers锛氫緷璧栬В鏋愬櫒
+1. `prebuild` 首先构建基础依赖：
+   - share：基础工具库
+   - internal-build-constants：构建常量
+   - internal-build-utils：构建工具
+   - internal-resolvers：依赖解析器
 
-2. 涓绘瀯寤烘祦绋嬶細
+2. 主构建流程：
 
    ```bash
-   # 1. 鏋勫缓宸ュ叿搴擄紙骞惰锛?
+   # 1. 构建工具库（并行）
    pnpm run utils:build
 
-   # 2. 鏋勫缓涓婚锛堜緷璧栧伐鍏峰簱锛?
+   # 2. 构建主题（依赖工具库）
    pnpm run build:theme
 
-   # 3. 鏋勫缓缁勪欢搴擄紙渚濊禆涓婅堪鎵€鏈夛級
+   # 3. 构建组件库（依赖上述所有）
    pnpm run build
    ```
 
-### 椤圭洰绾ф瀯寤洪厤缃?
+### 项目级构建配置
 
-1. \*_缁勪欢搴撴瀯寤洪厤缃?_
+1. **组件库构建配置**
 
 ```json
 // packages/hd-custom/project.json
@@ -390,29 +390,29 @@ hd-custom
       "options": {
         "command": "pnpm build",
         "outputs": [
-          "dist/hd-custom", // 涓绘瀯寤轰骇鐗?
-          "dist/types" // 绫诲瀷鏂囦欢
+          "dist/hd-custom", // 主构建产物
+          "dist/types" // 类型文件
         ],
-        "cwd": "packages/hd-custom" // 鎵ц鐩綍
+        "cwd": "packages/hd-custom" // 执行目录
       },
       "dependsOn": [
-        "^build", // 渚濊禆鍏朵粬鍖呯殑鏋勫缓
-        "build:theme", // 渚濊禆涓婚鏋勫缓
+        "^build", // 依赖其他包的构建
+        "build:theme", // 依赖主题构建
         {
-          "projects": "dependencies", // 鑷姩璇嗗埆渚濊禆椤?
+          "projects": "dependencies", // 自动识别依赖项
           "target": "build"
         }
       ],
       "inputs": [
-        "production", // 浣跨敤鐢熶骇鐜閰嶇疆
-        "{workspaceRoot}/tsconfig.json" // 鍏ㄥ眬 TypeScript 閰嶇疆
+        "production", // 使用生产环境配置
+        "{workspaceRoot}/tsconfig.json" // 全局 TypeScript 配置
       ]
     }
   }
 }
 ```
 
-2. \*_宸ュ叿搴撴瀯寤洪厤缃?_
+2. **工具库构建配置**
 
 ```json
 // packages/share/project.json
@@ -431,9 +431,9 @@ hd-custom
 }
 ```
 
-### 缂撳瓨鏈哄埗璇﹁В
+### 缓存机制详解
 
-1. **缂撳瓨閰嶇疆瀹屾暣绀轰緥**
+1. **缓存配置完整示例**
 
 ```json
 // nx.json
@@ -455,63 +455,63 @@ hd-custom
 }
 ```
 
-2. **缂撳瓨宸ヤ綔鍘熺悊**
+2. **缓存工作原理**
 
-- **杈撳叆鍝堝笇**锛?
+- **输入哈希**：
 
   ```json
   "inputs": [
-    "{projectRoot}/src/**/*",     // 婧愭枃浠?
-    "{projectRoot}/package.json", // 椤圭洰閰嶇疆
-    "{workspaceRoot}/tsconfig.json" // 鍏变韩閰嶇疆
+    "{projectRoot}/src/**/*",     // 源文件
+    "{projectRoot}/package.json", // 项目配置
+    "{workspaceRoot}/tsconfig.json" // 共享配置
   ]
   ```
 
-  Nx 浼氳绠楄繖浜涙枃浠剁殑缁勫悎鍝堝笇鍊?
+  Nx 会计算这些文件的组合哈希值
 
-- \**缂撳瓨閿敓鎴?*锛?
+- **缓存键生成**：
 
   ```
   cache-key = hash(inputs + command + dependencies-outputs)
   ```
 
-- **缂撳瓨瀛樺偍**锛?
+- **缓存存储**：
   ```
   .nx/cache/
-  鈹溾攢鈹€ file-hashes/      # 鏂囦欢鍝堝笇缂撳瓨
-  鈹溾攢鈹€ run/              # 杩愯缁撴灉缂撳瓨
-  鈹斺攢鈹€ terminalOutputs/  # 缁堢杈撳嚭缂撳瓨
+  ├── file-hashes/      # 文件哈希缓存
+  ├── run/              # 运行结果缓存
+  └── terminalOutputs/  # 终端输出缓存
   ```
 
-3. **缂撳瓨鐢熷懡鍛ㄦ湡**
+3. **缓存生命周期**
 
 ```bash
-# 寮€鍙戞祦绋嬩腑鐨勭紦瀛樹娇鐢?
-1. 妫€鏌ヨ緭鍏ユ枃浠跺搱甯屽€?
-2. 妫€鏌ヤ緷璧栭」鏋勫缓鐘舵€?
-3. 鏌ユ壘缂撳瓨鍛戒腑
-4. 濡傛湭鍛戒腑锛屾墽琛屾瀯寤哄苟缂撳瓨
-5. 濡傚懡涓紝鐩存帴鎭㈠缂撳瓨
+# 开发流程中的缓存使用
+1. 检查输入文件哈希值
+2. 检查依赖项构建状态
+3. 查找缓存命中
+4. 如未命中，执行构建并缓存
+5. 如命中，直接恢复缓存
 
-# 缂撳瓨缁存姢鍛戒护
-nx reset                 # 娓呴櫎鎵€鏈夌紦瀛?
-nx reset hd-custom     # 娓呴櫎鐗瑰畾椤圭洰缂撳瓨
-nx clean                # 娓呴櫎鏋勫缓浜х墿
+# 缓存维护命令
+nx reset                 # 清除所有缓存
+nx reset hd-custom     # 清除特定项目缓存
+nx clean                # 清除构建产物
 ```
 
-### 鎬ц兘浼樺寲绛栫暐
+### 性能优化策略
 
-1. **骞惰鏋勫缓浼樺寲**
+1. **并行构建优化**
 
 ```bash
-# 鏈€澶у寲骞惰鏋勫缓
+# 最大化并行构建
 nx run-many -t build -p share,hd-custom --parallel=3
 
-# 浣跨敤 affected 鍙瀯寤哄彉鏇?
+# 使用 affected 只构建变更
 nx affected -t build --parallel
 ```
 
-2. **渚濊禆浼樺寲**
+2. **依赖优化**
 
 ```json
 {
@@ -519,88 +519,88 @@ nx affected -t build --parallel
     {
       "projects": "dependencies",
       "target": "build",
-      "params": "forward" // 杞彂鏋勫缓鍙傛暟
+      "params": "forward" // 转发构建参数
     }
   ]
 }
 ```
 
-3. **缂撳瓨浼樺寲**
+3. **缓存优化**
 
-- 绮剧‘瀹氫箟 `inputs` 鍜?`outputs`
-- 浣跨敤 `nx graph` 鍒嗘瀽渚濊禆
-- 閰嶇疆杩滅▼缂撳瓨鍏变韩
-- 瀹氭湡娓呯悊杩囨湡缂撳瓨
+- 精确定义 `inputs` 和 `outputs`
+- 使用 `nx graph` 分析依赖
+- 配置远程缓存共享
+- 定期清理过期缓存
 
-4. **甯歌鎬ц兘闂瑙ｅ喅**
+4. **常见性能问题解决**
 
 ```bash
-# 鍒嗘瀽鏋勫缓鎬ц兘
+# 分析构建性能
 nx print-affected --select=tasks
 
-# 鏌ョ湅渚濊禆鍥?
+# 查看依赖图
 nx graph
 
-# 楠岃瘉缂撳瓨閰嶇疆
+# 验证缓存配置
 nx build hd-custom --skip-nx-cache=false --verbose
 ```
 
-## 涓ゅ眰鏋勫缓绯荤粺
+## 两层构建系统
 
-鏈」鐩噰鐢ㄤ簡涓ゅ眰鏋勫缓绯荤粺鐨勬灦鏋勶紝缁撳悎浜?Nx 鍜?Gulp 鐨勪紭鍔匡細
+本项目采用了两层构建系统的架构，结合了 Nx 和 Gulp 的优势：
 
-### 鏋勫缓绯荤粺鏋舵瀯
+### 构建系统架构
 
-1. **澶栧眰**: Nx 鐢ㄤ簬浠诲姟缂栨帓鍜岀紦瀛?
-   - 鎻愪緵楂樺眰娆＄殑浠诲姟缂栨帓
-   - 绠＄悊鏋勫缓缂撳瓨
-   - 澶勭悊椤圭洰闂寸殑渚濊禆鍏崇郴
+1. **外层**: Nx 用于任务编排和缓存
+   - 提供高层次的任务编排
+   - 管理构建缓存
+   - 处理项目间的依赖关系
 
-2. **鍐呭眰**: Gulp 鐢ㄤ簬鍏蜂綋鏋勫缓娴佺▼鎺у埗
-   - 绠＄悊鍏蜂綋鐨勬瀯寤烘楠?
-   - 鎺у埗鏂囦欢杞崲鍜屽鐞?
-   - 澶勭悊缁嗙矑搴︾殑渚濊禆鍏崇郴
+2. **内层**: Gulp 用于具体构建流程控制
+   - 管理具体的构建步骤
+   - 控制文件转换和处理
+   - 处理细粒度的依赖关系
 
-### 鏋勫缓娴佺▼璇存槑
+### 构建流程说明
 
-褰撴墽琛?`pnpm build` (鍗?`nx build internal-build`) 鏃讹細
+当执行 `pnpm build` (即 `nx build internal-build`) 时：
 
-1. Nx 棣栧厛妫€鏌ョ紦瀛橈紝濡傛灉鏈夊懡涓垯鐩存帴浣跨敤缂撳瓨缁撴灉
-2. 濡傛灉娌℃湁缂撳瓨鍛戒腑锛孨x 鍚姩 internal-build 椤圭洰鐨勬瀯寤?
-3. internal-build 椤圭洰閫氳繃 Gulp 鎵ц涓€绯诲垪浠诲姟锛?
-   - 娓呯悊鏋勫缓鐩綍
-   - 鏋勫缓鍩虹宸ュ叿搴?
-   - 鏋勫缓涓婚鏍峰紡
-   - 鐢熸垚绫诲瀷瀹氫箟
-   - 鏋勫缓缁勪欢搴?
-   - 澶嶅埗鍜屾暣鍚堟瀯寤轰骇鐗?
+1. Nx 首先检查缓存，如果有命中则直接使用缓存结果
+2. 如果没有缓存命中，Nx 启动 internal-build 项目的构建
+3. internal-build 项目通过 Gulp 执行一系列任务：
+   - 清理构建目录
+   - 构建基础工具库
+   - 构建主题样式
+   - 生成类型定义
+   - 构建组件库
+   - 复制和整合构建产物
 
-### 涓ゅ眰鏋勫缓鐨勪紭鍔?
+### 两层构建的优势
 
-1. \*_缁撳悎涓よ€呬紭鍔?_
-   - Nx 鎻愪緵楂樻晥鐨勭紦瀛樺拰澧為噺鏋勫缓
-   - Gulp 鎻愪緵鐏垫椿鐨勬瀯寤烘祦绋嬫帶鍒?
+1. **结合两者优势**
+   - Nx 提供高效的缓存和增量构建
+   - Gulp 提供灵活的构建流程控制
 
-2. **骞虫粦杩囨浮**
-   - 淇濈暀鐜版湁鐨勬瀯寤洪€昏緫
-   - 閫愭寮曞叆 Nx 鐨勫姛鑳?
-   - 闄嶄綆杩佺Щ椋庨櫓
+2. **平滑过渡**
+   - 保留现有的构建逻辑
+   - 逐步引入 Nx 的功能
+   - 降低迁移风险
 
-3. \*_鏈€浣冲疄璺?_
-   - 浣跨敤 Nx 绠＄悊澶у瀷浠诲姟鍜岀紦瀛?
-   - 浣跨敤 Gulp 澶勭悊缁嗚妭鍜屽鏉傛祦绋?
-   - 涓よ€呬紭鍔夸簰琛?
+3. **最佳实践**
+   - 使用 Nx 管理大型任务和缓存
+   - 使用 Gulp 处理细节和复杂流程
+   - 两者优势互补
 
-### 浣跨敤鏂瑰紡
+### 使用方式
 
 ```bash
-# 鎵ц瀹屾暣鏋勫缓
+# 执行完整构建
 pnpm build
 
-# 娓呯悊鏋勫缓浜х墿
+# 清理构建产物
 pnpm clean
 
-# 鏋勫缓鐗瑰畾鍖?
+# 构建特定包
 pnpm utils:build
 pnpm build:theme
 ```

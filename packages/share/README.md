@@ -1,6 +1,6 @@
 # @hd-custom/share
 
-组件库内部工具函数，跟随 `@rdeam/qui` 一起构建和发布，不作为独立 npm 包发布。
+组件库内部工具函数，跟随 `@rdeam/hd-ui` 一起构建和发布，不作为独立 npm 包发布。
 
 ## 当前模块
 
@@ -21,5 +21,5 @@
 对外使用时从组件库子路径导入：
 
 ```ts
-import { debounceFun, ocrValueMapping } from '@rdeam/qui/share'
+import { debounceFun, ocrValueMapping } from '@rdeam/hd-ui/share'
 ```

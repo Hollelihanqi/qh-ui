@@ -1,5 +1,5 @@
 const PKG_PREFIX = "@hd-custom";
-const PKG_NAME = "@hd/custom";
+const PKG_NAME = "@rdeam/hd-ui";
 const PKG_CAMELCASE_NAME = "HdCustom";
 const PKG_BRAND_NAME = "Hd Custom";
 const COMPONENT_EXPORT_PREFIX = "Hd";

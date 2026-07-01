@@ -1,5 +1,5 @@
 {
-  "name": "@rdeam/qui",
+  "name": "@rdeam/hd-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/hd-custom",
   "projectType": "library",
