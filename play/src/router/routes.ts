@@ -31,14 +31,6 @@ export const routes: RouteRecordRaw[] = [
         },
       },
       {
-        path: '/empty',
-        name: 'empty',
-        component: () => import('@/views/empty/Index.vue'),
-        meta: {
-          title: 'empty',
-        },
-      },
-      {
         path: '/jdata-viewer',
         name: 'jdata-viewer',
         component: () => import('@/views/jdata-viewer/Index.vue'),

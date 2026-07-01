@@ -1,7 +1,7 @@
 import type { ExtractPropTypes, PropType } from 'vue'
 import type { PaginationProps } from 'element-plus'
 import { buildProps } from '@hd-custom/utils'
-import type { EmptyProps } from '@hd-custom/components/empty'
+import type { EmptyProps } from 'element-plus'
 
 export interface ColumnsItemProps {
   label?: string
@@ -157,7 +157,7 @@ export const tableProps = buildProps({
   emptyOptions: {
     type: Object as PropType<EmptyProps>,
     default: () => ({
-      size: 'small',
+      description: '暂无数据',
     }),
   },
 })

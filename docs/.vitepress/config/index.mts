@@ -8,8 +8,8 @@ import { sidebars } from './sidebars'
 
 // https://vitepress.dev/reference/site-config
 const config: UserConfig = {
-  title: "技术平台部",
-  description: "技术平台部，业务组件库",
+  title: "hd-ui",
+  description: "hd-ui，业务组件库",
   metaChunk: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

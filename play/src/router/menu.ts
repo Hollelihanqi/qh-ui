@@ -15,11 +15,6 @@ export const menus = [
     code: '/ellipsis-tag',
   },
   {
-    label: 'Empty',
-    href: '/empty',
-    code: '/empty',
-  },
-  {
     label: 'JDataViewer',
     href: '/jdata-viewer',
     code: '/jdata-viewer',

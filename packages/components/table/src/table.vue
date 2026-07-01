@@ -26,7 +26,7 @@
       </template>
       <template #empty>
         <slot name="empty">
-          <Empty v-bind="emptyOptions"></Empty>
+          <ElEmpty v-bind="emptyOptions" />
         </slot>
       </template>
 
@@ -72,10 +72,9 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTable, ElTableColumn, ElPagination, ElButton, ElLoadingDirective as vQoding } from 'element-plus'
+import { ElTable, ElTableColumn, ElPagination, ElButton, ElEmpty, ElLoadingDirective as vQoding } from 'element-plus'
 import TableColumn from './components/TableColumn.vue'
 import SettingV from './components/Setting.vue'
-import Empty from '@hd-custom/components/empty'
 import { Setting } from '@element-plus/icons-vue'
 import useController from './use-controller'
 import useTable from './use-table'

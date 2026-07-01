@@ -1,7 +1,6 @@
 export * from './date-picker'
 export * from './descriptions'
 export * from './ellipsis-tag'
-export * from './empty'
 export * from './jdata-viewer'
 export * from './pro-table'
 export * from './radio'
