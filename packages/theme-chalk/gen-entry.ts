@@ -76,7 +76,7 @@ export { ${camelCaseName} }
         fs.mkdirSync(componentEntryDir)
       }
 
-      fs.writeFileSync(componentEntryPath, entryContent.trim())
+      fs.writeFileSync(componentEntryPath, `${entryContent.trim()}\n`)
     }
   })
 
@@ -89,7 +89,7 @@ export { ${camelCaseName} }
     .join('\n')
 
   const mainEntryPath = resolve(__dirname, './entry.ts')
-  fs.writeFileSync(mainEntryPath, mainEntryContent)
+  fs.writeFileSync(mainEntryPath, `${mainEntryContent}\n`)
 
   return mainEntryPath
 }

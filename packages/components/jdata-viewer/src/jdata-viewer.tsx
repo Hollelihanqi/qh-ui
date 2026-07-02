@@ -27,7 +27,7 @@ export default defineComponent({
     }
 
     // 优化 valueRender 函数，提高可读性
-    const valueRender = (node: any) => {
+    const defaultRender = (node: any) => {
       if (node.value === null) {
         return <span class="jv-n">null</span>
       }
@@ -64,6 +64,17 @@ export default defineComponent({
         default:
           return <span class="jv-greed">{JSON.stringify(node.value)}</span>
       }
+    }
+
+    // 自定义值渲染入口：传入了 valueRender 就交给业务方，否则走默认逻辑
+    const renderValue = (node: any) => {
+      if (typeof props.valueRender === 'function') {
+        const custom = props.valueRender(node, defaultRender)
+        if (custom !== undefined && custom !== null) {
+          return custom
+        }
+      }
+      return defaultRender(node)
     }
 
     const toggleExpand = (node: any) => {
@@ -142,7 +153,7 @@ export default defineComponent({
                   )}
                 </Fragment>
               )}
-              {valueRender(_node)}
+              {renderValue(_node)}
               {_node.isArrayChild && <span>，</span>}
             </div>
           )
