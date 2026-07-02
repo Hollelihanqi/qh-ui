@@ -94,7 +94,7 @@ export default defineComponent({
               })}
             >
               <CollapseArrow toggleClick={() => toggleExpand(_node)} isCollapsed={_node.collapse} />
-              <div style="display:inline-block;word-break: break-all;">
+              <div style="display:inline-block;word-break: break-all;overflow-wrap:anywhere;max-width:100%;">
                 {!_node.isArrayChild && (
                   <Fragment>
                     <span>{parseKey(key)}</span>
@@ -125,8 +125,9 @@ export default defineComponent({
           return (
             <div
               style={css({
-                display: props.renderHTag && isHtml(node) ? 'flex' : 'inline-block',
+                display: props.renderHTag && isHtml(node) ? 'flex' : 'block',
                 wordBreak: 'break-all',
+                overflowWrap: 'anywhere',
               })}
             >
               {type !== 'array' && (

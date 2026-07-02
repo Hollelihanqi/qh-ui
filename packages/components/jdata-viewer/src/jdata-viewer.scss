@@ -38,6 +38,10 @@
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    // 兜底：保证超长的无空格串（如 URL、DID）在容器宽度内自动折行，
+    // 避免内容撑宽后出现底部横向滚动条
+    word-break: break-all;
+    overflow-wrap: anywhere;
   }
 
   // 折叠箭头
