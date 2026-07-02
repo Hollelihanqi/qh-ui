@@ -1,23 +1,32 @@
-interface HdCustomResolverOptions {
-    /**
-     * 是否自动导入组件样式文件。
-     *
-     * 样式入口是每个组件的 es/components/<name>/style/index.mjs，它内部 import 自身
-     * 与依赖组件的 theme-chalk css。同一 css 被多个组件引用时由打包器按模块路径去重，
-     * 因此 resolver 无需维护任何组件依赖表。
-     *
-     * @default true
-     */
-    importStyle?: boolean;
-}
-declare const HdCustomResolver: (options?: HdCustomResolverOptions) => {
+/**
+ * 组件解析器。
+ *
+ * 组件 JS 入口（es/components/<name>/index.mjs）自身已 import 它的样式索引
+ * （style/index.mjs，含传递依赖的 theme-chalk css），所以这里只返回 from、
+ * 不再单独声明样式 sideEffects。样式随组件 JS 一起加载，css 按模块路径去重。
+ */
+declare const HdCustomResolver: () => {
     type: "component";
     resolve: (name: string) => {
         name: string;
         from: string;
-        sideEffects: string[] | undefined;
     } | undefined;
 };
+/**
+ * dev 预构建插件（可选）。
+ *
+ * hd-ui 组件都是 node_modules 里的 .mjs，dev 下首次用到会被 vite 按需预构建并 reload。
+ * 路由懒加载 + 每个新页面用到新组件 → 切菜单时反复 reload。
+ * 在 vite plugins 里加一行 hdUiDevPlugin()，启动时把所有组件入口一次性预构建，
+ * 即可杜绝运行时补构建造成的 reload。生产构建不受影响。
+ *
+ * 用法：
+ *   import { HdCustomResolver, hdUiDevPlugin } from '@rdeam/hd-ui/resolvers'
+ *   plugins: [Components({ resolvers: [HdCustomResolver()] }), hdUiDevPlugin()]
+ */
+declare function hdUiDevPlugin(): {
+    name: string;
+    config(config: any): void;
+};
 
-export { HdCustomResolver };
-export type { HdCustomResolverOptions };
+export { HdCustomResolver, hdUiDevPlugin };

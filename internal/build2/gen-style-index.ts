@@ -74,6 +74,19 @@ export async function generateStyleIndex() {
     const outDir = join(hdOutput, 'es', 'components', name, 'style')
     mkdirSync(outDir, { recursive: true })
     writeFileSync(join(outDir, 'index.mjs'), `${lines.join('\n')}\n`)
+
+    // 让组件 JS 入口自身引入样式索引：resolver 只需返回 index.mjs，消费方 vite 预构建时
+    // 把 style/index.mjs 折叠进 index.mjs 的同一个预构建块，每组件 JS 入口 2→1，
+    // dev 下切菜单因“发现新依赖”而 reload 的次数减半。
+    const indexMjs = join(hdOutput, 'es', 'components', name, 'index.mjs')
+    if (existsSync(indexMjs)) {
+      const marker = `import './style/index.mjs'`
+      const raw = readFileSync(indexMjs, 'utf-8')
+      if (!raw.startsWith(marker)) {
+        writeFileSync(indexMjs, `${marker}\n${raw}`)
+      }
+    }
+
     count += 1
   }
 

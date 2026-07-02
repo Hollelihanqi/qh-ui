@@ -35,7 +35,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { HdCustomResolver } from '@rdeam/hd-ui/resolvers'
+import { HdCustomResolver, hdUiDevPlugin } from '@rdeam/hd-ui/resolvers'
 
 export default defineConfig({
   plugins: [
@@ -48,11 +48,31 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     Components({
+      // HdCustomResolver 只返回组件 JS 入口；组件样式（含其依赖组件的样式）
+      // 已内建在组件 JS 里随组件一起加载，同一份样式 css 会被打包器按模块去重。
       resolvers: [ElementPlusResolver(), HdCustomResolver()],
     }),
+    // 可选：消除 dev 下「切菜单首次用到新组件就 reload」的问题。
+    // 启动时把所有 hd-ui 组件入口一次性预构建，生产构建不受影响。
+    hdUiDevPlugin(),
   ],
 })
 ```
+
+::: tip 样式是如何加载的
+
+- 组件 JS 入口（`es/components/<name>/index.mjs`）内部已 `import` 它的样式索引，
+  样式索引里是「该组件用到的所有组件样式的传递闭包」。所以模板里写 `<HdXxx />` 即可，
+  无需手动引入任何 css。
+- 同一份 `theme-chalk/*.css` 无论被多少组件引用，打包器都按模块路径去重，只产出一份。
+- 因此 `HdCustomResolver()` 不再有 `importStyle` 选项，样式始终随组件加载。
+  :::
+
+::: tip dev 切菜单 reload 怎么解决（可选）
+路由懒加载时，首次进入用到新 hd-ui 组件的页面，vite 会按需预构建该组件的 `.mjs` 并刷新一次页面。
+在 `plugins` 里加一行 `hdUiDevPlugin()`（如上），启动时一次性预构建全部组件入口，即可杜绝这种刷新。
+仅影响开发体验，生产构建无任何变化。不添加也能正常使用，只是首次进入新页面会闪一下。
+:::
 
 ### 完整引入
 
