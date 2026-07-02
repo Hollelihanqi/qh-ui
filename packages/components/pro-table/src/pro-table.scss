@@ -1,5 +1,22 @@
+/* 嵌套组件（search-form / table）的样式改由 resolver 通过
+   es/components/pro-table/style/index.mjs 按需拉取并按模块去重，不再内联进本 css。 */
 .hd-pro-table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .ptable-search {
+    margin-bottom: 8px;
+  }
+
   .ptable-box {
+    flex: 1;
+    height: 0;
+    padding: 16px;
+    background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
   }

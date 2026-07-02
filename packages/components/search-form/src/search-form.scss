@@ -1,3 +1,5 @@
+/* remote-search 样式改由 resolver 通过 es/components/search-form/style/index.mjs
+   按需拉取并按模块去重，不再内联进本 css。 */
 .el-form-item__content {
   .el-date-editor.el-input.msearch-form-item,
   .msearch-form-item {
@@ -5,8 +7,38 @@
   }
 }
 .hd-search-form {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px 16px 0;
+
+  .search-form .el-form-item {
+    margin-bottom: 20px;
+  }
+
+  .search-action-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
   .collapse-btn-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
     .collapse-btn {
+      width: 60px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       &:hover {
         background: rgba(215, 219, 223, 0.2);
       }

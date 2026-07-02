@@ -1,12 +1,8 @@
 const COMPONENT_EXPORT_PREFIX = "Hd";
-const COMPONENT_STYLE_PREFIX = "hd";
-function getComponentStyleName(componentName) {
-  return `${COMPONENT_STYLE_PREFIX}-${componentName}`;
-}
 
 function getSideEffects(componentName, importStyle) {
   if (!importStyle) return;
-  return [`@rdeam/hd-ui/theme-chalk/${getComponentStyleName(componentName)}.css`];
+  return [`@rdeam/hd-ui/es/components/${componentName}/style/index.mjs`];
 }
 const HdCustomResolver = (options = {}) => {
   const resolvedOptions = {

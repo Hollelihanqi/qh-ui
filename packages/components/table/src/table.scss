@@ -1,9 +1,16 @@
+/* 列筛选抽屉（Setting.vue）的样式随 table 入口一并打包。 */
+@import './components/setting.scss';
+
 .table-w {
   $font-color: #2a2e32;
   $el-table-header-bg-color: #eceef1;
   $el-table-header-font-color: $font-color;
   $page-number-font-color: #151719;
   background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   .el-table.is-scrolling-none th.el-table-fixed-column--left,
   .el-table.is-scrolling-none th.el-table-fixed-column--right,
   .el-table.is-scrolling-left th.el-table-fixed-column--left,
@@ -17,6 +24,31 @@
   }
   .table-header {
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .table-header-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .table-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 8px;
+    &.is-fill {
+      flex: 1;
+    }
+  }
+  .phd {
+    flex: 1;
+    height: 0;
+    opacity: 0;
+  }
+  .copy-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   .pagination-hide-table > div::before {
     display: none;
@@ -52,6 +84,10 @@
     }
   }
   .my-el-table {
+    width: 100%;
+    &.is-fill {
+      flex: 1;
+    }
     .el-scrollbar__view {
       height: 100%;
     }
@@ -74,5 +110,6 @@
   }
   .copy-icon-color {
     color: var(--el-color-primary);
+    cursor: pointer;
   }
 }

@@ -1,4 +1,17 @@
 .staicky-w {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  .staicky-c {
+    flex: 1;
+    height: 0;
+  }
+  .staicky-f {
+    position: sticky;
+    bottom: 0;
+    z-index: 99;
+  }
   .el-scrollbar__wrap {
     display: flex;
     flex-direction: column;

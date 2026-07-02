@@ -1,9 +1,9 @@
 <template>
-  <div class="hd-table table-w h-[100%] w-full flex flex-col">
-    <div v-if="$slots.tableHeader || toolBar" class="table-header flex items-center">
-      <div class="flex-1 flex items-center">
+  <div class="hd-table table-w">
+    <div v-if="$slots.tableHeader || toolBar" class="table-header">
+      <div class="table-header-main">
         <slot name="tableHeader"></slot>
-        <div v-if="toolBar" :class="`flex justify-end px-[8px] ${$slots.tableHeader ? '' : 'flex-1'}`">
+        <div v-if="toolBar" class="table-toolbar" :class="{ 'is-fill': !$slots.tableHeader }">
           <ElButton :icon="Setting" circle @click="handleSetting" />
         </div>
       </div>
@@ -11,8 +11,8 @@
     <ElTable
       ref="ElTableInstance"
       v-qoding="requestApi ? _loading : loading"
-      class="my-el-table w-[100%]"
-      :class="{ 'pagination-hide-table': !cpaginationShow, 'flex-1': !isDataEmpty || !_showSummary }"
+      class="my-el-table"
+      :class="{ 'pagination-hide-table': !cpaginationShow, 'is-fill': !isDataEmpty || !_showSummary }"
       :data="_tdata"
       :default-sort="_defaultSort"
       v-bind="$attrs"
@@ -54,7 +54,7 @@
 
       <slot name="inAction"></slot>
     </ElTable>
-    <div v-if="_showSummary" class="flex-1 opacity-0 h-0 phd"></div>
+    <div v-if="_showSummary" class="phd"></div>
     <ElPagination
       v-if="cpaginationShow"
       v-model:page-size="paginationParams.pageSize"

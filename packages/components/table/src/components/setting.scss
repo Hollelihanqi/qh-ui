@@ -1,4 +1,15 @@
 .iel-drawer__bodyp0 {
+  padding: 0;
+  .setting-list {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .setting-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
   .el-drawer__body {
     padding: 0;
     border-bottom: 1px solid #dcdfe6;

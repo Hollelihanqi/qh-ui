@@ -1,22 +1,12 @@
 <template>
-  <div class="hd-radio flex">
-    <div
-      v-for="(op, idx) in props.options"
-      :key="idx"
-      class="flex py-[6px] cursor-pointer items-center select-none mr-[32px] last:(mr-0)"
-      @click="onClicked(op)"
-    >
+  <div class="hd-radio">
+    <div v-for="(op, idx) in props.options" :key="idx" class="radio-item" @click="onClicked(op)">
       <div
-        :class="`${
+        :class="`radio-icon ${
           isCheck === (typeof op === 'string' ? op : op[props.value]) ? `active-icon` : ''
-        } w-[14px] h-[14px] border rounded-full mr-[8px] flex items-center justify-center ${
-          disabled ? 'disabled-radio' : ''
-        }`"
+        } ${disabled ? 'disabled-radio' : ''}`"
       >
-        <div
-          v-show="isCheck === (typeof op === 'string' ? op : op[props.value])"
-          class="w-[4px] h-[4px] rounded-full border-full shadow bg-white"
-        ></div>
+        <div v-show="isCheck === (typeof op === 'string' ? op : op[props.value])" class="radio-dot"></div>
       </div>
       <div
         :class="{

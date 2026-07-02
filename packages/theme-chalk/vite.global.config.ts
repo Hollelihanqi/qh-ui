@@ -3,21 +3,11 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'url'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import UnoCSS from 'unocss/vite'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    UnoCSS({
-      mode: 'per-module',
-      outputToCssLayers: {
-        cssLayerName: (layer) => `hd-ui-${layer}`,
-      },
-    }),
-  ],
+  plugins: [vue(), vueJsx()],
   build: {
     lib: {
       entry: {

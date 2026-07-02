@@ -1,19 +1,15 @@
 <template>
-  <div class="hd-time-line w-full time-line">
-    <div v-for="(item, index) in props.timeData" :key="'timer' + index" class="flex w-full time-line-item">
+  <div class="hd-time-line time-line">
+    <div v-for="(item, index) in props.timeData" :key="'timer' + index" class="time-line-item">
       <slot name="prepend" :item="item">
-        <div
-          v-if="getItemValue(item, 'status')"
-          :style="`width: ${props.prependWidth}`"
-          class="relative -top-1 flex justify-end"
-        >
+        <div v-if="getItemValue(item, 'status')" :style="`width: ${props.prependWidth}`" class="time-line-prepend">
           <div class="time-line-status">{{ getItemValue(item, 'status') }}</div>
         </div>
       </slot>
-      <div class="relative ml-4 flex-1 border-l-1 time-border cus-line">
-        <div class="min-h-[32px] px-4 relative -top-1">
+      <div class="time-border cus-line">
+        <div class="time-line-item-main">
           <slot :item="item">
-            <div v-if="getItemValue(item, 'timestamp')" class="mb-2">
+            <div v-if="getItemValue(item, 'timestamp')" class="time-line-item-time">
               {{ getItemValue(item, 'timestamp') }}
             </div>
             <div v-if="getItemValue(item, 'content')" class="time-line-item-content">
@@ -23,8 +19,8 @@
         </div>
         <div class="dot">
           <slot name="dot">
-            <div class="w-[16px] h-[16px] dot-con rounded-full flex items-center justify-center">
-              <div class="w-[8px] h-[8px] rounded-full"></div>
+            <div class="dot-con">
+              <div></div>
             </div>
           </slot>
         </div>

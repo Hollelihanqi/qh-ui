@@ -41,7 +41,8 @@
   },
   "style": "theme-chalk/index.css",
   "sideEffects": [
-    "theme-chalk/*.css"
+    "theme-chalk/*.css",
+    "es/components/*/style/index.mjs"
   ],
   "author": {
     "name": "Your Name",

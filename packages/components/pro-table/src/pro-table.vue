@@ -1,9 +1,9 @@
 <template>
-  <div class="hd-pro-table pro-table-w h-[100%] w-[100%] flex flex-col overflow-hidden gap-2">
+  <div class="hd-pro-table pro-table-w">
     <HdSearchForm
       v-if="!searchFormHide"
       ref="SearchFormInstance"
-      class="mb-[8px]"
+      class="ptable-search"
       okpos="left"
       :collapsed-rows="2"
       collapse
@@ -11,7 +11,7 @@
       @on-search="handleSearch"
       @on-reset="handleReset"
     />
-    <div class="ptable-box flex-1 h-0 p-[16px] bg-white">
+    <div class="ptable-box">
       <HdTable
         ref="HTableRef"
         :request-api="requestApi"

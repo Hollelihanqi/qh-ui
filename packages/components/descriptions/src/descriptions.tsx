@@ -57,7 +57,7 @@ export default defineComponent({
       const value = props.data[item.prop]
       const displayValue = item.enum ? item.enum[value] : value === undefined || value === null ? '--' : value
 
-      return <div class="w-full flex flex-wrap break-all">{displayValue}</div>
+      return <div class="desc-value">{displayValue}</div>
     }
 
     // 判断是否显示标签
@@ -76,9 +76,9 @@ export default defineComponent({
     }
 
     return () => (
-      <div class={`text-[14px] ${props.border ? 'descriptions-border' : ''}`}>
+      <div class={`hd-descriptions ${props.border ? 'descriptions-border' : ''}`}>
         {props.data ? (
-          <ElRow gutter={!props.border ? 16 : 0} class="overflow-x-hidden" style={{ lineHeight: props.lineHeight }}>
+          <ElRow gutter={!props.border ? 16 : 0} class="desc-row" style={{ lineHeight: props.lineHeight }}>
             {props.list.map((item: ListProps) => {
               const itemLabelPosition = getItemLabelPosition(item)
 
@@ -88,7 +88,7 @@ export default defineComponent({
                 <ElCol
                   style={getItemStyles(item)}
                   span={item.span || props.span}
-                  class={['overflow-x-hidden', props.colAignItemsCenter ? 'items-center' : '']}
+                  class={['desc-col', props.colAignItemsCenter ? 'is-center' : '']}
                 >
                   {shouldShowLabel(item.label) && (
                     <div
@@ -101,10 +101,7 @@ export default defineComponent({
                       {renderLabel(item)}
                     </div>
                   )}
-                  <div
-                    class={`${itemLabelPosition === 'top' ? 'w-full' : 'flex-1 w-0'} desc-prop`}
-                    style={getValueStyles(item)}
-                  >
+                  <div class={`desc-prop ${itemLabelPosition === 'top' ? 'is-top' : ''}`} style={getValueStyles(item)}>
                     {renderItemContent(item)}
                   </div>
                 </ElCol>
@@ -112,7 +109,7 @@ export default defineComponent({
             })}
           </ElRow>
         ) : (
-          <div class="h-[100px] flex items-center justify-center">暂无数据</div>
+          <div class="desc-empty">暂无数据</div>
         )}
       </div>
     )

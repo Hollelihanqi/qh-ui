@@ -32,25 +32,23 @@ export default defineComponent({
 
     const labelCountRender = (item: TabItemProps) => {
       if (item.labelCount && isRef(item.labelCount)) {
-        return <span class="pl-[2px]">（{item.labelCount.value}）</span>
+        return <span class="tab-label-count">（{item.labelCount.value}）</span>
       } else if (typeof item.labelCount === 'function') {
-        return <span class="pl-[2px]">（{item.labelCount()}）</span>
+        return <span class="tab-label-count">（{item.labelCount()}）</span>
       }
       return null
     }
 
     return () => {
       return (
-        <div class="w-full flex h-[32px] hd-tabs">
-          <div class="ltabs-box  flex">
+        <div class="hd-tabs">
+          <div class="ltabs-box">
             {props.tabs.map((item: TabItemProps, index: number) => {
               return (
                 <>
                   <div
                     style={tabItemStyles}
-                    class={`tab-item h-full flex items-center justify-center ${
-                      item.value === tabAct.value ? 'tab-active' : ''
-                    }`}
+                    class={`tab-item ${item.value === tabAct.value ? 'tab-active' : ''}`}
                     onClick={() => handleTabClick(item, index)}
                   >
                     <span> {item.label}</span>
@@ -60,7 +58,7 @@ export default defineComponent({
               )
             })}
           </div>
-          <div class="flex-1 w-0 h-full tabs-right-box">{slots.right && slots.right()}</div>
+          <div class="tabs-right-box">{slots.right && slots.right()}</div>
         </div>
       )
     }

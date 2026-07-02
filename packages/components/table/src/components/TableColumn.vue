@@ -112,7 +112,7 @@ const getCopyText = (column: any, scope: any): string => {
 const copyRender = (column: any, scope: any) => {
   return (
     <ElIcon
-      class="cursor-pointer copy-icon-color"
+      class="copy-icon-color"
       onClick={() => {
         copyTextToClipboard(getCopyText(column, scope))
       }}
@@ -143,7 +143,7 @@ const getRenderStrategy = computed(() => {
               : (scope: any) => renderCellData(column, scope)
 
           return (
-            <div class="flex items-center gap-2">
+            <div class="copy-cell">
               {copyRender(column, scope)}
               {content(scope)}
             </div>

@@ -17,12 +17,11 @@ export default defineComponent({
       },
     })
     return () => (
-      <div class="hd-sticky-container staicky-w h-full flex flex-col overflow-y-hidden">
+      <div class="hd-sticky-container staicky-w">
         {slots.header && <div class="staicky-h"> {slots.header()}</div>}
-        <div class="staicky-c flex-1 h-0">
+        <div class="staicky-c">
           <ElScrollbar ref={scrollbarRef} height="100%" {...attrs}>
-            {slots.default && slots.default()}{' '}
-            {slots.footer && <div class="staicky-f sticky bottom-0 z-99">{slots.footer()}</div>}
+            {slots.default && slots.default()} {slots.footer && <div class="staicky-f">{slots.footer()}</div>}
           </ElScrollbar>
         </div>
       </div>

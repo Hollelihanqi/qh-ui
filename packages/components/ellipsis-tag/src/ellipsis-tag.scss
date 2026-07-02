@@ -1,4 +1,12 @@
 .ellipsis-tag {
+  display: flex;
+  width: 100%;
+
+  .tag-clip {
+    flex: 1;
+    overflow: hidden;
+  }
+
   .tag-box {
     white-space: nowrap;
     width: fit-content;
@@ -8,7 +16,13 @@
   }
 
   .ellipsis {
-    @apply rounded-[2px] px-[8px] bg-white flex items-center cursor-pointer transition-colors;
+    border-radius: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.06);
     color: #7f7f7f;
     transition: all 0.3s;
@@ -22,7 +36,7 @@
 }
 
 .el-popover.ellipsis-tag-popover {
-  @apply p-3;
+  padding: 0.75rem;
 
   .tag-box {
     display: flex;
@@ -31,7 +45,8 @@
   }
 
   .tag {
-    @apply rounded-[2px] px-[8px] py-[4px];
+    border-radius: 2px;
+    padding: 4px 8px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     background-color: #fff;
     white-space: nowrap;

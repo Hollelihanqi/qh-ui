@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue'
 import { resolve, dirname, basename } from 'node:path'
 import { fileURLToPath } from 'url'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import UnoCSS from 'unocss/vite'
 import { readdirSync } from 'node:fs'
 import myMergeCssPlugin from './plugins/my-merge-css'
 import { COMPONENT_STYLE_PREFIX, getComponentStyleName } from '@hd-custom/build-constants'
@@ -22,17 +21,7 @@ const input = entries.reduce((acc, path) => {
 }, {})
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    UnoCSS({
-      mode: 'per-module',
-      outputToCssLayers: {
-        cssLayerName: (layer) => `hd-ui-${layer}`,
-      },
-    }),
-    myMergeCssPlugin(),
-  ],
+  plugins: [vue(), vueJsx(), myMergeCssPlugin()],
   build: {
     lib: {
       entry: {},

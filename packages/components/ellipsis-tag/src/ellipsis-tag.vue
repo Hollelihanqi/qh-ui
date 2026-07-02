@@ -1,6 +1,6 @@
 <template>
-  <div ref="containerRef" v-resize-element="resizeHandle" class="hd-ellipsis-tag ellipsis-tag flex w-full">
-    <div class="flex-1 overflow-hidden">
+  <div ref="containerRef" v-resize-element="resizeHandle" class="hd-ellipsis-tag ellipsis-tag">
+    <div class="tag-clip">
       <div class="tag-box" ref="tagBoxRef">
         <template v-for="(tag, index) in tags">
           <slot :info="tag">

@@ -23,6 +23,40 @@ export default defineComponent({
     const collapseIndex = ref(-1)
     const defaultValueMap = new Map()
     const fieldFormatKeys = ref<string[]>([])
+
+    // 按当前断点读取搜索项实际占用的列数（span + offset），保证折叠计算和真实网格布局一致。
+    const getControlCols = (control: SearchFormControlProps) => {
+      const point = breakPoint.value
+      const span = control?.[point]?.span ?? control?.span ?? 1
+      const offset = control?.[point]?.offset ?? control?.offset ?? 0
+
+      return span + offset
+    }
+
+    // 统一获取当前断点下一行可容纳的列数，兼容 number 和响应式对象两种配置。
+    const getCurrentCols = () => {
+      if (typeof props.colConfig === 'number') {
+        return props.colConfig
+      }
+
+      return props.colConfig?.[breakPoint.value] ?? 0
+    }
+
+    // 容器宽度和按钮宽度分开采集，但折叠阈值统一在这里重算，避免两边变化后状态不同步。
+    const recalculateLayout = () => {
+      // 任一宽度还没拿到就先不算，避免 Infinity / NaN 让折叠逻辑失真。
+      if (!searchContainerWidth.value || !searchActionBoxWidth.value) {
+        return
+      }
+
+      // “容器总宽度 / 按钮区域宽度” 约等于当前一行可以容纳多少个基础布局单位。
+      showSpnas.value = Math.floor(searchContainerWidth.value / searchActionBoxWidth.value)
+
+      // 折叠态下宽度变化后需要同步重算折叠起点。
+      if (collapsed.value) {
+        calculateCollapsedIndex()
+      }
+    }
     watch(
       () => props.collapse,
       (newValue: any) => {
@@ -36,13 +70,11 @@ export default defineComponent({
     const handleResize = async (e: any) => {
       searchContainerWidth.value = e.width
       GridInstance.value?.resize(e.width)
+      // 等待 Grid 断点切换和 DOM 重排完成后再读按钮宽度，保证读取到最新布局结果。
       await nextTick()
       const _width = SearchActionEl.value?.offsetWidth
       searchActionBoxWidth.value = _width
-      showSpnas.value = Math.floor(e.width / _width)
-      if (collapsed.value) {
-        calculateCollapsedIndex()
-      }
+      recalculateLayout()
     }
 
     const handleCollapse = () => {
@@ -81,9 +113,8 @@ export default defineComponent({
       let rowCount = 1
       const totalElements = elements.length
       for (let i = 0; i < totalElements; i++) {
-        const elementCols = elements[i].span || 1
-
-        const nextElementCol = i + 1 < totalElements ? elements[i + 1]?.span || 1 : 0
+        const elementCols = getControlCols(elements[i])
+        const nextElementCol = i + 1 < totalElements ? getControlCols(elements[i + 1]) : 0
 
         if (currentRowCols + elementCols > maxColsPerRow) {
           rowCount++
@@ -103,6 +134,7 @@ export default defineComponent({
 
     const handleActionResize = (e: any) => {
       searchActionBoxWidth.value = e.width
+      recalculateLayout()
     }
 
     const insearchFormModel = ref({})
@@ -127,7 +159,7 @@ export default defineComponent({
     const getFormatValues = () => {
       return props.formControls.reduce((acc: any, item: SearchFormControlProps) => {
         const { field, formatValue } = item as any
-        // 只处理那些有 formatValue 函数的属�?
+        // 只处理带 formatValue 函数的表单项
         if (typeof formatValue === 'function') {
           const value = _searchModel.value[field]
           // 只添加那些经过formatValue处理的属性到累加器对象中
@@ -143,10 +175,13 @@ export default defineComponent({
     }
 
     const getFieldFormat = () => {
+      // 每次重新计算前先清空上次记录，避免重复 push 导致删除字段范围越来越大。
+      fieldFormatKeys.value = []
+
       return props.formControls.reduce((acc: any, item: SearchFormControlProps) => {
         const { field, fieldFormat } = item as any
         if (field && fieldFormat) {
-          // �?fieldFormat 的结果添加到累加器中，而不是覆�?
+          // fieldFormat 的结果合并进累加器，而不是覆盖原值
           const formatResult = fieldFormat(_searchModel.value[field])
           if (typeof formatResult === 'object') {
             // 如果返回的是对象，展开合并
@@ -169,7 +204,7 @@ export default defineComponent({
       return values
     }
 
-    // 获取响应式设�?
+    // 获取单项响应式布局配置
     const getResponsive = (control: SearchFormControlProps, index: number) => {
       return {
         span: control?.span,
@@ -190,7 +225,7 @@ export default defineComponent({
       return ''
     }
 
-    // 处理默认�?
+    // 统一处理默认值并写回模型
     const handleDefaultValue = () => {
       const _dv: any = {}
       if (props.modelDefault) {
@@ -254,44 +289,20 @@ export default defineComponent({
 
     // 判断是否显示 展开/合并 按钮
     const showCollapse = computed(() => {
-      let totalSpan = 0
-      let show = false
+      const currentCols = getCurrentCols()
 
-      const isColConfigNumber = typeof props.colConfig === 'number'
-      const breakpointValue = breakPoint.value
+      if (!currentCols) {
+        return false
+      }
 
+      // “+1” 表示查询按钮区域占用一个表单元素宽度。
       const totalCol = _cformControls.value.reduce((prev, control: SearchFormControlProps) => {
-        prev +=
-          (control[breakpointValue]?.span || control.span || 1) +
-          (control[breakpointValue]?.offset || control.offset || 0)
+        prev += getControlCols(control)
         return prev
       }, 0)
 
-      for (const control of _cformControls.value) {
-        totalSpan +=
-          (control[breakpointValue]?.span || control.span || 1) +
-          (control[breakpointValue]?.offset || control.offset || 0)
-
-        if (isColConfigNumber) {
-          if (totalSpan > props.colConfig) {
-            show = true
-            break
-          }
-        } else if (props.colConfig && totalSpan >= props.colConfig[breakpointValue]) {
-          show = true
-          break
-        }
-      }
-      if (props.colConfig) {
-        const _colConfig: any = props.colConfig
-        const rows = Math.ceil((totalCol + 1) / _colConfig[breakpointValue])
-        if (rows > props.collapsedRows) {
-          show = true
-        } else {
-          show = false
-        }
-      }
-      return show
+      const rows = Math.ceil((totalCol + 1) / currentCols)
+      return rows > props.collapsedRows
     })
 
     provide('collapseIndex', collapseIndex)
@@ -322,11 +333,7 @@ export default defineComponent({
 
     return () => {
       return hasFormControls.value ? (
-        <div
-          ref={searchFormInstance}
-          v-resizeElement={handleResize}
-          class="hd-search-form relative bg-white px-[16px] pt-[20px]"
-        >
+        <div ref={searchFormInstance} v-resizeElement={handleResize} class="hd-search-form">
           <ElForm model={_searchModel.value} class="search-form" label-width="auto">
             <Grid
               ref={GridInstance}
@@ -338,7 +345,7 @@ export default defineComponent({
               {_cformControls.value.map((control: SearchFormControlProps, index: number) => {
                 return (
                   <GridItem key={control.field} {...getResponsive(control, index)}>
-                    <ElFormItem label={control.label} class="!mb-[20px]">
+                    <ElFormItem label={control.label}>
                       {control.field ? (
                         <SearchFormItem
                           v-model={_searchModel.value[control.field]}
@@ -351,7 +358,7 @@ export default defineComponent({
                 )
               })}
               <GridItem suffix v-resizeElement={handleActionResize}>
-                <div ref={SearchActionEl} class="search-action-box flex items-center justify-end mb-[20px]">
+                <div ref={SearchActionEl} class="search-action-box">
                   {props.okpos === 'right' ? (
                     <>
                       <ElButton onClick={handleReset}>重置</ElButton>
@@ -372,11 +379,8 @@ export default defineComponent({
             </Grid>
           </ElForm>
           {showCollapse.value && (
-            <div class={`collapse-btn-box absolute bottom-0 left-0 w-full flex justify-center`}>
-              <div
-                class={`collapse-btn h-[20px] w-[60px] flex items-center justify-center ${collapsed.value ? 'down' : 'up'}`}
-                onClick={handleCollapse}
-              >
+            <div class="collapse-btn-box">
+              <div class={`collapse-btn ${collapsed.value ? 'down' : 'up'}`} onClick={handleCollapse}>
                 <svg
                   v-show={!collapsed.value}
                   width="10px"

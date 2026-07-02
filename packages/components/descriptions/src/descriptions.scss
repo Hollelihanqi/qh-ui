@@ -1,3 +1,35 @@
+.hd-descriptions {
+  font-size: 14px;
+  .desc-row {
+    overflow-x: hidden;
+  }
+  .desc-col {
+    overflow-x: hidden;
+    &.is-center {
+      align-items: center;
+    }
+  }
+  .desc-prop {
+    flex: 1;
+    width: 0;
+    &.is-top {
+      flex: none;
+      width: 100%;
+    }
+  }
+  .desc-value {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-all;
+  }
+  .desc-empty {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .text-opc0 {
   opacity: 0;
 }

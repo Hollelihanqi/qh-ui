@@ -14,6 +14,11 @@
 .upload-info {
   position: relative;
   height: 40px;
+  .uploading-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
   border-bottom: 1px solid #eee;
   overflow: hidden;
   background-color: #faf8fe;

@@ -14,7 +14,7 @@
         <div class="status">
           <!-- <span v-show="status !== 'uploading'">{{ file.error ? statusText.error : statusText[status] }}</span> -->
           <span v-show="status2 !== 'uploading'">{{ statusText[status2] }}</span>
-          <div v-show="status2 === 'uploading'" class="flex items-center gap-2">
+          <div v-show="status2 === 'uploading'" class="uploading-info">
             <span>{{ progressStyle.progress }}</span>
             <span>{{ uploadAverageSpeed }}</span>
           </div>

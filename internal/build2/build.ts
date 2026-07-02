@@ -7,6 +7,7 @@ import chalk from 'chalk'
 import { consola } from 'consola'
 import { buildOutput, hdOutput, hdPackage, projRoot } from '@hd-custom/build-utils'
 import { generateTypesDefinitions } from './types-definitions2'
+import { generateStyleIndex } from './gen-style-index'
 import { run } from './utils'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -70,6 +71,8 @@ async function buildComponents() {
     configFile: resolve(__dirname, 'vite.config.ts'),
     logLevel: 'info',
   })
+  // es 模块产出后，生成各组件的样式索引（resolver 按需拉取、模块去重的入口）。
+  await generateStyleIndex()
 }
 
 async function buildThemeChalk() {

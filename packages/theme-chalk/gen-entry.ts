@@ -38,11 +38,16 @@ function generateComponentEntry() {
     const componentDir = resolve(compRoot, name)
     const camelCaseName = name.replace(/-(\w)/g, (_, c) => c.toUpperCase())
 
-    // 读取 style/index.ts 文件内容
+    // 读取 style/index.ts：只取 import 行（自身 scss）注入主题入口。
+    // 其中的 styleDependencies 等导出是给 es 构建的 style-index 生成器用的，不进主题 css。
     const styleIndexPath = resolve(componentDir, 'style/index.ts')
     let styleContent = ''
     if (fs.existsSync(styleIndexPath)) {
-      styleContent = fs.readFileSync(styleIndexPath, 'utf-8')
+      styleContent = fs
+        .readFileSync(styleIndexPath, 'utf-8')
+        .split('\n')
+        .filter((line) => line.trim().startsWith('import '))
+        .join('\n')
     }
 
     // 查找组件文件

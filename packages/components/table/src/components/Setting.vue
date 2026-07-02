@@ -1,11 +1,11 @@
 <template>
-  <ElDrawer v-model="dialogVisible" direction="rtl" title="列筛选" size="360px" class="p-0 iel-drawer__bodyp0">
+  <ElDrawer v-model="dialogVisible" direction="rtl" title="列筛选" size="360px" class="iel-drawer__bodyp0">
     <!-- <div class="h-[32px] w-full search-box flex items-center pl-[26px]">
       <el-icon><Search /></el-icon>
       <el-input placeholder="搜索" class="flex-1 h-full"> </el-input>
     </div> -->
 
-    <div class="pl-[16px] flex flex-col">
+    <div class="setting-list">
       <template v-for="item in columns" :key="item.prop">
         <ElCheckbox
           v-model="item.checked"
@@ -19,7 +19,7 @@
       </template>
     </div>
     <template #footer>
-      <div class="flex items-center justify-end">
+      <div class="setting-footer">
         <ElButton type="default" @click="handleSCancel">取消</ElButton>
         <!-- <ElButton type="primary" @click="handleSReture">恢复默认</ElButton> -->
         <!-- <ElButton type="primary" @click="handleSSave">保存</ElButton> -->
