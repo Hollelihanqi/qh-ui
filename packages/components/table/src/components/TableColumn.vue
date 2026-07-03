@@ -6,6 +6,7 @@
 import { useSlots, Fragment, computed } from 'vue'
 import { ElMessage, ElTableColumn, ElIcon } from 'element-plus'
 import { CopyDocument } from '@element-plus/icons-vue'
+import { copyStr } from '@hd-custom/share'
 
 defineProps({
   column: {
@@ -24,48 +25,15 @@ const formatEnum = (column: any, row: any) => {
   }
 }
 
-// 辅助函数：转义 HTML 特殊字符
-function escapeHtml(unsafe: string) {
-  return unsafe
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;')
-}
+// 复制文本到剪贴板：复用 @hd-custom/share 中的 copyStr，兼容 HTTP（非安全上下文）
+const copyTextToClipboard = async (copyData = '') => {
+  const text = String(copyData ?? '')
+  const ok = await copyStr(text)
 
-const copyTextToClipboard = (copyData = '') => {
-  // 对 copyData 进行转义处理，防止 XSS 攻击
-  const escapedCopyData = escapeHtml(copyData)
-
-  try {
-    const input = document.createElement('input')
-    input.value = escapedCopyData
-    document.body.appendChild(input)
-    input.select()
-
-    // 使用现代 API 替代 document.execCommand
-    if (navigator.clipboard) {
-      navigator.clipboard
-        .writeText(escapedCopyData)
-        .then(() => {
-          ElMessage({
-            type: 'success',
-            message: '复制成功',
-          })
-        })
-        .catch((err) => {
-          console.error('Failed to copy text: ', err)
-          ElMessage({
-            type: 'error',
-            message: '复制失败',
-          })
-        })
-    }
-    document.body.removeChild(input)
-  } catch (error) {
-    console.error('Error during copy operation: ', error)
-  }
+  ElMessage({
+    type: ok ? 'success' : 'error',
+    message: ok ? '复制成功' : '复制失败',
+  })
 }
 
 // 渲染表格数据
