@@ -1,6 +1,6 @@
 {
   "name": "@rdeam/hd-ui",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "type": "module",
   "module": "es/index.mjs",
   "types": "es/index.d.ts",
