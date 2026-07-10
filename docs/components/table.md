@@ -76,15 +76,15 @@ table/customColumnHeader
 
 ### Table-column 属性
 
-| 属性名       | 说明               | 类型             | 备注     |
-| ------------ | ------------------ | ---------------- | -------- |
-| hide         | 是否隐藏该列       | `()=>Boolean`    | -        |
-| copy         | 是否支持点击复制   | `Boolean`        | -        |
-| enum         | 枚举字典           | `Array/Object`   | -        |
-| formatText   | 文本格式化函数     | `(row)=>string`  | -        |
-| render       | 自定义渲染函数     | `(scope)=>VNode` | 支持 JSX |
-| headerRender | 自定义表头渲染函数 | `Function`       | 支持 JSX |
-| \_children   | 多级表头配置       | `Array`          | -        |
+| 属性名       | 说明               | 类型                      | 备注                                       |
+| ------------ | ------------------ | ------------------------- | ------------------------------------------ |
+| hide         | 是否隐藏该列       | `Boolean/(row?)=>Boolean` | 值为 `true`（或函数返回 `true`）时隐藏该列 |
+| copy         | 是否支持点击复制   | `Boolean/(row?)=>Boolean` | -                                          |
+| enum         | 枚举字典           | `Array/Object`            | -                                          |
+| formatText   | 文本格式化函数     | `(row)=>string`           | -                                          |
+| render       | 自定义渲染函数     | `(scope)=>VNode`          | 支持 JSX                                   |
+| headerRender | 自定义表头渲染函数 | `Function`                | 支持 JSX                                   |
+| \_children   | 多级表头配置       | `Array`                   | -                                          |
 
 ### Table 方法
 
