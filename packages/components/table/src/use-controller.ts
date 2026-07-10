@@ -96,11 +96,13 @@ const useController = (props: TableProps, _ElTableInstance: any) => {
   )
 
   const _showColumn = (column: any) => {
-    if (column.hide && typeof column.hide === 'function') {
-      return column.hide()
-    } else {
-      return column.show !== false
+    if (typeof column.hide === 'function') {
+      return !column.hide()
     }
+    if (typeof column.hide === 'boolean') {
+      return !column.hide
+    }
+    return column.show !== false
   }
 
   onBeforeMount(() => {
