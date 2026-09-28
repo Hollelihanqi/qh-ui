@@ -24,7 +24,7 @@
     "commit": "git add -A && pnpm exec git-cz && git push",
     "check-git": "git diff-index --quiet HEAD || (echo '发现未提交的代码改动，请先执行 pnpm commit 提交代码' && exit 1)",
     "update-version": "pnpm exec nx release version --projects=@rdeam/hd-ui",
-    "commit-version": "git add packages/hd-custom/package.json pnpm-lock.yaml && git commit -m \"chore(release): update package version\" || true",
+    "commit-version": "git add packages/hd-custom/package.json pnpm-lock.yaml && (git diff --cached --quiet || git commit -m \"chore(release): update package version\")",
     "build-after-version": "pnpm build",
     "tag-version": "tsx scripts/tag-version.ts",
     "publish-custom": "cd dist/hd-custom && npm publish",
