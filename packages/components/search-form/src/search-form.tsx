@@ -326,9 +326,16 @@ export default defineComponent({
     })
 
     onMounted(() => {
-      if (props.collapse && hasFormControls.value) {
-        calculateCollapsedIndex()
-      }
+      if (!hasFormControls.value) return
+      // 首屏同步测一次容器宽度,让 Grid 的断点在浏览器首次绘制之前就落到正确档位。
+      // 若只依赖 v-resizeElement:ResizeObserver 的首次回调要等下一帧,而该指令内部
+      // 又套了一层 requestAnimationFrame(见 directives/resize-element),合计推迟
+      // ≥2 帧。于是首帧会先用 Grid 的默认断点('xl')排版,之后才纠正成实测断点
+      // (容器 1200~1919 时是 'lg'),表现为查询表单字段宽度明显跳一下。
+      // 放在 onMounted 里测量:此时 DOM 已插入,而断点变化引起的重渲染会在微任务内
+      // flush,仍早于首次绘制,因此用户只会看到最终那一版。
+      handleResize(searchFormInstance.value?.getBoundingClientRect())
+      if (props.collapse) calculateCollapsedIndex()
     })
 
     return () => {
